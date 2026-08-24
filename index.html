@@ -2,40 +2,35 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
-
   <meta
     name="description"
     content="NAV KING - 不记网站名字，直接按任务找工具"
   >
-
   <meta
     http-equiv="Cache-Control"
     content="no-cache, no-store, must-revalidate"
   >
-
   <meta
     http-equiv="Pragma"
     content="no-cache"
   >
-
   <meta
     http-equiv="Expires"
     content="0"
   >
-
-  <meta name="theme-color" content="#111827">
-
-  <!-- 以后加入 manifest.json 后可直接启用 -->
-  <!-- <link rel="manifest" href="./manifest.json"> -->
+  <meta
+    name="theme-color"
+    content="#111827"
+  >
 
   <title>NAV KING · 导航王</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -82,6 +77,7 @@
         55px;
     }
 
+
     /* =========================
        HERO
     ========================= */
@@ -109,21 +105,32 @@
 
     .brand-row {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 12px;
     }
 
     .brand {
       font-size: 13px;
+
       font-weight: 900;
+
       letter-spacing: 3px;
+
       color: #60a5fa;
     }
 
     .save-nav-btn {
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.09);
+      border:
+        1px solid
+        rgba(255,255,255,.16);
+
+      background:
+        rgba(255,255,255,.09);
+
       color: white;
 
       min-height: 34px;
@@ -135,6 +142,7 @@
       border-radius: 999px;
 
       font-size: 12px;
+
       font-weight: 850;
 
       cursor: pointer;
@@ -169,6 +177,7 @@
       color: #cbd5e1;
     }
 
+
     /* =========================
        搜索
     ========================= */
@@ -189,6 +198,7 @@
       height: 48px;
 
       border: 0;
+
       outline: none;
 
       border-radius: 15px;
@@ -226,6 +236,7 @@
       cursor: pointer;
     }
 
+
     /* =========================
        后台状态
        前台隐藏
@@ -233,42 +244,16 @@
 
     .system-status {
       display: none !important;
-
-      margin-top: 14px;
-
-      padding:
-        12px
-        14px;
-
-      border-radius: 16px;
-
-      background: white;
-
-      border:
-        1px
-        solid
-        #e5e7eb;
-
-      font-size: 13px;
-
-      color: #64748b;
-
-      align-items: flex-start;
-
-      gap: 8px;
     }
 
     .status-dot {
       width: 10px;
-      height: 10px;
 
-      margin-top: 4px;
+      height: 10px;
 
       border-radius: 50%;
 
       background: #f59e0b;
-
-      flex-shrink: 0;
     }
 
     .status-dot.ok {
@@ -278,6 +263,11 @@
     .status-dot.error {
       background: #dc2626;
     }
+
+
+    /* =========================
+       引导
+    ========================= */
 
     .guide {
       margin:
@@ -291,6 +281,7 @@
 
       line-height: 1.6;
     }
+
 
     /* =========================
        分类
@@ -403,6 +394,7 @@
         none;
     }
 
+
     /* =========================
        分类颜色
     ========================= */
@@ -506,6 +498,7 @@
         );
     }
 
+
     /* =========================
        结果卡片
     ========================= */
@@ -563,8 +556,9 @@
       line-height: 1.6;
     }
 
+
     /* =========================
-       三网址
+       工具入口
     ========================= */
 
     .site-list {
@@ -593,8 +587,7 @@
         solid
         #e2e8f0;
 
-      background:
-        #f8fafc;
+      background: #f8fafc;
 
       border-radius: 17px;
 
@@ -602,7 +595,8 @@
 
       transition:
         transform .12s ease,
-        background .12s ease;
+        background .12s ease,
+        border-color .12s ease;
     }
 
     .site:active {
@@ -613,22 +607,42 @@
         #f1f5f9;
     }
 
+    .site.recommended {
+      border-color: #86efac;
+
+      background: #f7fff9;
+    }
+
     .site-left {
       min-width: 0;
 
       flex: 1;
     }
 
-    .site-number {
+    .site-topline {
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      flex-wrap: wrap;
+
+      margin-bottom: 7px;
+    }
+
+    .site-rank {
       display: inline-flex;
 
       align-items: center;
 
       justify-content: center;
 
-      width: 26px;
+      min-height: 26px;
 
-      height: 26px;
+      padding:
+        4px
+        8px;
 
       border-radius: 8px;
 
@@ -639,8 +653,27 @@
       font-size: 12px;
 
       font-weight: 900;
+    }
 
-      margin-bottom: 7px;
+    .site:nth-child(1)
+    .site-rank {
+      background: #dcfce7;
+
+      color: #166534;
+    }
+
+    .site:nth-child(2)
+    .site-rank {
+      background: #dbeafe;
+
+      color: #1d4ed8;
+    }
+
+    .site:nth-child(3)
+    .site-rank {
+      background: #fef3c7;
+
+      color: #92400e;
     }
 
     .site-name {
@@ -661,6 +694,56 @@
       word-break: break-all;
     }
 
+    .tool-tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      margin-top: 9px;
+    }
+
+    .tool-tag {
+      display: inline-flex;
+
+      align-items: center;
+
+      min-height: 24px;
+
+      padding:
+        4px
+        8px;
+
+      border-radius: 999px;
+
+      font-size: 11px;
+
+      font-weight: 750;
+
+      background: #f1f5f9;
+
+      color: #475569;
+    }
+
+    .tool-tag.good {
+      background: #dcfce7;
+
+      color: #166534;
+    }
+
+    .tool-tag.info {
+      background: #dbeafe;
+
+      color: #1d4ed8;
+    }
+
+    .tool-tag.warn {
+      background: #fef3c7;
+
+      color: #92400e;
+    }
+
     .site-open {
       flex-shrink: 0;
 
@@ -679,26 +762,9 @@
       font-weight: 800;
     }
 
-    .site:nth-child(1)
-    .site-number {
-      background: #dcfce7;
-      color: #166534;
-    }
-
-    .site:nth-child(2)
-    .site-number {
-      background: #dbeafe;
-      color: #1d4ed8;
-    }
-
-    .site:nth-child(3)
-    .site-number {
-      background: #fef3c7;
-      color: #92400e;
-    }
 
     /* =========================
-       标签
+       结果标签
     ========================= */
 
     .meta-row {
@@ -757,8 +823,7 @@
       padding-top: 12px;
 
       border-top:
-        1px
-        solid
+        1px solid
         #e5e7eb;
 
       color: #94a3b8;
@@ -767,6 +832,7 @@
 
       line-height: 1.55;
     }
+
 
     /* =========================
        未找到
@@ -793,6 +859,7 @@
     .empty.show {
       display: block;
     }
+
 
     /* =========================
        保存 NAV KING 弹窗
@@ -913,15 +980,12 @@
       width: 100%;
 
       border:
-        1px
-        solid
+        1px solid
         #e2e8f0;
 
-      background:
-        #f8fafc;
+      background: #f8fafc;
 
-      color:
-        #172033;
+      color: #172033;
 
       border-radius: 17px;
 
@@ -961,11 +1025,9 @@
 
       border-radius: 15px;
 
-      background:
-        #eff6ff;
+      background: #eff6ff;
 
-      color:
-        #1e3a8a;
+      color: #1e3a8a;
 
       font-size: 13px;
 
@@ -975,6 +1037,7 @@
     .save-help strong {
       color: #1d4ed8;
     }
+
 
     /* =========================
        底部广告
@@ -987,8 +1050,8 @@
 
       bottom:
         calc(
-          10px
-          + env(safe-area-inset-bottom)
+          10px +
+          env(safe-area-inset-bottom)
         );
 
       transform:
@@ -1026,7 +1089,9 @@
       color: #fbbf24;
     }
 
+
     @media (min-width:600px) {
+
       .task-grid {
         grid-template-columns:
           repeat(3,1fr);
@@ -1035,11 +1100,11 @@
       .save-modal-backdrop {
         align-items: center;
       }
+
     }
 
   </style>
 </head>
-
 
 <body>
 
@@ -1073,7 +1138,7 @@
     <div class="hero-text">
       不用记网站名字。
       直接选择任务，
-      NAV KING 给你显示最多 3 个可用网址入口。
+      NAV KING 会把更适合你的入口排在前面。
     </div>
 
     <div class="search">
@@ -1114,14 +1179,16 @@
 
   <div class="guide">
     ↓ 手机直接按分类找任务。
-    点击任务后显示最多 3 个网址，
-    由你自己选择进入。
+    点击任务后显示最多 3 个入口，
+    并优先推荐更清爽、低摩擦的选择。
   </div>
 
 
   <div id="categories">
   </div>
 
+
+  <!-- 搜索无结果 -->
 
   <section
     id="empty"
@@ -1132,8 +1199,7 @@
 
     <br><br>
 
-    可以尝试更简单的关键词，
-    例如：
+    可以尝试更简单的关键词，例如：
 
     <strong>
       PDF、压缩、抠图、证件照、
@@ -1142,6 +1208,8 @@
 
   </section>
 
+
+  <!-- 结果 -->
 
   <section
     id="result"
@@ -1178,11 +1246,15 @@
 
       NAV KING 只负责导航。
 
+      标签只展示数据库已有证据：
+      未知信息不会被当成“无广告”
+      或“国内已实测”。
+
       <br>
 
       你的文件不会上传到 NAV KING。
-      如果所选工具属于云端处理，
-      文件会由该第三方网站自行处理。
+      第三方工具是否本地处理或云端处理，
+      以对应入口标签为准。
 
     </div>
 
@@ -1303,28 +1375,31 @@
 </div>
 
 
-
 <script>
 
 "use strict";
 
 
 /* =========================================================
-   NAV KING FRONTEND
+   NAV KING V4.2
+   智能排序 + 用户标签
 ========================================================= */
 
 const APP_VERSION =
-  "3.2";
+  "4.2";
 
 const BUILD_ID =
-  "20260825-SAVE-NAV-KING";
+  "20260825-SMART-RANKING-LABELS";
 
 
-let atomicTasks = [];
+let atomicTasks =
+  [];
 
-let toolRegistry = [];
+let toolRegistry =
+  [];
 
-let searchableTasks = [];
+let searchableTasks =
+  [];
 
 let atomicDataVersion =
   "UNKNOWN";
@@ -1337,7 +1412,7 @@ let deferredInstallPrompt =
 
 
 /* =========================================================
-   分类显示规则
+   分类
 ========================================================= */
 
 const categoryConfig = {
@@ -1549,7 +1624,22 @@ const aliases = {
     "正则测试",
 
   "sql":
-    "SQL美化"
+    "SQL美化",
+
+  "二维码":
+    "二维码生成",
+
+  "解压":
+    "在线解压缩",
+
+  "字数":
+    "字数统计",
+
+  "网页转pdf":
+    "网页转PDF/长截图",
+
+  "长截图":
+    "网页转PDF/长截图"
 
 };
 
@@ -1594,14 +1684,15 @@ function isMac() {
 
 function openSaveModal() {
 
-  const backdrop =
-    document.getElementById(
+  document
+    .getElementById(
       "saveModalBackdrop"
+    )
+    .classList
+    .add(
+      "show"
     );
 
-  backdrop.classList.add(
-    "show"
-  );
 
   updateSaveHelp();
 
@@ -1636,8 +1727,8 @@ function updateSaveHelp() {
 
     help.innerHTML =
       "<strong>iPhone / iPad：</strong>" +
-      "点击 Safari 浏览器底部或顶部的“分享”按钮，" +
-      "向下滑找到“添加到主屏幕”。";
+      "点击 Safari 的“分享”按钮，" +
+      "再选择“添加到主屏幕”。";
 
     return;
 
@@ -1648,21 +1739,15 @@ function updateSaveHelp() {
     isAndroid()
   ) {
 
-    if (
+    help.innerHTML =
       deferredInstallPrompt
-    ) {
 
-      help.innerHTML =
-        "<strong>Android：</strong>" +
-        "你的浏览器支持直接安装。点击上方“添加到主屏幕”即可继续。";
+      ? "<strong>Android：</strong>" +
+        "你的浏览器支持安装，" +
+        "点击上方“添加到主屏幕”继续。"
 
-    } else {
-
-      help.innerHTML =
-        "<strong>Android：</strong>" +
-        "点击浏览器右上角菜单，选择“添加到主屏幕”或“安装应用”。";
-
-    }
+      : "<strong>Android：</strong>" +
+        "打开浏览器菜单，选择“添加到主屏幕”或“安装应用”。";
 
     return;
 
@@ -1675,7 +1760,7 @@ function updateSaveHelp() {
 
     help.innerHTML =
       "<strong>Mac：</strong>" +
-      "按 ⌘ + D 收藏当前页面。Safari 也可以通过“分享”菜单添加到程序坞或主屏幕。";
+      "按 ⌘ + D 收藏当前页面。";
 
     return;
 
@@ -1684,14 +1769,10 @@ function updateSaveHelp() {
 
   help.innerHTML =
     "<strong>Windows / Linux：</strong>" +
-    "按 Ctrl + D 收藏当前页面。Chrome / Edge 也可在浏览器菜单中选择安装或创建快捷方式。";
+    "按 Ctrl + D 收藏当前页面。";
 
 }
 
-
-/* =========================================================
-   Android PWA 安装事件
-========================================================= */
 
 window.addEventListener(
   "beforeinstallprompt",
@@ -1718,14 +1799,8 @@ async function handleAddHome() {
 
       deferredInstallPrompt.prompt();
 
-      const choice =
-        await deferredInstallPrompt
-          .userChoice;
-
-      console.log(
-        "PWA install choice:",
-        choice
-      );
+      await deferredInstallPrompt
+        .userChoice;
 
       deferredInstallPrompt =
         null;
@@ -1734,7 +1809,9 @@ async function handleAddHome() {
 
       return;
 
-    } catch (error) {
+    } catch (
+      error
+    ) {
 
       console.warn(
         "Install prompt failed:",
@@ -1758,49 +1835,34 @@ async function handleAddHome() {
 
     help.innerHTML =
       "<strong>操作步骤：</strong>" +
-      "点 Safari 的“分享”按钮 → 向下滑 → “添加到主屏幕” → “添加”。";
+      "Safari 分享 → 添加到主屏幕 → 添加。";
 
-    return;
-
-  }
-
-
-  if (
+  } else if (
     isAndroid()
   ) {
 
     help.innerHTML =
       "<strong>操作步骤：</strong>" +
-      "打开浏览器菜单 → 选择“添加到主屏幕”或“安装应用”。";
+      "浏览器菜单 → 添加到主屏幕 / 安装应用。";
 
-    return;
-
-  }
-
-
-  if (
+  } else if (
     isMac()
   ) {
 
     help.innerHTML =
       "<strong>桌面端：</strong>" +
-      "可以先按 ⌘ + D 收藏；部分 Chrome / Edge 版本也支持在地址栏安装网页应用。";
+      "按 ⌘ + D 收藏；部分浏览器也支持安装网页应用。";
 
-    return;
+  } else {
+
+    help.innerHTML =
+      "<strong>桌面端：</strong>" +
+      "按 Ctrl + D 收藏；Chrome / Edge 也可能支持安装应用。";
 
   }
 
-
-  help.innerHTML =
-    "<strong>桌面端：</strong>" +
-    "可以先按 Ctrl + D 收藏；Chrome / Edge 菜单中也可能提供“安装应用”或“创建快捷方式”。";
-
 }
 
-
-/* =========================================================
-   浏览器收藏
-========================================================= */
 
 function handleBookmark() {
 
@@ -1816,35 +1878,29 @@ function handleBookmark() {
 
     help.innerHTML =
       "<strong>Safari 收藏：</strong>" +
-      "点击“分享”按钮 → “添加书签”。";
+      "点击“分享” → “添加书签”。";
 
-    return;
-
-  }
-
-
-  if (
+  } else if (
     isMac()
   ) {
 
     help.innerHTML =
       "<strong>收藏快捷键：</strong>" +
-      "请按 ⌘ + D。浏览器安全限制不允许网页直接替你写入收藏夹。";
+      "按 ⌘ + D。网页不能绕过浏览器安全限制自动写入收藏夹。";
 
-    return;
+  } else {
+
+    help.innerHTML =
+      "<strong>收藏快捷键：</strong>" +
+      "按 Ctrl + D。网页不能绕过浏览器安全限制自动写入收藏夹。";
 
   }
-
-
-  help.innerHTML =
-    "<strong>收藏快捷键：</strong>" +
-    "请按 Ctrl + D。浏览器安全限制不允许网页直接替你写入收藏夹。";
 
 }
 
 
 /* =========================================================
-   JSON 数组读取
+   通用 JSON 读取
 ========================================================= */
 
 function extractArray(
@@ -1857,7 +1913,9 @@ function extractArray(
       data
     )
   ) {
+
     return data;
+
   }
 
 
@@ -1866,7 +1924,9 @@ function extractArray(
     typeof data !==
       "object"
   ) {
+
     return [];
+
   }
 
 
@@ -1897,7 +1957,9 @@ function extractArray(
    Task 字段
 ========================================================= */
 
-function getTaskId(task) {
+function getTaskId(
+  task
+) {
 
   return String(
     task.id ??
@@ -1915,7 +1977,9 @@ function getTaskId(task) {
 }
 
 
-function getTaskName(task) {
+function getTaskName(
+  task
+) {
 
   return (
     task.title ??
@@ -1933,7 +1997,9 @@ function getTaskName(task) {
 }
 
 
-function getTaskCategory(task) {
+function getTaskCategory(
+  task
+) {
 
   return (
     task.category ??
@@ -1947,7 +2013,9 @@ function getTaskCategory(task) {
 }
 
 
-function getTaskStatus(task) {
+function getTaskStatus(
+  task
+) {
 
   return (
     task.status ??
@@ -1961,7 +2029,9 @@ function getTaskStatus(task) {
 }
 
 
-function getTaskLayer(task) {
+function getTaskLayer(
+  task
+) {
 
   return (
     task.core_layer ??
@@ -1976,7 +2046,9 @@ function getTaskLayer(task) {
 }
 
 
-function getTaskDescription(task) {
+function getTaskDescription(
+  task
+) {
 
   return (
     task.user_job ??
@@ -1995,7 +2067,9 @@ function getTaskDescription(task) {
    Tool 字段
 ========================================================= */
 
-function getToolName(tool) {
+function getToolName(
+  tool
+) {
 
   return (
     tool.name ??
@@ -2011,7 +2085,9 @@ function getToolName(tool) {
 }
 
 
-function getToolUrl(tool) {
+function getToolUrl(
+  tool
+) {
 
   return (
     tool.direct_url ??
@@ -2028,7 +2104,9 @@ function getToolUrl(tool) {
 }
 
 
-function getToolTasks(tool) {
+function getToolTasks(
+  tool
+) {
 
   const raw =
     tool.tasks ??
@@ -2103,7 +2181,9 @@ function getToolTasks(tool) {
 }
 
 
-function getToolRole(tool) {
+function getToolRole(
+  tool
+) {
 
   return (
     tool.role ??
@@ -2117,7 +2197,9 @@ function getToolRole(tool) {
 }
 
 
-function getToolStatus(tool) {
+function getToolStatus(
+  tool
+) {
 
   return (
     tool.status ??
@@ -2131,7 +2213,27 @@ function getToolStatus(tool) {
 }
 
 
-function getToolLocal(tool) {
+function getToolLocal(
+  tool
+) {
+
+  const processing =
+    String(
+      tool.processing ??
+      ""
+    )
+    .toUpperCase();
+
+
+  if (
+    processing ===
+    "LOCAL"
+  ) {
+
+    return true;
+
+  }
+
 
   const value =
     tool.local ??
@@ -2149,8 +2251,568 @@ function getToolLocal(tool) {
 }
 
 
+function getToolAds(
+  tool
+) {
+
+  return String(
+    tool.ads ??
+    "UNKNOWN"
+  )
+  .trim()
+  .toUpperCase();
+
+}
+
+
+function getToolLogin(
+  tool
+) {
+
+  if (
+    tool.login_level
+  ) {
+
+    return String(
+      tool.login_level
+    )
+    .trim()
+    .toUpperCase();
+
+  }
+
+
+  if (
+    tool.login === false
+  ) {
+
+    return "NONE";
+
+  }
+
+
+  if (
+    tool.login === true
+  ) {
+
+    return "REQUIRED";
+
+  }
+
+
+  return "UNKNOWN";
+
+}
+
+
+function getToolProcessing(
+  tool
+) {
+
+  const value =
+    String(
+      tool.processing ??
+      ""
+    )
+    .trim()
+    .toUpperCase();
+
+
+  if (
+    value
+  ) {
+
+    return value;
+
+  }
+
+
+  return getToolLocal(
+    tool
+  )
+  ? "LOCAL"
+  : "UNKNOWN";
+
+}
+
+
+function getToolCnPriority(
+  tool
+) {
+
+  return String(
+    tool.cn_priority ??
+    "UNKNOWN"
+  )
+  .trim()
+  .toUpperCase();
+
+}
+
+
+function getToolCnVerified(
+  tool
+) {
+
+  return (
+    tool.cn_verified ===
+    true
+  );
+
+}
+
+
+function getToolMobile(
+  tool
+) {
+
+  return (
+    tool.mobile !==
+    false
+  );
+
+}
+
+
+function getEvidenceLevel(
+  tool
+) {
+
+  return String(
+    tool.evidence_level ??
+    tool.evidence ??
+    "UNKNOWN"
+  )
+  .trim()
+  .toUpperCase();
+
+}
+
+
 /* =========================================================
-   读取数据库
+   V4.2 智能评分
+========================================================= */
+
+function scoreTool(
+  tool
+) {
+
+  let score =
+    0;
+
+
+  /* 国内网络 */
+
+  if (
+    getToolCnVerified(
+      tool
+    )
+  ) {
+
+    score += 55;
+
+  } else {
+
+    const cn =
+      getToolCnPriority(
+        tool
+      );
+
+
+    if (
+      cn === "HIGH"
+    ) {
+
+      score += 30;
+
+    } else if (
+      cn === "MEDIUM"
+    ) {
+
+      score += 12;
+
+    } else if (
+      cn === "LOW"
+    ) {
+
+      score -= 12;
+
+    }
+
+  }
+
+
+  /* 广告 */
+
+  const ads =
+    getToolAds(
+      tool
+    );
+
+
+  if (
+    ads === "NONE"
+  ) {
+
+    score += 22;
+
+  } else if (
+    ads === "LOW"
+  ) {
+
+    score += 8;
+
+  } else if (
+    ads === "MEDIUM"
+  ) {
+
+    score -= 12;
+
+  } else if (
+    ads === "HIGH"
+  ) {
+
+    score -= 35;
+
+  }
+
+
+  /* 登录 */
+
+  const login =
+    getToolLogin(
+      tool
+    );
+
+
+  if (
+    login === "NONE"
+  ) {
+
+    score += 16;
+
+  } else if (
+    login === "OPTIONAL"
+  ) {
+
+    score += 6;
+
+  } else if (
+    login === "REQUIRED"
+  ) {
+
+    score -= 12;
+
+  }
+
+
+  /* 手机 */
+
+  if (
+    getToolMobile(
+      tool
+    )
+  ) {
+
+    score += 10;
+
+  }
+
+
+  /* 处理方式 */
+
+  const processing =
+    getToolProcessing(
+      tool
+    );
+
+
+  if (
+    processing === "LOCAL"
+  ) {
+
+    score += 12;
+
+  } else if (
+    processing === "CLOUD_TEMP"
+  ) {
+
+    score += 3;
+
+  } else if (
+    processing === "CLOUD_ACCOUNT"
+  ) {
+
+    score -= 3;
+
+  }
+
+
+  /* 证据 */
+
+  const evidence =
+    getEvidenceLevel(
+      tool
+    );
+
+
+  if (
+    evidence === "VERIFIED_PAGE"
+  ) {
+
+    score += 8;
+
+  } else if (
+    evidence === "VERIFIED_PROVIDER"
+  ) {
+
+    score += 4;
+
+  } else if (
+    evidence === "LEGACY_VALIDATED"
+  ) {
+
+    score += 2;
+
+  }
+
+
+  /* 原始 PRIMARY 只作为轻微加权 */
+
+  const role =
+    getToolRole(
+      tool
+    );
+
+
+  if (
+    role === "PRIMARY"
+  ) {
+
+    score += 3;
+
+  }
+
+
+  return score;
+
+}
+
+
+/* =========================================================
+   用户可读标签
+========================================================= */
+
+function getToolTags(
+  tool
+) {
+
+  const tags =
+    [];
+
+
+  /* 国内 */
+
+  if (
+    getToolCnVerified(
+      tool
+    )
+  ) {
+
+    tags.push({
+      text:
+        "✓ 国内实测",
+
+      type:
+        "good"
+    });
+
+  } else if (
+    getToolCnPriority(
+      tool
+    ) === "HIGH"
+  ) {
+
+    tags.push({
+      text:
+        "国内优先",
+
+      type:
+        "info"
+    });
+
+  }
+
+
+  /* 广告 */
+
+  if (
+    getToolAds(
+      tool
+    ) === "NONE"
+  ) {
+
+    tags.push({
+      text:
+        "无广告",
+
+      type:
+        "good"
+    });
+
+  } else if (
+    getToolAds(
+      tool
+    ) === "LOW"
+  ) {
+
+    tags.push({
+      text:
+        "少量广告",
+
+      type:
+        "warn"
+    });
+
+  }
+
+
+  /* 登录 */
+
+  if (
+    getToolLogin(
+      tool
+    ) === "NONE"
+  ) {
+
+    tags.push({
+      text:
+        "无需登录",
+
+      type:
+        "good"
+    });
+
+  } else if (
+    getToolLogin(
+      tool
+    ) === "OPTIONAL"
+  ) {
+
+    tags.push({
+      text:
+        "登录可选",
+
+      type:
+        "info"
+    });
+
+  } else if (
+    getToolLogin(
+      tool
+    ) === "REQUIRED"
+  ) {
+
+    tags.push({
+      text:
+        "需要登录",
+
+      type:
+        "warn"
+    });
+
+  }
+
+
+  /* 处理方式 */
+
+  const processing =
+    getToolProcessing(
+      tool
+    );
+
+
+  if (
+    processing === "LOCAL"
+  ) {
+
+    tags.push({
+      text:
+        "本地处理",
+
+      type:
+        "good"
+    });
+
+  } else if (
+    processing === "CLOUD_TEMP"
+  ) {
+
+    tags.push({
+      text:
+        "临时云处理",
+
+      type:
+        "info"
+    });
+
+  } else if (
+    processing === "CLOUD_ACCOUNT"
+  ) {
+
+    tags.push({
+      text:
+        "账号云处理",
+
+      type:
+        "warn"
+    });
+
+  } else if (
+    processing === "CLOUD"
+  ) {
+
+    tags.push({
+      text:
+        "云端处理",
+
+      type:
+        "info"
+    });
+
+  }
+
+
+  /* 手机 */
+
+  if (
+    getToolMobile(
+      tool
+    )
+  ) {
+
+    tags.push({
+      text:
+        "手机可用",
+
+      type:
+        "info"
+    });
+
+  }
+
+
+  return tags
+    .slice(
+      0,
+      5
+    );
+
+}
+
+
+/* =========================================================
+   数据加载
 ========================================================= */
 
 async function loadData() {
@@ -2169,16 +2831,6 @@ async function loadData() {
       Date.now();
 
 
-    const atomicUrl =
-      "./data/atomic_tasks.json?cb=" +
-      cacheBust;
-
-
-    const toolsUrl =
-      "./data/tools.json?cb=" +
-      cacheBust;
-
-
     const [
       atomicResponse,
       toolsResponse
@@ -2186,16 +2838,22 @@ async function loadData() {
       await Promise.all([
 
         fetch(
-          atomicUrl,
+          "./data/atomic_tasks.json?cb=" +
+          cacheBust,
+
           {
-            cache: "no-store"
+            cache:
+              "no-store"
           }
         ),
 
         fetch(
-          toolsUrl,
+          "./data/tools.json?cb=" +
+          cacheBust,
+
           {
-            cache: "no-store"
+            cache:
+              "no-store"
           }
         )
 
@@ -2376,7 +3034,9 @@ async function loadData() {
    可见任务
 ========================================================= */
 
-function isVisibleTask(task) {
+function isVisibleTask(
+  task
+) {
 
   const status =
     getTaskStatus(
@@ -2395,22 +3055,11 @@ function isVisibleTask(task) {
   }
 
 
-  const name =
+  return Boolean(
     getTaskName(
       task
-    );
-
-
-  if (
-    !name
-  ) {
-
-    return false;
-
-  }
-
-
-  return true;
+    )
+  );
 
 }
 
@@ -2531,209 +3180,191 @@ function renderCategories() {
   );
 
 
-  const categoryNames =
-    Object
-      .keys(
-        groups
-      )
-      .sort(
-        function(
-          a,
-          b
-        ) {
+  Object
+    .keys(
+      groups
+    )
+    .sort(
+      function(
+        a,
+        b
+      ) {
 
-          const configA =
-            categoryConfig[
-              a
-            ];
+        const orderA =
+          categoryConfig[a]?.order ??
+          999;
 
 
-          const configB =
-            categoryConfig[
-              b
-            ];
+        const orderB =
+          categoryConfig[b]?.order ??
+          999;
 
 
-          const orderA =
-            configA
-              ? configA.order
-              : 999;
+        return (
+          orderA -
+          orderB
+        );
+
+      }
+    )
+    .forEach(
+      function(
+        categoryName
+      ) {
+
+        const config =
+          categoryConfig[
+            categoryName
+          ] || {
+
+            title:
+              "🧩 " +
+              categoryName,
+
+            note:
+              "更多工具",
+
+            className:
+              "cat-other"
+
+          };
 
 
-          const orderB =
-            configB
-              ? configB.order
-              : 999;
-
-
-          return (
-            orderA -
-            orderB
+        const section =
+          document.createElement(
+            "section"
           );
 
-        }
-      );
+
+        section.className =
+          "category " +
+          config.className;
 
 
-  categoryNames.forEach(
-    function(
-      categoryName
-    ) {
+        const head =
+          document.createElement(
+            "div"
+          );
 
-      const tasks =
+
+        head.className =
+          "category-head";
+
+
+        const title =
+          document.createElement(
+            "h2"
+          );
+
+
+        title.className =
+          "category-title";
+
+
+        title.textContent =
+          config.title;
+
+
+        const note =
+          document.createElement(
+            "div"
+          );
+
+
+        note.className =
+          "category-note";
+
+
+        note.textContent =
+          config.note;
+
+
+        head.appendChild(
+          title
+        );
+
+
+        head.appendChild(
+          note
+        );
+
+
+        const grid =
+          document.createElement(
+            "div"
+          );
+
+
+        grid.className =
+          "task-grid";
+
+
         groups[
           categoryName
-        ];
+        ]
+        .forEach(
+          function(
+            task
+          ) {
+
+            const button =
+              document.createElement(
+                "div"
+              );
 
 
-      const config =
-        categoryConfig[
-          categoryName
-        ] || {
-
-          title:
-            "🧩 " +
-            categoryName,
-
-          note:
-            "更多工具",
-
-          className:
-            "cat-other"
-
-        };
+            button.className =
+              "task";
 
 
-      const section =
-        document.createElement(
-          "section"
-        );
-
-
-      section.className =
-        "category " +
-        config.className;
-
-
-      const head =
-        document.createElement(
-          "div"
-        );
-
-
-      head.className =
-        "category-head";
-
-
-      const title =
-        document.createElement(
-          "h2"
-        );
-
-
-      title.className =
-        "category-title";
-
-
-      title.textContent =
-        config.title;
-
-
-      const note =
-        document.createElement(
-          "div"
-        );
-
-
-      note.className =
-        "category-note";
-
-
-      note.textContent =
-        config.note;
-
-
-      head.appendChild(
-        title
-      );
-
-
-      head.appendChild(
-        note
-      );
-
-
-      const grid =
-        document.createElement(
-          "div"
-        );
-
-
-      grid.className =
-        "task-grid";
-
-
-      tasks.forEach(
-        function(task) {
-
-          const button =
-            document.createElement(
-              "div"
-            );
-
-
-          button.className =
-            "task";
-
-
-          button.textContent =
-            getTaskName(
-              task
-            );
-
-
-          button.addEventListener(
-            "click",
-            function() {
-
-              showTask(
+            button.textContent =
+              getTaskName(
                 task
               );
 
-            }
-          );
+
+            button.addEventListener(
+              "click",
+              function() {
+
+                showTask(
+                  task
+                );
+
+              }
+            );
 
 
-          grid.appendChild(
-            button
-          );
+            grid.appendChild(
+              button
+            );
 
-        }
-      );
-
-
-      section.appendChild(
-        head
-      );
+          }
+        );
 
 
-      section.appendChild(
-        grid
-      );
+        section.appendChild(
+          head
+        );
 
 
-      container.appendChild(
-        section
-      );
+        section.appendChild(
+          grid
+        );
 
-    }
-  );
+
+        container.appendChild(
+          section
+        );
+
+      }
+    );
 
 }
 
 
 /* =========================================================
-   找某任务对应工具
+   工具匹配 + 智能排序
 ========================================================= */
 
 function findToolsForTask(
@@ -2746,89 +3377,46 @@ function findToolsForTask(
     );
 
 
-  let tools =
-    toolRegistry
-      .filter(
-        function(tool) {
+  return toolRegistry
 
-          const ids =
-            getToolTasks(
-              tool
-            );
-
-
-          return ids.includes(
-            taskId
-          );
-
-        }
-      )
-      .filter(
-        function(tool) {
-
-          const status =
-            getToolStatus(
-              tool
-            );
-
-
-          return (
-            status !== "DOWN" &&
-            status !== "DISABLED" &&
-            status !== "DEAD"
-          );
-
-        }
-      );
-
-
-  tools.sort(
-    function(
-      a,
-      b
-    ) {
-
-      const roleA =
-        getToolRole(
-          a
-        );
-
-
-      const roleB =
-        getToolRole(
-          b
-        );
-
-
-      if (
-        roleA === "PRIMARY" &&
-        roleB !== "PRIMARY"
-      ) {
-
-        return -1;
-
-      }
-
-
-      if (
-        roleB === "PRIMARY" &&
-        roleA !== "PRIMARY"
-      ) {
-
-        return 1;
-
-      }
-
-
-      return 0;
-
-    }
-  );
-
-
-  return tools
     .filter(
-      function(tool) {
+      function(
+        tool
+      ) {
+
+        return getToolTasks(
+          tool
+        )
+        .includes(
+          taskId
+        );
+
+      }
+    )
+
+    .filter(
+      function(
+        tool
+      ) {
+
+        return ![
+          "DOWN",
+          "DISABLED",
+          "DEAD"
+        ]
+        .includes(
+          getToolStatus(
+            tool
+          )
+        );
+
+      }
+    )
+
+    .filter(
+      function(
+        tool
+      ) {
 
         return (
           getToolName(
@@ -2841,6 +3429,91 @@ function findToolsForTask(
 
       }
     )
+
+    .map(
+      function(
+        tool
+      ) {
+
+        return {
+
+          tool:
+            tool,
+
+          score:
+            scoreTool(
+              tool
+            )
+
+        };
+
+      }
+    )
+
+    .sort(
+      function(
+        a,
+        b
+      ) {
+
+        if (
+          b.score !==
+          a.score
+        ) {
+
+          return (
+            b.score -
+            a.score
+          );
+
+        }
+
+
+        const roleA =
+          getToolRole(
+            a.tool
+          );
+
+
+        const roleB =
+          getToolRole(
+            b.tool
+          );
+
+
+        if (
+          roleA === "PRIMARY" &&
+          roleB !== "PRIMARY"
+        ) {
+
+          return -1;
+
+        }
+
+
+        if (
+          roleB === "PRIMARY" &&
+          roleA !== "PRIMARY"
+        ) {
+
+          return 1;
+
+        }
+
+
+        return getToolName(
+          a.tool
+        )
+        .localeCompare(
+          getToolName(
+            b.tool
+          ),
+          "zh-CN"
+        );
+
+      }
+    )
+
     .slice(
       0,
       3
@@ -2850,7 +3523,7 @@ function findToolsForTask(
 
 
 /* =========================================================
-   展示任务
+   结果展示
 ========================================================= */
 
 function showTask(
@@ -2910,7 +3583,7 @@ function showTask(
     );
 
 
-  const tools =
+  const rankedTools =
     findToolsForTask(
       task
     );
@@ -2922,7 +3595,7 @@ function showTask(
 
   description.textContent =
     taskDescription ||
-    "下面提供最多 3 个可用网址入口，请根据自己的网络环境和需求选择。";
+    "已按国内优先、广告、登录、手机体验和处理方式自动排序。";
 
 
   list.innerHTML =
@@ -2934,7 +3607,7 @@ function showTask(
 
 
   if (
-    !tools.length
+    !rankedTools.length
   ) {
 
     const message =
@@ -2974,11 +3647,15 @@ function showTask(
   }
 
 
-  tools.forEach(
+  rankedTools.forEach(
     function(
-      tool,
+      item,
       index
     ) {
+
+      const tool =
+        item.tool;
+
 
       const name =
         getToolName(
@@ -3014,6 +3691,23 @@ function showTask(
       }
 
 
+      const rankText =
+        index === 0
+
+        ? "🥇 推荐"
+
+        : (
+            "备用 " +
+            index
+          );
+
+
+      const tags =
+        getToolTags(
+          tool
+        );
+
+
       const link =
         document.createElement(
           "a"
@@ -3021,7 +3715,12 @@ function showTask(
 
 
       link.className =
-        "site";
+        "site" +
+        (
+          index === 0
+          ? " recommended"
+          : ""
+        );
 
 
       link.href =
@@ -3036,12 +3735,38 @@ function showTask(
         "noopener noreferrer";
 
 
+      const tagsHtml =
+        tags
+          .map(
+            function(
+              tag
+            ) {
+
+              return `
+                <span
+                  class="tool-tag ${escapeHTML(tag.type)}"
+                >
+                  ${escapeHTML(tag.text)}
+                </span>
+              `;
+
+            }
+          )
+          .join(
+            ""
+          );
+
+
       link.innerHTML = `
 
         <div class="site-left">
 
-          <div class="site-number">
-            ${index + 1}
+          <div class="site-topline">
+
+            <span class="site-rank">
+              ${escapeHTML(rankText)}
+            </span>
+
           </div>
 
           <div class="site-name">
@@ -3051,6 +3776,18 @@ function showTask(
           <div class="site-domain">
             ${escapeHTML(domain)}
           </div>
+
+          ${
+            tagsHtml
+
+            ? `
+              <div class="tool-tags">
+                ${tagsHtml}
+              </div>
+            `
+
+            : ""
+          }
 
         </div>
 
@@ -3070,13 +3807,23 @@ function showTask(
 
 
   const anyLocal =
-    tools.some(
-      getToolLocal
+    rankedTools.some(
+      function(
+        item
+      ) {
+
+        return (
+          getToolProcessing(
+            item.tool
+          ) === "LOCAL"
+        );
+
+      }
     );
 
 
   if (
-    tools.length
+    rankedTools.length
   ) {
 
     if (
@@ -3085,7 +3832,7 @@ function showTask(
 
       addBadge(
         metaRow,
-        "本地处理优先",
+        "包含本地处理入口",
         "local"
       );
 
@@ -3093,7 +3840,7 @@ function showTask(
 
       addBadge(
         metaRow,
-        "第三方网站处理",
+        "以第三方网站处理为主",
         "cloud"
       );
 
@@ -3121,15 +3868,11 @@ function showTask(
   }
 
 
-  const category =
-    getTaskCategory(
-      task
-    );
-
-
   addBadge(
     metaRow,
-    category,
+    getTaskCategory(
+      task
+    ),
     ""
   );
 
@@ -3143,11 +3886,13 @@ function showTask(
     function() {
 
       result.scrollIntoView({
+
         behavior:
           "smooth",
 
         block:
           "center"
+
       });
 
     },
@@ -3238,12 +3983,10 @@ function searchTask() {
 
 
   let matched =
-    null;
-
-
-  matched =
     searchableTasks.find(
-      function(task) {
+      function(
+        task
+      ) {
 
         const name =
           getTaskName(
@@ -3296,7 +4039,9 @@ function searchTask() {
 
         matched =
           searchableTasks.find(
-            function(task) {
+            function(
+              task
+            ) {
 
               return (
                 getTaskName(
@@ -3330,16 +4075,18 @@ function searchTask() {
 
     matched =
       searchableTasks.find(
-        function(task) {
+        function(
+          task
+        ) {
 
           const keywords =
             Array.isArray(
               task.keywords
             )
-              ? task.keywords.join(
-                  " "
-                )
-              : "";
+            ? task.keywords.join(
+                " "
+              )
+            : "";
 
 
           const combined =
@@ -3393,11 +4140,13 @@ function searchTask() {
 
 
     empty.scrollIntoView({
+
       behavior:
         "smooth",
 
       block:
         "center"
+
     });
 
   }
@@ -3552,7 +4301,6 @@ document
 loadData();
 
 </script>
-
 
 </body>
 </html>
