@@ -1,86 +1,137 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-08-25",
   "tasks": [
     {
       "id": "pdf-compress",
       "title": "PDF太大了",
-      "keywords": ["PDF压缩", "压缩PDF", "PDF太大", "减小PDF"],
+      "keywords": [
+        "PDF压缩",
+        "压缩PDF",
+        "PDF太大",
+        "PDF文件太大",
+        "PDF发不出去",
+        "PDF上传不了"
+      ],
       "category": "PDF",
-      "description": "压缩PDF文件，减小体积",
-      "tools": []
+      "description": "压缩PDF文件，减小体积，方便微信发送、邮件发送和系统上传。",
+      "tools": [
+        {
+          "name": "iLovePDF",
+          "url": "https://www.ilovepdf.com/zh-cn/compress_pdf",
+          "label": "立即压缩PDF",
+          "free": "基础免费",
+          "login": "免登录",
+          "mobile": true
+        },
+        {
+          "name": "PDF24 Tools",
+          "url": "https://tools.pdf24.org/zh/compress-pdf",
+          "label": "备用：PDF24",
+          "free": "免费",
+          "login": "免登录",
+          "mobile": true
+        }
+      ]
     },
+
     {
       "id": "pdf-merge",
       "title": "合并PDF",
-      "keywords": ["PDF合并", "合并PDF", "多个PDF合成一个"],
+      "keywords": [
+        "PDF合并",
+        "合并PDF",
+        "多个PDF合成一个",
+        "PDF拼接"
+      ],
       "category": "PDF",
-      "description": "把多个PDF文件合并成一个",
-      "tools": []
+      "description": "把多个PDF文件按顺序合并成一个PDF。",
+      "tools": [
+        {
+          "name": "PDF24 Tools",
+          "url": "https://tools.pdf24.org/zh/merge-pdf",
+          "label": "立即合并PDF",
+          "free": "免费",
+          "login": "免登录",
+          "mobile": true
+        },
+        {
+          "name": "iLovePDF",
+          "url": "https://www.ilovepdf.com/zh-cn/merge_pdf",
+          "label": "备用：iLovePDF",
+          "free": "基础免费",
+          "login": "免登录",
+          "mobile": true
+        }
+      ]
     },
+
     {
       "id": "image-remove-bg",
       "title": "图片抠图",
-      "keywords": ["抠图", "去背景", "透明背景", "删除图片背景"],
+      "keywords": [
+        "抠图",
+        "去背景",
+        "透明背景",
+        "图片去底",
+        "商品图抠图",
+        "人像抠图"
+      ],
       "category": "图片",
-      "description": "自动去除图片背景",
-      "tools": []
+      "description": "自动去除图片背景，生成透明背景图片。",
+      "tools": [
+        {
+          "name": "BgSub",
+          "url": "https://bgsub.cn",
+          "label": "立即抠图",
+          "free": "基础免费",
+          "login": "免登录",
+          "mobile": true
+        },
+        {
+          "name": "PhotoRoom",
+          "url": "https://www.photoroom.com/tools/background-remover",
+          "label": "备用：PhotoRoom",
+          "free": "基础免费",
+          "login": "免登录基础功能",
+          "mobile": true
+        }
+      ]
     },
+
     {
       "id": "id-photo",
       "title": "制作证件照",
-      "keywords": ["证件照", "换底色", "白底照片", "蓝底照片", "红底照片"],
+      "keywords": [
+        "证件照",
+        "换底色",
+        "白底照片",
+        "蓝底照片",
+        "红底照片",
+        "一寸照",
+        "二寸照",
+        "报名照片"
+      ],
       "category": "图片",
-      "description": "制作证件照或更换背景颜色",
-      "tools": []
-    },
-    {
-      "id": "image-compress",
-      "title": "图片太大了",
-      "keywords": ["图片压缩", "照片压缩", "图片太大", "减小图片"],
-      "category": "图片",
-      "description": "压缩图片并减小文件体积",
-      "tools": []
-    },
-    {
-      "id": "video-compress",
-      "title": "视频太大了",
-      "keywords": ["视频压缩", "视频太大", "减小视频", "压缩MP4"],
-      "category": "视频",
-      "description": "压缩视频文件体积",
-      "tools": []
-    },
-    {
-      "id": "ocr",
-      "title": "图片提取文字",
-      "keywords": ["OCR", "图片转文字", "识别文字", "照片提取文字"],
-      "category": "办公",
-      "description": "识别图片中的文字",
-      "tools": []
-    },
-    {
-      "id": "audio-transcribe",
-      "title": "音频转文字",
-      "keywords": ["录音转文字", "音频转文字", "语音转文字", "会议录音"],
-      "category": "音频",
-      "description": "把录音或音频转换成文字",
-      "tools": []
-    },
-    {
-      "id": "ai-ppt",
-      "title": "AI帮我做PPT",
-      "keywords": ["AI PPT", "AI做PPT", "自动生成PPT", "PPT生成"],
-      "category": "AI",
-      "description": "通过AI快速生成演示文稿",
-      "tools": []
-    },
-    {
-      "id": "qr-code",
-      "title": "生成二维码",
-      "keywords": ["二维码", "生成二维码", "网址二维码", "QR"],
-      "category": "日常工具",
-      "description": "把网址或文字生成二维码",
-      "tools": []
+      "description": "制作证件照、更换背景颜色、调整一寸或二寸规格。",
+      "tools": [
+        {
+          "name": "IDPhoto.fit",
+          "url": "https://idphoto.fit",
+          "label": "立即制作证件照",
+          "free": "基础免费",
+          "login": "免登录",
+          "mobile": true
+        },
+        {
+          "name": "Cutout.Pro",
+          "url": "https://www.cutout.pro/zh-CN/passport-photo-maker",
+          "label": "备用：Cutout.Pro",
+          "free": "基础免费",
+          "login": "可选登录",
+          "mobile": true
+        }
+      ]
     }
   ]
 }
