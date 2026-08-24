@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="NAV KING 导航王：按任务找工具，不记网站名字，直接告诉我你现在要完成什么。"
-  />
+  <meta name="description" content="NAV KING - 你现在要干什么？直接找到可用工具入口。" />
   <title>NAV KING · 导航王</title>
 
   <style>
@@ -14,12 +11,8 @@
       box-sizing: border-box;
     }
 
-    html,
     body {
       margin: 0;
-      padding: 0;
-      background: #f6f7f9;
-      color: #111827;
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -27,268 +20,222 @@
         "PingFang SC",
         "Hiragino Sans GB",
         "Microsoft YaHei",
-        Arial,
         sans-serif;
-    }
-
-    body {
-      min-height: 100vh;
+      background: #f6f7fb;
+      color: #111827;
     }
 
     .page {
-      width: min(100%, 760px);
+      width: 100%;
+      max-width: 760px;
       margin: 0 auto;
-      padding: 42px 18px 56px;
+      padding: 36px 20px 56px;
     }
 
     .brand {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 800;
       letter-spacing: 4px;
-      color: #315fe8;
-      margin-bottom: 20px;
+      color: #3367e8;
+      margin-bottom: 18px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(42px, 9vw, 68px);
-      line-height: 1.08;
+      font-size: clamp(38px, 10vw, 64px);
+      line-height: 1.05;
       letter-spacing: -2px;
-      font-weight: 900;
     }
 
     .subtitle {
       margin-top: 18px;
       font-size: 18px;
-      line-height: 1.7;
-      color: #68707d;
-    }
-
-    .search-wrap {
-      margin-top: 30px;
+      line-height: 1.6;
+      color: #6b7280;
     }
 
     .search-box {
-      width: 100%;
-      height: 72px;
-      border: 1px solid #dfe3e8;
-      border-radius: 22px;
-      padding: 0 22px;
-      font-size: 18px;
-      color: #111827;
-      background: #fff;
-      outline: none;
-      box-shadow: 0 8px 30px rgba(17, 24, 39, 0.04);
-    }
-
-    .search-box:focus {
-      border-color: #315fe8;
-      box-shadow: 0 0 0 4px rgba(49, 95, 232, 0.08);
-    }
-
-    .search-box::placeholder {
-      color: #a6adb8;
-    }
-
-    .quick-title {
-      margin-top: 24px;
-      margin-bottom: 12px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #7a828e;
-    }
-
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .quick-btn {
-      border: 1px solid #e3e6ea;
-      background: #fff;
-      color: #222935;
-      border-radius: 16px;
-      padding: 14px;
-      text-align: left;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .quick-btn:active {
-      transform: scale(0.985);
-    }
-
-    /* 推广入口 */
-    .promo-card {
-      margin-top: 18px;
-      background: linear-gradient(135deg, #111827, #232b3d);
-      border-radius: 20px;
-      padding: 18px;
-      color: #fff;
-      box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
-    }
-
-    .promo-title {
-      font-size: 18px;
-      font-weight: 900;
-    }
-
-    .promo-desc {
-      margin-top: 7px;
-      font-size: 14px;
-      color: #c8cfda;
-    }
-
-    .wechat-row {
-      margin-top: 14px;
+      margin-top: 30px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 10px;
       display: flex;
-      align-items: center;
       gap: 10px;
+      box-shadow: 0 8px 30px rgba(17, 24, 39, 0.06);
     }
 
-    .wechat-code {
+    .search-box input {
       flex: 1;
+      border: 0;
+      outline: 0;
       min-width: 0;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 12px;
-      padding: 12px 13px;
-      font-size: 15px;
-      font-weight: 800;
+      font-size: 18px;
+      padding: 16px 14px;
+      background: transparent;
+      color: #111827;
     }
 
-    .copy-btn {
+    .search-box button {
       border: 0;
-      border-radius: 12px;
-      padding: 12px 16px;
-      background: #fff;
-      color: #111827;
-      font-size: 14px;
-      font-weight: 800;
+      background: #111827;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 0 22px;
+      border-radius: 18px;
       cursor: pointer;
     }
 
-    .status-card {
-      margin-top: 18px;
-      background: #fff;
-      border: 1px solid #e1e5e9;
-      border-radius: 20px;
-      padding: 18px;
-    }
-
-    .status-title {
-      font-size: 17px;
-      font-weight: 900;
-    }
-
-    .status-line {
-      margin-top: 10px;
-      color: #218c47;
-      font-weight: 800;
-      font-size: 16px;
-    }
-
-    .status-sub {
-      margin-top: 12px;
-      color: #707784;
-      line-height: 1.6;
+    .examples {
+      margin-top: 14px;
+      color: #9ca3af;
       font-size: 14px;
+      line-height: 1.7;
     }
 
-    .results-wrap {
-      margin-top: 24px;
+    .result {
+      display: none;
+      margin-top: 28px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 32px rgba(17, 24, 39, 0.06);
     }
 
-    .results-title {
-      font-size: 14px;
-      font-weight: 800;
-      color: #7a828e;
-      margin-bottom: 12px;
-    }
-
-    .result-card {
+    .result.active {
       display: block;
-      text-decoration: none;
-      color: inherit;
-      background: #fff;
-      border: 1px solid #e1e5e9;
+    }
+
+    .result-label {
+      color: #3367e8;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .result h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+
+    .result-desc {
+      margin-top: 10px;
+      color: #6b7280;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .tool-list {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .tool-card {
+      border: 1px solid #e5e7eb;
       border-radius: 18px;
       padding: 16px;
+      background: #fafafa;
+    }
+
+    .tool-name {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .tool-meta {
+      font-size: 13px;
+      color: #6b7280;
       margin-bottom: 12px;
     }
 
-    .result-task {
-      font-size: 16px;
-      font-weight: 900;
+    .tool-link {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #3367e8;
+      color: white;
+      font-weight: 800;
+      padding: 14px;
+      border-radius: 14px;
     }
 
-    .result-tool {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #68707d;
+    .tool-link.secondary {
+      background: white;
+      color: #111827;
+      border: 1px solid #d1d5db;
     }
 
-    .result-meta {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 5px 8px;
-      font-size: 12px;
-      background: #f0f3f6;
-      color: #616977;
-    }
-
-    .empty {
+    .empty-state {
+      display: none;
+      margin-top: 24px;
       background: #fff;
-      border: 1px dashed #d7dce2;
-      border-radius: 18px;
-      padding: 22px;
-      color: #7d8591;
-      text-align: center;
-      font-size: 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 20px;
+      color: #4b5563;
+      line-height: 1.6;
     }
 
-    footer {
-      margin-top: 42px;
+    .empty-state.active {
+      display: block;
+    }
+
+    .ad-card {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: #111827;
+      color: white;
       text-align: center;
-      color: #a0a7b2;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #9ca3af;
       font-size: 13px;
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 480px) {
       .page {
-        padding-top: 34px;
+        padding: 28px 18px 44px;
       }
 
       h1 {
-        font-size: 50px;
+        font-size: 52px;
       }
 
       .subtitle {
-        font-size: 16px;
+        font-size: 17px;
       }
 
       .search-box {
-        height: 68px;
-        font-size: 16px;
+        display: block;
+      }
+
+      .search-box input {
+        width: 100%;
+      }
+
+      .search-box button {
+        width: 100%;
+        padding: 14px 18px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <main class="page">
-
     <div class="brand">NAV KING</div>
 
     <h1>你现在要干什么？</h1>
@@ -297,283 +244,211 @@
       不记网站名字。直接告诉我你要完成什么任务。
     </div>
 
-    <div class="search-wrap">
+    <div class="search-box">
       <input
         id="searchInput"
-        class="search-box"
-        type="search"
-        placeholder="例如：PDF太大了、证件照换白底、视频压缩、录音转文字"
+        type="text"
+        placeholder="例如：PDF太大了、证件照换白底、图片抠图"
         autocomplete="off"
       />
+      <button id="searchBtn">帮我找</button>
     </div>
 
-    <div class="quick-title">热门任务</div>
-
-    <div class="quick-grid">
-      <button class="quick-btn" data-query="PDF压缩">PDF压缩</button>
-      <button class="quick-btn" data-query="证件照换底色">证件照换底色</button>
-      <button class="quick-btn" data-query="图片压缩">图片压缩</button>
-      <button class="quick-btn" data-query="录音转文字">录音转文字</button>
-      <button class="quick-btn" data-query="视频压缩">视频压缩</button>
-      <button class="quick-btn" data-query="图片转PDF">图片转PDF</button>
+    <div class="examples">
+      可以输入：PDF压缩 / 合并PDF / 抠图 / 去背景 / 一寸照 / 证件照换底色
     </div>
 
-    <!-- 推广入口 -->
-    <section class="promo-card">
-      <div class="promo-title">
-        解压必备资源 ➕
-      </div>
-
-      <div class="promo-desc">
-        添加 V 获取更多资源
-      </div>
-
-      <div class="wechat-row">
-        <div class="wechat-code">
-          V：ziyouluoti8 获取
-        </div>
-
-        <button id="copyWechat" class="copy-btn">
-          复制
-        </button>
-      </div>
+    <section id="result" class="result">
+      <div class="result-label">找到你要做的事</div>
+      <h2 id="resultTitle"></h2>
+      <div id="resultDesc" class="result-desc"></div>
+      <div id="toolList" class="tool-list"></div>
     </section>
 
-    <section class="status-card">
-      <div class="status-title">
-        NAV KING V1.3
-      </div>
+    <div id="emptyState" class="empty-state">
+      暂时没找到完全匹配的任务。你可以换一种更直接的说法，例如：
+      “PDF太大了”“我要抠图”“证件照换白底”。
+    </div>
 
-      <div class="status-line">
-        ● 静态前端运行正常
-      </div>
+    <div class="ad-card">
+      解压必备资源 ➕V ziyouluoti8 获取
+    </div>
 
-      <div class="status-sub">
-        GitHub Pages · Mobile First · No Backend
-      </div>
-    </section>
-
-    <section class="results-wrap">
-      <div class="results-title">
-        匹配结果
-      </div>
-
-      <div id="results">
-        <div class="empty">
-          输入你要完成的任务，NAV KING 会优先给你直达工具。
-        </div>
-      </div>
-    </section>
-
-    <footer>
+    <div class="footer">
       NAV KING · Task-first Navigation
-    </footer>
-
+    </div>
   </main>
 
   <script>
-    const searchInput = document.getElementById("searchInput");
-    const results = document.getElementById("results");
-    const quickButtons = document.querySelectorAll(".quick-btn");
-    const copyWechat = document.getElementById("copyWechat");
-
     let taskData = [];
 
     async function loadTasks() {
       try {
-        const response = await fetch("./tasks.json", {
-          cache: "no-store"
-        });
-
-        if (!response.ok) {
-          throw new Error("tasks.json not found");
-        }
-
-        taskData = await response.json();
-
+        const response = await fetch("./tasks.json?v=" + Date.now());
+        const data = await response.json();
+        taskData = Array.isArray(data.tasks) ? data.tasks : [];
       } catch (error) {
-        console.warn("任务数据暂未加载：", error);
-        taskData = [];
+        console.error("tasks.json 加载失败：", error);
       }
     }
 
-    function normalizeText(value = "") {
-      return String(value)
+    function normalizeText(text) {
+      return String(text || "")
         .toLowerCase()
-        .trim();
+        .replace(/\s+/g, "")
+        .replace(/[，。！？、,.!?]/g, "");
     }
 
-    function collectSearchText(task) {
-      return normalizeText([
-        task.id,
-        task.task,
-        task.name,
-        task.category,
-        task.tool,
-        task.tool_1,
-        task.tool_2,
-        task.keywords,
-        task.description
-      ]
-      .filter(Boolean)
-      .join(" "));
-    }
-
-    function renderResults(query) {
-
+    function scoreTask(query, task) {
       const q = normalizeText(query);
+      if (!q) return 0;
 
-      if (!q) {
-        results.innerHTML = `
-          <div class="empty">
-            输入你要完成的任务，NAV KING 会优先给你直达工具。
+      let score = 0;
+
+      const title = normalizeText(task.title);
+      const description = normalizeText(task.description);
+      const keywords = Array.isArray(task.keywords) ? task.keywords : [];
+
+      if (q === title) score += 100;
+      if (title.includes(q) || q.includes(title)) score += 50;
+
+      keywords.forEach((keyword) => {
+        const k = normalizeText(keyword);
+
+        if (q === k) score += 100;
+        else if (q.includes(k)) score += 50;
+        else if (k.includes(q)) score += 20;
+      });
+
+      if (description.includes(q)) score += 10;
+
+      return score;
+    }
+
+    function findBestTask(query) {
+      let bestTask = null;
+      let bestScore = 0;
+
+      taskData.forEach((task) => {
+        const score = scoreTask(query, task);
+
+        if (score > bestScore) {
+          bestScore = score;
+          bestTask = task;
+        }
+      });
+
+      return bestScore > 0 ? bestTask : null;
+    }
+
+    function renderTask(task) {
+      const result = document.getElementById("result");
+      const emptyState = document.getElementById("emptyState");
+      const title = document.getElementById("resultTitle");
+      const desc = document.getElementById("resultDesc");
+      const toolList = document.getElementById("toolList");
+
+      emptyState.classList.remove("active");
+      result.classList.add("active");
+
+      title.textContent = task.title || "找到工具";
+      desc.textContent = task.description || "";
+
+      toolList.innerHTML = "";
+
+      const tools = Array.isArray(task.tools) ? task.tools : [];
+
+      if (tools.length === 0) {
+        toolList.innerHTML = `
+          <div class="tool-card">
+            这个任务已经识别成功，但暂时还没有配置网址。
           </div>
         `;
         return;
       }
 
-      const matched = taskData
-        .filter(task => collectSearchText(task).includes(q))
-        .slice(0, 8);
+      tools.forEach((tool, index) => {
+        const card = document.createElement("div");
+        card.className = "tool-card";
 
-      if (!matched.length) {
-        results.innerHTML = `
-          <div class="empty">
-            暂时没有找到精确结果。后续会继续补充这个需求。
+        const linkClass = index === 0
+          ? "tool-link"
+          : "tool-link secondary";
+
+        card.innerHTML = `
+          <div class="tool-name">${escapeHtml(tool.name || "工具")}</div>
+
+          <div class="tool-meta">
+            ${escapeHtml(tool.free || "")}
+            ${tool.free && tool.login ? " · " : ""}
+            ${escapeHtml(tool.login || "")}
           </div>
-        `;
-        return;
-      }
 
-      results.innerHTML = matched.map(task => {
-
-        const taskName =
-          task.task ||
-          task.name ||
-          `任务 ${task.id || ""}`;
-
-        const toolName =
-          task.primary_name ||
-          task.tool ||
-          task.tool_1 ||
-          task.primary ||
-          "推荐工具";
-
-        const url =
-          task.direct_url ||
-          task.url ||
-          task.primary_url ||
-          task.tool_1_url ||
-          "#";
-
-        const mobile =
-          task.mobile ||
-          task.mobile_web ||
-          "YES";
-
-        const login =
-          task.login ||
-          task.login_required ||
-          "NO";
-
-        const free =
-          task.free ||
-          task.free_status ||
-          "";
-
-        return `
           <a
-            class="result-card"
-            href="${url}"
+            class="${linkClass}"
+            href="${escapeAttribute(tool.url || "#")}"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div class="result-task">
-              ${taskName}
-            </div>
-
-            <div class="result-tool">
-              推荐：${toolName}
-            </div>
-
-            <div class="result-meta">
-              <span class="badge">
-                手机：${mobile}
-              </span>
-
-              <span class="badge">
-                登录：${login}
-              </span>
-
-              ${
-                free
-                  ? `<span class="badge">${free}</span>`
-                  : ""
-              }
-            </div>
+            ${escapeHtml(tool.label || "打开工具")}
           </a>
         `;
-      }).join("");
-    }
 
-    searchInput.addEventListener("input", event => {
-      renderResults(event.target.value);
-    });
-
-    quickButtons.forEach(button => {
-
-      button.addEventListener("click", () => {
-
-        const query = button.dataset.query;
-
-        searchInput.value = query;
-
-        renderResults(query);
-
-        searchInput.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
+        toolList.appendChild(card);
       });
 
-    });
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
 
-    copyWechat.addEventListener("click", async () => {
+    function showEmpty() {
+      document.getElementById("result").classList.remove("active");
+      document.getElementById("emptyState").classList.add("active");
+    }
 
-      const text = "ziyouluoti8";
+    function runSearch() {
+      const input = document.getElementById("searchInput");
+      const query = input.value.trim();
 
-      try {
+      if (!query) return;
 
-        await navigator.clipboard.writeText(text);
+      const task = findBestTask(query);
 
-        copyWechat.textContent = "已复制 ✓";
-
-      } catch {
-
-        const textarea =
-          document.createElement("textarea");
-
-        textarea.value = text;
-
-        document.body.appendChild(textarea);
-
-        textarea.select();
-
-        document.execCommand("copy");
-
-        textarea.remove();
-
-        copyWechat.textContent = "已复制 ✓";
+      if (task) {
+        renderTask(task);
+      } else {
+        showEmpty();
       }
+    }
 
-      setTimeout(() => {
-        copyWechat.textContent = "复制";
-      }, 1600);
+    function escapeHtml(text) {
+      return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
 
-    });
+    function escapeAttribute(text) {
+      return escapeHtml(text);
+    }
+
+    document
+      .getElementById("searchBtn")
+      .addEventListener("click", runSearch);
+
+    document
+      .getElementById("searchInput")
+      .addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          runSearch();
+        }
+      });
 
     loadTasks();
   </script>
-
 </body>
 </html>
