@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NAV KING - 你现在要干什么？高效任务导航。" />
+  <title>NAV KING · 导航王</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
+      background: #f6f7f9;
+      color: #111827;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 24px 18px 60px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      margin-top: 26px;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #2563eb;
+    }
+
+    h1 {
+      margin: 12px 0 10px;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: #6b7280;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .search {
+      margin-top: 28px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.05);
+    }
+
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: none;
+      font-size: 17px;
+      background: transparent;
+    }
+
+    .status {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+    }
+
+    .status-title {
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .ok {
+      color: #15803d;
+      font-weight: 700;
+    }
+
+    .small {
+      margin-top: 8px;
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <div class="brand">NAV KING</div>
+
+    <h1>你现在要干什么？</h1>
+
+    <p class="subtitle">
+      不记网站名字。直接告诉我你要完成什么任务。
+    </p>
+
+    <section class="search">
+      <input
+        id="taskInput"
+        type="text"
+        placeholder="例如：PDF太大了、证件照换白底、视频压缩……"
+      />
+    </section>
+
+    <section class="status">
+      <div class="status-title">NAV KING V1.3</div>
+      <div class="ok" id="statusText">● 静态前端运行正常</div>
+
+      <div class="small">
+        GitHub Pages 部署测试 · Mobile First · No Backend
+      </div>
+    </section>
+
+    <div class="footer">
+      NAV KING · Task-first Navigation
+    </div>
+  </main>
+
+  <script>
+    const input = document.getElementById("taskInput");
+    const status = document.getElementById("statusText");
+
+    input.addEventListener("input", () => {
+      if (input.value.trim()) {
+        status.textContent = "● 输入识别模块正常";
+      } else {
+        status.textContent = "● 静态前端运行正常";
+      }
+    });
+  </script>
+</body>
+</html>
