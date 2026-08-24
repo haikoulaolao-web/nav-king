@@ -28,10 +28,14 @@
     content="0"
   >
 
+  <meta name="theme-color" content="#111827">
+
+  <!-- 以后加入 manifest.json 后可直接启用 -->
+  <!-- <link rel="manifest" href="./manifest.json"> -->
+
   <title>NAV KING · 导航王</title>
 
   <style>
-
     * {
       box-sizing: border-box;
     }
@@ -62,6 +66,10 @@
       font: inherit;
     }
 
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .container {
       width: 100%;
       max-width: 720px;
@@ -74,13 +82,11 @@
         55px;
     }
 
-
     /* =========================
        HERO
     ========================= */
 
     .hero {
-
       background:
         linear-gradient(
           135deg,
@@ -99,37 +105,61 @@
       box-shadow:
         0 14px 35px
         rgba(15,23,42,.16);
+    }
 
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
     .brand {
-
       font-size: 13px;
-
       font-weight: 900;
-
       letter-spacing: 3px;
-
       color: #60a5fa;
+    }
 
-      margin-bottom: 9px;
+    .save-nav-btn {
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.09);
+      color: white;
 
+      min-height: 34px;
+
+      padding:
+        7px
+        11px;
+
+      border-radius: 999px;
+
+      font-size: 12px;
+      font-weight: 850;
+
+      cursor: pointer;
+
+      white-space: nowrap;
+    }
+
+    .save-nav-btn:active {
+      transform: scale(.97);
     }
 
     .hero h1 {
-
-      margin: 0;
+      margin:
+        12px
+        0
+        0;
 
       font-size: 30px;
 
       line-height: 1.25;
 
       letter-spacing: -1px;
-
     }
 
     .hero-text {
-
       margin-top: 10px;
 
       font-size: 15px;
@@ -137,26 +167,21 @@
       line-height: 1.65;
 
       color: #cbd5e1;
-
     }
-
 
     /* =========================
        搜索
     ========================= */
 
     .search {
-
       margin-top: 18px;
 
       display: flex;
 
       gap: 8px;
-
     }
 
     .search input {
-
       flex: 1;
 
       min-width: 0;
@@ -164,7 +189,6 @@
       height: 48px;
 
       border: 0;
-
       outline: none;
 
       border-radius: 15px;
@@ -178,11 +202,9 @@
       color: #111827;
 
       background: white;
-
     }
 
     .search button {
-
       height: 48px;
 
       border: 0;
@@ -202,9 +224,7 @@
       font-weight: 850;
 
       cursor: pointer;
-
     }
-
 
     /* =========================
        后台状态
@@ -212,7 +232,6 @@
     ========================= */
 
     .system-status {
-
       display: none !important;
 
       margin-top: 14px;
@@ -237,13 +256,10 @@
       align-items: flex-start;
 
       gap: 8px;
-
     }
 
     .status-dot {
-
       width: 10px;
-
       height: 10px;
 
       margin-top: 4px;
@@ -253,7 +269,6 @@
       background: #f59e0b;
 
       flex-shrink: 0;
-
     }
 
     .status-dot.ok {
@@ -264,9 +279,7 @@
       background: #dc2626;
     }
 
-
     .guide {
-
       margin:
         15px
         4px
@@ -277,9 +290,7 @@
       font-size: 13px;
 
       line-height: 1.6;
-
     }
-
 
     /* =========================
        分类
@@ -290,7 +301,6 @@
     }
 
     .category {
-
       margin-top: 16px;
 
       border-radius: 23px;
@@ -300,11 +310,9 @@
       box-shadow:
         0 8px 25px
         rgba(15,23,42,.055);
-
     }
 
     .category-head {
-
       display: flex;
 
       align-items: center;
@@ -314,11 +322,9 @@
       gap: 10px;
 
       margin-bottom: 14px;
-
     }
 
     .category-title {
-
       margin: 0;
 
       font-size: 19px;
@@ -326,32 +332,26 @@
       font-weight: 850;
 
       letter-spacing: -.3px;
-
     }
 
     .category-note {
-
       font-size: 12px;
 
       color: #64748b;
 
       white-space: nowrap;
-
     }
 
     .task-grid {
-
       display: grid;
 
       grid-template-columns:
         repeat(2,1fr);
 
       gap: 10px;
-
     }
 
     .task {
-
       min-height: 64px;
 
       border:
@@ -393,19 +393,15 @@
       transition:
         transform .12s ease,
         box-shadow .12s ease;
-
     }
 
     .task:active {
-
       transform:
         scale(.96);
 
       box-shadow:
         none;
-
     }
-
 
     /* =========================
        分类颜色
@@ -510,13 +506,11 @@
         );
     }
 
-
     /* =========================
        结果卡片
     ========================= */
 
     .result {
-
       display: none;
 
       margin-top: 18px;
@@ -530,7 +524,6 @@
       box-shadow:
         0 12px 35px
         rgba(15,23,42,.12);
-
     }
 
     .result.show {
@@ -538,7 +531,6 @@
     }
 
     .result-label {
-
       font-size: 12px;
 
       font-weight: 850;
@@ -548,21 +540,17 @@
       letter-spacing: 1px;
 
       margin-bottom: 7px;
-
     }
 
     .result h2 {
-
       margin: 0;
 
       font-size: 21px;
 
       line-height: 1.35;
-
     }
 
     .result-description {
-
       margin:
         7px
         0
@@ -573,26 +561,21 @@
       font-size: 14px;
 
       line-height: 1.6;
-
     }
-
 
     /* =========================
        三网址
     ========================= */
 
     .site-list {
-
       display: flex;
 
       flex-direction: column;
 
       gap: 10px;
-
     }
 
     .site {
-
       display: flex;
 
       align-items: center;
@@ -610,7 +593,8 @@
         solid
         #e2e8f0;
 
-      background: #f8fafc;
+      background:
+        #f8fafc;
 
       border-radius: 17px;
 
@@ -619,29 +603,23 @@
       transition:
         transform .12s ease,
         background .12s ease;
-
     }
 
     .site:active {
-
       transform:
         scale(.98);
 
       background:
         #f1f5f9;
-
     }
 
     .site-left {
-
       min-width: 0;
 
       flex: 1;
-
     }
 
     .site-number {
-
       display: inline-flex;
 
       align-items: center;
@@ -663,21 +641,17 @@
       font-weight: 900;
 
       margin-bottom: 7px;
-
     }
 
     .site-name {
-
       font-size: 16px;
 
       font-weight: 850;
 
       line-height: 1.35;
-
     }
 
     .site-domain {
-
       margin-top: 4px;
 
       color: #64748b;
@@ -685,11 +659,9 @@
       font-size: 12px;
 
       word-break: break-all;
-
     }
 
     .site-open {
-
       flex-shrink: 0;
 
       background: #111827;
@@ -705,43 +677,31 @@
       font-size: 13px;
 
       font-weight: 800;
-
     }
 
     .site:nth-child(1)
     .site-number {
-
       background: #dcfce7;
-
       color: #166534;
-
     }
 
     .site:nth-child(2)
     .site-number {
-
       background: #dbeafe;
-
       color: #1d4ed8;
-
     }
 
     .site:nth-child(3)
     .site-number {
-
       background: #fef3c7;
-
       color: #92400e;
-
     }
-
 
     /* =========================
        标签
     ========================= */
 
     .meta-row {
-
       margin-top: 14px;
 
       display: flex;
@@ -749,11 +709,9 @@
       flex-wrap: wrap;
 
       gap: 7px;
-
     }
 
     .badge {
-
       display: inline-flex;
 
       align-items: center;
@@ -773,35 +731,27 @@
       background: #f1f5f9;
 
       color: #475569;
-
     }
 
     .badge.local {
-
       background: #dcfce7;
 
       color: #166534;
-
     }
 
     .badge.cloud {
-
       background: #fef3c7;
 
       color: #92400e;
-
     }
 
     .badge.pro {
-
       background: #e5e7eb;
 
       color: #374151;
-
     }
 
     .result-tip {
-
       margin-top: 13px;
 
       padding-top: 12px;
@@ -816,16 +766,13 @@
       font-size: 12px;
 
       line-height: 1.55;
-
     }
-
 
     /* =========================
        未找到
     ========================= */
 
     .empty {
-
       margin-top: 18px;
 
       background: white;
@@ -841,20 +788,199 @@
       line-height: 1.65;
 
       display: none;
-
     }
 
     .empty.show {
       display: block;
     }
 
+    /* =========================
+       保存 NAV KING 弹窗
+    ========================= */
+
+    .save-modal-backdrop {
+      position: fixed;
+
+      inset: 0;
+
+      display: none;
+
+      align-items: flex-end;
+
+      justify-content: center;
+
+      background:
+        rgba(15,23,42,.48);
+
+      padding:
+        20px
+        14px
+        calc(
+          20px +
+          env(safe-area-inset-bottom)
+        );
+
+      z-index: 1000;
+    }
+
+    .save-modal-backdrop.show {
+      display: flex;
+    }
+
+    .save-modal {
+      width: 100%;
+
+      max-width: 520px;
+
+      background: white;
+
+      border-radius: 24px;
+
+      padding: 20px;
+
+      box-shadow:
+        0 20px 50px
+        rgba(15,23,42,.28);
+    }
+
+    .save-modal-head {
+      display: flex;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      gap: 12px;
+    }
+
+    .save-modal-title {
+      margin: 0;
+
+      font-size: 20px;
+
+      line-height: 1.35;
+
+      font-weight: 900;
+    }
+
+    .save-modal-close {
+      border: 0;
+
+      background: #f1f5f9;
+
+      color: #475569;
+
+      width: 34px;
+
+      height: 34px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 20px;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+    }
+
+    .save-modal-subtitle {
+      margin-top: 8px;
+
+      color: #64748b;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+    .save-option-list {
+      margin-top: 16px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .save-option {
+      width: 100%;
+
+      border:
+        1px
+        solid
+        #e2e8f0;
+
+      background:
+        #f8fafc;
+
+      color:
+        #172033;
+
+      border-radius: 17px;
+
+      padding: 14px;
+
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .save-option:active {
+      transform: scale(.985);
+    }
+
+    .save-option-title {
+      font-size: 15px;
+
+      font-weight: 850;
+    }
+
+    .save-option-desc {
+      margin-top: 4px;
+
+      font-size: 12px;
+
+      color: #64748b;
+
+      line-height: 1.5;
+    }
+
+    .save-help {
+      margin-top: 14px;
+
+      padding:
+        13px
+        14px;
+
+      border-radius: 15px;
+
+      background:
+        #eff6ff;
+
+      color:
+        #1e3a8a;
+
+      font-size: 13px;
+
+      line-height: 1.65;
+    }
+
+    .save-help strong {
+      color: #1d4ed8;
+    }
 
     /* =========================
        底部广告
     ========================= */
 
     .ad {
-
       position: fixed;
 
       left: 50%;
@@ -894,21 +1020,21 @@
         rgba(15,23,42,.25);
 
       z-index: 100;
-
     }
 
     .ad strong {
       color: #fbbf24;
     }
 
-
     @media (min-width:600px) {
-
       .task-grid {
         grid-template-columns:
           repeat(3,1fr);
       }
 
+      .save-modal-backdrop {
+        align-items: center;
+      }
     }
 
   </style>
@@ -924,8 +1050,20 @@
 
   <section class="hero">
 
-    <div class="brand">
-      NAV KING
+    <div class="brand-row">
+
+      <div class="brand">
+        NAV KING
+      </div>
+
+      <button
+        id="saveNavButton"
+        class="save-nav-btn"
+        type="button"
+      >
+        ⭐ 保存 NAV KING
+      </button>
+
     </div>
 
     <h1>
@@ -981,13 +1119,9 @@
   </div>
 
 
-  <!-- 自动生成分类 -->
-
   <div id="categories">
   </div>
 
-
-  <!-- 搜索无结果 -->
 
   <section
     id="empty"
@@ -1008,8 +1142,6 @@
 
   </section>
 
-
-  <!-- 点击任务结果 -->
 
   <section
     id="result"
@@ -1060,6 +1192,102 @@
 </main>
 
 
+<!-- 保存 NAV KING 弹窗 -->
+
+<div
+  id="saveModalBackdrop"
+  class="save-modal-backdrop"
+>
+
+  <div
+    class="save-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="saveModalTitle"
+  >
+
+    <div class="save-modal-head">
+
+      <div>
+
+        <h2
+          id="saveModalTitle"
+          class="save-modal-title"
+        >
+          保存 NAV KING
+        </h2>
+
+        <div class="save-modal-subtitle">
+          下次不用重新找网址，
+          可以直接从手机桌面或浏览器收藏进入。
+        </div>
+
+      </div>
+
+      <button
+        id="saveModalClose"
+        class="save-modal-close"
+        type="button"
+        aria-label="关闭"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="save-option-list">
+
+      <button
+        id="addHomeButton"
+        class="save-option"
+        type="button"
+      >
+
+        <div class="save-option-title">
+          📱 添加到主屏幕
+        </div>
+
+        <div class="save-option-desc">
+          像 App 一样放到手机桌面，
+          下次直接点击进入。
+        </div>
+
+      </button>
+
+
+      <button
+        id="bookmarkButton"
+        class="save-option"
+        type="button"
+      >
+
+        <div class="save-option-title">
+          ⭐ 收藏到浏览器
+        </div>
+
+        <div class="save-option-desc">
+          保存到 Safari、Chrome、Edge
+          等浏览器收藏夹。
+        </div>
+
+      </button>
+
+    </div>
+
+
+    <div
+      id="saveHelp"
+      class="save-help"
+    >
+      正在识别你的设备…
+    </div>
+
+  </div>
+
+</div>
+
+
 <!-- 底部广告 -->
 
 <div class="ad">
@@ -1086,10 +1314,10 @@
 ========================================================= */
 
 const APP_VERSION =
-  "3.1";
+  "3.2";
 
 const BUILD_ID =
-  "20260825-HIDDEN-STATUS";
+  "20260825-SAVE-NAV-KING";
 
 
 let atomicTasks = [];
@@ -1103,6 +1331,9 @@ let atomicDataVersion =
 
 let toolsDataVersion =
   "UNKNOWN";
+
+let deferredInstallPrompt =
+  null;
 
 
 /* =========================================================
@@ -1192,7 +1423,7 @@ const categoryConfig = {
 
 
 /* =========================================================
-   常见自然语言别名
+   搜索别名
 ========================================================= */
 
 const aliases = {
@@ -1324,33 +1555,338 @@ const aliases = {
 
 
 /* =========================================================
+   设备识别
+========================================================= */
+
+function isIOS() {
+
+  return /iPad|iPhone|iPod/i
+    .test(
+      navigator.userAgent
+    );
+
+}
+
+
+function isAndroid() {
+
+  return /Android/i
+    .test(
+      navigator.userAgent
+    );
+
+}
+
+
+function isMac() {
+
+  return /Macintosh|Mac OS X/i
+    .test(
+      navigator.userAgent
+    );
+
+}
+
+
+/* =========================================================
+   保存 NAV KING
+========================================================= */
+
+function openSaveModal() {
+
+  const backdrop =
+    document.getElementById(
+      "saveModalBackdrop"
+    );
+
+  backdrop.classList.add(
+    "show"
+  );
+
+  updateSaveHelp();
+
+}
+
+
+function closeSaveModal() {
+
+  document
+    .getElementById(
+      "saveModalBackdrop"
+    )
+    .classList
+    .remove(
+      "show"
+    );
+
+}
+
+
+function updateSaveHelp() {
+
+  const help =
+    document.getElementById(
+      "saveHelp"
+    );
+
+
+  if (
+    isIOS()
+  ) {
+
+    help.innerHTML =
+      "<strong>iPhone / iPad：</strong>" +
+      "点击 Safari 浏览器底部或顶部的“分享”按钮，" +
+      "向下滑找到“添加到主屏幕”。";
+
+    return;
+
+  }
+
+
+  if (
+    isAndroid()
+  ) {
+
+    if (
+      deferredInstallPrompt
+    ) {
+
+      help.innerHTML =
+        "<strong>Android：</strong>" +
+        "你的浏览器支持直接安装。点击上方“添加到主屏幕”即可继续。";
+
+    } else {
+
+      help.innerHTML =
+        "<strong>Android：</strong>" +
+        "点击浏览器右上角菜单，选择“添加到主屏幕”或“安装应用”。";
+
+    }
+
+    return;
+
+  }
+
+
+  if (
+    isMac()
+  ) {
+
+    help.innerHTML =
+      "<strong>Mac：</strong>" +
+      "按 ⌘ + D 收藏当前页面。Safari 也可以通过“分享”菜单添加到程序坞或主屏幕。";
+
+    return;
+
+  }
+
+
+  help.innerHTML =
+    "<strong>Windows / Linux：</strong>" +
+    "按 Ctrl + D 收藏当前页面。Chrome / Edge 也可在浏览器菜单中选择安装或创建快捷方式。";
+
+}
+
+
+/* =========================================================
+   Android PWA 安装事件
+========================================================= */
+
+window.addEventListener(
+  "beforeinstallprompt",
+  function(event) {
+
+    event.preventDefault();
+
+    deferredInstallPrompt =
+      event;
+
+    updateSaveHelp();
+
+  }
+);
+
+
+async function handleAddHome() {
+
+  if (
+    deferredInstallPrompt
+  ) {
+
+    try {
+
+      deferredInstallPrompt.prompt();
+
+      const choice =
+        await deferredInstallPrompt
+          .userChoice;
+
+      console.log(
+        "PWA install choice:",
+        choice
+      );
+
+      deferredInstallPrompt =
+        null;
+
+      closeSaveModal();
+
+      return;
+
+    } catch (error) {
+
+      console.warn(
+        "Install prompt failed:",
+        error
+      );
+
+    }
+
+  }
+
+
+  const help =
+    document.getElementById(
+      "saveHelp"
+    );
+
+
+  if (
+    isIOS()
+  ) {
+
+    help.innerHTML =
+      "<strong>操作步骤：</strong>" +
+      "点 Safari 的“分享”按钮 → 向下滑 → “添加到主屏幕” → “添加”。";
+
+    return;
+
+  }
+
+
+  if (
+    isAndroid()
+  ) {
+
+    help.innerHTML =
+      "<strong>操作步骤：</strong>" +
+      "打开浏览器菜单 → 选择“添加到主屏幕”或“安装应用”。";
+
+    return;
+
+  }
+
+
+  if (
+    isMac()
+  ) {
+
+    help.innerHTML =
+      "<strong>桌面端：</strong>" +
+      "可以先按 ⌘ + D 收藏；部分 Chrome / Edge 版本也支持在地址栏安装网页应用。";
+
+    return;
+
+  }
+
+
+  help.innerHTML =
+    "<strong>桌面端：</strong>" +
+    "可以先按 Ctrl + D 收藏；Chrome / Edge 菜单中也可能提供“安装应用”或“创建快捷方式”。";
+
+}
+
+
+/* =========================================================
+   浏览器收藏
+========================================================= */
+
+function handleBookmark() {
+
+  const help =
+    document.getElementById(
+      "saveHelp"
+    );
+
+
+  if (
+    isIOS()
+  ) {
+
+    help.innerHTML =
+      "<strong>Safari 收藏：</strong>" +
+      "点击“分享”按钮 → “添加书签”。";
+
+    return;
+
+  }
+
+
+  if (
+    isMac()
+  ) {
+
+    help.innerHTML =
+      "<strong>收藏快捷键：</strong>" +
+      "请按 ⌘ + D。浏览器安全限制不允许网页直接替你写入收藏夹。";
+
+    return;
+
+  }
+
+
+  help.innerHTML =
+    "<strong>收藏快捷键：</strong>" +
+    "请按 Ctrl + D。浏览器安全限制不允许网页直接替你写入收藏夹。";
+
+}
+
+
+/* =========================================================
    JSON 数组读取
 ========================================================= */
 
-function extractArray(data, keys) {
+function extractArray(
+  data,
+  keys
+) {
 
-  if (Array.isArray(data)) {
+  if (
+    Array.isArray(
+      data
+    )
+  ) {
     return data;
   }
 
+
   if (
     !data ||
-    typeof data !== "object"
+    typeof data !==
+      "object"
   ) {
     return [];
   }
 
-  for (const key of keys) {
+
+  for (
+    const key
+    of keys
+  ) {
 
     if (
       Array.isArray(
         data[key]
       )
     ) {
+
       return data[key];
+
     }
 
   }
+
 
   return [];
 
@@ -1503,27 +2039,34 @@ function getToolTasks(tool) {
 
 
   if (
-    Array.isArray(raw)
+    Array.isArray(
+      raw
+    )
   ) {
 
     return raw
-      .map(function(id) {
+      .map(
+        function(id) {
 
-        return String(id)
-          .replace(
-            /^TASK\s*/i,
-            ""
-          )
-          .trim();
+          return String(id)
+            .replace(
+              /^TASK\s*/i,
+              ""
+            )
+            .trim();
 
-      })
-      .filter(Boolean);
+        }
+      )
+      .filter(
+        Boolean
+      );
 
   }
 
 
   if (
-    typeof raw === "string"
+    typeof raw ===
+      "string"
   ) {
 
     return raw
@@ -1532,21 +2075,25 @@ function getToolTasks(tool) {
         ""
       )
       .split(",")
-      .map(function(id) {
+      .map(
+        function(id) {
 
-        return id
-          .replace(
-            /^TASK\s*/i,
-            ""
-          )
-          .replace(
-            /["']/g,
-            ""
-          )
-          .trim();
+          return id
+            .replace(
+              /^TASK\s*/i,
+              ""
+            )
+            .replace(
+              /["']/g,
+              ""
+            )
+            .trim();
 
-      })
-      .filter(Boolean);
+        }
+      )
+      .filter(
+        Boolean
+      );
 
   }
 
@@ -1591,6 +2138,7 @@ function getToolLocal(tool) {
     tool.LOCAL ??
     tool.local_only ??
     tool.localOnly;
+
 
   return (
     value === true ||
@@ -1778,20 +2326,24 @@ async function loadData() {
       BUILD_ID
     );
 
+
     console.log(
       "TASK DATA VERSION:",
       atomicDataVersion
     );
+
 
     console.log(
       "TOOL DATA VERSION:",
       toolsDataVersion
     );
 
+
     console.log(
       "TASK COUNT:",
       searchableTasks.length
     );
+
 
     console.log(
       "TOOL COUNT:",
@@ -1799,7 +2351,9 @@ async function loadData() {
     );
 
 
-  } catch (error) {
+  } catch (
+    error
+  ) {
 
     console.error(
       "NAV KING LOAD ERROR:",
@@ -1825,7 +2379,9 @@ async function loadData() {
 function isVisibleTask(task) {
 
   const status =
-    getTaskStatus(task);
+    getTaskStatus(
+      task
+    );
 
 
   if (
@@ -1833,16 +2389,24 @@ function isVisibleTask(task) {
     status === "RETIRED" ||
     status === "DISABLED"
   ) {
+
     return false;
+
   }
 
 
   const name =
-    getTaskName(task);
+    getTaskName(
+      task
+    );
 
 
-  if (!name) {
+  if (
+    !name
+  ) {
+
     return false;
+
   }
 
 
@@ -1852,11 +2416,13 @@ function isVisibleTask(task) {
 
 
 /* =========================================================
-   状态检测
-   虽然前台隐藏，但逻辑保留
+   后台状态
 ========================================================= */
 
-function setStatus(type, text) {
+function setStatus(
+  type,
+  text
+) {
 
   const dot =
     document.getElementById(
@@ -1870,8 +2436,13 @@ function setStatus(type, text) {
     );
 
 
-  if (!dot || !label) {
+  if (
+    !dot ||
+    !label
+  ) {
+
     return;
+
   }
 
 
@@ -1923,27 +2494,36 @@ function renderCategories() {
     "";
 
 
-  const groups = {};
+  const groups =
+    {};
 
 
   searchableTasks.forEach(
     function(task) {
 
       const category =
-        getTaskCategory(task);
+        getTaskCategory(
+          task
+        );
 
 
       if (
-        !groups[category]
+        !groups[
+          category
+        ]
       ) {
 
-        groups[category] =
+        groups[
+          category
+        ] =
           [];
 
       }
 
 
-      groups[category].push(
+      groups[
+        category
+      ].push(
         task
       );
 
@@ -1953,39 +2533,52 @@ function renderCategories() {
 
   const categoryNames =
     Object
-      .keys(groups)
-      .sort(function(a,b) {
+      .keys(
+        groups
+      )
+      .sort(
+        function(
+          a,
+          b
+        ) {
 
-        const configA =
-          categoryConfig[a];
-
-
-        const configB =
-          categoryConfig[b];
-
-
-        const orderA =
-          configA
-            ? configA.order
-            : 999;
+          const configA =
+            categoryConfig[
+              a
+            ];
 
 
-        const orderB =
-          configB
-            ? configB.order
-            : 999;
+          const configB =
+            categoryConfig[
+              b
+            ];
 
 
-        return (
-          orderA -
-          orderB
-        );
+          const orderA =
+            configA
+              ? configA.order
+              : 999;
 
-      });
+
+          const orderB =
+            configB
+              ? configB.order
+              : 999;
+
+
+          return (
+            orderA -
+            orderB
+          );
+
+        }
+      );
 
 
   categoryNames.forEach(
-    function(categoryName) {
+    function(
+      categoryName
+    ) {
 
       const tasks =
         groups[
@@ -2143,56 +2736,77 @@ function renderCategories() {
    找某任务对应工具
 ========================================================= */
 
-function findToolsForTask(task) {
+function findToolsForTask(
+  task
+) {
 
   const taskId =
-    getTaskId(task);
+    getTaskId(
+      task
+    );
 
 
   let tools =
     toolRegistry
-      .filter(function(tool) {
+      .filter(
+        function(tool) {
 
-        const ids =
-          getToolTasks(tool);
-
-
-        return ids.includes(
-          taskId
-        );
-
-      })
-      .filter(function(tool) {
-
-        const status =
-          getToolStatus(tool);
+          const ids =
+            getToolTasks(
+              tool
+            );
 
 
-        return (
-          status !== "DOWN" &&
-          status !== "DISABLED" &&
-          status !== "DEAD"
-        );
+          return ids.includes(
+            taskId
+          );
 
-      });
+        }
+      )
+      .filter(
+        function(tool) {
+
+          const status =
+            getToolStatus(
+              tool
+            );
+
+
+          return (
+            status !== "DOWN" &&
+            status !== "DISABLED" &&
+            status !== "DEAD"
+          );
+
+        }
+      );
 
 
   tools.sort(
-    function(a,b) {
+    function(
+      a,
+      b
+    ) {
 
       const roleA =
-        getToolRole(a);
+        getToolRole(
+          a
+        );
 
 
       const roleB =
-        getToolRole(b);
+        getToolRole(
+          b
+        );
 
 
       if (
         roleA === "PRIMARY" &&
         roleB !== "PRIMARY"
       ) {
+
         return -1;
+
       }
 
 
@@ -2200,7 +2814,9 @@ function findToolsForTask(task) {
         roleB === "PRIMARY" &&
         roleA !== "PRIMARY"
       ) {
+
         return 1;
+
       }
 
 
@@ -2211,14 +2827,20 @@ function findToolsForTask(task) {
 
 
   return tools
-    .filter(function(tool) {
+    .filter(
+      function(tool) {
 
-      return (
-        getToolName(tool) &&
-        getToolUrl(tool)
-      );
+        return (
+          getToolName(
+            tool
+          ) &&
+          getToolUrl(
+            tool
+          )
+        );
 
-    })
+      }
+    )
     .slice(
       0,
       3
@@ -2231,7 +2853,9 @@ function findToolsForTask(task) {
    展示任务
 ========================================================= */
 
-function showTask(task) {
+function showTask(
+  task
+) {
 
   const result =
     document.getElementById(
@@ -2351,14 +2975,21 @@ function showTask(task) {
 
 
   tools.forEach(
-    function(tool,index) {
+    function(
+      tool,
+      index
+    ) {
 
       const name =
-        getToolName(tool);
+        getToolName(
+          tool
+        );
 
 
       const url =
-        getToolUrl(tool);
+        getToolUrl(
+          tool
+        );
 
 
       let domain =
@@ -2368,10 +2999,14 @@ function showTask(task) {
       try {
 
         domain =
-          new URL(url)
-            .hostname;
+          new URL(
+            url
+          )
+          .hostname;
 
-      } catch (error) {
+      } catch (
+        error
+      ) {
 
         domain =
           url;
@@ -2508,8 +3143,11 @@ function showTask(task) {
     function() {
 
       result.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+        behavior:
+          "smooth",
+
+        block:
+          "center"
       });
 
     },
@@ -2582,7 +3220,9 @@ function searchTask() {
   if (
     !keyword
   ) {
+
     return;
+
   }
 
 
@@ -2606,8 +3246,10 @@ function searchTask() {
       function(task) {
 
         const name =
-          getTaskName(task)
-            .toLowerCase();
+          getTaskName(
+            task
+          )
+          .toLowerCase();
 
 
         return (
@@ -2628,11 +3270,13 @@ function searchTask() {
   ) {
 
     for (
-      const alias in aliases
+      const alias
+      in aliases
     ) {
 
       const lowerAlias =
-        alias.toLowerCase();
+        alias
+          .toLowerCase();
 
 
       if (
@@ -2655,7 +3299,9 @@ function searchTask() {
             function(task) {
 
               return (
-                getTaskName(task) ===
+                getTaskName(
+                  task
+                ) ===
                 targetName
               );
 
@@ -2666,7 +3312,9 @@ function searchTask() {
         if (
           matched
         ) {
+
           break;
+
         }
 
       }
@@ -2688,15 +3336,21 @@ function searchTask() {
             Array.isArray(
               task.keywords
             )
-            ? task.keywords.join(" ")
-            : "";
+              ? task.keywords.join(
+                  " "
+                )
+              : "";
 
 
           const combined =
             (
-              getTaskName(task) +
+              getTaskName(
+                task
+              ) +
               " " +
-              getTaskDescription(task) +
+              getTaskDescription(
+                task
+              ) +
               " " +
               keywords
             )
@@ -2739,8 +3393,11 @@ function searchTask() {
 
 
     empty.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
+      behavior:
+        "smooth",
+
+      block:
+        "center"
     });
 
   }
@@ -2752,9 +3409,13 @@ function searchTask() {
    HTML 安全转义
 ========================================================= */
 
-function escapeHTML(value) {
+function escapeHTML(
+  value
+) {
 
-  return String(value)
+  return String(
+    value
+  )
 
     .replace(
       /&/g,
@@ -2785,7 +3446,7 @@ function escapeHTML(value) {
 
 
 /* =========================================================
-   搜索事件
+   事件
 ========================================================= */
 
 document
@@ -2804,13 +3465,79 @@ document
   )
   .addEventListener(
     "keydown",
-    function(event) {
+    function(
+      event
+    ) {
 
       if (
-        event.key === "Enter"
+        event.key ===
+        "Enter"
       ) {
 
         searchTask();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "saveNavButton"
+  )
+  .addEventListener(
+    "click",
+    openSaveModal
+  );
+
+
+document
+  .getElementById(
+    "saveModalClose"
+  )
+  .addEventListener(
+    "click",
+    closeSaveModal
+  );
+
+
+document
+  .getElementById(
+    "addHomeButton"
+  )
+  .addEventListener(
+    "click",
+    handleAddHome
+  );
+
+
+document
+  .getElementById(
+    "bookmarkButton"
+  )
+  .addEventListener(
+    "click",
+    handleBookmark
+  );
+
+
+document
+  .getElementById(
+    "saveModalBackdrop"
+  )
+  .addEventListener(
+    "click",
+    function(
+      event
+    ) {
+
+      if (
+        event.target ===
+        event.currentTarget
+      ) {
+
+        closeSaveModal();
 
       }
 
