@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-25",
+  "tasks": [
+    {
+      "id": "pdf-compress",
+      "title": "PDF太大了",
+      "keywords": ["PDF压缩", "压缩PDF", "PDF太大", "减小PDF"],
+      "category": "PDF",
+      "description": "压缩PDF文件，减小体积",
+      "tools": []
+    },
+    {
+      "id": "pdf-merge",
+      "title": "合并PDF",
+      "keywords": ["PDF合并", "合并PDF", "多个PDF合成一个"],
+      "category": "PDF",
+      "description": "把多个PDF文件合并成一个",
+      "tools": []
+    },
+    {
+      "id": "image-remove-bg",
+      "title": "图片抠图",
+      "keywords": ["抠图", "去背景", "透明背景", "删除图片背景"],
+      "category": "图片",
+      "description": "自动去除图片背景",
+      "tools": []
+    },
+    {
+      "id": "id-photo",
+      "title": "制作证件照",
+      "keywords": ["证件照", "换底色", "白底照片", "蓝底照片", "红底照片"],
+      "category": "图片",
+      "description": "制作证件照或更换背景颜色",
+      "tools": []
+    },
+    {
+      "id": "image-compress",
+      "title": "图片太大了",
+      "keywords": ["图片压缩", "照片压缩", "图片太大", "减小图片"],
+      "category": "图片",
+      "description": "压缩图片并减小文件体积",
+      "tools": []
+    },
+    {
+      "id": "video-compress",
+      "title": "视频太大了",
+      "keywords": ["视频压缩", "视频太大", "减小视频", "压缩MP4"],
+      "category": "视频",
+      "description": "压缩视频文件体积",
+      "tools": []
+    },
+    {
+      "id": "ocr",
+      "title": "图片提取文字",
+      "keywords": ["OCR", "图片转文字", "识别文字", "照片提取文字"],
+      "category": "办公",
+      "description": "识别图片中的文字",
+      "tools": []
+    },
+    {
+      "id": "audio-transcribe",
+      "title": "音频转文字",
+      "keywords": ["录音转文字", "音频转文字", "语音转文字", "会议录音"],
+      "category": "音频",
+      "description": "把录音或音频转换成文字",
+      "tools": []
+    },
+    {
+      "id": "ai-ppt",
+      "title": "AI帮我做PPT",
+      "keywords": ["AI PPT", "AI做PPT", "自动生成PPT", "PPT生成"],
+      "category": "AI",
+      "description": "通过AI快速生成演示文稿",
+      "tools": []
+    },
+    {
+      "id": "qr-code",
+      "title": "生成二维码",
+      "keywords": ["二维码", "生成二维码", "网址二维码", "QR"],
+      "category": "日常工具",
+      "description": "把网址或文字生成二维码",
+      "tools": []
+    }
+  ]
+}
