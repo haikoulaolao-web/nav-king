@@ -1,13 +1,15 @@
 {
-  "version": "3.0",
+  "version": "4.0",
   "updated": "2026-08-25",
-  "description": "NAV KING tool registry. Tool task IDs use canonical slug IDs identical to atomic_tasks.json.",
+  "description": "NAV KING full-category tool registry. All 48 canonical task IDs are covered. Existing validated PDF entries remain HEALTHY; newly seeded entries are CANDIDATE pending URL health audit.",
   "tools": [
     {
       "id": "TOOL-001",
       "name": "iLovePDF · PDF压缩",
       "url": "https://www.ilovepdf.com/zh-cn/compress_pdf",
-      "tasks": ["pdf-compress"],
+      "tasks": [
+        "pdf-compress"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -19,7 +21,9 @@
       "id": "TOOL-002",
       "name": "PDF24 · PDF压缩",
       "url": "https://tools.pdf24.org/zh/compress-pdf",
-      "tasks": ["pdf-compress"],
+      "tasks": [
+        "pdf-compress"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -31,7 +35,9 @@
       "id": "TOOL-003",
       "name": "Smallpdf · PDF压缩",
       "url": "https://smallpdf.com/cn/compress-pdf",
-      "tasks": ["pdf-compress"],
+      "tasks": [
+        "pdf-compress"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -39,12 +45,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-004",
       "name": "iLovePDF · PDF转Word",
       "url": "https://www.ilovepdf.com/zh-cn/pdf_to_word",
-      "tasks": ["pdf-to-word"],
+      "tasks": [
+        "pdf-to-word"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -56,7 +63,9 @@
       "id": "TOOL-005",
       "name": "Smallpdf · PDF转Word",
       "url": "https://smallpdf.com/cn/pdf-to-word",
-      "tasks": ["pdf-to-word"],
+      "tasks": [
+        "pdf-to-word"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -68,7 +77,9 @@
       "id": "TOOL-006",
       "name": "PDF24 · PDF转Word",
       "url": "https://tools.pdf24.org/zh/pdf-to-word",
-      "tasks": ["pdf-to-word"],
+      "tasks": [
+        "pdf-to-word"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -76,12 +87,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-007",
       "name": "iLovePDF · Word转PDF",
       "url": "https://www.ilovepdf.com/zh-cn/word_to_pdf",
-      "tasks": ["word-to-pdf"],
+      "tasks": [
+        "word-to-pdf"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -93,7 +105,9 @@
       "id": "TOOL-008",
       "name": "PDF24 · Word转PDF",
       "url": "https://tools.pdf24.org/zh/word-to-pdf",
-      "tasks": ["word-to-pdf"],
+      "tasks": [
+        "word-to-pdf"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -105,7 +119,9 @@
       "id": "TOOL-009",
       "name": "PDF.io · Word转PDF",
       "url": "https://pdf.io/zh/word2pdf/",
-      "tasks": ["word-to-pdf"],
+      "tasks": [
+        "word-to-pdf"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -113,12 +129,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-010",
       "name": "PDF24 · 合并PDF",
       "url": "https://tools.pdf24.org/zh/merge-pdf",
-      "tasks": ["pdf-merge"],
+      "tasks": [
+        "pdf-merge"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -130,7 +147,9 @@
       "id": "TOOL-011",
       "name": "iLovePDF · 合并PDF",
       "url": "https://www.ilovepdf.com/zh-cn/merge_pdf",
-      "tasks": ["pdf-merge"],
+      "tasks": [
+        "pdf-merge"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -142,7 +161,9 @@
       "id": "TOOL-012",
       "name": "Smallpdf · 合并PDF",
       "url": "https://smallpdf.com/cn/merge-pdf",
-      "tasks": ["pdf-merge"],
+      "tasks": [
+        "pdf-merge"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -150,12 +171,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-013",
       "name": "PDF24 · 拆分PDF",
       "url": "https://tools.pdf24.org/zh/split-pdf",
-      "tasks": ["pdf-split"],
+      "tasks": [
+        "pdf-split"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -167,7 +189,9 @@
       "id": "TOOL-014",
       "name": "iLovePDF · 拆分PDF",
       "url": "https://www.ilovepdf.com/zh-cn/split_pdf",
-      "tasks": ["pdf-split"],
+      "tasks": [
+        "pdf-split"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -179,7 +203,9 @@
       "id": "TOOL-015",
       "name": "Smallpdf · 拆分PDF",
       "url": "https://smallpdf.com/cn/split-pdf",
-      "tasks": ["pdf-split"],
+      "tasks": [
+        "pdf-split"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -187,12 +213,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-016",
       "name": "iLovePDF · PDF签名",
       "url": "https://www.ilovepdf.com/zh-cn/sign-pdf",
-      "tasks": ["pdf-sign"],
+      "tasks": [
+        "pdf-sign"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -204,7 +231,9 @@
       "id": "TOOL-017",
       "name": "PDF24 · PDF签名",
       "url": "https://tools.pdf24.org/zh/sign-pdf",
-      "tasks": ["pdf-sign"],
+      "tasks": [
+        "pdf-sign"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -216,7 +245,9 @@
       "id": "TOOL-018",
       "name": "Smallpdf · PDF签名",
       "url": "https://smallpdf.com/cn/sign-pdf",
-      "tasks": ["pdf-sign"],
+      "tasks": [
+        "pdf-sign"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -224,12 +255,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-019",
       "name": "iLovePDF · PDF转图片",
       "url": "https://www.ilovepdf.com/zh-cn/pdf_to_jpg",
-      "tasks": ["pdf-to-image"],
+      "tasks": [
+        "pdf-to-image"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -241,7 +273,9 @@
       "id": "TOOL-020",
       "name": "PDF24 · PDF转图片",
       "url": "https://tools.pdf24.org/zh/pdf-to-images",
-      "tasks": ["pdf-to-image"],
+      "tasks": [
+        "pdf-to-image"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -253,7 +287,9 @@
       "id": "TOOL-021",
       "name": "Smallpdf · PDF转图片",
       "url": "https://smallpdf.com/cn/pdf-to-jpg",
-      "tasks": ["pdf-to-image"],
+      "tasks": [
+        "pdf-to-image"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -261,12 +297,13 @@
       "local": false,
       "status": "HEALTHY"
     },
-
     {
       "id": "TOOL-022",
       "name": "PDF24 · 图片转PDF",
       "url": "https://tools.pdf24.org/zh/images-to-pdf",
-      "tasks": ["image-to-pdf"],
+      "tasks": [
+        "image-to-pdf"
+      ],
       "role": "PRIMARY",
       "mobile": true,
       "desktop": true,
@@ -278,7 +315,9 @@
       "id": "TOOL-023",
       "name": "iLovePDF · 图片转PDF",
       "url": "https://www.ilovepdf.com/zh-cn/jpg_to_pdf",
-      "tasks": ["image-to-pdf"],
+      "tasks": [
+        "image-to-pdf"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
@@ -290,13 +329,1695 @@
       "id": "TOOL-024",
       "name": "Smallpdf · 图片转PDF",
       "url": "https://smallpdf.com/cn/jpg-to-pdf",
-      "tasks": ["image-to-pdf"],
+      "tasks": [
+        "image-to-pdf"
+      ],
       "role": "FALLBACK",
       "mobile": true,
       "desktop": true,
       "login": false,
       "local": false,
       "status": "HEALTHY"
+    },
+    {
+      "id": "TOOL-025",
+      "name": "iLoveIMG · 图片压缩",
+      "url": "https://www.iloveimg.com/zh-cn/compress-image",
+      "tasks": [
+        "image-compress"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-026",
+      "name": "TinyPNG · 图片压缩",
+      "url": "https://tinypng.com/",
+      "tasks": [
+        "image-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-027",
+      "name": "Squoosh · 图片压缩",
+      "url": "https://squoosh.app/",
+      "tasks": [
+        "image-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-028",
+      "name": "remove.bg · 一键抠图",
+      "url": "https://www.remove.bg/zh",
+      "tasks": [
+        "image-remove-bg"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-029",
+      "name": "PhotoRoom · 去背景",
+      "url": "https://www.photoroom.com/tools/background-remover",
+      "tasks": [
+        "image-remove-bg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-030",
+      "name": "Adobe Express · 去背景",
+      "url": "https://www.adobe.com/express/feature/image/remove-background",
+      "tasks": [
+        "image-remove-bg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-031",
+      "name": "Cutout.Pro · 证件照换底色",
+      "url": "https://www.cutout.pro/zh-CN/passport-photo-maker",
+      "tasks": [
+        "id-photo-bg"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-032",
+      "name": "PhotoRoom · 背景替换",
+      "url": "https://www.photoroom.com/tools/background-remover",
+      "tasks": [
+        "id-photo-bg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-033",
+      "name": "remove.bg · 背景处理",
+      "url": "https://www.remove.bg/zh",
+      "tasks": [
+        "id-photo-bg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-034",
+      "name": "Cutout.Pro · 证件照制作",
+      "url": "https://www.cutout.pro/zh-CN/passport-photo-maker",
+      "tasks": [
+        "id-photo"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-035",
+      "name": "IDPhoto · 在线证件照",
+      "url": "https://idphoto.fit/",
+      "tasks": [
+        "id-photo"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-036",
+      "name": "PhotoRoom · 证件照背景处理",
+      "url": "https://www.photoroom.com/tools/background-remover",
+      "tasks": [
+        "id-photo"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-037",
+      "name": "iLoveIMG · 图片改尺寸",
+      "url": "https://www.iloveimg.com/zh-cn/resize-image",
+      "tasks": [
+        "image-resize"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-038",
+      "name": "Adobe Express · 图片改尺寸",
+      "url": "https://www.adobe.com/express/feature/image/resize",
+      "tasks": [
+        "image-resize"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-039",
+      "name": "Squoosh · 图片尺寸与压缩",
+      "url": "https://squoosh.app/",
+      "tasks": [
+        "image-resize"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-040",
+      "name": "OCR.Space · OCR",
+      "url": "https://ocr.space/",
+      "tasks": [
+        "image-ocr"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-041",
+      "name": "Google Lens · 图片文字识别",
+      "url": "https://lens.google.com/",
+      "tasks": [
+        "image-ocr"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-042",
+      "name": "i2OCR · 在线OCR",
+      "url": "https://www.i2ocr.com/",
+      "tasks": [
+        "image-ocr"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-043",
+      "name": "iLoveIMG · HEIC转JPG",
+      "url": "https://www.iloveimg.com/convert-to-jpg",
+      "tasks": [
+        "heic-to-jpg"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-044",
+      "name": "CloudConvert · HEIC转JPG",
+      "url": "https://cloudconvert.com/heic-to-jpg",
+      "tasks": [
+        "heic-to-jpg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-045",
+      "name": "FreeConvert · HEIC转JPG",
+      "url": "https://www.freeconvert.com/heic-to-jpg",
+      "tasks": [
+        "heic-to-jpg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-046",
+      "name": "PineTools · 图片拼接",
+      "url": "https://pinetools.com/merge-images",
+      "tasks": [
+        "image-stitch"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-047",
+      "name": "Canva · 图片拼接设计",
+      "url": "https://www.canva.com/",
+      "tasks": [
+        "image-stitch"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-048",
+      "name": "Kapwing · 图片拼接",
+      "url": "https://www.kapwing.com/tools/collage-maker",
+      "tasks": [
+        "image-stitch"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-049",
+      "name": "FreeConvert · 视频压缩",
+      "url": "https://www.freeconvert.com/video-compressor",
+      "tasks": [
+        "video-compress"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-050",
+      "name": "VEED · 视频压缩",
+      "url": "https://www.veed.io/tools/video-compressor",
+      "tasks": [
+        "video-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-051",
+      "name": "Clideo · 视频压缩",
+      "url": "https://clideo.com/compress-video",
+      "tasks": [
+        "video-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-052",
+      "name": "123apps · 视频剪切",
+      "url": "https://online-video-cutter.com/zh/",
+      "tasks": [
+        "video-cut"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-053",
+      "name": "Clideo · 视频剪切",
+      "url": "https://clideo.com/cut-video",
+      "tasks": [
+        "video-cut"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-054",
+      "name": "VEED · 视频剪切",
+      "url": "https://www.veed.io/tools/video-cutter",
+      "tasks": [
+        "video-cut"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-055",
+      "name": "EZGIF · 视频转GIF",
+      "url": "https://ezgif.com/video-to-gif",
+      "tasks": [
+        "video-to-gif"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-056",
+      "name": "CloudConvert · MP4转GIF",
+      "url": "https://cloudconvert.com/mp4-to-gif",
+      "tasks": [
+        "video-to-gif"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-057",
+      "name": "FreeConvert · 视频转GIF",
+      "url": "https://www.freeconvert.com/video-to-gif",
+      "tasks": [
+        "video-to-gif"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-058",
+      "name": "123apps · 视频提取音频",
+      "url": "https://audio-extractor.net/zh/",
+      "tasks": [
+        "video-extract-audio"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-059",
+      "name": "CloudConvert · MP4转MP3",
+      "url": "https://cloudconvert.com/mp4-to-mp3",
+      "tasks": [
+        "video-extract-audio"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-060",
+      "name": "FreeConvert · MP4转MP3",
+      "url": "https://www.freeconvert.com/mp4-to-mp3",
+      "tasks": [
+        "video-extract-audio"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-061",
+      "name": "123apps · 视频静音",
+      "url": "https://online-video-cutter.com/zh/mute-video",
+      "tasks": [
+        "video-mute"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-062",
+      "name": "Clideo · 视频静音",
+      "url": "https://clideo.com/mute-video",
+      "tasks": [
+        "video-mute"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-063",
+      "name": "VEED · 去除视频声音",
+      "url": "https://www.veed.io/tools/remove-audio-from-video",
+      "tasks": [
+        "video-mute"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-064",
+      "name": "VEED · 自动字幕",
+      "url": "https://www.veed.io/tools/auto-subtitle-generator-online",
+      "tasks": [
+        "video-subtitle"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-065",
+      "name": "Kapwing · 自动字幕",
+      "url": "https://www.kapwing.com/subtitles",
+      "tasks": [
+        "video-subtitle"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-066",
+      "name": "Canva · 自动字幕",
+      "url": "https://www.canva.com/features/auto-caption/",
+      "tasks": [
+        "video-subtitle"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-067",
+      "name": "MP3Cut · 音频裁剪",
+      "url": "https://mp3cut.net/zh/",
+      "tasks": [
+        "audio-cut"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-068",
+      "name": "AudioTrimmer · 音频裁剪",
+      "url": "https://audiotrimmer.com/",
+      "tasks": [
+        "audio-cut"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-069",
+      "name": "Clideo · 音频裁剪",
+      "url": "https://clideo.com/cut-audio",
+      "tasks": [
+        "audio-cut"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-070",
+      "name": "TurboScribe · 录音转文字",
+      "url": "https://turboscribe.ai/",
+      "tasks": [
+        "audio-transcribe"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-071",
+      "name": "Riverside · 音频转文字",
+      "url": "https://riverside.fm/transcription",
+      "tasks": [
+        "audio-transcribe"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-072",
+      "name": "飞书妙记 · 录音转文字",
+      "url": "https://www.feishu.cn/product/minutes",
+      "tasks": [
+        "audio-transcribe"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-073",
+      "name": "Adobe Enhance Speech · 音频降噪",
+      "url": "https://podcast.adobe.com/enhance",
+      "tasks": [
+        "audio-denoise"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-074",
+      "name": "VEED · 音频降噪",
+      "url": "https://www.veed.io/tools/remove-background-noise-from-audio",
+      "tasks": [
+        "audio-denoise"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-075",
+      "name": "Media.io · 音频降噪",
+      "url": "https://www.media.io/noise-reducer.html",
+      "tasks": [
+        "audio-denoise"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-076",
+      "name": "Vocal Remover · 人声伴奏分离",
+      "url": "https://vocalremover.org/zh/",
+      "tasks": [
+        "vocal-separation"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-077",
+      "name": "LALAL.AI · 人声分离",
+      "url": "https://www.lalal.ai/",
+      "tasks": [
+        "vocal-separation"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-078",
+      "name": "Moises · 人声伴奏分离",
+      "url": "https://moises.ai/",
+      "tasks": [
+        "vocal-separation"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-079",
+      "name": "TTSMaker · 文字转语音",
+      "url": "https://ttsmaker.com/zh-cn",
+      "tasks": [
+        "text-to-speech"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-080",
+      "name": "TTSMaker CN · 文字转语音",
+      "url": "https://ttsmaker.cn/",
+      "tasks": [
+        "text-to-speech"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-081",
+      "name": "NaturalReader · 文字转语音",
+      "url": "https://www.naturalreaders.com/online/",
+      "tasks": [
+        "text-to-speech"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-082",
+      "name": "123apps · 音频转MP3",
+      "url": "https://online-audio-converter.com/zh/",
+      "tasks": [
+        "audio-to-mp3"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-083",
+      "name": "CloudConvert · 音频格式转换",
+      "url": "https://cloudconvert.com/audio-converter",
+      "tasks": [
+        "audio-to-mp3"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-084",
+      "name": "FreeConvert · 音频格式转换",
+      "url": "https://www.freeconvert.com/audio-converter",
+      "tasks": [
+        "audio-to-mp3"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-085",
+      "name": "ChatGPT · AI问答",
+      "url": "https://chatgpt.com/",
+      "tasks": [
+        "ai-chat"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-086",
+      "name": "豆包 · AI问答",
+      "url": "https://www.doubao.com/chat/",
+      "tasks": [
+        "ai-chat"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-087",
+      "name": "Kimi · AI问答",
+      "url": "https://kimi.moonshot.cn/",
+      "tasks": [
+        "ai-chat"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-088",
+      "name": "Kimi · PDF总结",
+      "url": "https://kimi.moonshot.cn/",
+      "tasks": [
+        "ai-pdf-summary"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-089",
+      "name": "ChatPDF · PDF总结",
+      "url": "https://www.chatpdf.com/",
+      "tasks": [
+        "ai-pdf-summary"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-090",
+      "name": "ChatGPT · PDF总结",
+      "url": "https://chatgpt.com/",
+      "tasks": [
+        "ai-pdf-summary"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-091",
+      "name": "Gamma · AI做PPT",
+      "url": "https://gamma.app/",
+      "tasks": [
+        "ai-ppt"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-092",
+      "name": "Canva · AI演示文稿",
+      "url": "https://www.canva.com/",
+      "tasks": [
+        "ai-ppt"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-093",
+      "name": "SlidesAI · AI做PPT",
+      "url": "https://www.slidesai.io/",
+      "tasks": [
+        "ai-ppt"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-094",
+      "name": "DeepL · AI翻译",
+      "url": "https://www.deepl.com/translator",
+      "tasks": [
+        "ai-translate"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-095",
+      "name": "Google 翻译",
+      "url": "https://translate.google.com/",
+      "tasks": [
+        "ai-translate"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-096",
+      "name": "沉浸式翻译",
+      "url": "https://immersivetranslate.com/",
+      "tasks": [
+        "ai-translate"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-097",
+      "name": "ChatGPT · AI写文案",
+      "url": "https://chatgpt.com/",
+      "tasks": [
+        "ai-copywriting"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-098",
+      "name": "豆包 · AI写文案",
+      "url": "https://www.doubao.com/chat/",
+      "tasks": [
+        "ai-copywriting"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-099",
+      "name": "Kimi · AI写文案",
+      "url": "https://kimi.moonshot.cn/",
+      "tasks": [
+        "ai-copywriting"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-100",
+      "name": "Bing Image Creator · AI画图",
+      "url": "https://www.bing.com/images/create",
+      "tasks": [
+        "ai-image"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-101",
+      "name": "Adobe Firefly · AI画图",
+      "url": "https://firefly.adobe.com/",
+      "tasks": [
+        "ai-image"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-102",
+      "name": "Canva · AI图片生成",
+      "url": "https://www.canva.com/ai-image-generator/",
+      "tasks": [
+        "ai-image"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-103",
+      "name": "GitMind · 思维导图",
+      "url": "https://gitmind.cn/",
+      "tasks": [
+        "mind-map"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-104",
+      "name": "ProcessOn · 思维导图",
+      "url": "https://www.processon.com/",
+      "tasks": [
+        "mind-map"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-105",
+      "name": "Canva · 思维导图",
+      "url": "https://www.canva.com/graphs/mind-maps/",
+      "tasks": [
+        "mind-map"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-106",
+      "name": "diagrams.net · 流程图",
+      "url": "https://app.diagrams.net/",
+      "tasks": [
+        "flowchart"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-107",
+      "name": "ProcessOn · 流程图",
+      "url": "https://www.processon.com/",
+      "tasks": [
+        "flowchart"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-108",
+      "name": "Lucidchart · 流程图",
+      "url": "https://www.lucidchart.com/",
+      "tasks": [
+        "flowchart"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-109",
+      "name": "PairDrop · 文件快传",
+      "url": "https://pairdrop.net/",
+      "tasks": [
+        "file-transfer"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-110",
+      "name": "Wormhole · 文件快传",
+      "url": "https://wormhole.app/",
+      "tasks": [
+        "file-transfer"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-111",
+      "name": "奶牛快传 · 文件传输",
+      "url": "https://cowtransfer.com/",
+      "tasks": [
+        "file-transfer"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-112",
+      "name": "TextCleaner · 文本清洗",
+      "url": "https://www.textcleaner.net/",
+      "tasks": [
+        "text-clean"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-113",
+      "name": "Tool.lu · 文本工具",
+      "url": "https://tool.lu/",
+      "tasks": [
+        "text-clean"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-114",
+      "name": "CyberChef · 文本处理",
+      "url": "https://gchq.github.io/CyberChef/",
+      "tasks": [
+        "text-clean"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-115",
+      "name": "XE · 汇率换算",
+      "url": "https://www.xe.com/currencyconverter/",
+      "tasks": [
+        "currency-convert"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-116",
+      "name": "Wise · 汇率换算",
+      "url": "https://wise.com/currency-converter/",
+      "tasks": [
+        "currency-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-117",
+      "name": "X-Rates · 汇率换算",
+      "url": "https://www.x-rates.com/calculator/",
+      "tasks": [
+        "currency-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-118",
+      "name": "1Password · 随机密码",
+      "url": "https://1password.com/password-generator/",
+      "tasks": [
+        "password-generator"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-119",
+      "name": "Bitwarden · 随机密码",
+      "url": "https://bitwarden.com/password-generator/",
+      "tasks": [
+        "password-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-120",
+      "name": "LastPass · 随机密码",
+      "url": "https://www.lastpass.com/features/password-generator",
+      "tasks": [
+        "password-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-121",
+      "name": "Grammarly · 英文纠错",
+      "url": "https://www.grammarly.com/grammar-check",
+      "tasks": [
+        "english-check"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-122",
+      "name": "LanguageTool · 英文纠错",
+      "url": "https://languagetool.org/",
+      "tasks": [
+        "english-check"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-123",
+      "name": "QuillBot · 英文纠错",
+      "url": "https://quillbot.com/grammar-check",
+      "tasks": [
+        "english-check"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-124",
+      "name": "PaperYY · 论文查重",
+      "url": "https://www.paperyy.com/",
+      "tasks": [
+        "paper-check"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-125",
+      "name": "PaperPass · 论文查重",
+      "url": "https://www.paperpass.com/",
+      "tasks": [
+        "paper-check"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-126",
+      "name": "PaperFree · 论文查重",
+      "url": "https://www.paperfree.cn/",
+      "tasks": [
+        "paper-check"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-127",
+      "name": "SimpleTex · 公式转LaTeX",
+      "url": "https://simpletex.cn/",
+      "tasks": [
+        "latex-convert"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-128",
+      "name": "Mathpix · 公式转LaTeX",
+      "url": "https://mathpix.com/",
+      "tasks": [
+        "latex-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-129",
+      "name": "CodeCogs · LaTeX公式编辑",
+      "url": "https://editor.codecogs.com/",
+      "tasks": [
+        "latex-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-130",
+      "name": "MyBib · 参考文献生成",
+      "url": "https://www.mybib.com/",
+      "tasks": [
+        "citation-generator"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-131",
+      "name": "ZoteroBib · 参考文献生成",
+      "url": "https://zbib.org/",
+      "tasks": [
+        "citation-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-132",
+      "name": "Cite This For Me · 引用生成",
+      "url": "https://www.citethisforme.com/",
+      "tasks": [
+        "citation-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-133",
+      "name": "JSON.cn · JSON格式化",
+      "url": "https://www.json.cn/",
+      "tasks": [
+        "json-format"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-134",
+      "name": "JSONLint · JSON校验",
+      "url": "https://jsonlint.com/",
+      "tasks": [
+        "json-format"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-135",
+      "name": "JSON Hero · JSON查看",
+      "url": "https://jsonhero.io/",
+      "tasks": [
+        "json-format"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-136",
+      "name": "Regex101 · 正则测试",
+      "url": "https://regex101.com/",
+      "tasks": [
+        "regex-test"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-137",
+      "name": "RegExr · 正则测试",
+      "url": "https://regexr.com/",
+      "tasks": [
+        "regex-test"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-138",
+      "name": "菜鸟工具 · 正则测试",
+      "url": "https://c.runoob.com/front-end/854/",
+      "tasks": [
+        "regex-test"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-139",
+      "name": "SQLFormat · SQL美化",
+      "url": "https://sqlformat.org/",
+      "tasks": [
+        "sql-format"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-140",
+      "name": "Instant SQL Formatter · SQL美化",
+      "url": "https://www.dpriver.com/pp/sqlformat.htm",
+      "tasks": [
+        "sql-format"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-141",
+      "name": "Poor SQL · SQL美化",
+      "url": "https://poorsql.com/",
+      "tasks": [
+        "sql-format"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-142",
+      "name": "Ray.so · 代码截图",
+      "url": "https://ray.so/",
+      "tasks": [
+        "code-image"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-143",
+      "name": "Carbon · 代码截图",
+      "url": "https://carbon.now.sh/",
+      "tasks": [
+        "code-image"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-144",
+      "name": "Codeimg · 代码截图",
+      "url": "https://codeimg.io/",
+      "tasks": [
+        "code-image"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE"
     }
   ]
 }
