@@ -1,0 +1,98 @@
+name: Deterministic Tests
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'audit/**'
+      - '.github/workflows/deterministic-tests.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  deterministic-tests:
+    name: NAV KING Auditor v1.2 Acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Verify required files
+        run: |
+          test -f audit/audit_urls.py
+          test -f audit/run_deterministic_tests.py
+          test -f audit/candidates_deterministic.json
+          test -f audit/test_fixtures/parked_domain.html
+          test -f audit/test_fixtures/login_wall.html
+          test -f audit/test_fixtures/forced_app.html
+          test -f audit/test_fixtures/task_mismatch.html
+          test -f audit/test_fixtures/direct_tool_page.html
+
+      - name: Protect production files
+        run: |
+          sha256sum index.html > /tmp/index.before
+          sha256sum data/atomic_tasks.json > /tmp/atomic_tasks.before
+          sha256sum data/tools.json > /tmp/tools.before
+
+      - name: Run deterministic acceptance suite
+        run: |
+          python audit/run_deterministic_tests.py
+
+      - name: Verify production files unchanged
+        if: always()
+        run: |
+          sha256sum -c /tmp/index.before
+          sha256sum -c /tmp/atomic_tasks.before
+          sha256sum -c /tmp/tools.before
+
+      - name: Show audit results
+        if: always()
+        run: |
+          echo "=========================================="
+          echo "NAV KING Auditor v1.2 Test Results"
+          echo "=========================================="
+
+          if [ -f audit/audit-results.json ]; then
+            cat audit/audit-results.json
+          else
+            echo "audit/audit-results.json was not generated."
+          fi
+
+      - name: Write GitHub Actions summary
+        if: always()
+        run: |
+          echo "# NAV KING Auditor v1.2" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "## Deterministic Acceptance Test" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+
+          if [ -f audit/audit-results.json ]; then
+            echo "Audit results generated successfully." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Audit results were not generated." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Protected Production Files" >> "$GITHUB_STEP_SUMMARY"
+          echo "- index.html" >> "$GITHUB_STEP_SUMMARY"
+          echo "- data/atomic_tasks.json" >> "$GITHUB_STEP_SUMMARY"
+          echo "- data/tools.json" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### Auditor Version" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Version: 1.2" >> "$GITHUB_STEP_SUMMARY"
