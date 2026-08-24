@@ -1,12 +1,24 @@
 {
-  "version": "4.0",
+  "version": "4.1",
   "updated": "2026-08-25",
-  "description": "NAV KING full-category tool registry. All 48 canonical task IDs are covered. Existing validated PDF entries remain HEALTHY; newly seeded entries are CANDIDATE pending URL health audit.",
+  "description": "NAV KING V4.1 60x3 production-candidate registry. Structural matrix is machine-validated. cn_verified remains false until real Mainland China carrier testing.",
+  "quality_policy": {
+    "priority": [
+      "cn_access",
+      "task_fit",
+      "low_ads",
+      "mobile",
+      "low_login_friction",
+      "local_processing"
+    ],
+    "cn_verified_definition": "Only set true after real Mainland China network testing.",
+    "ads_unknown_rule": "UNKNOWN must never be displayed to users as ad-free."
+  },
   "tools": [
     {
       "id": "TOOL-001",
-      "name": "iLovePDF · PDF压缩",
-      "url": "https://www.ilovepdf.com/zh-cn/compress_pdf",
+      "name": "FreePD · PDF压缩",
+      "url": "https://freepd.cn/tools/pdf-compress",
       "tasks": [
         "pdf-compress"
       ],
@@ -14,11 +26,39 @@
       "mobile": true,
       "desktop": true,
       "login": false,
-      "local": false,
-      "status": "HEALTHY"
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "FreePD",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
     },
     {
       "id": "TOOL-002",
+      "name": "CokoTools · PDF压缩",
+      "url": "https://www.cokotools.com/zh/pdf/compress",
+      "tasks": [
+        "pdf-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PROVIDER"
+    },
+    {
+      "id": "TOOL-003",
       "name": "PDF24 · PDF压缩",
       "url": "https://tools.pdf24.org/zh/compress-pdf",
       "tasks": [
@@ -29,26 +69,19 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
-    },
-    {
-      "id": "TOOL-003",
-      "name": "Smallpdf · PDF压缩",
-      "url": "https://smallpdf.com/cn/compress-pdf",
-      "tasks": [
-        "pdf-compress"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "HEALTHY"
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-004",
-      "name": "iLovePDF · PDF转Word",
-      "url": "https://www.ilovepdf.com/zh-cn/pdf_to_word",
+      "name": "FreePD · PDF转Word",
+      "url": "https://freepd.cn/tools/pdf-to-word",
       "tasks": [
         "pdf-to-word"
       ],
@@ -56,25 +89,18 @@
       "mobile": true,
       "desktop": true,
       "login": false,
-      "local": false,
-      "status": "HEALTHY"
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "FreePD",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
     },
     {
       "id": "TOOL-005",
-      "name": "Smallpdf · PDF转Word",
-      "url": "https://smallpdf.com/cn/pdf-to-word",
-      "tasks": [
-        "pdf-to-word"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "HEALTHY"
-    },
-    {
-      "id": "TOOL-006",
       "name": "PDF24 · PDF转Word",
       "url": "https://tools.pdf24.org/zh/pdf-to-word",
       "tasks": [
@@ -85,7 +111,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "LEGACY_VALIDATED"
+    },
+    {
+      "id": "TOOL-006",
+      "name": "iLovePDF · PDF转Word",
+      "url": "https://www.ilovepdf.com/zh-cn/pdf_to_word",
+      "tasks": [
+        "pdf-to-word"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "iLovePDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-007",
@@ -99,24 +153,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "iLovePDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-008",
-      "name": "PDF24 · Word转PDF",
-      "url": "https://tools.pdf24.org/zh/word-to-pdf",
-      "tasks": [
-        "word-to-pdf"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "HEALTHY"
-    },
-    {
-      "id": "TOOL-009",
       "name": "PDF.io · Word转PDF",
       "url": "https://pdf.io/zh/word2pdf/",
       "tasks": [
@@ -127,12 +174,40 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "PDF.io",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
+    },
+    {
+      "id": "TOOL-009",
+      "name": "PDF24 · Word转PDF",
+      "url": "https://tools.pdf24.org/zh/word-to-pdf",
+      "tasks": [
+        "word-to-pdf"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "HEALTHY",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-010",
-      "name": "PDF24 · 合并PDF",
-      "url": "https://tools.pdf24.org/zh/merge-pdf",
+      "name": "FreePD · 合并PDF",
+      "url": "https://freepd.cn/tools/pdf-merge",
       "tasks": [
         "pdf-merge"
       ],
@@ -140,13 +215,20 @@
       "mobile": true,
       "desktop": true,
       "login": false,
-      "local": false,
-      "status": "HEALTHY"
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "FreePD",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
     },
     {
       "id": "TOOL-011",
-      "name": "iLovePDF · 合并PDF",
-      "url": "https://www.ilovepdf.com/zh-cn/merge_pdf",
+      "name": "CokoTools · 合并PDF",
+      "url": "https://www.cokotools.com/zh/pdf/merge",
       "tasks": [
         "pdf-merge"
       ],
@@ -154,13 +236,20 @@
       "mobile": true,
       "desktop": true,
       "login": false,
-      "local": false,
-      "status": "HEALTHY"
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
     },
     {
       "id": "TOOL-012",
-      "name": "Smallpdf · 合并PDF",
-      "url": "https://smallpdf.com/cn/merge-pdf",
+      "name": "PDF24 · 合并PDF",
+      "url": "https://tools.pdf24.org/zh/merge-pdf",
       "tasks": [
         "pdf-merge"
       ],
@@ -169,7 +258,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-013",
@@ -183,24 +279,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-014",
-      "name": "iLovePDF · 拆分PDF",
-      "url": "https://www.ilovepdf.com/zh-cn/split_pdf",
-      "tasks": [
-        "pdf-split"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "HEALTHY"
-    },
-    {
-      "id": "TOOL-015",
       "name": "Smallpdf · 拆分PDF",
       "url": "https://smallpdf.com/cn/split-pdf",
       "tasks": [
@@ -211,7 +300,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
+    },
+    {
+      "id": "TOOL-015",
+      "name": "iLovePDF · 拆分PDF",
+      "url": "https://www.ilovepdf.com/zh-cn/split_pdf",
+      "tasks": [
+        "pdf-split"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "HEALTHY",
+      "provider": "iLovePDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-016",
@@ -225,7 +342,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "iLovePDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-017",
@@ -239,7 +363,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-018",
@@ -253,7 +384,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-019",
@@ -267,7 +405,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "iLovePDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-020",
@@ -281,7 +426,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-021",
@@ -295,7 +447,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-022",
@@ -309,24 +468,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-023",
-      "name": "iLovePDF · 图片转PDF",
-      "url": "https://www.ilovepdf.com/zh-cn/jpg_to_pdf",
-      "tasks": [
-        "image-to-pdf"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "HEALTHY"
-    },
-    {
-      "id": "TOOL-024",
       "name": "Smallpdf · 图片转PDF",
       "url": "https://smallpdf.com/cn/jpg-to-pdf",
       "tasks": [
@@ -337,12 +489,40 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "HEALTHY"
+      "status": "HEALTHY",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
+    },
+    {
+      "id": "TOOL-024",
+      "name": "iLovePDF · 图片转PDF",
+      "url": "https://www.ilovepdf.com/zh-cn/jpg_to_pdf",
+      "tasks": [
+        "image-to-pdf"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "HEALTHY",
+      "provider": "iLovePDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-025",
-      "name": "iLoveIMG · 图片压缩",
-      "url": "https://www.iloveimg.com/zh-cn/compress-image",
+      "name": "FreePD · 图片压缩",
+      "url": "https://freepd.cn/imagetools/image-compress",
       "tasks": [
         "image-compress"
       ],
@@ -350,27 +530,20 @@
       "mobile": true,
       "desktop": true,
       "login": false,
-      "local": false,
-      "status": "CANDIDATE"
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "FreePD",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
     },
     {
       "id": "TOOL-026",
-      "name": "TinyPNG · 图片压缩",
-      "url": "https://tinypng.com/",
-      "tasks": [
-        "image-compress"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-027",
-      "name": "Squoosh · 图片压缩",
-      "url": "https://squoosh.app/",
+      "name": "CokoTools · 图片压缩",
+      "url": "https://www.cokotools.com/zh/images/imgCompress",
       "tasks": [
         "image-compress"
       ],
@@ -379,7 +552,35 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-027",
+      "name": "iLoveIMG · 图片压缩",
+      "url": "https://www.iloveimg.com/zh-cn/compress-image",
+      "tasks": [
+        "image-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "iLoveIMG",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-028",
@@ -393,24 +594,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "remove.bg",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-029",
-      "name": "PhotoRoom · 去背景",
-      "url": "https://www.photoroom.com/tools/background-remover",
-      "tasks": [
-        "image-remove-bg"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-030",
       "name": "Adobe Express · 去背景",
       "url": "https://www.adobe.com/express/feature/image/remove-background",
       "tasks": [
@@ -421,7 +615,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Adobe Express",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-030",
+      "name": "PhotoRoom · 去背景",
+      "url": "https://www.photoroom.com/tools/background-remover",
+      "tasks": [
+        "image-remove-bg"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "PhotoRoom",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-031",
@@ -435,7 +657,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Cutout.Pro",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-032",
@@ -449,7 +678,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "PhotoRoom",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-033",
@@ -463,7 +699,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "remove.bg",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-034",
@@ -477,7 +720,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Cutout.Pro",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-035",
@@ -491,7 +741,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "IDPhoto",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-036",
@@ -505,12 +762,19 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "PhotoRoom",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-037",
-      "name": "iLoveIMG · 图片改尺寸",
-      "url": "https://www.iloveimg.com/zh-cn/resize-image",
+      "name": "FreePD · 图片改尺寸",
+      "url": "https://freepd.cn/imagetools/image-resize",
       "tasks": [
         "image-resize"
       ],
@@ -518,25 +782,18 @@
       "mobile": true,
       "desktop": true,
       "login": false,
-      "local": false,
-      "status": "CANDIDATE"
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "FreePD",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
     },
     {
       "id": "TOOL-038",
-      "name": "Adobe Express · 图片改尺寸",
-      "url": "https://www.adobe.com/express/feature/image/resize",
-      "tasks": [
-        "image-resize"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-039",
       "name": "Squoosh · 图片尺寸与压缩",
       "url": "https://squoosh.app/",
       "tasks": [
@@ -547,7 +804,35 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "ACTIVE",
+      "provider": "Squoosh",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "LEGACY_VALIDATED"
+    },
+    {
+      "id": "TOOL-039",
+      "name": "iLoveIMG · 图片改尺寸",
+      "url": "https://www.iloveimg.com/zh-cn/resize-image",
+      "tasks": [
+        "image-resize"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "iLoveIMG",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "LEGACY_VALIDATED"
     },
     {
       "id": "TOOL-040",
@@ -561,7 +846,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "OCR.Space",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-041",
@@ -575,7 +867,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Google Lens",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-042",
@@ -589,7 +888,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "i2OCR",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-043",
@@ -603,7 +909,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "iLoveIMG",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-044",
@@ -617,7 +930,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "CloudConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-045",
@@ -631,7 +951,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "FreeConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-046",
@@ -645,7 +972,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "PineTools",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-047",
@@ -659,7 +993,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Canva",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-048",
@@ -673,7 +1014,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Kapwing",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-049",
@@ -687,24 +1035,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "FreeConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-050",
-      "name": "VEED · 视频压缩",
-      "url": "https://www.veed.io/tools/video-compressor",
-      "tasks": [
-        "video-compress"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-051",
       "name": "Clideo · 视频压缩",
       "url": "https://clideo.com/compress-video",
       "tasks": [
@@ -715,7 +1056,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Clideo",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-051",
+      "name": "VEED · 视频压缩",
+      "url": "https://www.veed.io/tools/video-compressor",
+      "tasks": [
+        "video-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "VEED",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-052",
@@ -729,7 +1098,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "123apps",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-053",
@@ -743,7 +1119,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Clideo",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-054",
@@ -757,7 +1140,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "VEED",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-055",
@@ -771,7 +1161,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "EZGIF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-056",
@@ -785,7 +1182,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "CloudConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-057",
@@ -799,7 +1203,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "FreeConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-058",
@@ -813,7 +1224,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "123apps",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-059",
@@ -827,7 +1245,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "CloudConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-060",
@@ -841,7 +1266,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "FreeConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-061",
@@ -855,7 +1287,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "123apps",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-062",
@@ -869,7 +1308,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Clideo",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-063",
@@ -883,7 +1329,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "VEED",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-064",
@@ -897,24 +1350,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "VEED",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-065",
-      "name": "Kapwing · 自动字幕",
-      "url": "https://www.kapwing.com/subtitles",
-      "tasks": [
-        "video-subtitle"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-066",
       "name": "Canva · 自动字幕",
       "url": "https://www.canva.com/features/auto-caption/",
       "tasks": [
@@ -925,7 +1371,35 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Canva",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-066",
+      "name": "Kapwing · 自动字幕",
+      "url": "https://www.kapwing.com/subtitles",
+      "tasks": [
+        "video-subtitle"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "Kapwing",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-067",
@@ -939,7 +1413,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "MP3Cut",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-068",
@@ -953,7 +1434,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "AudioTrimmer",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-069",
@@ -967,7 +1455,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Clideo",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-070",
@@ -981,7 +1476,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "TurboScribe",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-071",
@@ -995,7 +1497,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Riverside",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-072",
@@ -1009,7 +1518,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "飞书妙记",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-073",
@@ -1023,24 +1539,17 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Adobe Enhance Speech",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-074",
-      "name": "VEED · 音频降噪",
-      "url": "https://www.veed.io/tools/remove-background-noise-from-audio",
-      "tasks": [
-        "audio-denoise"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-075",
       "name": "Media.io · 音频降噪",
       "url": "https://www.media.io/noise-reducer.html",
       "tasks": [
@@ -1051,7 +1560,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Media.io",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-075",
+      "name": "VEED · 音频降噪",
+      "url": "https://www.veed.io/tools/remove-background-noise-from-audio",
+      "tasks": [
+        "audio-denoise"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "VEED",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-076",
@@ -1065,7 +1602,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Vocal Remover",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-077",
@@ -1079,7 +1623,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "LALAL.AI",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-078",
@@ -1093,7 +1644,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Moises",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-079",
@@ -1107,24 +1665,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "TTSMaker",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-080",
-      "name": "TTSMaker CN · 文字转语音",
-      "url": "https://ttsmaker.cn/",
-      "tasks": [
-        "text-to-speech"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-081",
       "name": "NaturalReader · 文字转语音",
       "url": "https://www.naturalreaders.com/online/",
       "tasks": [
@@ -1135,7 +1686,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "NaturalReader",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-081",
+      "name": "TTSMaker CN · 文字转语音",
+      "url": "https://ttsmaker.cn/",
+      "tasks": [
+        "text-to-speech"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "TTSMaker CN",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-082",
@@ -1149,7 +1728,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "123apps",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-083",
@@ -1163,7 +1749,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "CloudConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-084",
@@ -1177,7 +1770,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "FreeConvert",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-085",
@@ -1191,24 +1791,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "ChatGPT",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-086",
-      "name": "豆包 · AI问答",
-      "url": "https://www.doubao.com/chat/",
-      "tasks": [
-        "ai-chat"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-087",
       "name": "Kimi · AI问答",
       "url": "https://kimi.moonshot.cn/",
       "tasks": [
@@ -1219,7 +1812,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Kimi",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-087",
+      "name": "豆包 · AI问答",
+      "url": "https://www.doubao.com/chat/",
+      "tasks": [
+        "ai-chat"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "豆包",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-088",
@@ -1233,24 +1854,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Kimi",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-089",
-      "name": "ChatPDF · PDF总结",
-      "url": "https://www.chatpdf.com/",
-      "tasks": [
-        "ai-pdf-summary"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-090",
       "name": "ChatGPT · PDF总结",
       "url": "https://chatgpt.com/",
       "tasks": [
@@ -1261,7 +1875,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "ChatGPT",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-090",
+      "name": "ChatPDF · PDF总结",
+      "url": "https://www.chatpdf.com/",
+      "tasks": [
+        "ai-pdf-summary"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "ChatPDF",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-091",
@@ -1275,7 +1917,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Gamma",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-092",
@@ -1289,7 +1938,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Canva",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-093",
@@ -1303,7 +1959,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "SlidesAI",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-094",
@@ -1317,7 +1980,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "DeepL",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-095",
@@ -1331,7 +2001,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Google 翻译",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-096",
@@ -1345,7 +2022,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "沉浸式翻译",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-097",
@@ -1359,24 +2043,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "ChatGPT",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-098",
-      "name": "豆包 · AI写文案",
-      "url": "https://www.doubao.com/chat/",
-      "tasks": [
-        "ai-copywriting"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-099",
       "name": "Kimi · AI写文案",
       "url": "https://kimi.moonshot.cn/",
       "tasks": [
@@ -1387,7 +2064,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Kimi",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-099",
+      "name": "豆包 · AI写文案",
+      "url": "https://www.doubao.com/chat/",
+      "tasks": [
+        "ai-copywriting"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "豆包",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-100",
@@ -1401,7 +2106,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Bing Image Creator",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-101",
@@ -1415,7 +2127,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Adobe Firefly",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-102",
@@ -1429,7 +2148,14 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Canva",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-103",
@@ -1443,24 +2169,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "GitMind",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-104",
-      "name": "ProcessOn · 思维导图",
-      "url": "https://www.processon.com/",
-      "tasks": [
-        "mind-map"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": true,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-105",
       "name": "Canva · 思维导图",
       "url": "https://www.canva.com/graphs/mind-maps/",
       "tasks": [
@@ -1471,7 +2190,35 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Canva",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-105",
+      "name": "ProcessOn · 思维导图",
+      "url": "https://www.processon.com/",
+      "tasks": [
+        "mind-map"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "ProcessOn",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-106",
@@ -1485,24 +2232,17 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "diagrams.net",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-107",
-      "name": "ProcessOn · 流程图",
-      "url": "https://www.processon.com/",
-      "tasks": [
-        "flowchart"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": true,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-108",
       "name": "Lucidchart · 流程图",
       "url": "https://www.lucidchart.com/",
       "tasks": [
@@ -1513,7 +2253,35 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Lucidchart",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-108",
+      "name": "ProcessOn · 流程图",
+      "url": "https://www.processon.com/",
+      "tasks": [
+        "flowchart"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "ProcessOn",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-109",
@@ -1527,7 +2295,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "PairDrop",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-110",
@@ -1541,7 +2316,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Wormhole",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-111",
@@ -1555,7 +2337,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "奶牛快传",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-112",
@@ -1569,24 +2358,17 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "TextCleaner",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-113",
-      "name": "Tool.lu · 文本工具",
-      "url": "https://tool.lu/",
-      "tasks": [
-        "text-clean"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-114",
       "name": "CyberChef · 文本处理",
       "url": "https://gchq.github.io/CyberChef/",
       "tasks": [
@@ -1597,7 +2379,35 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "CyberChef",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-114",
+      "name": "Tool.lu · 文本工具",
+      "url": "https://tool.lu/",
+      "tasks": [
+        "text-clean"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "Tool.lu",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-115",
@@ -1611,7 +2421,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "XE",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-116",
@@ -1625,7 +2442,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Wise",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-117",
@@ -1639,7 +2463,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "X-Rates",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-118",
@@ -1653,7 +2484,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "1Password",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-119",
@@ -1667,7 +2505,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Bitwarden",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-120",
@@ -1681,7 +2526,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "LastPass",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-121",
@@ -1695,7 +2547,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Grammarly",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-122",
@@ -1709,7 +2568,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "LanguageTool",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-123",
@@ -1723,7 +2589,14 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "QuillBot",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-124",
@@ -1737,24 +2610,17 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "PaperYY",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-125",
-      "name": "PaperPass · 论文查重",
-      "url": "https://www.paperpass.com/",
-      "tasks": [
-        "paper-check"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": true,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-126",
       "name": "PaperFree · 论文查重",
       "url": "https://www.paperfree.cn/",
       "tasks": [
@@ -1765,7 +2631,35 @@
       "desktop": true,
       "login": true,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "PaperFree",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-126",
+      "name": "PaperPass · 论文查重",
+      "url": "https://www.paperpass.com/",
+      "tasks": [
+        "paper-check"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "PaperPass",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-127",
@@ -1779,24 +2673,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "SimpleTex",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-128",
-      "name": "Mathpix · 公式转LaTeX",
-      "url": "https://mathpix.com/",
-      "tasks": [
-        "latex-convert"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": true,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-129",
       "name": "CodeCogs · LaTeX公式编辑",
       "url": "https://editor.codecogs.com/",
       "tasks": [
@@ -1807,7 +2694,35 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "CodeCogs",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-129",
+      "name": "Mathpix · 公式转LaTeX",
+      "url": "https://mathpix.com/",
+      "tasks": [
+        "latex-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": true,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "Mathpix",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "REQUIRED",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-130",
@@ -1821,24 +2736,17 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "MyBib",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-131",
-      "name": "ZoteroBib · 参考文献生成",
-      "url": "https://zbib.org/",
-      "tasks": [
-        "citation-generator"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": false,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-132",
       "name": "Cite This For Me · 引用生成",
       "url": "https://www.citethisforme.com/",
       "tasks": [
@@ -1849,7 +2757,35 @@
       "desktop": true,
       "login": false,
       "local": false,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Cite This For Me",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-132",
+      "name": "ZoteroBib · 参考文献生成",
+      "url": "https://zbib.org/",
+      "tasks": [
+        "citation-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "CANDIDATE",
+      "provider": "ZoteroBib",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-133",
@@ -1863,24 +2799,17 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "JSON.cn",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-134",
-      "name": "JSONLint · JSON校验",
-      "url": "https://jsonlint.com/",
-      "tasks": [
-        "json-format"
-      ],
-      "role": "FALLBACK",
-      "mobile": true,
-      "desktop": true,
-      "login": false,
-      "local": true,
-      "status": "CANDIDATE"
-    },
-    {
-      "id": "TOOL-135",
       "name": "JSON Hero · JSON查看",
       "url": "https://jsonhero.io/",
       "tasks": [
@@ -1891,7 +2820,35 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "JSON Hero",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-135",
+      "name": "JSONLint · JSON校验",
+      "url": "https://jsonlint.com/",
+      "tasks": [
+        "json-format"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "CANDIDATE",
+      "provider": "JSONLint",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-136",
@@ -1905,7 +2862,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Regex101",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-137",
@@ -1919,7 +2883,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "RegExr",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-138",
@@ -1933,7 +2904,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "菜鸟工具",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-139",
@@ -1947,7 +2925,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "SQLFormat",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-140",
@@ -1961,7 +2946,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Instant SQL Formatter",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-141",
@@ -1975,7 +2967,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Poor SQL",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-142",
@@ -1989,7 +2988,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Ray.so",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-143",
@@ -2003,7 +3009,14 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Carbon",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
     },
     {
       "id": "TOOL-144",
@@ -2017,7 +3030,770 @@
       "desktop": true,
       "login": false,
       "local": true,
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "provider": "Codeimg",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-145",
+      "name": "CokoTools · PDF加水印",
+      "url": "https://www.cokotools.com/zh/pdf/watermark",
+      "tasks": [
+        "pdf-watermark"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-146",
+      "name": "PDF24 · PDF加水印",
+      "url": "https://tools.pdf24.org/zh/add-watermark",
+      "tasks": [
+        "pdf-watermark"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-147",
+      "name": "Smallpdf · PDF加水印",
+      "url": "https://smallpdf.com/cn/watermark-pdf",
+      "tasks": [
+        "pdf-watermark"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-148",
+      "name": "CokoTools · PDF删除页面",
+      "url": "https://www.cokotools.com/zh/pdf/delItem",
+      "tasks": [
+        "pdf-delete-pages"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PROVIDER"
+    },
+    {
+      "id": "TOOL-149",
+      "name": "PDF24 · 删除PDF页面",
+      "url": "https://tools.pdf24.org/zh/remove-pdf-pages",
+      "tasks": [
+        "pdf-delete-pages"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-150",
+      "name": "Smallpdf · 删除PDF页面",
+      "url": "https://smallpdf.com/cn/delete-pages-from-pdf",
+      "tasks": [
+        "pdf-delete-pages"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-151",
+      "name": "CokoTools · PDF页面旋转",
+      "url": "https://www.cokotools.com/zh/pdf/rotation",
+      "tasks": [
+        "pdf-rotate"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PROVIDER"
+    },
+    {
+      "id": "TOOL-152",
+      "name": "PDF24 · PDF页面旋转",
+      "url": "https://tools.pdf24.org/zh/rotate-pdf-pages",
+      "tasks": [
+        "pdf-rotate"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-153",
+      "name": "Smallpdf · 旋转PDF",
+      "url": "https://smallpdf.com/cn/rotate-pdf",
+      "tasks": [
+        "pdf-rotate"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Smallpdf",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-154",
+      "name": "FreePD · 图片格式转换",
+      "url": "https://freepd.cn/imagetools/image-convert",
+      "tasks": [
+        "image-format-convert"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "FreePD",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "NONE",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-155",
+      "name": "CloudConvert · 图片格式转换",
+      "url": "https://cloudconvert.com/image-converter",
+      "tasks": [
+        "image-format-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "CloudConvert",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-156",
+      "name": "FreeConvert · 图片格式转换",
+      "url": "https://www.freeconvert.com/image-converter",
+      "tasks": [
+        "image-format-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "FreeConvert",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-157",
+      "name": "Jimpl · 清除EXIF",
+      "url": "https://jimpl.com/remove-exif/",
+      "tasks": [
+        "image-remove-exif"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Jimpl",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-158",
+      "name": "ExifCleaner · EXIF清理",
+      "url": "https://exifcleaner.com/",
+      "tasks": [
+        "image-remove-exif"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "ExifCleaner",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "UNKNOWN",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-159",
+      "name": "VerExif · 清除照片EXIF",
+      "url": "https://www.verexif.com/en/",
+      "tasks": [
+        "image-remove-exif"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "VerExif",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-160",
+      "name": "EZGIF · GIF压缩",
+      "url": "https://ezgif.com/optimize",
+      "tasks": [
+        "gif-compress"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "EZGIF",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-161",
+      "name": "FreeConvert · GIF压缩",
+      "url": "https://www.freeconvert.com/gif-compressor",
+      "tasks": [
+        "gif-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "FreeConvert",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-162",
+      "name": "iLoveIMG · GIF/图片压缩",
+      "url": "https://www.iloveimg.com/zh-cn/compress-image",
+      "tasks": [
+        "gif-compress"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "iLoveIMG",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-163",
+      "name": "CokoTools · 音频合并",
+      "url": "https://www.cokotools.com/zh/audio/merge",
+      "tasks": [
+        "audio-merge"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-164",
+      "name": "Audio Joiner · 音频合并",
+      "url": "https://audio-joiner.com/zh/",
+      "tasks": [
+        "audio-merge"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "123apps",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-165",
+      "name": "Clideo · 音频合并",
+      "url": "https://clideo.com/merge-audio",
+      "tasks": [
+        "audio-merge"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Clideo",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-166",
+      "name": "CokoTools · 视频格式转换",
+      "url": "https://www.cokotools.com/zh/video/convert?to=mp4&type=all",
+      "tasks": [
+        "video-convert"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-167",
+      "name": "CloudConvert · 视频格式转换",
+      "url": "https://cloudconvert.com/video-converter",
+      "tasks": [
+        "video-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "CloudConvert",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-168",
+      "name": "FreeConvert · 视频格式转换",
+      "url": "https://www.freeconvert.com/video-converter",
+      "tasks": [
+        "video-convert"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "FreeConvert",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-169",
+      "name": "CokoTools · 二维码生成",
+      "url": "https://www.cokotools.com/zh/work/qrcode",
+      "tasks": [
+        "qr-generator"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PROVIDER"
+    },
+    {
+      "id": "TOOL-170",
+      "name": "QR Code Generator · 二维码生成",
+      "url": "https://www.qr-code-generator.com/",
+      "tasks": [
+        "qr-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "QR Code Generator",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-171",
+      "name": "QRCode Monkey · 二维码生成",
+      "url": "https://www.qrcode-monkey.com/",
+      "tasks": [
+        "qr-generator"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "QRCode Monkey",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-172",
+      "name": "CokoTools · 在线ZIP解压",
+      "url": "https://www.cokotools.com/zh/work/unzip",
+      "tasks": [
+        "archive-extract"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-173",
+      "name": "Archive Extractor · 在线解压",
+      "url": "https://extract.me/",
+      "tasks": [
+        "archive-extract"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Archive Extractor",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-174",
+      "name": "ezyZip · 在线解压",
+      "url": "https://www.ezyzip.com/",
+      "tasks": [
+        "archive-extract"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "ezyZip",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-175",
+      "name": "CokoTools · 字数统计",
+      "url": "https://www.cokotools.com/zh/text/wordCount",
+      "tasks": [
+        "word-count"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "CokoTools",
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "VERIFIED_PAGE"
+    },
+    {
+      "id": "TOOL-176",
+      "name": "Character Count Online · 字符统计",
+      "url": "https://www.charactercountonline.com/",
+      "tasks": [
+        "word-count"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "Character Count Online",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-177",
+      "name": "WordCounter · 字数统计",
+      "url": "https://wordcounter.net/",
+      "tasks": [
+        "word-count"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": true,
+      "status": "ACTIVE",
+      "provider": "WordCounter",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "LOCAL",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-178",
+      "name": "PDF24 · 网页转PDF",
+      "url": "https://tools.pdf24.org/zh/webpage-to-pdf",
+      "tasks": [
+        "webpage-to-pdf"
+      ],
+      "role": "PRIMARY",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "PDF24",
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "ads": "LOW",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-179",
+      "name": "PrintFriendly · 网页转PDF",
+      "url": "https://www.printfriendly.com/",
+      "tasks": [
+        "webpage-to-pdf"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "PrintFriendly",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
+    },
+    {
+      "id": "TOOL-180",
+      "name": "Sejda · HTML转PDF",
+      "url": "https://www.sejda.com/html-to-pdf",
+      "tasks": [
+        "webpage-to-pdf"
+      ],
+      "role": "FALLBACK",
+      "mobile": true,
+      "desktop": true,
+      "login": false,
+      "local": false,
+      "status": "ACTIVE",
+      "provider": "Sejda",
+      "cn_priority": "LOW",
+      "cn_verified": false,
+      "ads": "UNKNOWN",
+      "login_level": "NONE",
+      "processing": "CLOUD",
+      "evidence_level": "CANDIDATE"
     }
   ]
 }
