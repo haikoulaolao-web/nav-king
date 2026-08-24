@@ -1,454 +1,649 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NAV KING - 你现在要干什么？直接找到可用工具入口。" />
-  <title>NAV KING · 导航王</title>
+  <title>NAV KING - 你现在要干什么？</title>
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "PingFang SC",
-        "Hiragino Sans GB",
-        "Microsoft YaHei",
-        sans-serif;
-      background: #f6f7fb;
-      color: #111827;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      padding-bottom: 90px;
     }
 
-    .page {
-      width: 100%;
-      max-width: 760px;
+    .container {
+      width: min(100%, 720px);
       margin: 0 auto;
-      padding: 36px 20px 56px;
+      padding: 18px 14px 40px;
     }
 
-    .brand {
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      color: #3367e8;
-      margin-bottom: 18px;
+    .hero {
+      background: linear-gradient(135deg, #111827, #1f2937);
+      border-radius: 22px;
+      padding: 22px 18px;
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.16);
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(38px, 10vw, 64px);
-      line-height: 1.05;
-      letter-spacing: -2px;
+    .logo {
+      font-size: 13px;
+      opacity: 0.7;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
     }
 
-    .subtitle {
-      margin-top: 18px;
-      font-size: 18px;
+    .hero h1 {
+      font-size: 27px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 14px;
       line-height: 1.6;
-      color: #6b7280;
+      opacity: 0.82;
     }
 
     .search-box {
-      margin-top: 30px;
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 24px;
-      padding: 10px;
       display: flex;
-      gap: 10px;
-      box-shadow: 0 8px 30px rgba(17, 24, 39, 0.06);
+      gap: 8px;
+      margin-top: 16px;
     }
 
     .search-box input {
       flex: 1;
-      border: 0;
-      outline: 0;
-      min-width: 0;
-      font-size: 18px;
-      padding: 16px 14px;
-      background: transparent;
-      color: #111827;
+      border: none;
+      outline: none;
+      padding: 13px 14px;
+      border-radius: 14px;
+      font-size: 15px;
     }
 
     .search-box button {
-      border: 0;
-      background: #111827;
-      color: white;
-      font-size: 16px;
+      border: none;
+      background: #2563eb;
+      color: #fff;
+      padding: 0 16px;
+      border-radius: 14px;
       font-weight: 700;
-      padding: 0 22px;
-      border-radius: 18px;
-      cursor: pointer;
-    }
-
-    .examples {
-      margin-top: 14px;
-      color: #9ca3af;
       font-size: 14px;
-      line-height: 1.7;
     }
 
-    .result {
+    .tip {
+      margin: 16px 3px 6px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .section {
+      margin-top: 16px;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .section-title h2 {
+      font-size: 18px;
+    }
+
+    .section-title span {
+      font-size: 12px;
+      opacity: 0.68;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .task {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 14px;
+      padding: 13px 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.18s ease;
+      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+    }
+
+    .task:active {
+      transform: scale(0.97);
+    }
+
+    .pdf { background: #dbeafe; }
+    .image { background: #dcfce7; }
+    .video { background: #ede9fe; }
+    .audio { background: #ffedd5; }
+    .ai { background: #cffafe; }
+    .office { background: #fef3c7; }
+    .learning { background: #fce7f3; }
+    .pro { background: #e5e7eb; }
+
+    .result-panel {
       display: none;
-      margin-top: 28px;
-      background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 10px 32px rgba(17, 24, 39, 0.06);
+      margin-top: 16px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
     }
 
-    .result.active {
+    .result-panel.active {
       display: block;
     }
 
-    .result-label {
-      color: #3367e8;
-      font-weight: 800;
-      font-size: 13px;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .result h2 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 1.25;
-    }
-
-    .result-desc {
-      margin-top: 10px;
-      color: #6b7280;
+    .result-title {
       font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .tool-list {
-      margin-top: 18px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .tool-card {
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 16px;
-      background: #fafafa;
-    }
-
-    .tool-name {
-      font-size: 17px;
       font-weight: 800;
       margin-bottom: 6px;
     }
 
-    .tool-meta {
+    .result-desc {
       font-size: 13px;
-      color: #6b7280;
+      color: #64748b;
       margin-bottom: 12px;
+      line-height: 1.55;
     }
 
-    .tool-link {
+    .result-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .result-actions a {
+      flex: 1;
       display: block;
-      text-align: center;
       text-decoration: none;
-      background: #3367e8;
-      color: white;
+      text-align: center;
+      border-radius: 12px;
+      padding: 12px 10px;
       font-weight: 800;
-      padding: 14px;
-      border-radius: 14px;
+      font-size: 14px;
     }
 
-    .tool-link.secondary {
-      background: white;
-      color: #111827;
-      border: 1px solid #d1d5db;
-    }
-
-    .empty-state {
-      display: none;
-      margin-top: 24px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 20px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
-
-    .empty-state.active {
-      display: block;
-    }
-
-    .ad-card {
-      margin-top: 28px;
-      padding: 18px 20px;
-      border-radius: 20px;
+    .primary {
       background: #111827;
-      color: white;
-      text-align: center;
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: .2px;
+      color: #fff;
     }
 
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #9ca3af;
-      font-size: 13px;
+    .backup {
+      background: #f1f5f9;
+      color: #334155;
     }
 
-    @media (max-width: 480px) {
-      .page {
-        padding: 28px 18px 44px;
-      }
+    .ad {
+      position: fixed;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      width: calc(100% - 28px);
+      max-width: 690px;
+      background: #111827;
+      color: #fff;
+      border-radius: 16px;
+      padding: 13px 14px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+      z-index: 99;
+    }
 
-      h1 {
-        font-size: 52px;
-      }
+    .ad strong {
+      color: #fbbf24;
+    }
 
-      .subtitle {
-        font-size: 17px;
-      }
-
-      .search-box {
-        display: block;
-      }
-
-      .search-box input {
-        width: 100%;
-      }
-
-      .search-box button {
-        width: 100%;
-        padding: 14px 18px;
+    @media (min-width: 560px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
 </head>
 
 <body>
-  <main class="page">
-    <div class="brand">NAV KING</div>
 
-    <h1>你现在要干什么？</h1>
+  <main class="container">
 
-    <div class="subtitle">
-      不记网站名字。直接告诉我你要完成什么任务。
-    </div>
+    <section class="hero">
+      <div class="logo">NAV KING</div>
+      <h1>你现在要干什么？</h1>
+      <p>
+        不用记网站名字。直接点你的需求，马上给你能用的网址。
+      </p>
 
-    <div class="search-box">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="例如：PDF太大了、证件照换白底、图片抠图"
-        autocomplete="off"
-      />
-      <button id="searchBtn">帮我找</button>
-    </div>
-
-    <div class="examples">
-      可以输入：PDF压缩 / 合并PDF / 抠图 / 去背景 / 一寸照 / 证件照换底色
-    </div>
-
-    <section id="result" class="result">
-      <div class="result-label">找到你要做的事</div>
-      <h2 id="resultTitle"></h2>
-      <div id="resultDesc" class="result-desc"></div>
-      <div id="toolList" class="tool-list"></div>
+      <div class="search-box">
+        <input id="searchInput" placeholder="例如：压缩PDF、证件照、视频转文字" />
+        <button onclick="searchTask()">搜索</button>
+      </div>
     </section>
 
-    <div id="emptyState" class="empty-state">
-      暂时没找到完全匹配的任务。你可以换一种更直接的说法，例如：
-      “PDF太大了”“我要抠图”“证件照换白底”。
+    <div class="tip">
+      先看分类，找不到再搜索。
     </div>
 
-    <div class="ad-card">
-      解压必备资源 ➕V ziyouluoti8 获取
-    </div>
+    <section class="section pdf">
+      <div class="section-title">
+        <h2>📄 PDF / 文档</h2>
+        <span>办公高频</span>
+      </div>
 
-    <div class="footer">
-      NAV KING · Task-first Navigation
-    </div>
+      <div class="grid">
+        <div class="task" onclick="showTask('PDF压缩')">PDF压缩</div>
+        <div class="task" onclick="showTask('PDF转Word')">PDF转Word</div>
+        <div class="task" onclick="showTask('Word转PDF')">Word转PDF</div>
+        <div class="task" onclick="showTask('合并PDF')">合并PDF</div>
+        <div class="task" onclick="showTask('分割PDF')">拆分PDF</div>
+        <div class="task" onclick="showTask('PDF电子签名')">PDF签名</div>
+        <div class="task" onclick="showTask('PDF转JPG图片')">PDF转图片</div>
+        <div class="task" onclick="showTask('图片转PDF')">图片转PDF</div>
+      </div>
+    </section>
+
+    <section class="section image">
+      <div class="section-title">
+        <h2>🖼 图片</h2>
+        <span>手机最常用</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('图片压缩')">图片压缩</div>
+        <div class="task" onclick="showTask('图片在线抠图去背景')">一键抠图</div>
+        <div class="task" onclick="showTask('证件照换底色')">证件照换底色</div>
+        <div class="task" onclick="showTask('制作标准寸照')">制作证件照</div>
+        <div class="task" onclick="showTask('图片裁剪与改尺寸')">改尺寸</div>
+        <div class="task" onclick="showTask('图片文字提取OCR')">OCR提取文字</div>
+        <div class="task" onclick="showTask('HEIC转JPG')">HEIC转JPG</div>
+        <div class="task" onclick="showTask('多图拼接长图')">拼接长图</div>
+      </div>
+    </section>
+
+    <section class="section video">
+      <div class="section-title">
+        <h2>🎬 视频</h2>
+        <span>短视频 / 微信</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('视频在线压缩')">视频压缩</div>
+        <div class="task" onclick="showTask('视频剪切截取')">剪视频</div>
+        <div class="task" onclick="showTask('视频截取转GIF')">视频转GIF</div>
+        <div class="task" onclick="showTask('视频提取音频')">提取音频</div>
+        <div class="task" onclick="showTask('视频静音去声音')">视频静音</div>
+        <div class="task" onclick="showTask('视频自动加字幕')">自动字幕</div>
+      </div>
+    </section>
+
+    <section class="section audio">
+      <div class="section-title">
+        <h2>🎧 音频</h2>
+        <span>学习 / 创作</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('音频在线裁剪与修剪')">音频裁剪</div>
+        <div class="task" onclick="showTask('音频语音转文字')">录音转文字</div>
+        <div class="task" onclick="showTask('音频降噪与人声增强')">音频降噪</div>
+        <div class="task" onclick="showTask('人声伴奏分离')">人声伴奏分离</div>
+        <div class="task" onclick="showTask('文字转语音TTS')">文字转语音</div>
+        <div class="task" onclick="showTask('音频格式转换')">音频转MP3</div>
+      </div>
+    </section>
+
+    <section class="section ai">
+      <div class="section-title">
+        <h2>🤖 AI</h2>
+        <span>效率工具</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('AI通用智能问答')">AI问答</div>
+        <div class="task" onclick="showTask('AI长文档与PDF阅读总结')">PDF总结</div>
+        <div class="task" onclick="showTask('AI一键生成PPT演示文稿')">AI做PPT</div>
+        <div class="task" onclick="showTask('AI多语言高质量翻译')">AI翻译</div>
+        <div class="task" onclick="showTask('AI电商营销与社媒文案生成')">AI写文案</div>
+        <div class="task" onclick="showTask('AI文本生成图像')">AI画图</div>
+      </div>
+    </section>
+
+    <section class="section office">
+      <div class="section-title">
+        <h2>💼 办公 / 实用</h2>
+        <span>日常工具</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('在线制作思维导图')">思维导图</div>
+        <div class="task" onclick="showTask('在线制作流程图')">流程图</div>
+        <div class="task" onclick="showTask('跨设备临时文件快传')">文件快传</div>
+        <div class="task" onclick="showTask('文本去重与空白清洗')">文本清洗</div>
+        <div class="task" onclick="showTask('实时汇率换算与换算器')">汇率换算</div>
+        <div class="task" onclick="showTask('生成高强度随机密码')">随机密码</div>
+      </div>
+    </section>
+
+    <section class="section learning">
+      <div class="section-title">
+        <h2>🎓 学习 / 求职</h2>
+        <span>学生刚需</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('英文语法检查与纠错')">英文纠错</div>
+        <div class="task" onclick="showTask('学术论文查重与降重')">论文查重</div>
+        <div class="task" onclick="showTask('复杂数学公式识别转LaTeX')">公式转LaTeX</div>
+        <div class="task" onclick="showTask('参考文献引用格式生成')">参考文献生成</div>
+      </div>
+    </section>
+
+    <section class="section pro">
+      <div class="section-title">
+        <h2>🧰 Pro / 开发者</h2>
+        <span>专业工具</span>
+      </div>
+
+      <div class="grid">
+        <div class="task" onclick="showTask('JSON格式化与解析校验')">JSON格式化</div>
+        <div class="task" onclick="showTask('正则表达式在线测试')">正则测试</div>
+        <div class="task" onclick="showTask('SQL代码格式化美化')">SQL美化</div>
+        <div class="task" onclick="showTask('生成美观代码分享截图')">代码截图</div>
+      </div>
+    </section>
+
+    <section id="resultPanel" class="result-panel">
+      <div id="resultTitle" class="result-title">任务</div>
+      <div id="resultDesc" class="result-desc">推荐可用网址</div>
+
+      <div class="result-actions">
+        <a id="primaryLink" class="primary" href="#" target="_blank">
+          打开推荐网址
+        </a>
+
+        <a id="backupLink" class="backup" href="#" target="_blank">
+          备用入口
+        </a>
+      </div>
+    </section>
+
   </main>
 
+  <div class="ad">
+    解压必备资源➕V <strong>ziyouluoti8</strong> 获取
+  </div>
+
   <script>
-    let taskData = [];
+    const tasks = {
+      "PDF压缩": {
+        primary: "https://www.ilovepdf.com/zh-cn/compress_pdf",
+        backup: "https://tools.pdf24.org/zh/compress-pdf"
+      },
+      "PDF转Word": {
+        primary: "https://www.ilovepdf.com/zh-cn/pdf_to_word",
+        backup: "https://smallpdf.com/cn/pdf-to-word"
+      },
+      "Word转PDF": {
+        primary: "https://pdf.io/zh/word2pdf/",
+        backup: "https://www.ilovepdf.com/zh-cn/word_to_pdf"
+      },
+      "合并PDF": {
+        primary: "https://tools.pdf24.org/zh/merge-pdf",
+        backup: "https://tinywow.com/pdf/merge"
+      },
+      "分割PDF": {
+        primary: "https://tools.pdf24.org/zh/split-pdf",
+        backup: "https://smallpdf.com/cn/split-pdf"
+      },
+      "PDF电子签名": {
+        primary: "https://www.ilovepdf.com/zh-cn/sign-pdf",
+        backup: "https://tools.pdf24.org/zh/sign-pdf"
+      },
+      "PDF转JPG图片": {
+        primary: "https://tinywow.com/pdf/to-jpg",
+        backup: "https://www.ilovepdf.com/zh-cn/pdf_to_jpg"
+      },
+      "图片转PDF": {
+        primary: "https://tools.pdf24.org/zh/images-to-pdf",
+        backup: "https://www.ilovepdf.com/zh-cn/jpg_to_pdf"
+      },
 
-    async function loadTasks() {
-      try {
-        const response = await fetch("./tasks.json?v=" + Date.now());
-        const data = await response.json();
-        taskData = Array.isArray(data.tasks) ? data.tasks : [];
-      } catch (error) {
-        console.error("tasks.json 加载失败：", error);
+      "图片压缩": {
+        primary: "https://squoosh.app",
+        backup: "https://tinypng.com"
+      },
+      "图片在线抠图去背景": {
+        primary: "https://bgsub.cn",
+        backup: "https://www.photoroom.com/tools/background-remover"
+      },
+      "证件照换底色": {
+        primary: "https://tooleyes.com/tool/photo_background.html",
+        backup: "https://www.cutout.pro/zh-CN/passport-photo-maker"
+      },
+      "制作标准寸照": {
+        primary: "https://idphoto.fit",
+        backup: "https://www.cutout.pro/zh-CN/passport-photo-maker"
+      },
+      "图片裁剪与改尺寸": {
+        primary: "https://www.iloveimg.com/zh-cn/crop-image",
+        backup: "https://redketchup.io/image-resizer"
+      },
+      "图片文字提取OCR": {
+        primary: "https://ocr.space",
+        backup: "https://tool.lu/ocr/"
+      },
+      "HEIC转JPG": {
+        primary: "https://cloudconvert.com/heic-to-jpg",
+        backup: "https://heic.online"
+      },
+      "多图拼接长图": {
+        primary: "https://qtool.net/puzzle",
+        backup: "https://pinetools.com/merge-images"
+      },
+
+      "视频在线压缩": {
+        primary: "https://www.freeconvert.com/video-compressor",
+        backup: "https://www.veed.io/tools/video-compressor"
+      },
+      "视频剪切截取": {
+        primary: "https://online-video-cutter.com/zh/",
+        backup: "https://67tool.com/video-trim"
+      },
+      "视频截取转GIF": {
+        primary: "https://ezgif.com/video-to-gif",
+        backup: "https://cloudconvert.com/mp4-to-gif"
+      },
+      "视频提取音频": {
+        primary: "https://audio-extractor.net/zh/",
+        backup: "https://cloudconvert.com/mp4-to-mp3"
+      },
+      "视频静音去声音": {
+        primary: "https://online-video-cutter.com/zh/mute-video",
+        backup: "https://www.audioremover.com"
+      },
+      "视频自动加字幕": {
+        primary: "https://www.veed.io/tools/auto-subtitle-generator-online",
+        backup: "https://www.kapwing.com/subtitles"
+      },
+
+      "音频在线裁剪与修剪": {
+        primary: "https://mp3cut.net/zh/",
+        backup: "https://audiotrimmer.com"
+      },
+      "音频语音转文字": {
+        primary: "https://riverside.com/transcription",
+        backup: "https://www.feishu.cn/product/minutes"
+      },
+      "音频降噪与人声增强": {
+        primary: "https://podcast.adobe.com/enhance",
+        backup: "https://vocalremover.org/zh/"
+      },
+      "人声伴奏分离": {
+        primary: "https://vocalremover.org/zh/",
+        backup: "https://www.lalal.ai"
+      },
+      "文字转语音TTS": {
+        primary: "https://ttsmaker.cn",
+        backup: "https://tooleyes.com/tool/text_to_audio.html"
+      },
+      "音频格式转换": {
+        primary: "https://online-audio-converter.com/zh/",
+        backup: "https://cloudconvert.com/audio-converter"
+      },
+
+      "AI通用智能问答": {
+        primary: "https://chatgpt.com",
+        backup: "https://www.doubao.com/chat/"
+      },
+      "AI长文档与PDF阅读总结": {
+        primary: "https://kimi.moonshot.cn",
+        backup: "https://www.chatpdf.com"
+      },
+      "AI一键生成PPT演示文稿": {
+        primary: "https://gamma.app",
+        backup: "https://ppt.sankki.com"
+      },
+      "AI多语言高质量翻译": {
+        primary: "https://www.deepl.com/translator",
+        backup: "https://immersivetranslate.com"
+      },
+      "AI电商营销与社媒文案生成": {
+        primary: "https://www.copy.ai",
+        backup: "https://tongyi.aliyun.com"
+      },
+      "AI文本生成图像": {
+        primary: "https://www.bing.com/images/create",
+        backup: "https://rightbrain.art"
+      },
+
+      "在线制作思维导图": {
+        primary: "https://gitmind.cn/app/template",
+        backup: "https://naotu.baidu.com"
+      },
+      "在线制作流程图": {
+        primary: "https://app.diagrams.net",
+        backup: "https://www.processon.com"
+      },
+      "跨设备临时文件快传": {
+        primary: "https://snapdrop.net",
+        backup: "https://cowtransfer.com"
+      },
+      "文本去重与空白清洗": {
+        primary: "https://iamwawa.cn/quchong.html",
+        backup: "https://www.textcleaner.net"
+      },
+      "实时汇率换算与换算器": {
+        primary: "https://www.xe.com/currencyconverter/",
+        backup: "https://xcurrency.com"
+      },
+      "生成高强度随机密码": {
+        primary: "https://1password.com/password-generator/",
+        backup: "https://goonlinetools.com/password-generator/"
+      },
+
+      "英文语法检查与纠错": {
+        primary: "https://www.grammarly.com/grammar-check",
+        backup: "https://languagetool.org/zh-CN"
+      },
+      "学术论文查重与降重": {
+        primary: "https://www.paperyy.com",
+        backup: "https://www.paperpass.com"
+      },
+      "复杂数学公式识别转LaTeX": {
+        primary: "https://simpletex.cn/ai/latex_ocr",
+        backup: "https://snip.mathpix.com"
+      },
+      "参考文献引用格式生成": {
+        primary: "https://www.citethisforme.com",
+        backup: "https://www.mybib.com"
+      },
+
+      "JSON格式化与解析校验": {
+        primary: "https://www.json.cn",
+        backup: "https://jsonhero.io"
+      },
+      "正则表达式在线测试": {
+        primary: "https://regex101.com",
+        backup: "https://c.runoob.com/front-end/854/"
+      },
+      "SQL代码格式化美化": {
+        primary: "https://sqlformat.org",
+        backup: "https://geekstool.com/sql-format"
+      },
+      "生成美观代码分享截图": {
+        primary: "https://ray.so",
+        backup: "https://carbon.now.sh"
       }
-    }
+    };
 
-    function normalizeText(text) {
-      return String(text || "")
-        .toLowerCase()
-        .replace(/\s+/g, "")
-        .replace(/[，。！？、,.!?]/g, "");
-    }
+    function showTask(name) {
+      const data = tasks[name];
+      if (!data) return;
 
-    function scoreTask(query, task) {
-      const q = normalizeText(query);
-      if (!q) return 0;
+      document.getElementById("resultTitle").textContent = name;
+      document.getElementById("resultDesc").textContent =
+        "已为你匹配一个主推荐网址和一个备用入口。";
 
-      let score = 0;
+      document.getElementById("primaryLink").href = data.primary;
+      document.getElementById("backupLink").href = data.backup;
 
-      const title = normalizeText(task.title);
-      const description = normalizeText(task.description);
-      const keywords = Array.isArray(task.keywords) ? task.keywords : [];
+      const panel = document.getElementById("resultPanel");
+      panel.classList.add("active");
 
-      if (q === title) score += 100;
-      if (title.includes(q) || q.includes(title)) score += 50;
-
-      keywords.forEach((keyword) => {
-        const k = normalizeText(keyword);
-
-        if (q === k) score += 100;
-        else if (q.includes(k)) score += 50;
-        else if (k.includes(q)) score += 20;
+      panel.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
       });
-
-      if (description.includes(q)) score += 10;
-
-      return score;
     }
 
-    function findBestTask(query) {
-      let bestTask = null;
-      let bestScore = 0;
+    function searchTask() {
+      const keyword = document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
 
-      taskData.forEach((task) => {
-        const score = scoreTask(query, task);
+      if (!keyword) return;
 
-        if (score > bestScore) {
-          bestScore = score;
-          bestTask = task;
-        }
-      });
+      const names = Object.keys(tasks);
 
-      return bestScore > 0 ? bestTask : null;
-    }
+      const matched = names.find(name =>
+        name.toLowerCase().includes(keyword) ||
+        keyword.includes(name.toLowerCase())
+      );
 
-    function renderTask(task) {
-      const result = document.getElementById("result");
-      const emptyState = document.getElementById("emptyState");
-      const title = document.getElementById("resultTitle");
-      const desc = document.getElementById("resultDesc");
-      const toolList = document.getElementById("toolList");
-
-      emptyState.classList.remove("active");
-      result.classList.add("active");
-
-      title.textContent = task.title || "找到工具";
-      desc.textContent = task.description || "";
-
-      toolList.innerHTML = "";
-
-      const tools = Array.isArray(task.tools) ? task.tools : [];
-
-      if (tools.length === 0) {
-        toolList.innerHTML = `
-          <div class="tool-card">
-            这个任务已经识别成功，但暂时还没有配置网址。
-          </div>
-        `;
+      if (matched) {
+        showTask(matched);
         return;
       }
 
-      tools.forEach((tool, index) => {
-        const card = document.createElement("div");
-        card.className = "tool-card";
-
-        const linkClass = index === 0
-          ? "tool-link"
-          : "tool-link secondary";
-
-        card.innerHTML = `
-          <div class="tool-name">${escapeHtml(tool.name || "工具")}</div>
-
-          <div class="tool-meta">
-            ${escapeHtml(tool.free || "")}
-            ${tool.free && tool.login ? " · " : ""}
-            ${escapeHtml(tool.login || "")}
-          </div>
-
-          <a
-            class="${linkClass}"
-            href="${escapeAttribute(tool.url || "#")}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ${escapeHtml(tool.label || "打开工具")}
-          </a>
-        `;
-
-        toolList.appendChild(card);
-      });
-
-      result.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
+      alert("暂时没找到完全匹配的任务，可以先从下方分类里选择。");
     }
 
-    function showEmpty() {
-      document.getElementById("result").classList.remove("active");
-      document.getElementById("emptyState").classList.add("active");
-    }
-
-    function runSearch() {
-      const input = document.getElementById("searchInput");
-      const query = input.value.trim();
-
-      if (!query) return;
-
-      const task = findBestTask(query);
-
-      if (task) {
-        renderTask(task);
-      } else {
-        showEmpty();
+    document.getElementById("searchInput").addEventListener("keydown", e => {
+      if (e.key === "Enter") {
+        searchTask();
       }
-    }
-
-    function escapeHtml(text) {
-      return String(text)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-
-    function escapeAttribute(text) {
-      return escapeHtml(text);
-    }
-
-    document
-      .getElementById("searchBtn")
-      .addEventListener("click", runSearch);
-
-    document
-      .getElementById("searchInput")
-      .addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          runSearch();
-        }
-      });
-
-    loadTasks();
+    });
   </script>
+
 </body>
 </html>
