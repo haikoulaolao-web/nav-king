@@ -1,649 +1,1364 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NAV KING - 你现在要干什么？</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NAV KING - 按任务找网址">
+  <title>NAV KING · 导航王</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "PingFang SC",
+        "Microsoft YaHei",
+        sans-serif;
       background: #f5f7fb;
-      color: #1f2937;
-      padding-bottom: 90px;
+      color: #172033;
+      padding-bottom: 105px;
     }
 
     .container {
-      width: min(100%, 720px);
+      width: 100%;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 18px 14px 40px;
+      padding: 18px 14px 50px;
     }
+
+    /* =========================
+       顶部
+    ========================= */
 
     .hero {
-      background: linear-gradient(135deg, #111827, #1f2937);
-      border-radius: 22px;
-      padding: 22px 18px;
-      color: #fff;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+      background:
+        linear-gradient(
+          135deg,
+          #111827 0%,
+          #1f2937 100%
+        );
+      color: white;
+      border-radius: 24px;
+      padding: 24px 20px;
+      box-shadow:
+        0 14px 35px rgba(15, 23, 42, 0.16);
     }
 
-    .logo {
+    .brand {
       font-size: 13px;
-      opacity: 0.7;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: #60a5fa;
+      margin-bottom: 9px;
     }
 
     .hero h1 {
-      font-size: 27px;
+      margin: 0;
+      font-size: 30px;
       line-height: 1.25;
-      margin-bottom: 8px;
+      letter-spacing: -1px;
     }
 
-    .hero p {
-      font-size: 14px;
-      line-height: 1.6;
-      opacity: 0.82;
+    .hero-text {
+      margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #cbd5e1;
     }
 
-    .search-box {
+    /* =========================
+       搜索
+    ========================= */
+
+    .search {
+      margin-top: 18px;
       display: flex;
       gap: 8px;
-      margin-top: 16px;
     }
 
-    .search-box input {
+    .search input {
       flex: 1;
-      border: none;
+      min-width: 0;
+      height: 48px;
+      border: 0;
       outline: none;
-      padding: 13px 14px;
-      border-radius: 14px;
+      border-radius: 15px;
+      padding: 0 15px;
       font-size: 15px;
+      color: #111827;
+      background: white;
     }
 
-    .search-box button {
-      border: none;
+    .search button {
+      height: 48px;
+      border: 0;
+      border-radius: 15px;
+      padding: 0 17px;
       background: #2563eb;
-      color: #fff;
-      padding: 0 16px;
-      border-radius: 14px;
-      font-weight: 700;
+      color: white;
       font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
     }
 
-    .tip {
-      margin: 16px 3px 6px;
-      font-size: 13px;
+    .guide {
+      margin: 16px 4px 4px;
       color: #64748b;
+      font-size: 13px;
+      line-height: 1.6;
     }
 
-    .section {
+    /* =========================
+       分类区域
+    ========================= */
+
+    .category {
       margin-top: 16px;
-      border-radius: 20px;
-      padding: 16px;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      border-radius: 23px;
+      padding: 17px;
+      box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.055);
     }
 
-    .section-title {
+    .category-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 14px;
     }
 
-    .section-title h2 {
-      font-size: 18px;
+    .category-title {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 850;
+      letter-spacing: -0.3px;
     }
 
-    .section-title span {
+    .category-note {
       font-size: 12px;
-      opacity: 0.68;
+      color: #64748b;
+      white-space: nowrap;
     }
 
-    .grid {
+    .task-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
     .task {
-      background: rgba(255,255,255,0.82);
+      min-height: 64px;
       border: 1px solid rgba(255,255,255,0.9);
-      border-radius: 14px;
-      padding: 13px 10px;
+      background: rgba(255,255,255,0.82);
+      border-radius: 17px;
+      padding: 10px 7px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       text-align: center;
-      font-size: 14px;
-      font-weight: 700;
+      color: #172033;
+      font-size: 15px;
+      font-weight: 800;
+
       cursor: pointer;
-      transition: 0.18s ease;
-      box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
+      user-select: none;
+
+      box-shadow:
+        0 3px 12px rgba(15,23,42,0.04);
+
+      transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease;
     }
 
     .task:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
+      box-shadow: none;
     }
 
-    .pdf { background: #dbeafe; }
-    .image { background: #dcfce7; }
-    .video { background: #ede9fe; }
-    .audio { background: #ffedd5; }
-    .ai { background: #cffafe; }
-    .office { background: #fef3c7; }
-    .learning { background: #fce7f3; }
-    .pro { background: #e5e7eb; }
+    /* 分类颜色 */
 
-    .result-panel {
+    .pdf {
+      background:
+        linear-gradient(135deg, #dbeafe, #eff6ff);
+    }
+
+    .image {
+      background:
+        linear-gradient(135deg, #dcfce7, #f0fdf4);
+    }
+
+    .video {
+      background:
+        linear-gradient(135deg, #ede9fe, #f5f3ff);
+    }
+
+    .audio {
+      background:
+        linear-gradient(135deg, #ffedd5, #fff7ed);
+    }
+
+    .ai {
+      background:
+        linear-gradient(135deg, #cffafe, #ecfeff);
+    }
+
+    .office {
+      background:
+        linear-gradient(135deg, #fef3c7, #fffbeb);
+    }
+
+    .learning {
+      background:
+        linear-gradient(135deg, #fce7f3, #fdf2f8);
+    }
+
+    .pro {
+      background:
+        linear-gradient(135deg, #e5e7eb, #f3f4f6);
+    }
+
+    /* =========================
+       三入口结果区
+    ========================= */
+
+    .result {
       display: none;
-      margin-top: 16px;
-      background: #fff;
-      border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+      margin-top: 18px;
+      background: white;
+      border-radius: 23px;
+      padding: 19px;
+      box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.12);
     }
 
-    .result-panel.active {
+    .result.show {
       display: block;
     }
 
-    .result-title {
-      font-size: 16px;
+    .result-label {
+      font-size: 12px;
       font-weight: 800;
-      margin-bottom: 6px;
+      color: #2563eb;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
     }
 
-    .result-desc {
-      font-size: 13px;
+    .result h2 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .result-description {
+      margin: 7px 0 17px;
       color: #64748b;
-      margin-bottom: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .site-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .site {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      text-decoration: none;
+      color: #172033;
+
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      border-radius: 17px;
+      padding: 14px;
+
+      transition:
+        transform 0.12s ease,
+        background 0.12s ease;
+    }
+
+    .site:active {
+      transform: scale(0.98);
+      background: #f1f5f9;
+    }
+
+    .site-left {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .site-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 25px;
+      height: 25px;
+
+      border-radius: 8px;
+      background: #e0e7ff;
+      color: #3730a3;
+
+      font-size: 12px;
+      font-weight: 900;
+
+      margin-bottom: 7px;
+    }
+
+    .site-name {
+      font-size: 16px;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+
+    .site-domain {
+      margin-top: 3px;
+      color: #64748b;
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .site-open {
+      flex-shrink: 0;
+
+      background: #111827;
+      color: white;
+
+      border-radius: 11px;
+      padding: 9px 11px;
+
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .result-tip {
+      margin-top: 13px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e7eb;
+      color: #94a3b8;
+      font-size: 12px;
       line-height: 1.55;
     }
 
-    .result-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .result-actions a {
-      flex: 1;
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 12px;
-      padding: 12px 10px;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .primary {
-      background: #111827;
-      color: #fff;
-    }
-
-    .backup {
-      background: #f1f5f9;
-      color: #334155;
-    }
+    /* =========================
+       底部广告
+    ========================= */
 
     .ad {
       position: fixed;
       left: 50%;
       bottom: 10px;
       transform: translateX(-50%);
+
       width: calc(100% - 28px);
       max-width: 690px;
+
       background: #111827;
-      color: #fff;
-      border-radius: 16px;
-      padding: 13px 14px;
+      color: white;
+
+      border-radius: 18px;
+      padding: 14px 12px;
+
       text-align: center;
       font-size: 14px;
-      font-weight: 700;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
-      z-index: 99;
+      font-weight: 800;
+
+      box-shadow:
+        0 12px 30px rgba(15,23,42,0.25);
+
+      z-index: 100;
     }
 
     .ad strong {
       color: #fbbf24;
     }
 
-    @media (min-width: 560px) {
-      .grid {
+    /* =========================
+       平板
+    ========================= */
+
+    @media (min-width: 600px) {
+
+      .task-grid {
         grid-template-columns: repeat(3, 1fr);
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <main class="container">
+<main class="container">
 
-    <section class="hero">
-      <div class="logo">NAV KING</div>
-      <h1>你现在要干什么？</h1>
-      <p>
-        不用记网站名字。直接点你的需求，马上给你能用的网址。
-      </p>
+  <!-- 顶部 -->
 
-      <div class="search-box">
-        <input id="searchInput" placeholder="例如：压缩PDF、证件照、视频转文字" />
-        <button onclick="searchTask()">搜索</button>
-      </div>
-    </section>
+  <section class="hero">
 
-    <div class="tip">
-      先看分类，找不到再搜索。
+    <div class="brand">
+      NAV KING
     </div>
 
-    <section class="section pdf">
-      <div class="section-title">
-        <h2>📄 PDF / 文档</h2>
-        <span>办公高频</span>
-      </div>
+    <h1>
+      你现在要干什么？
+    </h1>
 
-      <div class="grid">
-        <div class="task" onclick="showTask('PDF压缩')">PDF压缩</div>
-        <div class="task" onclick="showTask('PDF转Word')">PDF转Word</div>
-        <div class="task" onclick="showTask('Word转PDF')">Word转PDF</div>
-        <div class="task" onclick="showTask('合并PDF')">合并PDF</div>
-        <div class="task" onclick="showTask('分割PDF')">拆分PDF</div>
-        <div class="task" onclick="showTask('PDF电子签名')">PDF签名</div>
-        <div class="task" onclick="showTask('PDF转JPG图片')">PDF转图片</div>
-        <div class="task" onclick="showTask('图片转PDF')">图片转PDF</div>
-      </div>
-    </section>
+    <div class="hero-text">
+      不用记网站名字。选择你要完成的任务，
+      再从 3 个网址入口中自己选择。
+    </div>
 
-    <section class="section image">
-      <div class="section-title">
-        <h2>🖼 图片</h2>
-        <span>手机最常用</span>
-      </div>
+    <div class="search">
 
-      <div class="grid">
-        <div class="task" onclick="showTask('图片压缩')">图片压缩</div>
-        <div class="task" onclick="showTask('图片在线抠图去背景')">一键抠图</div>
-        <div class="task" onclick="showTask('证件照换底色')">证件照换底色</div>
-        <div class="task" onclick="showTask('制作标准寸照')">制作证件照</div>
-        <div class="task" onclick="showTask('图片裁剪与改尺寸')">改尺寸</div>
-        <div class="task" onclick="showTask('图片文字提取OCR')">OCR提取文字</div>
-        <div class="task" onclick="showTask('HEIC转JPG')">HEIC转JPG</div>
-        <div class="task" onclick="showTask('多图拼接长图')">拼接长图</div>
-      </div>
-    </section>
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="例如：PDF压缩、抠图、AI做PPT"
+      >
 
-    <section class="section video">
-      <div class="section-title">
-        <h2>🎬 视频</h2>
-        <span>短视频 / 微信</span>
-      </div>
+      <button onclick="searchTask()">
+        搜索
+      </button>
 
-      <div class="grid">
-        <div class="task" onclick="showTask('视频在线压缩')">视频压缩</div>
-        <div class="task" onclick="showTask('视频剪切截取')">剪视频</div>
-        <div class="task" onclick="showTask('视频截取转GIF')">视频转GIF</div>
-        <div class="task" onclick="showTask('视频提取音频')">提取音频</div>
-        <div class="task" onclick="showTask('视频静音去声音')">视频静音</div>
-        <div class="task" onclick="showTask('视频自动加字幕')">自动字幕</div>
-      </div>
-    </section>
+    </div>
 
-    <section class="section audio">
-      <div class="section-title">
-        <h2>🎧 音频</h2>
-        <span>学习 / 创作</span>
-      </div>
+  </section>
 
-      <div class="grid">
-        <div class="task" onclick="showTask('音频在线裁剪与修剪')">音频裁剪</div>
-        <div class="task" onclick="showTask('音频语音转文字')">录音转文字</div>
-        <div class="task" onclick="showTask('音频降噪与人声增强')">音频降噪</div>
-        <div class="task" onclick="showTask('人声伴奏分离')">人声伴奏分离</div>
-        <div class="task" onclick="showTask('文字转语音TTS')">文字转语音</div>
-        <div class="task" onclick="showTask('音频格式转换')">音频转MP3</div>
-      </div>
-    </section>
-
-    <section class="section ai">
-      <div class="section-title">
-        <h2>🤖 AI</h2>
-        <span>效率工具</span>
-      </div>
-
-      <div class="grid">
-        <div class="task" onclick="showTask('AI通用智能问答')">AI问答</div>
-        <div class="task" onclick="showTask('AI长文档与PDF阅读总结')">PDF总结</div>
-        <div class="task" onclick="showTask('AI一键生成PPT演示文稿')">AI做PPT</div>
-        <div class="task" onclick="showTask('AI多语言高质量翻译')">AI翻译</div>
-        <div class="task" onclick="showTask('AI电商营销与社媒文案生成')">AI写文案</div>
-        <div class="task" onclick="showTask('AI文本生成图像')">AI画图</div>
-      </div>
-    </section>
-
-    <section class="section office">
-      <div class="section-title">
-        <h2>💼 办公 / 实用</h2>
-        <span>日常工具</span>
-      </div>
-
-      <div class="grid">
-        <div class="task" onclick="showTask('在线制作思维导图')">思维导图</div>
-        <div class="task" onclick="showTask('在线制作流程图')">流程图</div>
-        <div class="task" onclick="showTask('跨设备临时文件快传')">文件快传</div>
-        <div class="task" onclick="showTask('文本去重与空白清洗')">文本清洗</div>
-        <div class="task" onclick="showTask('实时汇率换算与换算器')">汇率换算</div>
-        <div class="task" onclick="showTask('生成高强度随机密码')">随机密码</div>
-      </div>
-    </section>
-
-    <section class="section learning">
-      <div class="section-title">
-        <h2>🎓 学习 / 求职</h2>
-        <span>学生刚需</span>
-      </div>
-
-      <div class="grid">
-        <div class="task" onclick="showTask('英文语法检查与纠错')">英文纠错</div>
-        <div class="task" onclick="showTask('学术论文查重与降重')">论文查重</div>
-        <div class="task" onclick="showTask('复杂数学公式识别转LaTeX')">公式转LaTeX</div>
-        <div class="task" onclick="showTask('参考文献引用格式生成')">参考文献生成</div>
-      </div>
-    </section>
-
-    <section class="section pro">
-      <div class="section-title">
-        <h2>🧰 Pro / 开发者</h2>
-        <span>专业工具</span>
-      </div>
-
-      <div class="grid">
-        <div class="task" onclick="showTask('JSON格式化与解析校验')">JSON格式化</div>
-        <div class="task" onclick="showTask('正则表达式在线测试')">正则测试</div>
-        <div class="task" onclick="showTask('SQL代码格式化美化')">SQL美化</div>
-        <div class="task" onclick="showTask('生成美观代码分享截图')">代码截图</div>
-      </div>
-    </section>
-
-    <section id="resultPanel" class="result-panel">
-      <div id="resultTitle" class="result-title">任务</div>
-      <div id="resultDesc" class="result-desc">推荐可用网址</div>
-
-      <div class="result-actions">
-        <a id="primaryLink" class="primary" href="#" target="_blank">
-          打开推荐网址
-        </a>
-
-        <a id="backupLink" class="backup" href="#" target="_blank">
-          备用入口
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <div class="ad">
-    解压必备资源➕V <strong>ziyouluoti8</strong> 获取
+  <div class="guide">
+    ↓ 直接按分类找任务。点击任务后，会显示 3 个可选网址。
   </div>
 
-  <script>
-    const tasks = {
-      "PDF压缩": {
-        primary: "https://www.ilovepdf.com/zh-cn/compress_pdf",
-        backup: "https://tools.pdf24.org/zh/compress-pdf"
-      },
-      "PDF转Word": {
-        primary: "https://www.ilovepdf.com/zh-cn/pdf_to_word",
-        backup: "https://smallpdf.com/cn/pdf-to-word"
-      },
-      "Word转PDF": {
-        primary: "https://pdf.io/zh/word2pdf/",
-        backup: "https://www.ilovepdf.com/zh-cn/word_to_pdf"
-      },
-      "合并PDF": {
-        primary: "https://tools.pdf24.org/zh/merge-pdf",
-        backup: "https://tinywow.com/pdf/merge"
-      },
-      "分割PDF": {
-        primary: "https://tools.pdf24.org/zh/split-pdf",
-        backup: "https://smallpdf.com/cn/split-pdf"
-      },
-      "PDF电子签名": {
-        primary: "https://www.ilovepdf.com/zh-cn/sign-pdf",
-        backup: "https://tools.pdf24.org/zh/sign-pdf"
-      },
-      "PDF转JPG图片": {
-        primary: "https://tinywow.com/pdf/to-jpg",
-        backup: "https://www.ilovepdf.com/zh-cn/pdf_to_jpg"
-      },
-      "图片转PDF": {
-        primary: "https://tools.pdf24.org/zh/images-to-pdf",
-        backup: "https://www.ilovepdf.com/zh-cn/jpg_to_pdf"
-      },
 
-      "图片压缩": {
-        primary: "https://squoosh.app",
-        backup: "https://tinypng.com"
-      },
-      "图片在线抠图去背景": {
-        primary: "https://bgsub.cn",
-        backup: "https://www.photoroom.com/tools/background-remover"
-      },
-      "证件照换底色": {
-        primary: "https://tooleyes.com/tool/photo_background.html",
-        backup: "https://www.cutout.pro/zh-CN/passport-photo-maker"
-      },
-      "制作标准寸照": {
-        primary: "https://idphoto.fit",
-        backup: "https://www.cutout.pro/zh-CN/passport-photo-maker"
-      },
-      "图片裁剪与改尺寸": {
-        primary: "https://www.iloveimg.com/zh-cn/crop-image",
-        backup: "https://redketchup.io/image-resizer"
-      },
-      "图片文字提取OCR": {
-        primary: "https://ocr.space",
-        backup: "https://tool.lu/ocr/"
-      },
-      "HEIC转JPG": {
-        primary: "https://cloudconvert.com/heic-to-jpg",
-        backup: "https://heic.online"
-      },
-      "多图拼接长图": {
-        primary: "https://qtool.net/puzzle",
-        backup: "https://pinetools.com/merge-images"
-      },
+  <!-- PDF -->
 
-      "视频在线压缩": {
-        primary: "https://www.freeconvert.com/video-compressor",
-        backup: "https://www.veed.io/tools/video-compressor"
-      },
-      "视频剪切截取": {
-        primary: "https://online-video-cutter.com/zh/",
-        backup: "https://67tool.com/video-trim"
-      },
-      "视频截取转GIF": {
-        primary: "https://ezgif.com/video-to-gif",
-        backup: "https://cloudconvert.com/mp4-to-gif"
-      },
-      "视频提取音频": {
-        primary: "https://audio-extractor.net/zh/",
-        backup: "https://cloudconvert.com/mp4-to-mp3"
-      },
-      "视频静音去声音": {
-        primary: "https://online-video-cutter.com/zh/mute-video",
-        backup: "https://www.audioremover.com"
-      },
-      "视频自动加字幕": {
-        primary: "https://www.veed.io/tools/auto-subtitle-generator-online",
-        backup: "https://www.kapwing.com/subtitles"
-      },
+  <section class="category pdf">
 
-      "音频在线裁剪与修剪": {
-        primary: "https://mp3cut.net/zh/",
-        backup: "https://audiotrimmer.com"
-      },
-      "音频语音转文字": {
-        primary: "https://riverside.com/transcription",
-        backup: "https://www.feishu.cn/product/minutes"
-      },
-      "音频降噪与人声增强": {
-        primary: "https://podcast.adobe.com/enhance",
-        backup: "https://vocalremover.org/zh/"
-      },
-      "人声伴奏分离": {
-        primary: "https://vocalremover.org/zh/",
-        backup: "https://www.lalal.ai"
-      },
-      "文字转语音TTS": {
-        primary: "https://ttsmaker.cn",
-        backup: "https://tooleyes.com/tool/text_to_audio.html"
-      },
-      "音频格式转换": {
-        primary: "https://online-audio-converter.com/zh/",
-        backup: "https://cloudconvert.com/audio-converter"
-      },
+    <div class="category-head">
+      <h2 class="category-title">📄 PDF / 文档</h2>
+      <div class="category-note">办公高频</div>
+    </div>
 
-      "AI通用智能问答": {
-        primary: "https://chatgpt.com",
-        backup: "https://www.doubao.com/chat/"
-      },
-      "AI长文档与PDF阅读总结": {
-        primary: "https://kimi.moonshot.cn",
-        backup: "https://www.chatpdf.com"
-      },
-      "AI一键生成PPT演示文稿": {
-        primary: "https://gamma.app",
-        backup: "https://ppt.sankki.com"
-      },
-      "AI多语言高质量翻译": {
-        primary: "https://www.deepl.com/translator",
-        backup: "https://immersivetranslate.com"
-      },
-      "AI电商营销与社媒文案生成": {
-        primary: "https://www.copy.ai",
-        backup: "https://tongyi.aliyun.com"
-      },
-      "AI文本生成图像": {
-        primary: "https://www.bing.com/images/create",
-        backup: "https://rightbrain.art"
-      },
+    <div class="task-grid">
 
-      "在线制作思维导图": {
-        primary: "https://gitmind.cn/app/template",
-        backup: "https://naotu.baidu.com"
-      },
-      "在线制作流程图": {
-        primary: "https://app.diagrams.net",
-        backup: "https://www.processon.com"
-      },
-      "跨设备临时文件快传": {
-        primary: "https://snapdrop.net",
-        backup: "https://cowtransfer.com"
-      },
-      "文本去重与空白清洗": {
-        primary: "https://iamwawa.cn/quchong.html",
-        backup: "https://www.textcleaner.net"
-      },
-      "实时汇率换算与换算器": {
-        primary: "https://www.xe.com/currencyconverter/",
-        backup: "https://xcurrency.com"
-      },
-      "生成高强度随机密码": {
-        primary: "https://1password.com/password-generator/",
-        backup: "https://goonlinetools.com/password-generator/"
-      },
+      <div class="task" onclick="showTask('PDF压缩')">
+        PDF压缩
+      </div>
 
-      "英文语法检查与纠错": {
-        primary: "https://www.grammarly.com/grammar-check",
-        backup: "https://languagetool.org/zh-CN"
-      },
-      "学术论文查重与降重": {
-        primary: "https://www.paperyy.com",
-        backup: "https://www.paperpass.com"
-      },
-      "复杂数学公式识别转LaTeX": {
-        primary: "https://simpletex.cn/ai/latex_ocr",
-        backup: "https://snip.mathpix.com"
-      },
-      "参考文献引用格式生成": {
-        primary: "https://www.citethisforme.com",
-        backup: "https://www.mybib.com"
-      },
+      <div class="task" onclick="showTask('PDF转Word')">
+        PDF转Word
+      </div>
 
-      "JSON格式化与解析校验": {
-        primary: "https://www.json.cn",
-        backup: "https://jsonhero.io"
-      },
-      "正则表达式在线测试": {
-        primary: "https://regex101.com",
-        backup: "https://c.runoob.com/front-end/854/"
-      },
-      "SQL代码格式化美化": {
-        primary: "https://sqlformat.org",
-        backup: "https://geekstool.com/sql-format"
-      },
-      "生成美观代码分享截图": {
-        primary: "https://ray.so",
-        backup: "https://carbon.now.sh"
+      <div class="task" onclick="showTask('Word转PDF')">
+        Word转PDF
+      </div>
+
+      <div class="task" onclick="showTask('合并PDF')">
+        合并PDF
+      </div>
+
+      <div class="task" onclick="showTask('分割PDF')">
+        拆分PDF
+      </div>
+
+      <div class="task" onclick="showTask('PDF签名')">
+        PDF签名
+      </div>
+
+      <div class="task" onclick="showTask('PDF转图片')">
+        PDF转图片
+      </div>
+
+      <div class="task" onclick="showTask('图片转PDF')">
+        图片转PDF
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 图片 -->
+
+  <section class="category image">
+
+    <div class="category-head">
+      <h2 class="category-title">🖼 图片</h2>
+      <div class="category-note">手机常用</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('图片压缩')">
+        图片压缩
+      </div>
+
+      <div class="task" onclick="showTask('一键抠图')">
+        一键抠图
+      </div>
+
+      <div class="task" onclick="showTask('证件照换底色')">
+        证件照换底色
+      </div>
+
+      <div class="task" onclick="showTask('制作证件照')">
+        制作证件照
+      </div>
+
+      <div class="task" onclick="showTask('图片改尺寸')">
+        图片改尺寸
+      </div>
+
+      <div class="task" onclick="showTask('OCR提取文字')">
+        OCR提取文字
+      </div>
+
+      <div class="task" onclick="showTask('HEIC转JPG')">
+        HEIC转JPG
+      </div>
+
+      <div class="task" onclick="showTask('拼接长图')">
+        拼接长图
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 视频 -->
+
+  <section class="category video">
+
+    <div class="category-head">
+      <h2 class="category-title">🎬 视频</h2>
+      <div class="category-note">短视频</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('视频压缩')">
+        视频压缩
+      </div>
+
+      <div class="task" onclick="showTask('视频剪切')">
+        视频剪切
+      </div>
+
+      <div class="task" onclick="showTask('视频转GIF')">
+        视频转GIF
+      </div>
+
+      <div class="task" onclick="showTask('视频提取音频')">
+        提取音频
+      </div>
+
+      <div class="task" onclick="showTask('视频静音')">
+        视频静音
+      </div>
+
+      <div class="task" onclick="showTask('视频自动字幕')">
+        自动字幕
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 音频 -->
+
+  <section class="category audio">
+
+    <div class="category-head">
+      <h2 class="category-title">🎧 音频</h2>
+      <div class="category-note">声音处理</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('音频裁剪')">
+        音频裁剪
+      </div>
+
+      <div class="task" onclick="showTask('录音转文字')">
+        录音转文字
+      </div>
+
+      <div class="task" onclick="showTask('音频降噪')">
+        音频降噪
+      </div>
+
+      <div class="task" onclick="showTask('人声伴奏分离')">
+        人声伴奏分离
+      </div>
+
+      <div class="task" onclick="showTask('文字转语音')">
+        文字转语音
+      </div>
+
+      <div class="task" onclick="showTask('音频转MP3')">
+        音频转MP3
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- AI -->
+
+  <section class="category ai">
+
+    <div class="category-head">
+      <h2 class="category-title">🤖 AI 工具</h2>
+      <div class="category-note">效率</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('AI问答')">
+        AI问答
+      </div>
+
+      <div class="task" onclick="showTask('AI总结PDF')">
+        AI总结PDF
+      </div>
+
+      <div class="task" onclick="showTask('AI做PPT')">
+        AI做PPT
+      </div>
+
+      <div class="task" onclick="showTask('AI翻译')">
+        AI翻译
+      </div>
+
+      <div class="task" onclick="showTask('AI写文案')">
+        AI写文案
+      </div>
+
+      <div class="task" onclick="showTask('AI画图')">
+        AI画图
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 办公 -->
+
+  <section class="category office">
+
+    <div class="category-head">
+      <h2 class="category-title">💼 办公 / 实用</h2>
+      <div class="category-note">日常工具</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('思维导图')">
+        思维导图
+      </div>
+
+      <div class="task" onclick="showTask('流程图')">
+        流程图
+      </div>
+
+      <div class="task" onclick="showTask('文件快传')">
+        文件快传
+      </div>
+
+      <div class="task" onclick="showTask('文本清洗')">
+        文本清洗
+      </div>
+
+      <div class="task" onclick="showTask('汇率换算')">
+        汇率换算
+      </div>
+
+      <div class="task" onclick="showTask('随机密码')">
+        随机密码
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 学习 -->
+
+  <section class="category learning">
+
+    <div class="category-head">
+      <h2 class="category-title">🎓 学习 / 求职</h2>
+      <div class="category-note">学生刚需</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('英文纠错')">
+        英文纠错
+      </div>
+
+      <div class="task" onclick="showTask('论文查重')">
+        论文查重
+      </div>
+
+      <div class="task" onclick="showTask('公式转LaTeX')">
+        公式转LaTeX
+      </div>
+
+      <div class="task" onclick="showTask('参考文献生成')">
+        参考文献生成
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 开发者 -->
+
+  <section class="category pro">
+
+    <div class="category-head">
+      <h2 class="category-title">🧰 Pro / 开发者</h2>
+      <div class="category-note">专业工具</div>
+    </div>
+
+    <div class="task-grid">
+
+      <div class="task" onclick="showTask('JSON格式化')">
+        JSON格式化
+      </div>
+
+      <div class="task" onclick="showTask('正则测试')">
+        正则测试
+      </div>
+
+      <div class="task" onclick="showTask('SQL美化')">
+        SQL美化
+      </div>
+
+      <div class="task" onclick="showTask('代码截图')">
+        代码截图
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 点击任务后显示 -->
+
+  <section id="result" class="result">
+
+    <div class="result-label">
+      网址入口
+    </div>
+
+    <h2 id="resultTitle">
+      任务名称
+    </h2>
+
+    <div class="result-description">
+      下面提供 3 个入口。网址、服务和可用性可能变化，
+      请根据自己的网络和需求选择。
+    </div>
+
+    <div id="siteList" class="site-list">
+    </div>
+
+    <div class="result-tip">
+      NAV KING 只负责导航，不上传、保存或处理你的文件。
+      文件实际由你选择的网站处理。
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- 底部广告 -->
+
+<div class="ad">
+  解压必备资源 ➕ V
+  <strong>ziyouluoti8</strong>
+  获取
+</div>
+
+
+<script>
+
+  /* =====================================
+     任务数据库
+     每个任务最多显示 3 个入口
+  ===================================== */
+
+  const tasks = {
+
+    /* PDF */
+
+    "PDF压缩": [
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/compress_pdf"],
+      ["PDF24", "https://tools.pdf24.org/zh/compress-pdf"],
+      ["Smallpdf", "https://smallpdf.com/cn/compress-pdf"]
+    ],
+
+    "PDF转Word": [
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/pdf_to_word"],
+      ["Smallpdf", "https://smallpdf.com/cn/pdf-to-word"],
+      ["PDF24", "https://tools.pdf24.org/zh/pdf-to-word"]
+    ],
+
+    "Word转PDF": [
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/word_to_pdf"],
+      ["PDF24", "https://tools.pdf24.org/zh/word-to-pdf"],
+      ["PDF.io", "https://pdf.io/zh/word2pdf/"]
+    ],
+
+    "合并PDF": [
+      ["PDF24", "https://tools.pdf24.org/zh/merge-pdf"],
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/merge_pdf"],
+      ["Smallpdf", "https://smallpdf.com/cn/merge-pdf"]
+    ],
+
+    "分割PDF": [
+      ["PDF24", "https://tools.pdf24.org/zh/split-pdf"],
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/split_pdf"],
+      ["Smallpdf", "https://smallpdf.com/cn/split-pdf"]
+    ],
+
+    "PDF签名": [
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/sign-pdf"],
+      ["PDF24", "https://tools.pdf24.org/zh/sign-pdf"],
+      ["Smallpdf", "https://smallpdf.com/cn/sign-pdf"]
+    ],
+
+    "PDF转图片": [
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/pdf_to_jpg"],
+      ["PDF24", "https://tools.pdf24.org/zh/pdf-to-images"],
+      ["Smallpdf", "https://smallpdf.com/cn/pdf-to-jpg"]
+    ],
+
+    "图片转PDF": [
+      ["PDF24", "https://tools.pdf24.org/zh/images-to-pdf"],
+      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/jpg_to_pdf"],
+      ["Smallpdf", "https://smallpdf.com/cn/jpg-to-pdf"]
+    ],
+
+
+    /* 图片 */
+
+    "图片压缩": [
+      ["Squoosh", "https://squoosh.app/"],
+      ["TinyPNG", "https://tinypng.com/"],
+      ["iLoveIMG", "https://www.iloveimg.com/zh-cn/compress-image"]
+    ],
+
+    "一键抠图": [
+      ["BgSub", "https://bgsub.cn/"],
+      ["PhotoRoom", "https://www.photoroom.com/tools/background-remover"],
+      ["Remove.bg", "https://www.remove.bg/zh"]
+    ],
+
+    "证件照换底色": [
+      ["Cutout.Pro", "https://www.cutout.pro/zh-CN/passport-photo-maker"],
+      ["BgSub", "https://bgsub.cn/"],
+      ["PhotoRoom", "https://www.photoroom.com/tools/background-remover"]
+    ],
+
+    "制作证件照": [
+      ["IDPhoto", "https://idphoto.fit/"],
+      ["Cutout.Pro", "https://www.cutout.pro/zh-CN/passport-photo-maker"],
+      ["PhotoRoom", "https://www.photoroom.com/"]
+    ],
+
+    "图片改尺寸": [
+      ["iLoveIMG", "https://www.iloveimg.com/zh-cn/resize-image"],
+      ["RedKetchup", "https://redketchup.io/image-resizer"],
+      ["Squoosh", "https://squoosh.app/"]
+    ],
+
+    "OCR提取文字": [
+      ["OCR.Space", "https://ocr.space/"],
+      ["Tool.lu OCR", "https://tool.lu/ocr/"],
+      ["Google Lens", "https://lens.google.com/"]
+    ],
+
+    "HEIC转JPG": [
+      ["CloudConvert", "https://cloudconvert.com/heic-to-jpg"],
+      ["HEIC Online", "https://heic.online/"],
+      ["FreeConvert", "https://www.freeconvert.com/heic-to-jpg"]
+    ],
+
+    "拼接长图": [
+      ["PineTools", "https://pinetools.com/merge-images"],
+      ["QuickPictureTools", "https://www.quickpicturetools.com/"],
+      ["Canva", "https://www.canva.com/"]
+    ],
+
+
+    /* 视频 */
+
+    "视频压缩": [
+      ["FreeConvert", "https://www.freeconvert.com/video-compressor"],
+      ["VEED", "https://www.veed.io/tools/video-compressor"],
+      ["Clideo", "https://clideo.com/compress-video"]
+    ],
+
+    "视频剪切": [
+      ["123apps", "https://online-video-cutter.com/zh/"],
+      ["Clideo", "https://clideo.com/cut-video"],
+      ["VEED", "https://www.veed.io/tools/video-cutter"]
+    ],
+
+    "视频转GIF": [
+      ["EZGIF", "https://ezgif.com/video-to-gif"],
+      ["CloudConvert", "https://cloudconvert.com/mp4-to-gif"],
+      ["FreeConvert", "https://www.freeconvert.com/video-to-gif"]
+    ],
+
+    "视频提取音频": [
+      ["123apps", "https://audio-extractor.net/zh/"],
+      ["CloudConvert", "https://cloudconvert.com/mp4-to-mp3"],
+      ["FreeConvert", "https://www.freeconvert.com/mp4-to-mp3"]
+    ],
+
+    "视频静音": [
+      ["123apps", "https://online-video-cutter.com/zh/mute-video"],
+      ["Clideo", "https://clideo.com/mute-video"],
+      ["VEED", "https://www.veed.io/tools/remove-audio-from-video"]
+    ],
+
+    "视频自动字幕": [
+      ["VEED", "https://www.veed.io/tools/auto-subtitle-generator-online"],
+      ["Kapwing", "https://www.kapwing.com/subtitles"],
+      ["Canva", "https://www.canva.com/features/auto-caption/"]
+    ],
+
+
+    /* 音频 */
+
+    "音频裁剪": [
+      ["MP3Cut", "https://mp3cut.net/zh/"],
+      ["AudioTrimmer", "https://audiotrimmer.com/"],
+      ["Clideo", "https://clideo.com/cut-audio"]
+    ],
+
+    "录音转文字": [
+      ["Riverside", "https://riverside.fm/transcription"],
+      ["飞书妙记", "https://www.feishu.cn/product/minutes"],
+      ["TurboScribe", "https://turboscribe.ai/"]
+    ],
+
+    "音频降噪": [
+      ["Adobe Enhance", "https://podcast.adobe.com/enhance"],
+      ["VEED", "https://www.veed.io/tools/remove-background-noise-from-audio"],
+      ["Media.io", "https://www.media.io/noise-reducer.html"]
+    ],
+
+    "人声伴奏分离": [
+      ["Vocal Remover", "https://vocalremover.org/zh/"],
+      ["LALAL.AI", "https://www.lalal.ai/"],
+      ["Moises", "https://moises.ai/"]
+    ],
+
+    "文字转语音": [
+      ["TTSMaker", "https://ttsmaker.com/zh-cn"],
+      ["TTSMaker CN", "https://ttsmaker.cn/"],
+      ["NaturalReader", "https://www.naturalreaders.com/online/"]
+    ],
+
+    "音频转MP3": [
+      ["123apps", "https://online-audio-converter.com/zh/"],
+      ["CloudConvert", "https://cloudconvert.com/audio-converter"],
+      ["FreeConvert", "https://www.freeconvert.com/audio-converter"]
+    ],
+
+
+    /* AI */
+
+    "AI问答": [
+      ["ChatGPT", "https://chatgpt.com/"],
+      ["豆包", "https://www.doubao.com/chat/"],
+      ["Kimi", "https://kimi.moonshot.cn/"]
+    ],
+
+    "AI总结PDF": [
+      ["Kimi", "https://kimi.moonshot.cn/"],
+      ["ChatPDF", "https://www.chatpdf.com/"],
+      ["ChatGPT", "https://chatgpt.com/"]
+    ],
+
+    "AI做PPT": [
+      ["Gamma", "https://gamma.app/"],
+      ["Canva", "https://www.canva.com/"],
+      ["SlidesAI", "https://www.slidesai.io/"]
+    ],
+
+    "AI翻译": [
+      ["DeepL", "https://www.deepl.com/translator"],
+      ["沉浸式翻译", "https://immersivetranslate.com/"],
+      ["Google 翻译", "https://translate.google.com/"]
+    ],
+
+    "AI写文案": [
+      ["ChatGPT", "https://chatgpt.com/"],
+      ["豆包", "https://www.doubao.com/chat/"],
+      ["通义", "https://tongyi.aliyun.com/"]
+    ],
+
+    "AI画图": [
+      ["Bing Image Creator", "https://www.bing.com/images/create"],
+      ["Canva", "https://www.canva.com/ai-image-generator/"],
+      ["Adobe Firefly", "https://firefly.adobe.com/"]
+    ],
+
+
+    /* 办公 */
+
+    "思维导图": [
+      ["GitMind", "https://gitmind.cn/"],
+      ["ProcessOn", "https://www.processon.com/"],
+      ["Canva", "https://www.canva.com/graphs/mind-maps/"]
+    ],
+
+    "流程图": [
+      ["diagrams.net", "https://app.diagrams.net/"],
+      ["ProcessOn", "https://www.processon.com/"],
+      ["Lucidchart", "https://www.lucidchart.com/"]
+    ],
+
+    "文件快传": [
+      ["PairDrop", "https://pairdrop.net/"],
+      ["奶牛快传", "https://cowtransfer.com/"],
+      ["Wormhole", "https://wormhole.app/"]
+    ],
+
+    "文本清洗": [
+      ["TextCleaner", "https://www.textcleaner.net/"],
+      ["Tool.lu", "https://tool.lu/"],
+      ["CyberChef", "https://gchq.github.io/CyberChef/"]
+    ],
+
+    "汇率换算": [
+      ["XE", "https://www.xe.com/currencyconverter/"],
+      ["Wise", "https://wise.com/currency-converter/"],
+      ["X-Rates", "https://www.x-rates.com/calculator/"]
+    ],
+
+    "随机密码": [
+      ["1Password", "https://1password.com/password-generator/"],
+      ["Bitwarden", "https://bitwarden.com/password-generator/"],
+      ["LastPass", "https://www.lastpass.com/features/password-generator"]
+    ],
+
+
+    /* 学习 */
+
+    "英文纠错": [
+      ["Grammarly", "https://www.grammarly.com/grammar-check"],
+      ["LanguageTool", "https://languagetool.org/"],
+      ["QuillBot", "https://quillbot.com/grammar-check"]
+    ],
+
+    "论文查重": [
+      ["PaperYY", "https://www.paperyy.com/"],
+      ["PaperPass", "https://www.paperpass.com/"],
+      ["Turnitin", "https://www.turnitin.com/"]
+    ],
+
+    "公式转LaTeX": [
+      ["SimpleTex", "https://simpletex.cn/"],
+      ["Mathpix", "https://mathpix.com/"],
+      ["CodeCogs", "https://editor.codecogs.com/"]
+    ],
+
+    "参考文献生成": [
+      ["MyBib", "https://www.mybib.com/"],
+      ["Cite This For Me", "https://www.citethisforme.com/"],
+      ["ZoteroBib", "https://zbib.org/"]
+    ],
+
+
+    /* 开发者 */
+
+    "JSON格式化": [
+      ["JSON.cn", "https://www.json.cn/"],
+      ["JSON Hero", "https://jsonhero.io/"],
+      ["JSONLint", "https://jsonlint.com/"]
+    ],
+
+    "正则测试": [
+      ["Regex101", "https://regex101.com/"],
+      ["RegExr", "https://regexr.com/"],
+      ["菜鸟工具", "https://c.runoob.com/front-end/854/"]
+    ],
+
+    "SQL美化": [
+      ["SQLFormat", "https://sqlformat.org/"],
+      ["Instant SQL Formatter", "https://www.dpriver.com/pp/sqlformat.htm"],
+      ["Poor SQL", "https://poorsql.com/"]
+    ],
+
+    "代码截图": [
+      ["Ray.so", "https://ray.so/"],
+      ["Carbon", "https://carbon.now.sh/"],
+      ["Codeimg", "https://codeimg.io/"]
+    ]
+
+  };
+
+
+  /* =====================================
+     显示任务的三个网址
+  ===================================== */
+
+  function showTask(taskName) {
+
+    const sites = tasks[taskName];
+
+    if (!sites) {
+      alert("这个任务的入口还在整理中。");
+      return;
+    }
+
+    const result =
+      document.getElementById("result");
+
+    const title =
+      document.getElementById("resultTitle");
+
+    const list =
+      document.getElementById("siteList");
+
+    title.textContent = taskName;
+
+    list.innerHTML = "";
+
+    sites.forEach(function(site, index) {
+
+      const name = site[0];
+      const url = site[1];
+
+      let domain = "";
+
+      try {
+        domain = new URL(url).hostname;
+      } catch (e) {
+        domain = url;
       }
-    };
 
-    function showTask(name) {
-      const data = tasks[name];
-      if (!data) return;
+      const link =
+        document.createElement("a");
 
-      document.getElementById("resultTitle").textContent = name;
-      document.getElementById("resultDesc").textContent =
-        "已为你匹配一个主推荐网址和一个备用入口。";
+      link.className = "site";
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
 
-      document.getElementById("primaryLink").href = data.primary;
-      document.getElementById("backupLink").href = data.backup;
+      link.innerHTML = `
+        <div class="site-left">
 
-      const panel = document.getElementById("resultPanel");
-      panel.classList.add("active");
+          <div class="site-number">
+            ${index + 1}
+          </div>
 
-      panel.scrollIntoView({
+          <div class="site-name">
+            ${name}
+          </div>
+
+          <div class="site-domain">
+            ${domain}
+          </div>
+
+        </div>
+
+        <div class="site-open">
+          打开
+        </div>
+      `;
+
+      list.appendChild(link);
+
+    });
+
+    result.classList.add("show");
+
+    setTimeout(function() {
+
+      result.scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
+
+    }, 80);
+
+  }
+
+
+  /* =====================================
+     搜索
+  ===================================== */
+
+  function searchTask() {
+
+    const input =
+      document.getElementById("searchInput");
+
+    const keyword =
+      input.value.trim().toLowerCase();
+
+    if (!keyword) {
+      return;
     }
 
-    function searchTask() {
-      const keyword = document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toLowerCase();
+    const taskNames =
+      Object.keys(tasks);
 
-      if (!keyword) return;
+    let matched = null;
 
-      const names = Object.keys(tasks);
 
-      const matched = names.find(name =>
-        name.toLowerCase().includes(keyword) ||
-        keyword.includes(name.toLowerCase())
+    /* 第一层：直接包含 */
+
+    matched = taskNames.find(function(name) {
+
+      const lowerName =
+        name.toLowerCase();
+
+      return (
+        lowerName.includes(keyword) ||
+        keyword.includes(lowerName)
       );
 
-      if (matched) {
-        showTask(matched);
-        return;
+    });
+
+
+    /* 第二层：简单关键词 */
+
+    if (!matched) {
+
+      const aliases = {
+
+        "压缩pdf": "PDF压缩",
+        "pdf太大": "PDF压缩",
+        "pdf小一点": "PDF压缩",
+
+        "抠图": "一键抠图",
+        "去背景": "一键抠图",
+        "透明背景": "一键抠图",
+
+        "证件照": "制作证件照",
+        "换底色": "证件照换底色",
+
+        "提取文字": "OCR提取文字",
+        "图片文字": "OCR提取文字",
+        "ocr": "OCR提取文字",
+
+        "视频太大": "视频压缩",
+        "压视频": "视频压缩",
+
+        "视频转音频": "视频提取音频",
+        "提取音乐": "视频提取音频",
+
+        "语音转文字": "录音转文字",
+        "录音文字": "录音转文字",
+
+        "伴奏": "人声伴奏分离",
+        "去人声": "人声伴奏分离",
+
+        "ppt": "AI做PPT",
+        "做ppt": "AI做PPT",
+
+        "翻译": "AI翻译",
+
+        "画图": "AI画图",
+        "生成图片": "AI画图",
+
+        "思维导图": "思维导图",
+
+        "论文": "论文查重",
+        "查重": "论文查重",
+
+        "latex": "公式转LaTeX",
+
+        "json": "JSON格式化",
+
+        "正则": "正则测试",
+
+        "sql": "SQL美化"
+
+      };
+
+
+      for (const key in aliases) {
+
+        if (
+          keyword.includes(key) ||
+          key.includes(keyword)
+        ) {
+
+          matched = aliases[key];
+          break;
+
+        }
+
       }
 
-      alert("暂时没找到完全匹配的任务，可以先从下方分类里选择。");
     }
 
-    document.getElementById("searchInput").addEventListener("keydown", e => {
-      if (e.key === "Enter") {
-        searchTask();
+
+    if (matched) {
+
+      showTask(matched);
+
+    } else {
+
+      alert(
+        "暂时没有找到完全匹配的任务。\n\n请从下方分类中选择。"
+      );
+
+    }
+
+  }
+
+
+  /* 回车搜索 */
+
+  document
+    .getElementById("searchInput")
+    .addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Enter") {
+          searchTask();
+        }
+
       }
-    });
-  </script>
+    );
+
+</script>
 
 </body>
 </html>
