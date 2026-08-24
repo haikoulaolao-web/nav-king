@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NAV KING - 按任务找网址">
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <meta
+    name="description"
+    content="NAV KING 导航王 - 不用记网站名字，按你要完成的任务直接找工具网址。"
+  />
+
+  <meta name="theme-color" content="#111827" />
+
   <title>NAV KING · 导航王</title>
 
   <style>
+
     * {
       box-sizing: border-box;
     }
@@ -17,6 +29,7 @@
 
     body {
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -24,381 +37,912 @@
         "PingFang SC",
         "Microsoft YaHei",
         sans-serif;
+
       background: #f5f7fb;
       color: #172033;
-      padding-bottom: 105px;
+
+      padding-bottom:
+        calc(
+          104px + env(safe-area-inset-bottom)
+        );
     }
+
+
+    button,
+    input {
+      font: inherit;
+    }
+
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
 
     .container {
       width: 100%;
-      max-width: 720px;
+      max-width: 760px;
+
       margin: 0 auto;
-      padding: 18px 14px 50px;
+
+      padding:
+        16px
+        14px
+        50px;
     }
 
-    /* =========================
-       顶部
-    ========================= */
+
+    /* ========================================
+       HERO
+    ======================================== */
 
     .hero {
+      position: relative;
+      overflow: hidden;
+
       background:
         linear-gradient(
           135deg,
           #111827 0%,
-          #1f2937 100%
+          #172033 55%,
+          #1e293b 100%
         );
-      color: white;
-      border-radius: 24px;
-      padding: 24px 20px;
+
+      color: #ffffff;
+
+      border-radius: 26px;
+
+      padding:
+        25px
+        20px
+        21px;
+
       box-shadow:
-        0 14px 35px rgba(15, 23, 42, 0.16);
+        0 16px 40px
+        rgba(15, 23, 42, 0.18);
     }
 
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      right: -85px;
+      top: -85px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(37, 99, 235, 0.18);
+    }
+
+
     .brand {
+      position: relative;
+      z-index: 1;
+
       font-size: 13px;
-      font-weight: 800;
+
+      font-weight: 900;
+
       letter-spacing: 3px;
+
       color: #60a5fa;
+
       margin-bottom: 9px;
     }
 
+
     .hero h1 {
+      position: relative;
+      z-index: 1;
+
       margin: 0;
+
       font-size: 30px;
-      line-height: 1.25;
+
+      line-height: 1.2;
+
       letter-spacing: -1px;
     }
 
+
     .hero-text {
+      position: relative;
+      z-index: 1;
+
       margin-top: 10px;
-      font-size: 15px;
-      line-height: 1.65;
+
       color: #cbd5e1;
+
+      font-size: 14px;
+
+      line-height: 1.7;
     }
 
-    /* =========================
-       搜索
-    ========================= */
+
+    .hero-tags {
+      position: relative;
+      z-index: 1;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-top: 14px;
+    }
+
+
+    .hero-tag {
+      padding:
+        6px
+        9px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255, 255, 255, 0.09);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+      color: #e2e8f0;
+
+      font-size: 11px;
+
+      font-weight: 700;
+    }
+
+
+    /* ========================================
+       SEARCH
+    ======================================== */
 
     .search {
+      position: relative;
+      z-index: 2;
+
       margin-top: 18px;
+
       display: flex;
+
       gap: 8px;
     }
 
+
     .search input {
       flex: 1;
+
       min-width: 0;
-      height: 48px;
+
+      height: 50px;
+
       border: 0;
+
       outline: none;
+
       border-radius: 15px;
-      padding: 0 15px;
-      font-size: 15px;
-      color: #111827;
+
+      padding:
+        0
+        15px;
+
       background: white;
+
+      color: #111827;
+
+      font-size: 15px;
+
+      box-shadow:
+        inset 0 0 0 1px
+        rgba(148, 163, 184, 0.1);
     }
 
+
     .search button {
-      height: 48px;
+      height: 50px;
+
       border: 0;
+
       border-radius: 15px;
-      padding: 0 17px;
+
+      padding:
+        0
+        17px;
+
       background: #2563eb;
+
       color: white;
+
       font-size: 14px;
-      font-weight: 800;
+
+      font-weight: 900;
+
       cursor: pointer;
     }
 
+
     .guide {
-      margin: 16px 4px 4px;
+      margin:
+        15px
+        4px
+        4px;
+
       color: #64748b;
+
       font-size: 13px;
-      line-height: 1.6;
+
+      line-height: 1.7;
     }
 
-    /* =========================
-       分类区域
-    ========================= */
+
+    /* ========================================
+       CATEGORY NAV
+    ======================================== */
+
+    .quick-nav {
+      display: flex;
+
+      gap: 8px;
+
+      overflow-x: auto;
+
+      margin-top: 14px;
+
+      padding-bottom: 3px;
+
+      scrollbar-width: none;
+    }
+
+
+    .quick-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .quick-nav button {
+      flex-shrink: 0;
+
+      border: 0;
+
+      padding:
+        9px
+        12px;
+
+      border-radius: 999px;
+
+      background: white;
+
+      color: #475569;
+
+      box-shadow:
+        0 4px 14px
+        rgba(15, 23, 42, 0.05);
+
+      font-size: 12px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+
+    /* ========================================
+       CATEGORY
+    ======================================== */
 
     .category {
       margin-top: 16px;
-      border-radius: 23px;
+
+      border-radius: 24px;
+
       padding: 17px;
+
       box-shadow:
-        0 8px 25px rgba(15, 23, 42, 0.055);
+        0 9px 26px
+        rgba(15, 23, 42, 0.055);
     }
+
 
     .category-head {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 10px;
+
       margin-bottom: 14px;
     }
 
+
+    .category-title-wrap {
+      min-width: 0;
+    }
+
+
     .category-title {
       margin: 0;
+
       font-size: 19px;
-      font-weight: 850;
+
+      font-weight: 900;
+
       letter-spacing: -0.3px;
     }
 
+
     .category-note {
-      font-size: 12px;
+      margin-top: 3px;
+
       color: #64748b;
-      white-space: nowrap;
+
+      font-size: 11px;
     }
+
+
+    .expand-button {
+      flex-shrink: 0;
+
+      border: 0;
+
+      background:
+        rgba(255, 255, 255, 0.74);
+
+      color: #475569;
+
+      border-radius: 999px;
+
+      padding:
+        8px
+        11px;
+
+      font-size: 12px;
+
+      font-weight: 850;
+
+      cursor: pointer;
+    }
+
 
     .task-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
       gap: 10px;
     }
 
+
     .task {
       min-height: 64px;
-      border: 1px solid rgba(255,255,255,0.9);
-      background: rgba(255,255,255,0.82);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.92);
+
+      background:
+        rgba(255, 255, 255, 0.83);
+
       border-radius: 17px;
-      padding: 10px 7px;
+
+      padding:
+        11px
+        8px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       text-align: center;
+
       color: #172033;
-      font-size: 15px;
-      font-weight: 800;
+
+      font-size: 14px;
+
+      line-height: 1.35;
+
+      font-weight: 850;
 
       cursor: pointer;
+
       user-select: none;
 
+      -webkit-tap-highlight-color:
+        transparent;
+
       box-shadow:
-        0 3px 12px rgba(15,23,42,0.04);
+        0 3px 12px
+        rgba(15, 23, 42, 0.04);
 
       transition:
         transform 0.12s ease,
         box-shadow 0.12s ease;
     }
 
+
     .task:active {
-      transform: scale(0.96);
+      transform: scale(0.965);
+
       box-shadow: none;
     }
 
-    /* 分类颜色 */
+
+    .task.extra-task {
+      display: none;
+    }
+
+
+    .category.expanded
+    .task.extra-task {
+      display: flex;
+    }
+
+
+    /* ========================================
+       CATEGORY COLORS
+    ======================================== */
 
     .pdf {
       background:
-        linear-gradient(135deg, #dbeafe, #eff6ff);
+        linear-gradient(
+          135deg,
+          #dbeafe,
+          #eff6ff
+        );
     }
+
 
     .image {
       background:
-        linear-gradient(135deg, #dcfce7, #f0fdf4);
+        linear-gradient(
+          135deg,
+          #dcfce7,
+          #f0fdf4
+        );
     }
+
 
     .video {
       background:
-        linear-gradient(135deg, #ede9fe, #f5f3ff);
+        linear-gradient(
+          135deg,
+          #ede9fe,
+          #f5f3ff
+        );
     }
+
 
     .audio {
       background:
-        linear-gradient(135deg, #ffedd5, #fff7ed);
+        linear-gradient(
+          135deg,
+          #ffedd5,
+          #fff7ed
+        );
     }
+
 
     .ai {
       background:
-        linear-gradient(135deg, #cffafe, #ecfeff);
+        linear-gradient(
+          135deg,
+          #cffafe,
+          #ecfeff
+        );
     }
+
 
     .office {
       background:
-        linear-gradient(135deg, #fef3c7, #fffbeb);
+        linear-gradient(
+          135deg,
+          #fef3c7,
+          #fffbeb
+        );
     }
+
 
     .learning {
       background:
-        linear-gradient(135deg, #fce7f3, #fdf2f8);
+        linear-gradient(
+          135deg,
+          #fce7f3,
+          #fdf2f8
+        );
     }
+
 
     .pro {
       background:
-        linear-gradient(135deg, #e5e7eb, #f3f4f6);
+        linear-gradient(
+          135deg,
+          #e5e7eb,
+          #f8fafc
+        );
     }
 
-    /* =========================
-       三入口结果区
-    ========================= */
+
+    /* ========================================
+       RESULT
+    ======================================== */
 
     .result {
       display: none;
+
       margin-top: 18px;
+
       background: white;
-      border-radius: 23px;
+
+      border-radius: 24px;
+
       padding: 19px;
+
       box-shadow:
-        0 12px 35px rgba(15, 23, 42, 0.12);
+        0 14px 38px
+        rgba(15, 23, 42, 0.13);
+
+      border:
+        1px solid
+        rgba(226, 232, 240, 0.8);
     }
+
 
     .result.show {
       display: block;
     }
 
+
     .result-label {
-      font-size: 12px;
-      font-weight: 800;
+      display: inline-flex;
+
+      align-items: center;
+
+      border-radius: 999px;
+
+      padding:
+        6px
+        9px;
+
+      background: #eff6ff;
+
       color: #2563eb;
-      letter-spacing: 1px;
-      margin-bottom: 7px;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 0.7px;
+
+      margin-bottom: 10px;
     }
+
 
     .result h2 {
       margin: 0;
+
       font-size: 21px;
+
       line-height: 1.35;
     }
 
+
     .result-description {
-      margin: 7px 0 17px;
+      margin:
+        7px
+        0
+        16px;
+
       color: #64748b;
-      font-size: 14px;
-      line-height: 1.6;
+
+      font-size: 13px;
+
+      line-height: 1.65;
     }
+
 
     .site-list {
       display: flex;
+
       flex-direction: column;
+
       gap: 10px;
     }
 
+
     .site {
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
+
       gap: 12px;
 
       text-decoration: none;
+
       color: #172033;
 
-      border: 1px solid #e2e8f0;
+      border:
+        1px solid
+        #e2e8f0;
+
       background: #f8fafc;
+
       border-radius: 17px;
+
       padding: 14px;
 
-      transition:
-        transform 0.12s ease,
-        background 0.12s ease;
+      -webkit-tap-highlight-color:
+        transparent;
     }
 
+
     .site:active {
-      transform: scale(0.98);
+      transform: scale(0.985);
+
       background: #f1f5f9;
     }
 
+
     .site-left {
-      min-width: 0;
       flex: 1;
+
+      min-width: 0;
     }
+
+
+    .site-top {
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+    }
+
 
     .site-number {
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
-      width: 25px;
-      height: 25px;
+      width: 26px;
+
+      height: 26px;
 
       border-radius: 8px;
+
       background: #e0e7ff;
+
       color: #3730a3;
 
       font-size: 12px;
+
       font-weight: 900;
 
-      margin-bottom: 7px;
+      flex-shrink: 0;
     }
 
+
     .site-name {
-      font-size: 16px;
-      font-weight: 850;
+      font-size: 15px;
+
+      font-weight: 900;
+
       line-height: 1.35;
     }
 
+
     .site-domain {
-      margin-top: 3px;
+      margin-top: 5px;
+
+      padding-left: 34px;
+
       color: #64748b;
+
       font-size: 12px;
+
       word-break: break-all;
     }
+
 
     .site-open {
       flex-shrink: 0;
 
       background: #111827;
+
       color: white;
 
       border-radius: 11px;
-      padding: 9px 11px;
 
-      font-size: 13px;
-      font-weight: 800;
+      padding:
+        9px
+        11px;
+
+      font-size: 12px;
+
+      font-weight: 850;
     }
+
 
     .result-tip {
       margin-top: 13px;
+
       padding-top: 12px;
-      border-top: 1px solid #e5e7eb;
+
+      border-top:
+        1px solid
+        #e5e7eb;
+
       color: #94a3b8;
+
+      font-size: 11px;
+
+      line-height: 1.65;
+    }
+
+
+    .privacy-warning {
+      margin-bottom: 13px;
+
+      padding:
+        11px
+        12px;
+
+      border-radius: 13px;
+
+      background: #fff7ed;
+
+      color: #9a3412;
+
       font-size: 12px;
+
       line-height: 1.55;
     }
 
-    /* =========================
-       底部广告
-    ========================= */
+
+    /* ========================================
+       SEARCH EMPTY
+    ======================================== */
+
+    .search-empty {
+      display: none;
+
+      margin-top: 16px;
+
+      padding: 16px;
+
+      background: white;
+
+      border-radius: 18px;
+
+      text-align: center;
+
+      color: #64748b;
+
+      font-size: 13px;
+
+      box-shadow:
+        0 5px 18px
+        rgba(15,23,42,0.05);
+    }
+
+
+    .search-empty.show {
+      display: block;
+    }
+
+
+    /* ========================================
+       FOOTER INFO
+    ======================================== */
+
+    .footer-info {
+      margin-top: 22px;
+
+      padding:
+        18px
+        16px;
+
+      border-radius: 20px;
+
+      background: white;
+
+      color: #64748b;
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      box-shadow:
+        0 7px 20px
+        rgba(15,23,42,0.04);
+    }
+
+
+    .footer-info strong {
+      color: #172033;
+    }
+
+
+    /* ========================================
+       AD
+    ======================================== */
 
     .ad {
       position: fixed;
-      left: 50%;
-      bottom: 10px;
-      transform: translateX(-50%);
 
-      width: calc(100% - 28px);
-      max-width: 690px;
+      left: 50%;
+
+      bottom:
+        calc(
+          9px +
+          env(safe-area-inset-bottom)
+        );
+
+      transform:
+        translateX(-50%);
+
+      width:
+        calc(100% - 28px);
+
+      max-width: 720px;
 
       background: #111827;
+
       color: white;
 
       border-radius: 18px;
-      padding: 14px 12px;
+
+      padding:
+        14px
+        12px;
 
       text-align: center;
+
       font-size: 14px;
-      font-weight: 800;
+
+      font-weight: 850;
 
       box-shadow:
-        0 12px 30px rgba(15,23,42,0.25);
+        0 12px 32px
+        rgba(15, 23, 42, 0.27);
 
-      z-index: 100;
+      z-index: 1000;
     }
+
 
     .ad strong {
       color: #fbbf24;
     }
 
-    /* =========================
-       平板
-    ========================= */
+
+    /* ========================================
+       TABLET
+    ======================================== */
 
     @media (min-width: 600px) {
 
       .task-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns:
+          repeat(3, minmax(0,1fr));
+      }
+
+      .hero h1 {
+        font-size: 33px;
       }
 
     }
@@ -406,11 +950,16 @@
   </style>
 </head>
 
+
 <body>
+
 
 <main class="container">
 
-  <!-- 顶部 -->
+
+  <!-- =====================================
+       HERO
+  ====================================== -->
 
   <section class="hero">
 
@@ -423,8 +972,16 @@
     </h1>
 
     <div class="hero-text">
-      不用记网站名字。选择你要完成的任务，
+      不用记网站名字。
+      按任务找工具，点击需求后，
       再从 3 个网址入口中自己选择。
+    </div>
+
+    <div class="hero-tags">
+      <span class="hero-tag">手机优先</span>
+      <span class="hero-tag">无需安装</span>
+      <span class="hero-tag">任务直达</span>
+      <span class="hero-tag">3 个备用入口</span>
     </div>
 
     <div class="search">
@@ -432,8 +989,9 @@
       <input
         id="searchInput"
         type="text"
-        placeholder="例如：PDF压缩、抠图、AI做PPT"
-      >
+        autocomplete="off"
+        placeholder="例如：PDF压缩、证件照、录音转文字"
+      />
 
       <button onclick="searchTask()">
         搜索
@@ -443,362 +1001,130 @@
 
   </section>
 
+
   <div class="guide">
-    ↓ 直接按分类找任务。点击任务后，会显示 3 个可选网址。
+    ↓ 不知道网站叫什么没关系。
+    直接按下面的分类找你要完成的事情。
   </div>
 
 
-  <!-- PDF -->
+  <div class="quick-nav">
 
-  <section class="category pdf">
+    <button onclick="jumpTo('cat-pdf')">
+      📄 PDF
+    </button>
 
-    <div class="category-head">
-      <h2 class="category-title">📄 PDF / 文档</h2>
-      <div class="category-note">办公高频</div>
-    </div>
+    <button onclick="jumpTo('cat-image')">
+      🖼 图片
+    </button>
 
-    <div class="task-grid">
+    <button onclick="jumpTo('cat-video')">
+      🎬 视频
+    </button>
 
-      <div class="task" onclick="showTask('PDF压缩')">
-        PDF压缩
-      </div>
+    <button onclick="jumpTo('cat-audio')">
+      🎧 音频
+    </button>
 
-      <div class="task" onclick="showTask('PDF转Word')">
-        PDF转Word
-      </div>
+    <button onclick="jumpTo('cat-ai')">
+      🤖 AI
+    </button>
 
-      <div class="task" onclick="showTask('Word转PDF')">
-        Word转PDF
-      </div>
+    <button onclick="jumpTo('cat-office')">
+      💼 办公
+    </button>
 
-      <div class="task" onclick="showTask('合并PDF')">
-        合并PDF
-      </div>
+    <button onclick="jumpTo('cat-learning')">
+      🎓 学习
+    </button>
 
-      <div class="task" onclick="showTask('分割PDF')">
-        拆分PDF
-      </div>
+    <button onclick="jumpTo('cat-pro')">
+      🧰 Pro
+    </button>
 
-      <div class="task" onclick="showTask('PDF签名')">
-        PDF签名
-      </div>
+  </div>
 
-      <div class="task" onclick="showTask('PDF转图片')">
-        PDF转图片
-      </div>
 
-      <div class="task" onclick="showTask('图片转PDF')">
-        图片转PDF
-      </div>
+  <div
+    id="categoryContainer">
+  </div>
 
-    </div>
 
-  </section>
+  <div
+    id="searchEmpty"
+    class="search-empty">
 
+    没找到完全对应的任务。<br>
+    可以换一种简单说法，
+    或直接从上面的分类中选择。
 
-  <!-- 图片 -->
+  </div>
 
-  <section class="category image">
 
-    <div class="category-head">
-      <h2 class="category-title">🖼 图片</h2>
-      <div class="category-note">手机常用</div>
-    </div>
+  <!-- =====================================
+       RESULT
+  ====================================== -->
 
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('图片压缩')">
-        图片压缩
-      </div>
-
-      <div class="task" onclick="showTask('一键抠图')">
-        一键抠图
-      </div>
-
-      <div class="task" onclick="showTask('证件照换底色')">
-        证件照换底色
-      </div>
-
-      <div class="task" onclick="showTask('制作证件照')">
-        制作证件照
-      </div>
-
-      <div class="task" onclick="showTask('图片改尺寸')">
-        图片改尺寸
-      </div>
-
-      <div class="task" onclick="showTask('OCR提取文字')">
-        OCR提取文字
-      </div>
-
-      <div class="task" onclick="showTask('HEIC转JPG')">
-        HEIC转JPG
-      </div>
-
-      <div class="task" onclick="showTask('拼接长图')">
-        拼接长图
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- 视频 -->
-
-  <section class="category video">
-
-    <div class="category-head">
-      <h2 class="category-title">🎬 视频</h2>
-      <div class="category-note">短视频</div>
-    </div>
-
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('视频压缩')">
-        视频压缩
-      </div>
-
-      <div class="task" onclick="showTask('视频剪切')">
-        视频剪切
-      </div>
-
-      <div class="task" onclick="showTask('视频转GIF')">
-        视频转GIF
-      </div>
-
-      <div class="task" onclick="showTask('视频提取音频')">
-        提取音频
-      </div>
-
-      <div class="task" onclick="showTask('视频静音')">
-        视频静音
-      </div>
-
-      <div class="task" onclick="showTask('视频自动字幕')">
-        自动字幕
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- 音频 -->
-
-  <section class="category audio">
-
-    <div class="category-head">
-      <h2 class="category-title">🎧 音频</h2>
-      <div class="category-note">声音处理</div>
-    </div>
-
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('音频裁剪')">
-        音频裁剪
-      </div>
-
-      <div class="task" onclick="showTask('录音转文字')">
-        录音转文字
-      </div>
-
-      <div class="task" onclick="showTask('音频降噪')">
-        音频降噪
-      </div>
-
-      <div class="task" onclick="showTask('人声伴奏分离')">
-        人声伴奏分离
-      </div>
-
-      <div class="task" onclick="showTask('文字转语音')">
-        文字转语音
-      </div>
-
-      <div class="task" onclick="showTask('音频转MP3')">
-        音频转MP3
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- AI -->
-
-  <section class="category ai">
-
-    <div class="category-head">
-      <h2 class="category-title">🤖 AI 工具</h2>
-      <div class="category-note">效率</div>
-    </div>
-
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('AI问答')">
-        AI问答
-      </div>
-
-      <div class="task" onclick="showTask('AI总结PDF')">
-        AI总结PDF
-      </div>
-
-      <div class="task" onclick="showTask('AI做PPT')">
-        AI做PPT
-      </div>
-
-      <div class="task" onclick="showTask('AI翻译')">
-        AI翻译
-      </div>
-
-      <div class="task" onclick="showTask('AI写文案')">
-        AI写文案
-      </div>
-
-      <div class="task" onclick="showTask('AI画图')">
-        AI画图
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- 办公 -->
-
-  <section class="category office">
-
-    <div class="category-head">
-      <h2 class="category-title">💼 办公 / 实用</h2>
-      <div class="category-note">日常工具</div>
-    </div>
-
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('思维导图')">
-        思维导图
-      </div>
-
-      <div class="task" onclick="showTask('流程图')">
-        流程图
-      </div>
-
-      <div class="task" onclick="showTask('文件快传')">
-        文件快传
-      </div>
-
-      <div class="task" onclick="showTask('文本清洗')">
-        文本清洗
-      </div>
-
-      <div class="task" onclick="showTask('汇率换算')">
-        汇率换算
-      </div>
-
-      <div class="task" onclick="showTask('随机密码')">
-        随机密码
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- 学习 -->
-
-  <section class="category learning">
-
-    <div class="category-head">
-      <h2 class="category-title">🎓 学习 / 求职</h2>
-      <div class="category-note">学生刚需</div>
-    </div>
-
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('英文纠错')">
-        英文纠错
-      </div>
-
-      <div class="task" onclick="showTask('论文查重')">
-        论文查重
-      </div>
-
-      <div class="task" onclick="showTask('公式转LaTeX')">
-        公式转LaTeX
-      </div>
-
-      <div class="task" onclick="showTask('参考文献生成')">
-        参考文献生成
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- 开发者 -->
-
-  <section class="category pro">
-
-    <div class="category-head">
-      <h2 class="category-title">🧰 Pro / 开发者</h2>
-      <div class="category-note">专业工具</div>
-    </div>
-
-    <div class="task-grid">
-
-      <div class="task" onclick="showTask('JSON格式化')">
-        JSON格式化
-      </div>
-
-      <div class="task" onclick="showTask('正则测试')">
-        正则测试
-      </div>
-
-      <div class="task" onclick="showTask('SQL美化')">
-        SQL美化
-      </div>
-
-      <div class="task" onclick="showTask('代码截图')">
-        代码截图
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- 点击任务后显示 -->
-
-  <section id="result" class="result">
+  <section
+    id="result"
+    class="result">
 
     <div class="result-label">
-      网址入口
+      3 个网址入口
     </div>
 
     <h2 id="resultTitle">
       任务名称
     </h2>
 
-    <div class="result-description">
-      下面提供 3 个入口。网址、服务和可用性可能变化，
-      请根据自己的网络和需求选择。
+    <div
+      id="privacyWarning"
+      class="privacy-warning"
+      style="display:none;">
     </div>
 
-    <div id="siteList" class="site-list">
+    <div class="result-description">
+      不强制推荐某一个网站。
+      你可以查看域名后，自主选择任意入口打开。
+    </div>
+
+    <div
+      id="siteList"
+      class="site-list">
     </div>
 
     <div class="result-tip">
-      NAV KING 只负责导航，不上传、保存或处理你的文件。
-      文件实际由你选择的网站处理。
+      NAV KING 是导航页，
+      不接收、不上传、不保存你的文件。
+      你点击后会离开本站，
+      文件及账号操作由对应第三方网站负责。
     </div>
 
   </section>
 
+
+  <div class="footer-info">
+
+    <strong>NAV KING 的使用逻辑：</strong><br>
+
+    你只需要知道自己想完成什么，
+    不需要记住工具品牌。
+
+    <br><br>
+
+    首页展示高频需求；
+    点击「查看全部」可展开完整分类；
+    搜索框会同时搜索隐藏任务。
+
+  </div>
+
+
 </main>
 
 
-<!-- 底部广告 -->
+<!-- =====================================
+     AD
+====================================== -->
 
 <div class="ad">
   解压必备资源 ➕ V
@@ -809,556 +1135,3648 @@
 
 <script>
 
-  /* =====================================
-     任务数据库
-     每个任务最多显示 3 个入口
-  ===================================== */
-
-  const tasks = {
-
-    /* PDF */
-
-    "PDF压缩": [
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/compress_pdf"],
-      ["PDF24", "https://tools.pdf24.org/zh/compress-pdf"],
-      ["Smallpdf", "https://smallpdf.com/cn/compress-pdf"]
-    ],
-
-    "PDF转Word": [
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/pdf_to_word"],
-      ["Smallpdf", "https://smallpdf.com/cn/pdf-to-word"],
-      ["PDF24", "https://tools.pdf24.org/zh/pdf-to-word"]
-    ],
-
-    "Word转PDF": [
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/word_to_pdf"],
-      ["PDF24", "https://tools.pdf24.org/zh/word-to-pdf"],
-      ["PDF.io", "https://pdf.io/zh/word2pdf/"]
-    ],
-
-    "合并PDF": [
-      ["PDF24", "https://tools.pdf24.org/zh/merge-pdf"],
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/merge_pdf"],
-      ["Smallpdf", "https://smallpdf.com/cn/merge-pdf"]
-    ],
-
-    "分割PDF": [
-      ["PDF24", "https://tools.pdf24.org/zh/split-pdf"],
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/split_pdf"],
-      ["Smallpdf", "https://smallpdf.com/cn/split-pdf"]
-    ],
-
-    "PDF签名": [
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/sign-pdf"],
-      ["PDF24", "https://tools.pdf24.org/zh/sign-pdf"],
-      ["Smallpdf", "https://smallpdf.com/cn/sign-pdf"]
-    ],
-
-    "PDF转图片": [
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/pdf_to_jpg"],
-      ["PDF24", "https://tools.pdf24.org/zh/pdf-to-images"],
-      ["Smallpdf", "https://smallpdf.com/cn/pdf-to-jpg"]
-    ],
-
-    "图片转PDF": [
-      ["PDF24", "https://tools.pdf24.org/zh/images-to-pdf"],
-      ["iLovePDF", "https://www.ilovepdf.com/zh-cn/jpg_to_pdf"],
-      ["Smallpdf", "https://smallpdf.com/cn/jpg-to-pdf"]
-    ],
-
-
-    /* 图片 */
-
-    "图片压缩": [
-      ["Squoosh", "https://squoosh.app/"],
-      ["TinyPNG", "https://tinypng.com/"],
-      ["iLoveIMG", "https://www.iloveimg.com/zh-cn/compress-image"]
-    ],
-
-    "一键抠图": [
-      ["BgSub", "https://bgsub.cn/"],
-      ["PhotoRoom", "https://www.photoroom.com/tools/background-remover"],
-      ["Remove.bg", "https://www.remove.bg/zh"]
-    ],
-
-    "证件照换底色": [
-      ["Cutout.Pro", "https://www.cutout.pro/zh-CN/passport-photo-maker"],
-      ["BgSub", "https://bgsub.cn/"],
-      ["PhotoRoom", "https://www.photoroom.com/tools/background-remover"]
-    ],
-
-    "制作证件照": [
-      ["IDPhoto", "https://idphoto.fit/"],
-      ["Cutout.Pro", "https://www.cutout.pro/zh-CN/passport-photo-maker"],
-      ["PhotoRoom", "https://www.photoroom.com/"]
-    ],
-
-    "图片改尺寸": [
-      ["iLoveIMG", "https://www.iloveimg.com/zh-cn/resize-image"],
-      ["RedKetchup", "https://redketchup.io/image-resizer"],
-      ["Squoosh", "https://squoosh.app/"]
-    ],
-
-    "OCR提取文字": [
-      ["OCR.Space", "https://ocr.space/"],
-      ["Tool.lu OCR", "https://tool.lu/ocr/"],
-      ["Google Lens", "https://lens.google.com/"]
-    ],
-
-    "HEIC转JPG": [
-      ["CloudConvert", "https://cloudconvert.com/heic-to-jpg"],
-      ["HEIC Online", "https://heic.online/"],
-      ["FreeConvert", "https://www.freeconvert.com/heic-to-jpg"]
-    ],
-
-    "拼接长图": [
-      ["PineTools", "https://pinetools.com/merge-images"],
-      ["QuickPictureTools", "https://www.quickpicturetools.com/"],
-      ["Canva", "https://www.canva.com/"]
-    ],
-
-
-    /* 视频 */
-
-    "视频压缩": [
-      ["FreeConvert", "https://www.freeconvert.com/video-compressor"],
-      ["VEED", "https://www.veed.io/tools/video-compressor"],
-      ["Clideo", "https://clideo.com/compress-video"]
-    ],
-
-    "视频剪切": [
-      ["123apps", "https://online-video-cutter.com/zh/"],
-      ["Clideo", "https://clideo.com/cut-video"],
-      ["VEED", "https://www.veed.io/tools/video-cutter"]
-    ],
-
-    "视频转GIF": [
-      ["EZGIF", "https://ezgif.com/video-to-gif"],
-      ["CloudConvert", "https://cloudconvert.com/mp4-to-gif"],
-      ["FreeConvert", "https://www.freeconvert.com/video-to-gif"]
-    ],
-
-    "视频提取音频": [
-      ["123apps", "https://audio-extractor.net/zh/"],
-      ["CloudConvert", "https://cloudconvert.com/mp4-to-mp3"],
-      ["FreeConvert", "https://www.freeconvert.com/mp4-to-mp3"]
-    ],
-
-    "视频静音": [
-      ["123apps", "https://online-video-cutter.com/zh/mute-video"],
-      ["Clideo", "https://clideo.com/mute-video"],
-      ["VEED", "https://www.veed.io/tools/remove-audio-from-video"]
-    ],
-
-    "视频自动字幕": [
-      ["VEED", "https://www.veed.io/tools/auto-subtitle-generator-online"],
-      ["Kapwing", "https://www.kapwing.com/subtitles"],
-      ["Canva", "https://www.canva.com/features/auto-caption/"]
-    ],
-
-
-    /* 音频 */
-
-    "音频裁剪": [
-      ["MP3Cut", "https://mp3cut.net/zh/"],
-      ["AudioTrimmer", "https://audiotrimmer.com/"],
-      ["Clideo", "https://clideo.com/cut-audio"]
-    ],
-
-    "录音转文字": [
-      ["Riverside", "https://riverside.fm/transcription"],
-      ["飞书妙记", "https://www.feishu.cn/product/minutes"],
-      ["TurboScribe", "https://turboscribe.ai/"]
-    ],
-
-    "音频降噪": [
-      ["Adobe Enhance", "https://podcast.adobe.com/enhance"],
-      ["VEED", "https://www.veed.io/tools/remove-background-noise-from-audio"],
-      ["Media.io", "https://www.media.io/noise-reducer.html"]
-    ],
-
-    "人声伴奏分离": [
-      ["Vocal Remover", "https://vocalremover.org/zh/"],
-      ["LALAL.AI", "https://www.lalal.ai/"],
-      ["Moises", "https://moises.ai/"]
-    ],
-
-    "文字转语音": [
-      ["TTSMaker", "https://ttsmaker.com/zh-cn"],
-      ["TTSMaker CN", "https://ttsmaker.cn/"],
-      ["NaturalReader", "https://www.naturalreaders.com/online/"]
-    ],
-
-    "音频转MP3": [
-      ["123apps", "https://online-audio-converter.com/zh/"],
-      ["CloudConvert", "https://cloudconvert.com/audio-converter"],
-      ["FreeConvert", "https://www.freeconvert.com/audio-converter"]
-    ],
-
-
-    /* AI */
-
-    "AI问答": [
-      ["ChatGPT", "https://chatgpt.com/"],
-      ["豆包", "https://www.doubao.com/chat/"],
-      ["Kimi", "https://kimi.moonshot.cn/"]
-    ],
-
-    "AI总结PDF": [
-      ["Kimi", "https://kimi.moonshot.cn/"],
-      ["ChatPDF", "https://www.chatpdf.com/"],
-      ["ChatGPT", "https://chatgpt.com/"]
-    ],
-
-    "AI做PPT": [
-      ["Gamma", "https://gamma.app/"],
-      ["Canva", "https://www.canva.com/"],
-      ["SlidesAI", "https://www.slidesai.io/"]
-    ],
-
-    "AI翻译": [
-      ["DeepL", "https://www.deepl.com/translator"],
-      ["沉浸式翻译", "https://immersivetranslate.com/"],
-      ["Google 翻译", "https://translate.google.com/"]
-    ],
-
-    "AI写文案": [
-      ["ChatGPT", "https://chatgpt.com/"],
-      ["豆包", "https://www.doubao.com/chat/"],
-      ["通义", "https://tongyi.aliyun.com/"]
-    ],
-
-    "AI画图": [
-      ["Bing Image Creator", "https://www.bing.com/images/create"],
-      ["Canva", "https://www.canva.com/ai-image-generator/"],
-      ["Adobe Firefly", "https://firefly.adobe.com/"]
-    ],
-
-
-    /* 办公 */
-
-    "思维导图": [
-      ["GitMind", "https://gitmind.cn/"],
-      ["ProcessOn", "https://www.processon.com/"],
-      ["Canva", "https://www.canva.com/graphs/mind-maps/"]
-    ],
-
-    "流程图": [
-      ["diagrams.net", "https://app.diagrams.net/"],
-      ["ProcessOn", "https://www.processon.com/"],
-      ["Lucidchart", "https://www.lucidchart.com/"]
-    ],
-
-    "文件快传": [
-      ["PairDrop", "https://pairdrop.net/"],
-      ["奶牛快传", "https://cowtransfer.com/"],
-      ["Wormhole", "https://wormhole.app/"]
-    ],
-
-    "文本清洗": [
-      ["TextCleaner", "https://www.textcleaner.net/"],
-      ["Tool.lu", "https://tool.lu/"],
-      ["CyberChef", "https://gchq.github.io/CyberChef/"]
-    ],
-
-    "汇率换算": [
-      ["XE", "https://www.xe.com/currencyconverter/"],
-      ["Wise", "https://wise.com/currency-converter/"],
-      ["X-Rates", "https://www.x-rates.com/calculator/"]
-    ],
-
-    "随机密码": [
-      ["1Password", "https://1password.com/password-generator/"],
-      ["Bitwarden", "https://bitwarden.com/password-generator/"],
-      ["LastPass", "https://www.lastpass.com/features/password-generator"]
-    ],
-
-
-    /* 学习 */
-
-    "英文纠错": [
-      ["Grammarly", "https://www.grammarly.com/grammar-check"],
-      ["LanguageTool", "https://languagetool.org/"],
-      ["QuillBot", "https://quillbot.com/grammar-check"]
-    ],
-
-    "论文查重": [
-      ["PaperYY", "https://www.paperyy.com/"],
-      ["PaperPass", "https://www.paperpass.com/"],
-      ["Turnitin", "https://www.turnitin.com/"]
-    ],
-
-    "公式转LaTeX": [
-      ["SimpleTex", "https://simpletex.cn/"],
-      ["Mathpix", "https://mathpix.com/"],
-      ["CodeCogs", "https://editor.codecogs.com/"]
-    ],
-
-    "参考文献生成": [
-      ["MyBib", "https://www.mybib.com/"],
-      ["Cite This For Me", "https://www.citethisforme.com/"],
-      ["ZoteroBib", "https://zbib.org/"]
-    ],
-
-
-    /* 开发者 */
-
-    "JSON格式化": [
-      ["JSON.cn", "https://www.json.cn/"],
-      ["JSON Hero", "https://jsonhero.io/"],
-      ["JSONLint", "https://jsonlint.com/"]
-    ],
-
-    "正则测试": [
-      ["Regex101", "https://regex101.com/"],
-      ["RegExr", "https://regexr.com/"],
-      ["菜鸟工具", "https://c.runoob.com/front-end/854/"]
-    ],
-
-    "SQL美化": [
-      ["SQLFormat", "https://sqlformat.org/"],
-      ["Instant SQL Formatter", "https://www.dpriver.com/pp/sqlformat.htm"],
-      ["Poor SQL", "https://poorsql.com/"]
-    ],
-
-    "代码截图": [
-      ["Ray.so", "https://ray.so/"],
-      ["Carbon", "https://carbon.now.sh/"],
-      ["Codeimg", "https://codeimg.io/"]
-    ]
-
-  };
-
-
-  /* =====================================
-     显示任务的三个网址
-  ===================================== */
-
-  function showTask(taskName) {
-
-    const sites = tasks[taskName];
-
-    if (!sites) {
-      alert("这个任务的入口还在整理中。");
-      return;
-    }
-
-    const result =
-      document.getElementById("result");
-
-    const title =
-      document.getElementById("resultTitle");
-
-    const list =
-      document.getElementById("siteList");
-
-    title.textContent = taskName;
-
-    list.innerHTML = "";
-
-    sites.forEach(function(site, index) {
-
-      const name = site[0];
-      const url = site[1];
-
-      let domain = "";
-
-      try {
-        domain = new URL(url).hostname;
-      } catch (e) {
-        domain = url;
+
+/* ==================================================
+   数据结构
+================================================== */
+
+
+const categoryData = [
+
+
+  /* ==================================================
+     PDF
+  ================================================== */
+
+  {
+    id: "cat-pdf",
+
+    className: "pdf",
+
+    icon: "📄",
+
+    name: "PDF / 文档",
+
+    note: "转换 · 压缩 · 编辑",
+
+    featuredCount: 8,
+
+    tasks: [
+
+      {
+        name: "PDF压缩",
+
+        aliases: [
+          "pdf太大",
+          "pdf变小",
+          "压缩pdf",
+          "微信pdf太大"
+        ],
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/compress_pdf"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/compress-pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/compress-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF转Word",
+
+        aliases: [
+          "pdf转doc",
+          "pdf转docx",
+          "pdf可编辑",
+          "修改pdf文字"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/pdf_to_word"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/pdf-to-word"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/pdf-to-word"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Word转PDF",
+
+        aliases: [
+          "doc转pdf",
+          "docx转pdf",
+          "word变pdf"
+        ],
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/word_to_pdf"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/word-to-pdf"
+          ],
+          [
+            "PDF.io",
+            "https://pdf.io/zh/word2pdf/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "合并PDF",
+
+        aliases: [
+          "多个pdf合并",
+          "pdf拼接",
+          "pdf合成"
+        ],
+
+        sites: [
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/merge-pdf"
+          ],
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/merge_pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/merge-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "分割PDF",
+
+        aliases: [
+          "拆分pdf",
+          "提取pdf页面",
+          "pdf单页"
+        ],
+
+        sites: [
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/split-pdf"
+          ],
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/split_pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/split-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF删除页面",
+
+        aliases: [
+          "pdf删页",
+          "删除pdf空白页"
+        ],
+
+        sites: [
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/remove-pdf-pages"
+          ],
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/remove-pages"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/delete-pages-from-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF电子签名",
+
+        aliases: [
+          "pdf签名",
+          "合同签名",
+          "pdf盖章"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/sign-pdf"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/sign-pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/sign-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF转图片",
+
+        aliases: [
+          "pdf转jpg",
+          "pdf转png",
+          "pdf每页图片"
+        ],
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/pdf_to_jpg"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/pdf-to-images"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/pdf-to-jpg"
+          ]
+        ]
+      },
+
+
+      {
+        name: "图片转PDF",
+
+        aliases: [
+          "照片转pdf",
+          "多张照片pdf",
+          "图片合成pdf"
+        ],
+
+        sites: [
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/images-to-pdf"
+          ],
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/jpg_to_pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/jpg-to-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF页面旋转",
+
+        aliases: [
+          "pdf倒过来",
+          "pdf旋转"
+        ],
+
+        sites: [
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/rotate-pdf-pages"
+          ],
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/rotate_pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/rotate-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF加水印",
+
+        aliases: [
+          "pdf保密水印",
+          "pdf平铺水印",
+          "pdf版权"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/watermark_pdf"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/add-watermark-to-pdf"
+          ],
+          [
+            "Sejda",
+            "https://www.sejda.com/zh/watermark-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF解除密码",
+
+        aliases: [
+          "pdf解密",
+          "pdf去密码",
+          "pdf解除限制"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/unlock_pdf"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/unlock-pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/unlock-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PPT转PDF",
+
+        aliases: [
+          "pptx转pdf",
+          "幻灯片转pdf"
+        ],
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/powerpoint_to_pdf"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/powerpoint-to-pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/ppt-to-pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Excel转PDF",
+
+        aliases: [
+          "xlsx转pdf",
+          "表格转pdf"
+        ],
+
+        sites: [
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/excel-to-pdf"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/cn/excel-to-pdf"
+          ],
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/excel_to_pdf"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF扫描件效果",
+
+        aliases: [
+          "pdf扫描效果",
+          "模拟扫描件",
+          "电子版变扫描件"
+        ],
+
+        sites: [
+          [
+            "Look Scanned",
+            "https://lookscanned.io/"
+          ],
+          [
+            "ScanMyDoc",
+            "https://scanmydoc.net/"
+          ],
+          [
+            "PDF24",
+            "https://tools.pdf24.org/zh/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF转Excel",
+
+        aliases: [
+          "pdf表格转excel",
+          "pdf财报表格",
+          "提取pdf表格"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "iLovePDF",
+            "https://www.ilovepdf.com/zh-cn/pdf_to_excel"
+          ],
+          [
+            "Smallpdf",
+            "https://smallpdf.com/pdf-to-excel"
+          ],
+          [
+            "Adobe Acrobat",
+            "https://www.adobe.com/acrobat/online/pdf-to-excel.html"
+          ]
+        ]
       }
 
-      const link =
-        document.createElement("a");
+    ]
 
-      link.className = "site";
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
+  },
 
-      link.innerHTML = `
-        <div class="site-left">
 
-          <div class="site-number">
-            ${index + 1}
+
+  /* ==================================================
+     IMAGE
+  ================================================== */
+
+  {
+    id: "cat-image",
+
+    className: "image",
+
+    icon: "🖼",
+
+    name: "图片",
+
+    note: "手机 · 证件 · 自媒体",
+
+    featuredCount: 8,
+
+    tasks: [
+
+      {
+        name: "图片压缩",
+
+        aliases: [
+          "照片太大",
+          "图片太大",
+          "压到100kb",
+          "压到50kb",
+          "报名照片大小"
+        ],
+
+        sites: [
+          [
+            "Squoosh",
+            "https://squoosh.app/"
+          ],
+          [
+            "TinyPNG",
+            "https://tinypng.com/"
+          ],
+          [
+            "iLoveIMG",
+            "https://www.iloveimg.com/zh-cn/compress-image"
+          ]
+        ]
+      },
+
+
+      {
+        name: "一键抠图",
+
+        aliases: [
+          "去背景",
+          "透明背景",
+          "背景移除",
+          "商品抠图"
+        ],
+
+        sites: [
+          [
+            "BgSub",
+            "https://bgsub.cn/"
+          ],
+          [
+            "PhotoRoom",
+            "https://www.photoroom.com/tools/background-remover"
+          ],
+          [
+            "Remove.bg",
+            "https://www.remove.bg/zh"
+          ]
+        ]
+      },
+
+
+      {
+        name: "证件照换底色",
+
+        aliases: [
+          "白底证件照",
+          "蓝底改白底",
+          "红底证件照",
+          "教资照片底色"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Cutout.Pro",
+            "https://www.cutout.pro/zh-CN/passport-photo-maker"
+          ],
+          [
+            "BgSub",
+            "https://bgsub.cn/"
+          ],
+          [
+            "PhotoRoom",
+            "https://www.photoroom.com/tools/background-remover"
+          ]
+        ]
+      },
+
+
+      {
+        name: "制作标准证件照",
+
+        aliases: [
+          "一寸照片",
+          "二寸照片",
+          "简历证件照",
+          "护照照片"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "IDPhoto",
+            "https://idphoto.fit/"
+          ],
+          [
+            "Cutout.Pro",
+            "https://www.cutout.pro/zh-CN/passport-photo-maker"
+          ],
+          [
+            "PhotoRoom",
+            "https://www.photoroom.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "图片改尺寸",
+
+        aliases: [
+          "图片裁剪",
+          "改像素",
+          "改宽高",
+          "小红书3比4",
+          "16比9"
+        ],
+
+        sites: [
+          [
+            "iLoveIMG",
+            "https://www.iloveimg.com/zh-cn/resize-image"
+          ],
+          [
+            "RedKetchup",
+            "https://redketchup.io/image-resizer"
+          ],
+          [
+            "Squoosh",
+            "https://squoosh.app/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "OCR提取文字",
+
+        aliases: [
+          "截图提取文字",
+          "图片转文字",
+          "识别图片文字",
+          "照片文字"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "OCR.Space",
+            "https://ocr.space/"
+          ],
+          [
+            "Tool.lu OCR",
+            "https://tool.lu/ocr/"
+          ],
+          [
+            "Google Lens",
+            "https://lens.google.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "HEIC转JPG",
+
+        aliases: [
+          "苹果照片打不开",
+          "iphone照片格式",
+          "heif转jpg"
+        ],
+
+        sites: [
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/heic-to-jpg"
+          ],
+          [
+            "HEIC Online",
+            "https://heic.online/"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/heic-to-jpg"
+          ]
+        ]
+      },
+
+
+      {
+        name: "拼接长图",
+
+        aliases: [
+          "聊天记录拼图",
+          "多张图拼长图",
+          "图片拼接",
+          "朋友圈长图"
+        ],
+
+        sites: [
+          [
+            "PineTools",
+            "https://pinetools.com/merge-images"
+          ],
+          [
+            "QTOOL",
+            "https://qtool.net/puzzle"
+          ],
+          [
+            "Canva",
+            "https://www.canva.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "图片无损放大",
+
+        aliases: [
+          "照片变清晰",
+          "老照片清晰",
+          "图片放大4倍",
+          "图片4k"
+        ],
+
+        sites: [
+          [
+            "Upscale.media",
+            "https://www.upscale.media/zh"
+          ],
+          [
+            "Bigjpg",
+            "https://bigjpg.com/"
+          ],
+          [
+            "Cutout.Pro",
+            "https://www.cutout.pro/photo-enhancer-sharpener-upscaler"
+          ]
+        ]
+      },
+
+
+      {
+        name: "去水印与路人",
+
+        aliases: [
+          "图片去水印",
+          "去掉路人",
+          "图片消除",
+          "去杂物"
+        ],
+
+        sites: [
+          [
+            "Cleanup.pictures",
+            "https://cleanup.pictures/"
+          ],
+          [
+            "WatermarkRemover",
+            "https://www.watermarkremover.io/zh"
+          ],
+          [
+            "SnapEdit",
+            "https://snapedit.app/zh/remove-object"
+          ]
+        ]
+      },
+
+
+      {
+        name: "证件加防盗水印",
+
+        aliases: [
+          "身份证水印",
+          "仅供办理使用",
+          "证件防盗用"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "油条工具箱",
+            "https://utils.fun/watermark/"
+          ],
+          [
+            "so工具",
+            "https://sotool.net/watermark/"
+          ],
+          [
+            "蛙蛙工具",
+            "https://iamwawa.cn/watermark.html"
+          ]
+        ]
+      },
+
+
+      {
+        name: "九宫格切图",
+
+        aliases: [
+          "朋友圈九宫格",
+          "一张图切九张"
+        ],
+
+        sites: [
+          [
+            "独特工具箱",
+            "https://dute.org/jiugongge"
+          ],
+          [
+            "在线工具网",
+            "https://zxgj.cn/g/jiugongge"
+          ],
+          [
+            "PineTools",
+            "https://pinetools.com/split-image"
+          ]
+        ]
+      },
+
+
+      {
+        name: "WebP转JPG",
+
+        aliases: [
+          "webp转png",
+          "网页图片格式"
+        ],
+
+        sites: [
+          [
+            "AnyWebP",
+            "https://anywebp.com/"
+          ],
+          [
+            "EZGIF",
+            "https://ezgif.com/webp-to-jpg"
+          ],
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/webp-to-jpg"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PNG / JPG互转",
+
+        aliases: [
+          "png转jpg",
+          "jpg转png",
+          "图片格式转换"
+        ],
+
+        sites: [
+          [
+            "iLoveIMG",
+            "https://www.iloveimg.com/zh-cn/convert-to-jpg"
+          ],
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/png-to-jpg"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/image-converter"
+          ]
+        ]
+      },
+
+
+      {
+        name: "制作GIF",
+
+        aliases: [
+          "图片做gif",
+          "动图制作"
+        ],
+
+        sites: [
+          [
+            "EZGIF",
+            "https://ezgif.com/maker"
+          ],
+          [
+            "iLoveIMG",
+            "https://www.iloveimg.com/"
+          ],
+          [
+            "Canva",
+            "https://www.canva.com/create/gif-maker/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "生成二维码",
+
+        aliases: [
+          "链接二维码",
+          "网址二维码",
+          "wifi二维码"
+        ],
+
+        sites: [
+          [
+            "草料二维码",
+            "https://cli.im/"
+          ],
+          [
+            "QRCode Monkey",
+            "https://www.qrcode-monkey.com/"
+          ],
+          [
+            "QR Code Generator",
+            "https://www.qr-code-generator.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "识别二维码图片",
+
+        aliases: [
+          "二维码截图解析",
+          "图片里的二维码"
+        ],
+
+        sites: [
+          [
+            "草料二维码解码",
+            "https://cli.im/deqr"
+          ],
+          [
+            "ZXing Decoder",
+            "https://zxing.org/w/decode.jspx"
+          ],
+          [
+            "WebQR",
+            "https://webqr.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "艺术二维码",
+
+        aliases: [
+          "logo二维码",
+          "彩色二维码",
+          "个性二维码"
+        ],
+
+        sites: [
+          [
+            "QRCode Monkey",
+            "https://www.qrcode-monkey.com/"
+          ],
+          [
+            "草料二维码",
+            "https://cli.im/"
+          ],
+          [
+            "Canva",
+            "https://www.canva.com/qr-code-generator/"
+          ]
+        ]
+      }
+
+    ]
+
+  },
+
+
+
+  /* ==================================================
+     VIDEO
+  ================================================== */
+
+  {
+    id: "cat-video",
+
+    className: "video",
+
+    icon: "🎬",
+
+    name: "视频",
+
+    note: "剪切 · 压缩 · 字幕",
+
+    featuredCount: 6,
+
+    tasks: [
+
+      {
+        name: "视频压缩",
+
+        aliases: [
+          "视频太大",
+          "微信视频发不出去",
+          "视频变小",
+          "视频压到25mb"
+        ],
+
+        sites: [
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/video-compressor"
+          ],
+          [
+            "VEED",
+            "https://www.veed.io/tools/video-compressor"
+          ],
+          [
+            "Clideo",
+            "https://clideo.com/compress-video"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频剪切",
+
+        aliases: [
+          "截取视频",
+          "视频裁剪",
+          "视频切一段"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://online-video-cutter.com/zh/"
+          ],
+          [
+            "Clideo",
+            "https://clideo.com/cut-video"
+          ],
+          [
+            "VEED",
+            "https://www.veed.io/tools/video-cutter"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频转GIF",
+
+        aliases: [
+          "视频变动图",
+          "表情包gif"
+        ],
+
+        sites: [
+          [
+            "EZGIF",
+            "https://ezgif.com/video-to-gif"
+          ],
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/mp4-to-gif"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/video-to-gif"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频提取音频",
+
+        aliases: [
+          "视频转mp3",
+          "提取视频声音",
+          "提取背景音乐"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://audio-extractor.net/zh/"
+          ],
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/mp4-to-mp3"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/mp4-to-mp3"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频静音",
+
+        aliases: [
+          "视频去声音",
+          "去掉视频原声"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://online-video-cutter.com/zh/mute-video"
+          ],
+          [
+            "Clideo",
+            "https://clideo.com/mute-video"
+          ],
+          [
+            "VEED",
+            "https://www.veed.io/tools/remove-audio-from-video"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频自动字幕",
+
+        aliases: [
+          "视频加字幕",
+          "自动识别字幕",
+          "生成srt"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "VEED",
+            "https://www.veed.io/tools/auto-subtitle-generator-online"
+          ],
+          [
+            "Kapwing",
+            "https://www.kapwing.com/subtitles"
+          ],
+          [
+            "Canva",
+            "https://www.canva.com/features/auto-caption/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频格式转换",
+
+        aliases: [
+          "mkv转mp4",
+          "mov转mp4",
+          "avi转mp4"
+        ],
+
+        sites: [
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/video-converter"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/video-converter"
+          ],
+          [
+            "123apps",
+            "https://video-converter.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "GIF转MP4",
+
+        aliases: [
+          "gif转视频",
+          "动图转mp4"
+        ],
+
+        sites: [
+          [
+            "EZGIF",
+            "https://ezgif.com/gif-to-mp4"
+          ],
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/gif-to-mp4"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/gif-to-mp4"
+          ]
+        ]
+      },
+
+
+      {
+        name: "视频变速",
+
+        aliases: [
+          "视频2倍速",
+          "视频慢动作"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://online-video-cutter.com/zh/change-video-speed"
+          ],
+          [
+            "EZGIF",
+            "https://ezgif.com/video-speed"
+          ],
+          [
+            "Kapwing",
+            "https://www.kapwing.com/tools/change-video-speed"
+          ]
+        ]
+      },
+
+
+      {
+        name: "在线视频编辑",
+
+        aliases: [
+          "在线剪辑",
+          "浏览器剪视频"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://online-video-cutter.com/zh/"
+          ],
+          [
+            "Kapwing",
+            "https://www.kapwing.com/"
+          ],
+          [
+            "VEED",
+            "https://www.veed.io/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "网页录屏",
+
+        aliases: [
+          "在线录屏",
+          "屏幕录制",
+          "免安装录屏"
+        ],
+
+        sites: [
+          [
+            "VEED Screen Recorder",
+            "https://www.veed.io/tools/screen-recorder"
+          ],
+          [
+            "ScreenApp",
+            "https://screenapp.io/"
+          ],
+          [
+            "RecordCast",
+            "https://www.recordcast.com/"
+          ]
+        ]
+      }
+
+    ]
+
+  },
+
+
+
+  /* ==================================================
+     AUDIO
+  ================================================== */
+
+  {
+    id: "cat-audio",
+
+    className: "audio",
+
+    icon: "🎧",
+
+    name: "音频",
+
+    note: "录音 · 配音 · 音乐",
+
+    featuredCount: 6,
+
+    tasks: [
+
+      {
+        name: "音频裁剪",
+
+        aliases: [
+          "剪mp3",
+          "制作铃声",
+          "裁剪录音"
+        ],
+
+        sites: [
+          [
+            "MP3Cut",
+            "https://mp3cut.net/zh/"
+          ],
+          [
+            "AudioTrimmer",
+            "https://audiotrimmer.com/"
+          ],
+          [
+            "Clideo",
+            "https://clideo.com/cut-audio"
+          ]
+        ]
+      },
+
+
+      {
+        name: "录音转文字",
+
+        aliases: [
+          "语音转文字",
+          "会议录音文字",
+          "采访转文字",
+          "录音笔"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Riverside",
+            "https://riverside.fm/transcription"
+          ],
+          [
+            "飞书妙记",
+            "https://www.feishu.cn/product/minutes"
+          ],
+          [
+            "TurboScribe",
+            "https://turboscribe.ai/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "音频降噪",
+
+        aliases: [
+          "录音去杂音",
+          "人声增强",
+          "去电流声"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Adobe Enhance",
+            "https://podcast.adobe.com/enhance"
+          ],
+          [
+            "VEED",
+            "https://www.veed.io/tools/remove-background-noise-from-audio"
+          ],
+          [
+            "Media.io",
+            "https://www.media.io/noise-reducer.html"
+          ]
+        ]
+      },
+
+
+      {
+        name: "人声伴奏分离",
+
+        aliases: [
+          "去人声",
+          "提取伴奏",
+          "提取人声",
+          "消音伴奏"
+        ],
+
+        sites: [
+          [
+            "Vocal Remover",
+            "https://vocalremover.org/zh/"
+          ],
+          [
+            "LALAL.AI",
+            "https://www.lalal.ai/"
+          ],
+          [
+            "Moises",
+            "https://moises.ai/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "文字转语音",
+
+        aliases: [
+          "tts",
+          "文字配音",
+          "AI配音"
+        ],
+
+        sites: [
+          [
+            "TTSMaker",
+            "https://ttsmaker.com/zh-cn"
+          ],
+          [
+            "TTSMaker CN",
+            "https://ttsmaker.cn/"
+          ],
+          [
+            "NaturalReader",
+            "https://www.naturalreaders.com/online/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "音频转MP3",
+
+        aliases: [
+          "flac转mp3",
+          "m4a转mp3",
+          "wav转mp3"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://online-audio-converter.com/zh/"
+          ],
+          [
+            "CloudConvert",
+            "https://cloudconvert.com/audio-converter"
+          ],
+          [
+            "FreeConvert",
+            "https://www.freeconvert.com/audio-converter"
+          ]
+        ]
+      },
+
+
+      {
+        name: "音频合并",
+
+        aliases: [
+          "录音合并",
+          "多个mp3合并",
+          "音乐串烧"
+        ],
+
+        sites: [
+          [
+            "123apps",
+            "https://audio-joiner.com/zh/"
+          ],
+          [
+            "Clideo",
+            "https://clideo.com/merge-audio"
+          ],
+          [
+            "Audio Joiner",
+            "https://audio-joiner.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "白噪音",
+
+        aliases: [
+          "雨声",
+          "森林声",
+          "专注声音",
+          "助眠"
+        ],
+
+        sites: [
+          [
+            "A Soft Murmur",
+            "https://asoftmurmur.com/"
+          ],
+          [
+            "Tree.fm",
+            "https://www.tree.fm/"
+          ],
+          [
+            "Noisli",
+            "https://www.noisli.com/"
+          ]
+        ]
+      }
+
+    ]
+
+  },
+
+
+
+  /* ==================================================
+     AI
+  ================================================== */
+
+  {
+    id: "cat-ai",
+
+    className: "ai",
+
+    icon: "🤖",
+
+    name: "AI 工具",
+
+    note: "问答 · 写作 · 创作",
+
+    featuredCount: 6,
+
+    tasks: [
+
+      {
+        name: "AI通用问答",
+
+        aliases: [
+          "chatgpt",
+          "豆包",
+          "kimi",
+          "问AI"
+        ],
+
+        sites: [
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ],
+          [
+            "豆包",
+            "https://www.doubao.com/chat/"
+          ],
+          [
+            "Kimi",
+            "https://kimi.moonshot.cn/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI深度推理写作",
+
+        aliases: [
+          "deepseek",
+          "claude",
+          "写长文",
+          "深度思考"
+        ],
+
+        sites: [
+          [
+            "DeepSeek",
+            "https://chat.deepseek.com/"
+          ],
+          [
+            "Claude",
+            "https://claude.ai/"
+          ],
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI总结PDF",
+
+        aliases: [
+          "pdf总结",
+          "读论文",
+          "长文档总结",
+          "文献总结"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Kimi",
+            "https://kimi.moonshot.cn/"
+          ],
+          [
+            "ChatPDF",
+            "https://www.chatpdf.com/"
+          ],
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI做PPT",
+
+        aliases: [
+          "生成ppt",
+          "ppt生成",
+          "演示文稿"
+        ],
+
+        sites: [
+          [
+            "Gamma",
+            "https://gamma.app/"
+          ],
+          [
+            "Canva",
+            "https://www.canva.com/"
+          ],
+          [
+            "SlidesAI",
+            "https://www.slidesai.io/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI翻译",
+
+        aliases: [
+          "英文翻译",
+          "中文翻译",
+          "文档翻译"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "DeepL",
+            "https://www.deepl.com/translator"
+          ],
+          [
+            "沉浸式翻译",
+            "https://immersivetranslate.com/"
+          ],
+          [
+            "Google 翻译",
+            "https://translate.google.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI写文案",
+
+        aliases: [
+          "小红书文案",
+          "营销文案",
+          "爆款标题",
+          "广告文案"
+        ],
+
+        sites: [
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ],
+          [
+            "豆包",
+            "https://www.doubao.com/chat/"
+          ],
+          [
+            "通义",
+            "https://tongyi.aliyun.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI画图",
+
+        aliases: [
+          "生成图片",
+          "文生图",
+          "AI图片"
+        ],
+
+        sites: [
+          [
+            "Bing Image Creator",
+            "https://www.bing.com/images/create"
+          ],
+          [
+            "Adobe Firefly",
+            "https://firefly.adobe.com/"
+          ],
+          [
+            "Canva",
+            "https://www.canva.com/ai-image-generator/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI扩图重绘",
+
+        aliases: [
+          "扩图",
+          "局部重绘",
+          "风格转换",
+          "图片重绘"
+        ],
+
+        sites: [
+          [
+            "Clipdrop",
+            "https://clipdrop.co/"
+          ],
+          [
+            "Adobe Firefly",
+            "https://firefly.adobe.com/"
+          ],
+          [
+            "Tensor.Art",
+            "https://tensor.art/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI生成视频",
+
+        aliases: [
+          "文生视频",
+          "图片生成视频",
+          "AI视频"
+        ],
+
+        sites: [
+          [
+            "Runway",
+            "https://runwayml.com/"
+          ],
+          [
+            "Luma Dream Machine",
+            "https://lumalabs.ai/dream-machine"
+          ],
+          [
+            "Kling",
+            "https://klingai.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI搜索研报",
+
+        aliases: [
+          "AI搜索",
+          "行业研报",
+          "纯净搜索",
+          "资料研究"
+        ],
+
+        sites: [
+          [
+            "秘塔AI搜索",
+            "https://metaso.cn/"
+          ],
+          [
+            "Perplexity",
+            "https://www.perplexity.ai/"
+          ],
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI文本润色",
+
+        aliases: [
+          "降重",
+          "改写",
+          "学术润色",
+          "文字优化"
+        ],
+
+        sites: [
+          [
+            "秘塔写作猫",
+            "https://xiezuocat.com/"
+          ],
+          [
+            "QuillBot",
+            "https://quillbot.com/"
+          ],
+          [
+            "DeepL Write",
+            "https://www.deepl.com/write"
+          ]
+        ]
+      },
+
+
+      {
+        name: "AI小说续写",
+
+        aliases: [
+          "故事续写",
+          "小说写作",
+          "剧情推演"
+        ],
+
+        sites: [
+          [
+            "彩云小梦",
+            "https://if.caiyunai.com/"
+          ],
+          [
+            "Sudowrite",
+            "https://www.sudowrite.com/"
+          ],
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ]
+        ]
+      }
+
+    ]
+
+  },
+
+
+
+  /* ==================================================
+     OFFICE
+  ================================================== */
+
+  {
+    id: "cat-office",
+
+    className: "office",
+
+    icon: "💼",
+
+    name: "办公 / 实用",
+
+    note: "日常高频效率",
+
+    featuredCount: 8,
+
+    tasks: [
+
+      {
+        name: "思维导图",
+
+        aliases: [
+          "脑图",
+          "大纲变导图"
+        ],
+
+        sites: [
+          [
+            "GitMind",
+            "https://gitmind.cn/"
+          ],
+          [
+            "ProcessOn",
+            "https://www.processon.com/"
+          ],
+          [
+            "Markmap",
+            "https://markmap.js.org/repl"
+          ]
+        ]
+      },
+
+
+      {
+        name: "流程图",
+
+        aliases: [
+          "画流程图",
+          "uml",
+          "架构图"
+        ],
+
+        sites: [
+          [
+            "diagrams.net",
+            "https://app.diagrams.net/"
+          ],
+          [
+            "ProcessOn",
+            "https://www.processon.com/"
+          ],
+          [
+            "Lucidchart",
+            "https://www.lucidchart.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "文件快传",
+
+        aliases: [
+          "手机电脑传文件",
+          "不用微信传文件",
+          "大文件传输"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "PairDrop",
+            "https://pairdrop.net/"
+          ],
+          [
+            "奶牛快传",
+            "https://cowtransfer.com/"
+          ],
+          [
+            "Wormhole",
+            "https://wormhole.app/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "文本清洗",
+
+        aliases: [
+          "去空行",
+          "去重复",
+          "去空格",
+          "复制文字乱格式"
+        ],
+
+        sites: [
+          [
+            "TextCleaner",
+            "https://www.textcleaner.net/"
+          ],
+          [
+            "蛙蛙工具",
+            "https://iamwawa.cn/quchong.html"
+          ],
+          [
+            "CyberChef",
+            "https://gchq.github.io/CyberChef/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "文本差异对比",
+
+        aliases: [
+          "两份合同对比",
+          "文本找不同",
+          "diff"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Diffchecker",
+            "https://www.diffchecker.com/text-compare/"
+          ],
+          [
+            "极客工具",
+            "https://geekstool.com/diff"
+          ],
+          [
+            "Draftable",
+            "https://www.draftable.com/compare"
+          ]
+        ]
+      },
+
+
+      {
+        name: "字数统计",
+
+        aliases: [
+          "汉字统计",
+          "字符统计",
+          "中文字数"
+        ],
+
+        sites: [
+          [
+            "蛙蛙字数统计",
+            "https://iamwawa.cn/zishu.html"
+          ],
+          [
+            "WordCounter",
+            "https://wordcounter.net/"
+          ],
+          [
+            "Character Count",
+            "https://charactercounttool.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "汇率换算",
+
+        aliases: [
+          "美元人民币",
+          "欧元人民币",
+          "外汇换算"
+        ],
+
+        sites: [
+          [
+            "XE",
+            "https://www.xe.com/currencyconverter/"
+          ],
+          [
+            "Wise",
+            "https://wise.com/currency-converter/"
+          ],
+          [
+            "X-Rates",
+            "https://www.x-rates.com/calculator/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "随机密码",
+
+        aliases: [
+          "密码生成",
+          "强密码",
+          "16位密码"
+        ],
+
+        sites: [
+          [
+            "1Password",
+            "https://1password.com/password-generator/"
+          ],
+          [
+            "Bitwarden",
+            "https://bitwarden.com/password-generator/"
+          ],
+          [
+            "LastPass",
+            "https://www.lastpass.com/features/password-generator"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Markdown转PDF",
+
+        aliases: [
+          "md转pdf",
+          "markdown转word",
+          "markdown文档"
+        ],
+
+        sites: [
+          [
+            "md2doc",
+            "https://md2doc.com/"
+          ],
+          [
+            "Doocs Markdown",
+            "https://md.doocs.org/"
+          ],
+          [
+            "Dillinger",
+            "https://dillinger.io/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Excel转Markdown",
+
+        aliases: [
+          "表格转markdown",
+          "csv转markdown"
+        ],
+
+        sites: [
+          [
+            "TableConvert",
+            "https://tableconvert.com/excel-to-markdown"
+          ],
+          [
+            "Table Generator",
+            "https://www.tablesgenerator.com/markdown_tables"
+          ],
+          [
+            "Markdown Tables",
+            "https://www.convertcsv.com/csv-to-markdown.htm"
+          ]
+        ]
+      },
+
+
+      {
+        name: "个人知识笔记",
+
+        aliases: [
+          "笔记软件",
+          "知识库",
+          "notion"
+        ],
+
+        sites: [
+          [
+            "Notion",
+            "https://www.notion.so/"
+          ],
+          [
+            "flomo",
+            "https://flomoapp.com/"
+          ],
+          [
+            "语雀",
+            "https://www.yuque.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "待办清单",
+
+        aliases: [
+          "todo",
+          "任务管理",
+          "滴答清单"
+        ],
+
+        sites: [
+          [
+            "滴答清单",
+            "https://dida365.com/"
+          ],
+          [
+            "Todoist",
+            "https://todoist.com/"
+          ],
+          [
+            "Microsoft To Do",
+            "https://to-do.office.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "房贷分期计算",
+
+        aliases: [
+          "房贷计算",
+          "贷款利息",
+          "等额本息"
+        ],
+
+        sites: [
+          [
+            "在线工具网",
+            "https://zxgj.cn/g/fangdai"
+          ],
+          [
+            "一个工具箱",
+            "https://atoolbox.net/"
+          ],
+          [
+            "Calculator.net",
+            "https://www.calculator.net/loan-calculator.html"
+          ]
+        ]
+      },
+
+
+      {
+        name: "人民币大写",
+
+        aliases: [
+          "金额大写",
+          "财务大写"
+        ],
+
+        sites: [
+          [
+            "蛙蛙工具",
+            "https://iamwawa.cn/daxie.html"
+          ],
+          [
+            "TOL",
+            "https://tol.vip/rmb.html"
+          ],
+          [
+            "在线工具",
+            "https://tool.lu/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "在线解压ZIP",
+
+        aliases: [
+          "在线解压",
+          "zip解压",
+          "rar解压",
+          "7z解压",
+          "手机解压"
+        ],
+
+        sites: [
+          [
+            "ezyZip",
+            "https://www.ezyzip.com/"
+          ],
+          [
+            "Extract.me",
+            "https://extract.me/"
+          ],
+          [
+            "Unzip Online",
+            "https://unzip-online.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "阅后即焚便签",
+
+        aliases: [
+          "临时秘密",
+          "密码安全发送",
+          "一次性便签"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Privnote",
+            "https://privnote.com/"
+          ],
+          [
+            "Password Pusher",
+            "https://pwpush.com/"
+          ],
+          [
+            "OneTimeSecret",
+            "https://onetimesecret.com/"
+          ]
+        ]
+      }
+
+    ]
+
+  },
+
+
+
+  /* ==================================================
+     LEARNING
+  ================================================== */
+
+  {
+    id: "cat-learning",
+
+    className: "learning",
+
+    icon: "🎓",
+
+    name: "学习 / 求职",
+
+    note: "论文 · 英语 · 考试",
+
+    featuredCount: 6,
+
+    tasks: [
+
+      {
+        name: "英文语法纠错",
+
+        aliases: [
+          "英文检查",
+          "英语语法",
+          "邮件纠错"
+        ],
+
+        sites: [
+          [
+            "Grammarly",
+            "https://www.grammarly.com/grammar-check"
+          ],
+          [
+            "LanguageTool",
+            "https://languagetool.org/"
+          ],
+          [
+            "QuillBot",
+            "https://quillbot.com/grammar-check"
+          ]
+        ]
+      },
+
+
+      {
+        name: "论文查重",
+
+        aliases: [
+          "查重复率",
+          "论文重复率",
+          "毕业论文"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "PaperYY",
+            "https://www.paperyy.com/"
+          ],
+          [
+            "PaperPass",
+            "https://www.paperpass.com/"
+          ],
+          [
+            "Turnitin",
+            "https://www.turnitin.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "公式转LaTeX",
+
+        aliases: [
+          "数学公式识别",
+          "公式截图",
+          "latex识别"
+        ],
+
+        sites: [
+          [
+            "SimpleTex",
+            "https://simpletex.cn/"
+          ],
+          [
+            "Mathpix",
+            "https://mathpix.com/"
+          ],
+          [
+            "CodeCogs",
+            "https://editor.codecogs.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "参考文献生成",
+
+        aliases: [
+          "gbt7714",
+          "gb/t 7714",
+          "apa引用",
+          "论文引用"
+        ],
+
+        sites: [
+          [
+            "MyBib",
+            "https://www.mybib.com/"
+          ],
+          [
+            "Cite This For Me",
+            "https://www.citethisforme.com/"
+          ],
+          [
+            "ZoteroBib",
+            "https://zbib.org/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "打字背单词",
+
+        aliases: [
+          "打字练习",
+          "背单词网页"
+        ],
+
+        sites: [
+          [
+            "Qwerty Learner",
+            "https://qwerty.kaiyi.cool/"
+          ],
+          [
+            "TypeLit",
+            "https://www.typelit.io/"
+          ],
+          [
+            "Monkeytype",
+            "https://monkeytype.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "PDF文献速读",
+
+        aliases: [
+          "读论文",
+          "论文总结",
+          "英文文献总结"
+        ],
+
+        sensitive: true,
+
+        sites: [
+          [
+            "Kimi",
+            "https://kimi.moonshot.cn/"
+          ],
+          [
+            "ChatPDF",
+            "https://www.chatpdf.com/"
+          ],
+          [
+            "ChatGPT",
+            "https://chatgpt.com/"
+          ]
+        ]
+      }
+
+    ]
+
+  },
+
+
+
+  /* ==================================================
+     PRO
+  ================================================== */
+
+  {
+    id: "cat-pro",
+
+    className: "pro",
+
+    icon: "🧰",
+
+    name: "Pro / 开发者 / 网络",
+
+    note: "专业与网络工具",
+
+    featuredCount: 8,
+
+    tasks: [
+
+      {
+        name: "JSON格式化",
+
+        aliases: [
+          "json校验",
+          "json美化",
+          "json转yaml"
+        ],
+
+        sites: [
+          [
+            "JSON.cn",
+            "https://www.json.cn/"
+          ],
+          [
+            "JSON Hero",
+            "https://jsonhero.io/"
+          ],
+          [
+            "JSONLint",
+            "https://jsonlint.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "正则测试",
+
+        aliases: [
+          "regex",
+          "正则表达式"
+        ],
+
+        sites: [
+          [
+            "Regex101",
+            "https://regex101.com/"
+          ],
+          [
+            "RegExr",
+            "https://regexr.com/"
+          ],
+          [
+            "菜鸟工具",
+            "https://c.runoob.com/front-end/854/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "SQL美化",
+
+        aliases: [
+          "sql格式化",
+          "sql排版"
+        ],
+
+        sites: [
+          [
+            "SQLFormat",
+            "https://sqlformat.org/"
+          ],
+          [
+            "Instant SQL Formatter",
+            "https://www.dpriver.com/pp/sqlformat.htm"
+          ],
+          [
+            "Poor SQL",
+            "https://poorsql.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "代码截图",
+
+        aliases: [
+          "代码图片",
+          "mac代码卡片"
+        ],
+
+        sites: [
+          [
+            "Ray.so",
+            "https://ray.so/"
+          ],
+          [
+            "Carbon",
+            "https://carbon.now.sh/"
+          ],
+          [
+            "Codeimg",
+            "https://codeimg.io/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Unix时间戳",
+
+        aliases: [
+          "时间戳转换",
+          "10位时间戳",
+          "13位时间戳"
+        ],
+
+        sites: [
+          [
+            "Tool.lu",
+            "https://tool.lu/timestamp/"
+          ],
+          [
+            "OKTools",
+            "https://oktools.net/timestamp"
+          ],
+          [
+            "Epoch Converter",
+            "https://www.epochconverter.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Base64编码解码",
+
+        aliases: [
+          "base64",
+          "url编码",
+          "编码转换"
+        ],
+
+        sites: [
+          [
+            "Base64Decode",
+            "https://www.base64decode.org/"
+          ],
+          [
+            "CyberChef",
+            "https://gchq.github.io/CyberChef/"
+          ],
+          [
+            "Base64.Guru",
+            "https://base64.guru/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "网络测速",
+
+        aliases: [
+          "测网速",
+          "宽带测速",
+          "延迟"
+        ],
+
+        sites: [
+          [
+            "Speedtest",
+            "https://www.speedtest.net/"
+          ],
+          [
+            "Fast.com",
+            "https://fast.com/"
+          ],
+          [
+            "Cloudflare Speed",
+            "https://speed.cloudflare.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "IP地址查询",
+
+        aliases: [
+          "查ip",
+          "公网ip",
+          "ip归属地"
+        ],
+
+        sites: [
+          [
+            "IP.cn",
+            "https://ip.cn/"
+          ],
+          [
+            "IP138",
+            "https://www.ip138.com/"
+          ],
+          [
+            "WhatIsMyIP",
+            "https://www.whatismyip.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Whois域名查询",
+
+        aliases: [
+          "whois",
+          "域名到期",
+          "域名注册"
+        ],
+
+        sites: [
+          [
+            "站长之家",
+            "https://whois.chinaz.com/"
+          ],
+          [
+            "ICANN Lookup",
+            "https://lookup.icann.org/"
+          ],
+          [
+            "Who.is",
+            "https://who.is/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "正则可视化",
+
+        aliases: [
+          "regex图",
+          "正则轨道图"
+        ],
+
+        sites: [
+          [
+            "Regexper",
+            "https://regexper.com/"
+          ],
+          [
+            "Debuggex",
+            "https://www.debuggex.com/"
+          ],
+          [
+            "Regex101",
+            "https://regex101.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "App图标生成",
+
+        aliases: [
+          "ios图标",
+          "android图标",
+          "app icon"
+        ],
+
+        sites: [
+          [
+            "AppIcon",
+            "https://appicon.co/"
+          ],
+          [
+            "EasyAppIcon",
+            "https://easyappicon.com/"
+          ],
+          [
+            "Favicon.io",
+            "https://favicon.io/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "Favicon生成",
+
+        aliases: [
+          "网站ico",
+          "favicon ico"
+        ],
+
+        sites: [
+          [
+            "Favicon.io",
+            "https://favicon.io/"
+          ],
+          [
+            "RealFaviconGenerator",
+            "https://realfavicongenerator.net/"
+          ],
+          [
+            "favicon.cc",
+            "https://www.favicon.cc/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "图片取色与配色",
+
+        aliases: [
+          "提取颜色",
+          "色卡",
+          "调色板"
+        ],
+
+        sites: [
+          [
+            "Adobe Color",
+            "https://color.adobe.com/zh/create/image"
+          ],
+          [
+            "Coolors",
+            "https://coolors.co/image-picker"
+          ],
+          [
+            "ImageColorPicker",
+            "https://imagecolorpicker.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "CSS渐变生成",
+
+        aliases: [
+          "渐变背景",
+          "cssgradient"
+        ],
+
+        sites: [
+          [
+            "CSS Gradient",
+            "https://cssgradient.io/"
+          ],
+          [
+            "WebGradients",
+            "https://webgradients.com/"
+          ],
+          [
+            "Gradient Hunt",
+            "https://gradienthunt.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "在线PSD编辑",
+
+        aliases: [
+          "psd打开",
+          "没有photoshop",
+          "在线ps"
+        ],
+
+        sites: [
+          [
+            "Photopea",
+            "https://www.photopea.com/"
+          ],
+          [
+            "Pixlr",
+            "https://pixlr.com/"
+          ],
+          [
+            "PhotoKit",
+            "https://photokit.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "临时邮箱",
+
+        aliases: [
+          "一次性邮箱",
+          "10分钟邮箱",
+          "临时email"
+        ],
+
+        sites: [
+          [
+            "Temp-Mail",
+            "https://temp-mail.org/"
+          ],
+          [
+            "10 Minute Mail",
+            "https://10minutemail.com/"
+          ],
+          [
+            "Guerrilla Mail",
+            "https://www.guerrillamail.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "全球时区换算",
+
+        aliases: [
+          "北京纽约时间",
+          "海外开会时间",
+          "世界时间"
+        ],
+
+        sites: [
+          [
+            "World Time Buddy",
+            "https://www.worldtimebuddy.com/"
+          ],
+          [
+            "Timeanddate",
+            "https://www.timeanddate.com/worldclock/meeting.html"
+          ],
+          [
+            "Every Time Zone",
+            "https://everytimezone.com/"
+          ]
+        ]
+      },
+
+
+      {
+        name: "中国亲戚称谓",
+
+        aliases: [
+          "亲戚关系",
+          "亲戚怎么叫"
+        ],
+
+        sites: [
+          [
+            "孟坤工具箱",
+            "https://tool.mkblog.cn/relates/"
+          ],
+          [
+            "Relationship",
+            "https://passer-by.com/relationship/"
+          ],
+          [
+            "亲戚称呼计算",
+            "https://passer-by.com/relationship/"
+          ]
+        ]
+      }
+
+    ]
+
+  }
+
+];
+
+
+
+/* ==================================================
+   全局索引
+================================================== */
+
+
+const taskIndex = {};
+
+
+categoryData.forEach(function(category) {
+
+  category.tasks.forEach(function(task) {
+
+    task.categoryId =
+      category.id;
+
+    taskIndex[task.name] =
+      task;
+
+  });
+
+});
+
+
+
+/* ==================================================
+   页面渲染
+================================================== */
+
+
+function renderCategories() {
+
+  const container =
+    document.getElementById(
+      "categoryContainer"
+    );
+
+
+  container.innerHTML = "";
+
+
+  categoryData.forEach(
+    function(category) {
+
+      const section =
+        document.createElement(
+          "section"
+        );
+
+
+      section.id =
+        category.id;
+
+
+      section.className =
+        "category " +
+        category.className;
+
+
+      const hasExtra =
+        category.tasks.length >
+        category.featuredCount;
+
+
+      let html = `
+
+        <div class="category-head">
+
+          <div class="category-title-wrap">
+
+            <h2 class="category-title">
+              ${category.icon}
+              ${category.name}
+            </h2>
+
+            <div class="category-note">
+              ${category.note}
+              · ${category.tasks.length} 项
+            </div>
+
           </div>
 
-          <div class="site-name">
-            ${name}
-          </div>
-
-          <div class="site-domain">
-            ${domain}
-          </div>
+          ${
+            hasExtra
+            ?
+            `
+              <button
+                class="expand-button"
+                onclick="toggleCategory('${category.id}', this)">
+                查看全部
+              </button>
+            `
+            :
+            ""
+          }
 
         </div>
 
-        <div class="site-open">
-          打开
-        </div>
+        <div class="task-grid">
+
       `;
 
-      list.appendChild(link);
 
-    });
+      category.tasks.forEach(
+        function(task, index) {
 
-    result.classList.add("show");
+          const extraClass =
+            index >=
+            category.featuredCount
+            ?
+            "extra-task"
+            :
+            "";
 
-    setTimeout(function() {
+
+          html += `
+
+            <button
+              class="task ${extraClass}"
+              onclick='showTask(${JSON.stringify(task.name)})'>
+              ${task.name}
+            </button>
+
+          `;
+
+        }
+      );
+
+
+      html += `</div>`;
+
+
+      section.innerHTML =
+        html;
+
+
+      container.appendChild(
+        section
+      );
+
+    }
+  );
+
+}
+
+
+
+/* ==================================================
+   展开分类
+================================================== */
+
+
+function toggleCategory(
+  categoryId,
+  button
+) {
+
+  const section =
+    document.getElementById(
+      categoryId
+    );
+
+
+  const expanded =
+    section.classList.toggle(
+      "expanded"
+    );
+
+
+  button.textContent =
+    expanded
+    ?
+    "收起"
+    :
+    "查看全部";
+
+}
+
+
+
+/* ==================================================
+   分类跳转
+================================================== */
+
+
+function jumpTo(id) {
+
+  const element =
+    document.getElementById(id);
+
+
+  if (!element) {
+    return;
+  }
+
+
+  element.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+
+
+/* ==================================================
+   显示任务
+================================================== */
+
+
+function showTask(taskName) {
+
+  const task =
+    taskIndex[taskName];
+
+
+  if (!task) {
+
+    alert(
+      "这个任务的入口还在整理中。"
+    );
+
+    return;
+
+  }
+
+
+  const result =
+    document.getElementById(
+      "result"
+    );
+
+
+  const title =
+    document.getElementById(
+      "resultTitle"
+    );
+
+
+  const list =
+    document.getElementById(
+      "siteList"
+    );
+
+
+  const warning =
+    document.getElementById(
+      "privacyWarning"
+    );
+
+
+  title.textContent =
+    task.name;
+
+
+  list.innerHTML = "";
+
+
+  if (task.sensitive) {
+
+    warning.style.display =
+      "block";
+
+
+    warning.textContent =
+      "⚠️ 这个任务可能涉及证件、合同、录音、论文或其他隐私文件。请先确认第三方网站的隐私规则；敏感材料优先选择本地处理工具。";
+
+  } else {
+
+    warning.style.display =
+      "none";
+
+    warning.textContent = "";
+
+  }
+
+
+  task.sites
+    .slice(0, 3)
+    .forEach(
+      function(site, index) {
+
+        const name =
+          site[0];
+
+
+        const url =
+          site[1];
+
+
+        let domain =
+          url;
+
+
+        try {
+
+          domain =
+            new URL(url)
+            .hostname
+            .replace(
+              /^www\./,
+              ""
+            );
+
+        } catch (error) {
+
+        }
+
+
+        const link =
+          document.createElement(
+            "a"
+          );
+
+
+        link.className =
+          "site";
+
+
+        link.href =
+          url;
+
+
+        link.target =
+          "_blank";
+
+
+        link.rel =
+          "noopener noreferrer nofollow";
+
+
+        link.innerHTML = `
+
+          <div class="site-left">
+
+            <div class="site-top">
+
+              <div class="site-number">
+                ${index + 1}
+              </div>
+
+              <div class="site-name">
+                ${name}
+              </div>
+
+            </div>
+
+            <div class="site-domain">
+              ${domain}
+            </div>
+
+          </div>
+
+          <div class="site-open">
+            打开
+          </div>
+
+        `;
+
+
+        list.appendChild(
+          link
+        );
+
+      }
+    );
+
+
+  result.classList.add(
+    "show"
+  );
+
+
+  document
+    .getElementById(
+      "searchEmpty"
+    )
+    .classList.remove(
+      "show"
+    );
+
+
+  setTimeout(
+    function() {
 
       result.scrollIntoView({
         behavior: "smooth",
         block: "center"
       });
 
-    }, 80);
+    },
+    80
+  );
 
+}
+
+
+
+/* ==================================================
+   搜索文本标准化
+================================================== */
+
+
+function normalizeText(text) {
+
+  return String(text)
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[\/\\_\-—–.,，。！!？?（）()]/g, "");
+
+}
+
+
+
+/* ==================================================
+   搜索
+================================================== */
+
+
+function searchTask() {
+
+  const input =
+    document.getElementById(
+      "searchInput"
+    );
+
+
+  const rawKeyword =
+    input.value.trim();
+
+
+  if (!rawKeyword) {
+    return;
   }
 
 
-  /* =====================================
-     搜索
-  ===================================== */
-
-  function searchTask() {
-
-    const input =
-      document.getElementById("searchInput");
-
-    const keyword =
-      input.value.trim().toLowerCase();
-
-    if (!keyword) {
-      return;
-    }
-
-    const taskNames =
-      Object.keys(tasks);
-
-    let matched = null;
+  const keyword =
+    normalizeText(
+      rawKeyword
+    );
 
 
-    /* 第一层：直接包含 */
+  let bestTask = null;
 
-    matched = taskNames.find(function(name) {
-
-      const lowerName =
-        name.toLowerCase();
-
-      return (
-        lowerName.includes(keyword) ||
-        keyword.includes(lowerName)
-      );
-
-    });
+  let bestScore = 0;
 
 
-    /* 第二层：简单关键词 */
+  Object.values(taskIndex)
+    .forEach(
+      function(task) {
 
-    if (!matched) {
-
-      const aliases = {
-
-        "压缩pdf": "PDF压缩",
-        "pdf太大": "PDF压缩",
-        "pdf小一点": "PDF压缩",
-
-        "抠图": "一键抠图",
-        "去背景": "一键抠图",
-        "透明背景": "一键抠图",
-
-        "证件照": "制作证件照",
-        "换底色": "证件照换底色",
-
-        "提取文字": "OCR提取文字",
-        "图片文字": "OCR提取文字",
-        "ocr": "OCR提取文字",
-
-        "视频太大": "视频压缩",
-        "压视频": "视频压缩",
-
-        "视频转音频": "视频提取音频",
-        "提取音乐": "视频提取音频",
-
-        "语音转文字": "录音转文字",
-        "录音文字": "录音转文字",
-
-        "伴奏": "人声伴奏分离",
-        "去人声": "人声伴奏分离",
-
-        "ppt": "AI做PPT",
-        "做ppt": "AI做PPT",
-
-        "翻译": "AI翻译",
-
-        "画图": "AI画图",
-        "生成图片": "AI画图",
-
-        "思维导图": "思维导图",
-
-        "论文": "论文查重",
-        "查重": "论文查重",
-
-        "latex": "公式转LaTeX",
-
-        "json": "JSON格式化",
-
-        "正则": "正则测试",
-
-        "sql": "SQL美化"
-
-      };
+        const candidates = [
+          task.name,
+          ...(task.aliases || [])
+        ];
 
 
-      for (const key in aliases) {
+        candidates.forEach(
+          function(candidate) {
 
-        if (
-          keyword.includes(key) ||
-          key.includes(keyword)
-        ) {
-
-          matched = aliases[key];
-          break;
-
-        }
-
-      }
-
-    }
+            const normalized =
+              normalizeText(
+                candidate
+              );
 
 
-    if (matched) {
-
-      showTask(matched);
-
-    } else {
-
-      alert(
-        "暂时没有找到完全匹配的任务。\n\n请从下方分类中选择。"
-      );
-
-    }
-
-  }
+            let score = 0;
 
 
-  /* 回车搜索 */
+            if (
+              keyword === normalized
+            ) {
 
-  document
-    .getElementById("searchInput")
-    .addEventListener(
-      "keydown",
-      function(event) {
+              score = 100;
 
-        if (event.key === "Enter") {
-          searchTask();
-        }
+            }
+
+            else if (
+              normalized.includes(
+                keyword
+              )
+            ) {
+
+              score = 80;
+
+            }
+
+            else if (
+              keyword.includes(
+                normalized
+              )
+            ) {
+
+              score = 70;
+
+            }
+
+            else {
+
+              const chars =
+                [...new Set(
+                  keyword.split("")
+                )];
+
+
+              let matchedChars = 0;
+
+
+              chars.forEach(
+                function(char) {
+
+                  if (
+                    normalized.includes(
+                      char
+                    )
+                  ) {
+
+                    matchedChars++;
+
+                  }
+
+                }
+              );
+
+
+              score =
+                (
+                  matchedChars /
+                  Math.max(
+                    chars.length,
+                    1
+                  )
+                ) * 40;
+
+            }
+
+
+            if (
+              score >
+              bestScore
+            ) {
+
+              bestScore =
+                score;
+
+              bestTask =
+                task;
+
+            }
+
+          }
+        );
 
       }
     );
 
+
+  if (
+    bestTask &&
+    bestScore >= 55
+  ) {
+
+    const category =
+      document.getElementById(
+        bestTask.categoryId
+      );
+
+
+    if (category) {
+
+      category.classList.add(
+        "expanded"
+      );
+
+
+      const expandButton =
+        category.querySelector(
+          ".expand-button"
+        );
+
+
+      if (expandButton) {
+
+        expandButton.textContent =
+          "收起";
+
+      }
+
+    }
+
+
+    showTask(
+      bestTask.name
+    );
+
+  }
+
+  else {
+
+    document
+      .getElementById(
+        "result"
+      )
+      .classList.remove(
+        "show"
+      );
+
+
+    document
+      .getElementById(
+        "searchEmpty"
+      )
+      .classList.add(
+        "show"
+      );
+
+
+    document
+      .getElementById(
+        "searchEmpty"
+      )
+      .scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
+  }
+
+}
+
+
+
+/* ==================================================
+   回车搜索
+================================================== */
+
+
+document
+  .getElementById(
+    "searchInput"
+  )
+  .addEventListener(
+    "keydown",
+    function(event) {
+
+      if (
+        event.key === "Enter"
+      ) {
+
+        searchTask();
+
+      }
+
+    }
+  );
+
+
+
+/* ==================================================
+   初始化
+================================================== */
+
+
+renderCategories();
+
+
 </script>
+
 
 </body>
 </html>
