@@ -13,6 +13,21 @@
     content="NAV KING - 不记网站名字，直接按任务找工具"
   >
 
+  <meta
+    http-equiv="Cache-Control"
+    content="no-cache, no-store, must-revalidate"
+  >
+
+  <meta
+    http-equiv="Pragma"
+    content="no-cache"
+  >
+
+  <meta
+    http-equiv="Expires"
+    content="0"
+  >
+
   <title>NAV KING · 导航王</title>
 
   <style>
@@ -26,6 +41,7 @@
 
     body {
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -33,8 +49,10 @@
         "PingFang SC",
         "Microsoft YaHei",
         sans-serif;
+
       background: #f5f7fb;
       color: #172033;
+
       padding-bottom: 110px;
     }
 
@@ -50,6 +68,10 @@
       padding: 18px 14px 55px;
     }
 
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
       background:
         linear-gradient(
@@ -57,9 +79,11 @@
           #111827 0%,
           #1f2937 100%
         );
+
       color: white;
       border-radius: 24px;
       padding: 24px 20px;
+
       box-shadow:
         0 14px 35px
         rgba(15,23,42,.16);
@@ -87,6 +111,10 @@
       color: #cbd5e1;
     }
 
+    /* =========================
+       搜索
+    ========================= */
+
     .search {
       margin-top: 18px;
       display: flex;
@@ -97,45 +125,70 @@
       flex: 1;
       min-width: 0;
       height: 48px;
+
       border: 0;
       outline: none;
+
       border-radius: 15px;
+
       padding: 0 15px;
+
       font-size: 15px;
+
       color: #111827;
       background: white;
     }
 
     .search button {
       height: 48px;
+
       border: 0;
       border-radius: 15px;
+
       padding: 0 17px;
+
       background: #2563eb;
       color: white;
+
       font-size: 14px;
       font-weight: 850;
+
       cursor: pointer;
     }
 
+    /* =========================
+       状态
+    ========================= */
+
     .system-status {
       margin-top: 14px;
+
       padding: 12px 14px;
+
       border-radius: 16px;
+
       background: white;
+
       border: 1px solid #e5e7eb;
+
       font-size: 13px;
       color: #64748b;
+
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 8px;
     }
 
     .status-dot {
       width: 10px;
       height: 10px;
+
+      margin-top: 4px;
+
       border-radius: 50%;
+
       background: #f59e0b;
+
       flex-shrink: 0;
     }
 
@@ -149,10 +202,16 @@
 
     .guide {
       margin: 15px 4px 4px;
+
       color: #64748b;
+
       font-size: 13px;
       line-height: 1.6;
     }
+
+    /* =========================
+       分类
+    ========================= */
 
     #categories {
       min-height: 220px;
@@ -160,8 +219,11 @@
 
     .category {
       margin-top: 16px;
+
       border-radius: 23px;
+
       padding: 17px;
+
       box-shadow:
         0 8px 25px
         rgba(15,23,42,.055);
@@ -171,14 +233,18 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 10px;
+
       margin-bottom: 14px;
     }
 
     .category-title {
       margin: 0;
+
       font-size: 19px;
       font-weight: 850;
+
       letter-spacing: -.3px;
     }
 
@@ -196,25 +262,36 @@
 
     .task {
       min-height: 64px;
+
       border:
         1px solid
         rgba(255,255,255,.9);
+
       background:
         rgba(255,255,255,.82);
+
       border-radius: 17px;
+
       padding: 10px 7px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
+
       color: #172033;
+
       font-size: 15px;
       font-weight: 800;
+
       cursor: pointer;
       user-select: none;
+
       box-shadow:
         0 3px 12px
         rgba(15,23,42,.04);
+
       transition:
         transform .12s ease,
         box-shadow .12s ease;
@@ -224,6 +301,10 @@
       transform: scale(.96);
       box-shadow: none;
     }
+
+    /* =========================
+       分类颜色
+    ========================= */
 
     .cat-pdf {
       background:
@@ -324,12 +405,21 @@
         );
     }
 
+    /* =========================
+       结果卡片
+    ========================= */
+
     .result {
       display: none;
+
       margin-top: 18px;
+
       background: white;
+
       border-radius: 23px;
+
       padding: 19px;
+
       box-shadow:
         0 12px 35px
         rgba(15,23,42,.12);
@@ -342,23 +432,33 @@
     .result-label {
       font-size: 12px;
       font-weight: 850;
+
       color: #2563eb;
+
       letter-spacing: 1px;
+
       margin-bottom: 7px;
     }
 
     .result h2 {
       margin: 0;
+
       font-size: 21px;
       line-height: 1.35;
     }
 
     .result-description {
       margin: 7px 0 16px;
+
       color: #64748b;
+
       font-size: 14px;
       line-height: 1.6;
     }
+
+    /* =========================
+       三网址
+    ========================= */
 
     .site-list {
       display: flex;
@@ -370,13 +470,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 12px;
+
       text-decoration: none;
       color: #172033;
+
       border: 1px solid #e2e8f0;
+
       background: #f8fafc;
+
       border-radius: 17px;
+
       padding: 14px;
+
       transition:
         transform .12s ease,
         background .12s ease;
@@ -396,13 +503,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       width: 26px;
       height: 26px;
+
       border-radius: 8px;
+
       background: #e0e7ff;
       color: #3730a3;
+
       font-size: 12px;
       font-weight: 900;
+
       margin-bottom: 7px;
     }
 
@@ -414,17 +526,24 @@
 
     .site-domain {
       margin-top: 4px;
+
       color: #64748b;
+
       font-size: 12px;
+
       word-break: break-all;
     }
 
     .site-open {
       flex-shrink: 0;
+
       background: #111827;
       color: white;
+
       border-radius: 11px;
+
       padding: 9px 11px;
+
       font-size: 13px;
       font-weight: 800;
     }
@@ -444,21 +563,32 @@
       color: #92400e;
     }
 
+    /* =========================
+       标签
+    ========================= */
+
     .meta-row {
       margin-top: 14px;
+
       display: flex;
       flex-wrap: wrap;
+
       gap: 7px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
+
       min-height: 28px;
+
       padding: 5px 9px;
+
       border-radius: 999px;
+
       font-size: 11px;
       font-weight: 750;
+
       background: #f1f5f9;
       color: #475569;
     }
@@ -480,21 +610,35 @@
 
     .result-tip {
       margin-top: 13px;
+
       padding-top: 12px;
+
       border-top: 1px solid #e5e7eb;
+
       color: #94a3b8;
+
       font-size: 12px;
       line-height: 1.55;
     }
 
+    /* =========================
+       未找到
+    ========================= */
+
     .empty {
       margin-top: 18px;
+
       background: white;
+
       padding: 18px;
+
       border-radius: 20px;
+
       color: #64748b;
+
       font-size: 14px;
       line-height: 1.65;
+
       display: none;
     }
 
@@ -502,27 +646,42 @@
       display: block;
     }
 
+    /* =========================
+       底部广告
+    ========================= */
+
     .ad {
       position: fixed;
+
       left: 50%;
+
       bottom:
         calc(
-          10px
-          + env(safe-area-inset-bottom)
+          10px +
+          env(safe-area-inset-bottom)
         );
+
       transform: translateX(-50%);
+
       width: calc(100% - 28px);
       max-width: 690px;
+
       background: #111827;
       color: white;
+
       border-radius: 18px;
+
       padding: 14px 12px;
+
       text-align: center;
+
       font-size: 14px;
       font-weight: 850;
+
       box-shadow:
         0 12px 30px
         rgba(15,23,42,.25);
+
       z-index: 100;
     }
 
@@ -536,6 +695,7 @@
           repeat(3,1fr);
       }
     }
+
   </style>
 </head>
 
@@ -600,7 +760,8 @@
   </div>
 
 
-  <div id="categories"></div>
+  <div id="categories">
+  </div>
 
 
   <section
@@ -638,24 +799,31 @@
     <div
       id="resultDescription"
       class="result-description"
-    ></div>
+    >
+    </div>
 
     <div
       id="siteList"
       class="site-list"
-    ></div>
+    >
+    </div>
 
     <div
       id="metaRow"
       class="meta-row"
-    ></div>
+    >
+    </div>
 
     <div class="result-tip">
+
       NAV KING 只负责导航。
+
       <br>
+
       你的文件不会上传到 NAV KING。
       如果所选工具属于云端处理，
       文件会由该第三方网站自行处理。
+
     </div>
 
   </section>
@@ -664,9 +832,15 @@
 
 
 <div class="ad">
+
   解压必备资源 ➕ V
-  <strong>ziyouluoti8</strong>
+
+  <strong>
+    ziyouluoti8
+  </strong>
+
   获取
+
 </div>
 
 
@@ -674,14 +848,34 @@
 
 "use strict";
 
+
+/* =========================================================
+   NAV KING FRONTEND BUILD
+========================================================= */
+
+const APP_VERSION =
+  "3.1";
+
+const BUILD_ID =
+  "20260825-CACHE-FIX";
+
+
 let atomicTasks = [];
+
 let toolRegistry = [];
+
 let searchableTasks = [];
 
+let atomicDataVersion =
+  "UNKNOWN";
 
-/* =========================
-   分类定义
-========================= */
+let toolsDataVersion =
+  "UNKNOWN";
+
+
+/* =========================================================
+   分类
+========================================================= */
 
 const categoryConfig = {
 
@@ -765,94 +959,180 @@ const categoryConfig = {
 };
 
 
-/* =========================
+/* =========================================================
    搜索别名
-========================= */
+========================================================= */
 
 const aliases = {
 
-  "pdf太大": "PDF压缩",
-  "压缩pdf": "PDF压缩",
-  "pdf小一点": "PDF压缩",
+  "pdf太大":
+    "PDF压缩",
 
-  "pdf转word": "PDF转Word",
-  "pdf改文字": "PDF转Word",
+  "压缩pdf":
+    "PDF压缩",
 
-  "pdf转excel": "PDF表格专用提取转Excel",
-  "pdf表格": "PDF表格专用提取转Excel",
+  "pdf小一点":
+    "PDF压缩",
 
-  "抠图": "图片在线抠图去背景",
-  "去背景": "图片在线抠图去背景",
-  "透明背景": "图片在线抠图去背景",
+  "pdf转word":
+    "PDF转Word",
 
-  "图片太大": "图片压缩",
-  "照片太大": "图片压缩",
-  "100kb": "图片压缩",
+  "pdf改文字":
+    "PDF转Word",
 
-  "证件照": "制作标准寸照",
-  "换底色": "证件照换底色与换装",
-  "换西装": "证件照换底色与换装",
-  "正装": "证件照换底色与换装",
+  "pdf转excel":
+    "PDF表格专用提取转Excel",
 
-  "图片文字": "图片文字提取OCR",
-  "提取文字": "图片文字提取OCR",
-  "ocr": "图片文字提取OCR",
+  "pdf表格":
+    "PDF表格专用提取转Excel",
 
-  "视频太大": "视频在线压缩",
-  "压视频": "视频在线压缩",
+  "抠图":
+    "图片在线抠图去背景",
 
-  "视频转音频": "视频提取音频",
-  "提取音频": "视频提取音频",
+  "去背景":
+    "图片在线抠图去背景",
 
-  "录音文字": "音频语音转文字",
-  "语音转文字": "音频语音转文字",
-  "会议转文字": "音频语音转文字",
+  "透明背景":
+    "图片在线抠图去背景",
 
-  "去人声": "人声伴奏分离",
-  "伴奏": "人声伴奏分离",
+  "图片太大":
+    "图片压缩",
 
-  "做ppt": "AI一键生成PPT演示文稿",
-  "ppt": "AI一键生成PPT演示文稿",
+  "照片太大":
+    "图片压缩",
 
-  "翻译": "AI多语言高质量翻译",
+  "100kb":
+    "图片压缩",
 
-  "总结pdf": "AI长文档与PDF阅读总结",
-  "长文总结": "AI长文档与PDF阅读总结",
+  "证件照":
+    "制作标准寸照",
 
-  "画图": "AI文本生成图像",
-  "ai图片": "AI文本生成图像",
+  "换底色":
+    "证件照换底色与换装",
 
-  "思维导图": "在线制作思维导图",
-  "流程图": "在线制作流程图",
+  "换西装":
+    "证件照换底色与换装",
 
-  "查重": "学术论文查重与报告生成",
-  "论文": "学术论文查重与报告生成",
+  "正装":
+    "证件照换底色与换装",
 
-  "latex": "复杂数学公式识别转LaTeX",
-  "公式": "复杂数学公式识别转LaTeX",
+  "图片文字":
+    "图片文字提取OCR",
 
-  "json": "JSON格式化、校验与结构转换",
-  "正则": "正则表达式在线测试",
-  "sql": "SQL代码格式化美化",
+  "提取文字":
+    "图片文字提取OCR",
 
-  "网页截图": "网页整页转长截图/PDF",
-  "网页转pdf": "网页整页转长截图/PDF",
-  "长截图": "网页整页转长截图/PDF",
+  "ocr":
+    "图片文字提取OCR",
 
-  "解压": "在线解压缩与归档预览",
-  "压缩包": "在线解压缩与归档预览",
+  "视频太大":
+    "视频在线压缩",
 
-  "临时邮箱": "临时一次性邮箱",
-  "录屏": "在线免安装网页录屏",
-  "psd": "在线PSD图层查看与编辑",
-  "时区": "全球多时区换算与会议规划"
+  "压视频":
+    "视频在线压缩",
+
+  "视频转音频":
+    "视频提取音频",
+
+  "提取音频":
+    "视频提取音频",
+
+  "录音文字":
+    "音频语音转文字",
+
+  "语音转文字":
+    "音频语音转文字",
+
+  "会议转文字":
+    "音频语音转文字",
+
+  "去人声":
+    "人声伴奏分离",
+
+  "伴奏":
+    "人声伴奏分离",
+
+  "做ppt":
+    "AI一键生成PPT演示文稿",
+
+  "ppt":
+    "AI一键生成PPT演示文稿",
+
+  "翻译":
+    "AI多语言高质量翻译",
+
+  "总结pdf":
+    "AI长文档与PDF阅读总结",
+
+  "长文总结":
+    "AI长文档与PDF阅读总结",
+
+  "画图":
+    "AI文本生成图像",
+
+  "ai图片":
+    "AI文本生成图像",
+
+  "思维导图":
+    "在线制作思维导图",
+
+  "流程图":
+    "在线制作流程图",
+
+  "查重":
+    "学术论文查重与报告生成",
+
+  "论文":
+    "学术论文查重与报告生成",
+
+  "latex":
+    "复杂数学公式识别转LaTeX",
+
+  "公式":
+    "复杂数学公式识别转LaTeX",
+
+  "json":
+    "JSON格式化、校验与结构转换",
+
+  "正则":
+    "正则表达式在线测试",
+
+  "sql":
+    "SQL代码格式化美化",
+
+  "网页截图":
+    "网页整页转长截图/PDF",
+
+  "网页转pdf":
+    "网页整页转长截图/PDF",
+
+  "长截图":
+    "网页整页转长截图/PDF",
+
+  "解压":
+    "在线解压缩与归档预览",
+
+  "压缩包":
+    "在线解压缩与归档预览",
+
+  "临时邮箱":
+    "临时一次性邮箱",
+
+  "录屏":
+    "在线免安装网页录屏",
+
+  "psd":
+    "在线PSD图层查看与编辑",
+
+  "时区":
+    "全球多时区换算与会议规划"
 
 };
 
 
-/* =========================
-   JSON 数组读取
-========================= */
+/* =========================================================
+   JSON 数组兼容
+========================================================= */
 
 function extractArray(data, keys) {
 
@@ -860,25 +1140,33 @@ function extractArray(data, keys) {
     return data;
   }
 
-  if (!data || typeof data !== "object") {
+  if (
+    !data ||
+    typeof data !== "object"
+  ) {
     return [];
   }
 
   for (const key of keys) {
 
-    if (Array.isArray(data[key])) {
+    if (
+      Array.isArray(
+        data[key]
+      )
+    ) {
       return data[key];
     }
 
   }
 
   return [];
+
 }
 
 
-/* =========================
+/* =========================================================
    Task 字段
-========================= */
+========================================================= */
 
 function getTaskId(task) {
 
@@ -889,6 +1177,10 @@ function getTaskId(task) {
     task.ID ??
     ""
   )
+  .replace(
+    /^TASK\s*/i,
+    ""
+  )
   .trim();
 
 }
@@ -897,9 +1189,9 @@ function getTaskId(task) {
 function getTaskName(task) {
 
   return (
-    task.title ??
     task.name ??
     task.task ??
+    task.title ??
     task.canonical_name ??
     task.canonicalName ??
     task.zh_name ??
@@ -914,7 +1206,7 @@ function getTaskName(task) {
 
 function getTaskCategory(task) {
 
-  const raw = (
+  return (
     task.category ??
     task.CATEGORY ??
     "OTHER"
@@ -922,26 +1214,6 @@ function getTaskCategory(task) {
   .toString()
   .trim()
   .toUpperCase();
-
-  const categoryMap = {
-
-    PDF: "PDF_DOCUMENT",
-    PDF_DOCUMENT: "PDF_DOCUMENT",
-
-    IMAGE: "IMAGE",
-    VIDEO: "VIDEO",
-    AUDIO: "AUDIO",
-    AI: "AI",
-    OFFICE: "OFFICE",
-    LEARNING: "LEARNING",
-    PROGRAMMING: "PROGRAMMING",
-    DESIGN: "DESIGN",
-    WEB: "WEB",
-    OTHER: "OTHER"
-
-  };
-
-  return categoryMap[raw] || "OTHER";
 
 }
 
@@ -990,43 +1262,9 @@ function getTaskDescription(task) {
 }
 
 
-function getTaskKeywords(task) {
-
-  const raw =
-    task.keywords ??
-    task.KEYWORDS ??
-    [];
-
-  if (Array.isArray(raw)) {
-
-    return raw
-      .map(String)
-      .map(function(v) {
-        return v.trim();
-      })
-      .filter(Boolean);
-
-  }
-
-  if (typeof raw === "string") {
-
-    return raw
-      .split(/[,，|]/)
-      .map(function(v) {
-        return v.trim();
-      })
-      .filter(Boolean);
-
-  }
-
-  return [];
-
-}
-
-
-/* =========================
+/* =========================================================
    Tool 字段
-========================= */
+========================================================= */
 
 function getToolName(tool) {
 
@@ -1070,27 +1308,55 @@ function getToolTasks(tool) {
     tool.TASKS ??
     [];
 
-  if (Array.isArray(raw)) {
+
+  if (
+    Array.isArray(raw)
+  ) {
 
     return raw
       .map(function(id) {
-        return String(id).trim();
+
+        return String(id)
+          .replace(
+            /^TASK\s*/i,
+            ""
+          )
+          .trim();
+
       })
       .filter(Boolean);
 
   }
 
-  if (typeof raw === "string") {
+
+  if (
+    typeof raw === "string"
+  ) {
 
     return raw
-      .replace(/[\[\]]/g, "")
+      .replace(
+        /[\[\]]/g,
+        ""
+      )
       .split(",")
       .map(function(id) {
-        return id.trim();
+
+        return id
+          .replace(
+            /^TASK\s*/i,
+            ""
+          )
+          .replace(
+            /["']/g,
+            ""
+          )
+          .trim();
+
       })
       .filter(Boolean);
 
   }
+
 
   return [];
 
@@ -1135,51 +1401,88 @@ function getToolLocal(tool) {
 
   return (
     value === true ||
-    String(value).toUpperCase() === "YES" ||
-    String(value).toUpperCase() === "TRUE"
+    value === "YES" ||
+    value === "TRUE"
   );
 
 }
 
 
-/* =========================
-   载入数据库
-========================= */
+/* =========================================================
+   数据读取
+   关键修复：
+   1. Date.now()
+   2. cache: no-store
+========================================================= */
 
 async function loadData() {
 
   setStatus(
     "loading",
-    "正在读取 NAV KING 数据库…"
+    "NAV KING V" +
+    APP_VERSION +
+    " · 正在读取最新数据库…"
   );
 
+
   try {
+
+    const cacheBust =
+      Date.now();
+
+
+    const atomicUrl =
+      "./data/atomic_tasks.json?cb=" +
+      cacheBust;
+
+
+    const toolsUrl =
+      "./data/tools.json?cb=" +
+      cacheBust;
+
 
     const [
       atomicResponse,
       toolsResponse
-    ] = await Promise.all([
+    ] =
+      await Promise.all([
 
-      fetch("./data/atomic_tasks.json?v=4"),
+        fetch(
+          atomicUrl,
+          {
+            cache: "no-store"
+          }
+        ),
 
-      fetch("./data/tools.json?v=4")
+        fetch(
+          toolsUrl,
+          {
+            cache: "no-store"
+          }
+        )
 
-    ]);
+      ]);
 
 
-    if (!atomicResponse.ok) {
+    if (
+      !atomicResponse.ok
+    ) {
 
       throw new Error(
-        "atomic_tasks.json 读取失败"
+        "atomic_tasks.json HTTP " +
+        atomicResponse.status
       );
 
     }
 
 
-    if (!toolsResponse.ok) {
+    if (
+      !toolsResponse.ok
+    ) {
 
       throw new Error(
-        "tools.json 读取失败"
+        "tools.json HTTP " +
+        toolsResponse.status
       );
 
     }
@@ -1188,8 +1491,25 @@ async function loadData() {
     const atomicData =
       await atomicResponse.json();
 
+
     const toolsData =
       await toolsResponse.json();
+
+
+    atomicDataVersion =
+      String(
+        atomicData.version ??
+        atomicData.VERSION ??
+        "UNKNOWN"
+      );
+
+
+    toolsDataVersion =
+      String(
+        toolsData.version ??
+        toolsData.VERSION ??
+        "UNKNOWN"
+      );
 
 
     atomicTasks =
@@ -1216,19 +1536,23 @@ async function loadData() {
       );
 
 
-    if (!atomicTasks.length) {
+    if (
+      !atomicTasks.length
+    ) {
 
       throw new Error(
-        "atomic_tasks.json 中没有读取到任务"
+        "atomic_tasks.json 没有读取到任务"
       );
 
     }
 
 
-    if (!toolRegistry.length) {
+    if (
+      !toolRegistry.length
+    ) {
 
       throw new Error(
-        "tools.json 中没有读取到工具"
+        "tools.json 没有读取到工具入口"
       );
 
     }
@@ -1245,7 +1569,13 @@ async function loadData() {
 
     setStatus(
       "ok",
-      "数据库运行正常 · 已读取 " +
+      "NAV KING V" +
+      APP_VERSION +
+      " · TASK DATA " +
+      atomicDataVersion +
+      " · TOOL DATA " +
+      toolsDataVersion +
+      " · 已读取 " +
       searchableTasks.length +
       " 个任务 / " +
       toolRegistry.length +
@@ -1253,13 +1583,44 @@ async function loadData() {
     );
 
 
+    console.log(
+      "NAV KING BUILD:",
+      BUILD_ID
+    );
+
+    console.log(
+      "TASK DATA VERSION:",
+      atomicDataVersion
+    );
+
+    console.log(
+      "TOOL DATA VERSION:",
+      toolsDataVersion
+    );
+
+    console.log(
+      "TASK COUNT:",
+      searchableTasks.length
+    );
+
+    console.log(
+      "TOOL COUNT:",
+      toolRegistry.length
+    );
+
+
   } catch (error) {
 
-    console.error(error);
+    console.error(
+      "NAV KING LOAD ERROR:",
+      error
+    );
+
 
     setStatus(
       "error",
-      "数据库读取失败，请检查 data/atomic_tasks.json 和 data/tools.json"
+      "数据库读取失败：" +
+      error.message
     );
 
   }
@@ -1267,14 +1628,15 @@ async function loadData() {
 }
 
 
-/* =========================
-   是否展示
-========================= */
+/* =========================================================
+   可见任务
+========================================================= */
 
 function isVisibleTask(task) {
 
   const status =
     getTaskStatus(task);
+
 
   if (
     status === "MERGED" ||
@@ -1284,18 +1646,24 @@ function isVisibleTask(task) {
     return false;
   }
 
-  if (!getTaskName(task)) {
+
+  const name =
+    getTaskName(task);
+
+
+  if (!name) {
     return false;
   }
+
 
   return true;
 
 }
 
 
-/* =========================
+/* =========================================================
    状态栏
-========================= */
+========================================================= */
 
 function setStatus(type, text) {
 
@@ -1304,30 +1672,48 @@ function setStatus(type, text) {
       "statusDot"
     );
 
+
   const label =
     document.getElementById(
       "statusText"
     );
 
+
   dot.className =
     "status-dot";
 
-  if (type === "ok") {
-    dot.classList.add("ok");
+
+  if (
+    type === "ok"
+  ) {
+
+    dot.classList.add(
+      "ok"
+    );
+
   }
 
-  if (type === "error") {
-    dot.classList.add("error");
+
+  if (
+    type === "error"
+  ) {
+
+    dot.classList.add(
+      "error"
+    );
+
   }
 
-  label.textContent = text;
+
+  label.textContent =
+    text;
 
 }
 
 
-/* =========================
+/* =========================================================
    分类渲染
-========================= */
+========================================================= */
 
 function renderCategories() {
 
@@ -1336,7 +1722,10 @@ function renderCategories() {
       "categories"
     );
 
-  container.innerHTML = "";
+
+  container.innerHTML =
+    "";
+
 
   const groups = {};
 
@@ -1347,37 +1736,54 @@ function renderCategories() {
       const category =
         getTaskCategory(task);
 
-      if (!groups[category]) {
-        groups[category] = [];
+
+      if (
+        !groups[category]
+      ) {
+
+        groups[category] =
+          [];
+
       }
 
-      groups[category].push(task);
+
+      groups[category].push(
+        task
+      );
 
     }
   );
 
 
   const categoryNames =
-    Object.keys(groups)
+    Object
+      .keys(groups)
       .sort(function(a,b) {
 
         const configA =
           categoryConfig[a];
 
+
         const configB =
           categoryConfig[b];
+
 
         const orderA =
           configA
             ? configA.order
             : 999;
 
+
         const orderB =
           configB
             ? configB.order
             : 999;
 
-        return orderA - orderB;
+
+        return (
+          orderA -
+          orderB
+        );
 
       });
 
@@ -1386,19 +1792,26 @@ function renderCategories() {
     function(categoryName) {
 
       const tasks =
-        groups[categoryName];
+        groups[
+          categoryName
+        ];
+
 
       const config =
         categoryConfig[
           categoryName
         ] || {
+
           title:
             "🧩 " +
             categoryName,
+
           note:
             "更多工具",
+
           className:
             "cat-other"
+
         };
 
 
@@ -1406,6 +1819,7 @@ function renderCategories() {
         document.createElement(
           "section"
         );
+
 
       section.className =
         "category " +
@@ -1417,6 +1831,7 @@ function renderCategories() {
           "div"
         );
 
+
       head.className =
         "category-head";
 
@@ -1426,8 +1841,10 @@ function renderCategories() {
           "h2"
         );
 
+
       title.className =
         "category-title";
+
 
       title.textContent =
         config.title;
@@ -1438,22 +1855,30 @@ function renderCategories() {
           "div"
         );
 
+
       note.className =
         "category-note";
+
 
       note.textContent =
         config.note;
 
 
-      head.appendChild(title);
+      head.appendChild(
+        title
+      );
 
-      head.appendChild(note);
+
+      head.appendChild(
+        note
+      );
 
 
       const grid =
         document.createElement(
           "div"
         );
+
 
       grid.className =
         "task-grid";
@@ -1467,18 +1892,28 @@ function renderCategories() {
               "div"
             );
 
+
           button.className =
             "task";
 
+
           button.textContent =
-            getTaskName(task);
+            getTaskName(
+              task
+            );
+
 
           button.addEventListener(
             "click",
             function() {
-              showTask(task);
+
+              showTask(
+                task
+              );
+
             }
           );
+
 
           grid.appendChild(
             button
@@ -1488,9 +1923,15 @@ function renderCategories() {
       );
 
 
-      section.appendChild(head);
+      section.appendChild(
+        head
+      );
 
-      section.appendChild(grid);
+
+      section.appendChild(
+        grid
+      );
+
 
       container.appendChild(
         section
@@ -1502,9 +1943,9 @@ function renderCategories() {
 }
 
 
-/* =========================
-   匹配工具
-========================= */
+/* =========================================================
+   Task → Tool
+========================================================= */
 
 function findToolsForTask(task) {
 
@@ -1519,6 +1960,7 @@ function findToolsForTask(task) {
         const ids =
           getToolTasks(tool);
 
+
         return ids.includes(
           taskId
         );
@@ -1529,6 +1971,7 @@ function findToolsForTask(task) {
         const status =
           getToolStatus(tool);
 
+
         return (
           status !== "DOWN" &&
           status !== "DISABLED" &&
@@ -1538,31 +1981,37 @@ function findToolsForTask(task) {
       });
 
 
-  tools.sort(function(a,b) {
+  tools.sort(
+    function(a,b) {
 
-    const roleA =
-      getToolRole(a);
+      const roleA =
+        getToolRole(a);
 
-    const roleB =
-      getToolRole(b);
 
-    const weight = {
-      PRIMARY: 1,
-      FALLBACK: 2,
-      FALLBACK_1: 2,
-      FALLBACK_2: 3,
-      BACKUP: 3
-    };
+      const roleB =
+        getToolRole(b);
 
-    const aWeight =
-      weight[roleA] || 9;
 
-    const bWeight =
-      weight[roleB] || 9;
+      if (
+        roleA === "PRIMARY" &&
+        roleB !== "PRIMARY"
+      ) {
+        return -1;
+      }
 
-    return aWeight - bWeight;
 
-  });
+      if (
+        roleB === "PRIMARY" &&
+        roleA !== "PRIMARY"
+      ) {
+        return 1;
+      }
+
+
+      return 0;
+
+    }
+  );
 
 
   return tools
@@ -1574,14 +2023,17 @@ function findToolsForTask(task) {
       );
 
     })
-    .slice(0,3);
+    .slice(
+      0,
+      3
+    );
 
 }
 
 
-/* =========================
-   展示任务
-========================= */
+/* =========================================================
+   显示任务
+========================================================= */
 
 function showTask(task) {
 
@@ -1590,25 +2042,30 @@ function showTask(task) {
       "result"
     );
 
+
   const empty =
     document.getElementById(
       "empty"
     );
+
 
   const title =
     document.getElementById(
       "resultTitle"
     );
 
+
   const description =
     document.getElementById(
       "resultDescription"
     );
 
+
   const list =
     document.getElementById(
       "siteList"
     );
+
 
   const metaRow =
     document.getElementById(
@@ -1622,13 +2079,21 @@ function showTask(task) {
 
 
   const taskName =
-    getTaskName(task);
+    getTaskName(
+      task
+    );
+
 
   const taskDescription =
-    getTaskDescription(task);
+    getTaskDescription(
+      task
+    );
+
 
   const tools =
-    findToolsForTask(task);
+    findToolsForTask(
+      task
+    );
 
 
   title.textContent =
@@ -1637,38 +2102,50 @@ function showTask(task) {
 
   description.textContent =
     taskDescription ||
-    "下面提供最多 3 个网址入口，请根据自己的网络环境和需求选择。";
+    "下面提供最多 3 个可用网址入口，请根据自己的网络环境和需求选择。";
 
 
-  list.innerHTML = "";
+  list.innerHTML =
+    "";
 
-  metaRow.innerHTML = "";
+
+  metaRow.innerHTML =
+    "";
 
 
-  if (!tools.length) {
+  if (
+    !tools.length
+  ) {
 
     const message =
       document.createElement(
         "div"
       );
 
+
     message.style.padding =
       "15px";
+
 
     message.style.background =
       "#fff7ed";
 
+
     message.style.borderRadius =
       "14px";
+
 
     message.style.color =
       "#9a3412";
 
+
     message.style.fontSize =
       "14px";
 
+
     message.textContent =
       "这个任务已经进入 NAV KING，但目前还没有关联网址入口。";
+
 
     list.appendChild(
       message
@@ -1683,21 +2160,25 @@ function showTask(task) {
       const name =
         getToolName(tool);
 
+
       const url =
         getToolUrl(tool);
 
 
-      let domain = "";
+      let domain =
+        "";
+
 
       try {
 
         domain =
           new URL(url)
-          .hostname;
+            .hostname;
 
       } catch (error) {
 
-        domain = url;
+        domain =
+          url;
 
       }
 
@@ -1711,11 +2192,14 @@ function showTask(task) {
       link.className =
         "site";
 
+
       link.href =
         url;
 
+
       link.target =
         "_blank";
+
 
       link.rel =
         "noopener noreferrer";
@@ -1754,19 +2238,23 @@ function showTask(task) {
   );
 
 
-  if (tools.length) {
-
-    const anyLocal =
-      tools.some(
-        getToolLocal
-      );
+  const anyLocal =
+    tools.some(
+      getToolLocal
+    );
 
 
-    if (anyLocal) {
+  if (
+    tools.length
+  ) {
+
+    if (
+      anyLocal
+    ) {
 
       addBadge(
         metaRow,
-        "包含本地处理入口",
+        "本地处理优先",
         "local"
       );
 
@@ -1784,9 +2272,14 @@ function showTask(task) {
 
 
   const layer =
-    getTaskLayer(task);
+    getTaskLayer(
+      task
+    );
 
-  if (layer === "PRO") {
+
+  if (
+    layer === "PRO"
+  ) {
 
     addBadge(
       metaRow,
@@ -1797,9 +2290,15 @@ function showTask(task) {
   }
 
 
+  const category =
+    getTaskCategory(
+      task
+    );
+
+
   addBadge(
     metaRow,
-    getTaskCategory(task),
+    category,
     ""
   );
 
@@ -1809,21 +2308,24 @@ function showTask(task) {
   );
 
 
-  setTimeout(function() {
+  setTimeout(
+    function() {
 
-    result.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
+      result.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
 
-  },80);
+    },
+    80
+  );
 
 }
 
 
-/* =========================
+/* =========================================================
    Badge
-========================= */
+========================================================= */
 
 function addBadge(
   parent,
@@ -1836,15 +2338,25 @@ function addBadge(
       "span"
     );
 
+
   badge.className =
     "badge";
 
-  if (type) {
-    badge.classList.add(type);
+
+  if (
+    type
+  ) {
+
+    badge.classList.add(
+      type
+    );
+
   }
+
 
   badge.textContent =
     text;
+
 
   parent.appendChild(
     badge
@@ -1853,9 +2365,9 @@ function addBadge(
 }
 
 
-/* =========================
+/* =========================================================
    搜索
-========================= */
+========================================================= */
 
 function searchTask() {
 
@@ -1864,13 +2376,16 @@ function searchTask() {
       "searchInput"
     );
 
+
   const keyword =
     input.value
       .trim()
       .toLowerCase();
 
 
-  if (!keyword) {
+  if (
+    !keyword
+  ) {
     return;
   }
 
@@ -1880,12 +2395,14 @@ function searchTask() {
       "empty"
     );
 
+
   empty.classList.remove(
     "show"
   );
 
 
-  let matched = null;
+  let matched =
+    null;
 
 
   matched =
@@ -1896,33 +2413,46 @@ function searchTask() {
           getTaskName(task)
             .toLowerCase();
 
+
         return (
-          name.includes(keyword) ||
-          keyword.includes(name)
+          name.includes(
+            keyword
+          ) ||
+          keyword.includes(
+            name
+          )
         );
 
       }
     );
 
 
-  if (!matched) {
+  if (
+    !matched
+  ) {
 
     for (
-      const alias
-      in aliases
+      const alias in aliases
     ) {
+
+      const lowerAlias =
+        alias.toLowerCase();
+
 
       if (
         keyword.includes(
-          alias.toLowerCase()
+          lowerAlias
         ) ||
-        alias
-          .toLowerCase()
-          .includes(keyword)
+        lowerAlias.includes(
+          keyword
+        )
       ) {
 
         const targetName =
-          aliases[alias];
+          aliases[
+            alias
+          ];
+
 
         matched =
           searchableTasks.find(
@@ -1936,7 +2466,10 @@ function searchTask() {
             }
           );
 
-        if (matched) {
+
+        if (
+          matched
+        ) {
           break;
         }
 
@@ -1947,25 +2480,22 @@ function searchTask() {
   }
 
 
-  if (!matched) {
+  if (
+    !matched
+  ) {
 
     matched =
       searchableTasks.find(
         function(task) {
 
-          const keywords =
-            getTaskKeywords(task)
-              .join(" ");
-
           const combined =
             (
               getTaskName(task) +
               " " +
-              getTaskDescription(task) +
-              " " +
-              keywords
+              getTaskDescription(task)
             )
             .toLowerCase();
+
 
           return combined.includes(
             keyword
@@ -1977,20 +2507,30 @@ function searchTask() {
   }
 
 
-  if (matched) {
+  if (
+    matched
+  ) {
 
-    showTask(matched);
+    showTask(
+      matched
+    );
 
   } else {
 
     document
-      .getElementById("result")
+      .getElementById(
+        "result"
+      )
       .classList
-      .remove("show");
+      .remove(
+        "show"
+      );
+
 
     empty.classList.add(
       "show"
     );
+
 
     empty.scrollIntoView({
       behavior: "smooth",
@@ -2002,26 +2542,45 @@ function searchTask() {
 }
 
 
-/* =========================
+/* =========================================================
    HTML 转义
-========================= */
+========================================================= */
 
 function escapeHTML(value) {
 
   return String(value)
 
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
 
-/* =========================
+/* =========================================================
    事件
-========================= */
+========================================================= */
 
 document
   .getElementById(
@@ -2044,16 +2603,18 @@ document
       if (
         event.key === "Enter"
       ) {
+
         searchTask();
+
       }
 
     }
   );
 
 
-/* =========================
+/* =========================================================
    START
-========================= */
+========================================================= */
 
 loadData();
 
