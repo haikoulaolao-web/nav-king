@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-25",
+  "description": "NAV KING 工具注册表。任务层通过 tool_id 调用具体网址。",
+  "tools": {
+    "ilovepdf": {
+      "name": "iLovePDF",
+      "domain": "ilovepdf.com",
+      "category": ["PDF"],
+      "base_url": "https://www.ilovepdf.com/zh-cn/",
+      "routes": {
+        "pdf-compress": "https://www.ilovepdf.com/zh-cn/compress_pdf",
+        "pdf-to-word": "https://www.ilovepdf.com/zh-cn/pdf_to_word",
+        "word-to-pdf": "https://www.ilovepdf.com/zh-cn/word_to_pdf",
+        "pdf-merge": "https://www.ilovepdf.com/zh-cn/merge_pdf",
+        "pdf-split": "https://www.ilovepdf.com/zh-cn/split_pdf",
+        "pdf-sign": "https://www.ilovepdf.com/zh-cn/sign-pdf",
+        "pdf-to-image": "https://www.ilovepdf.com/zh-cn/pdf_to_jpg",
+        "image-to-pdf": "https://www.ilovepdf.com/zh-cn/jpg_to_pdf"
+      }
+    },
+
+    "pdf24": {
+      "name": "PDF24",
+      "domain": "tools.pdf24.org",
+      "category": ["PDF"],
+      "base_url": "https://tools.pdf24.org/zh/",
+      "routes": {
+        "pdf-compress": "https://tools.pdf24.org/zh/compress-pdf",
+        "pdf-to-word": "https://tools.pdf24.org/zh/pdf-to-word",
+        "word-to-pdf": "https://tools.pdf24.org/zh/word-to-pdf",
+        "pdf-merge": "https://tools.pdf24.org/zh/merge-pdf",
+        "pdf-split": "https://tools.pdf24.org/zh/split-pdf",
+        "pdf-sign": "https://tools.pdf24.org/zh/sign-pdf",
+        "pdf-to-image": "https://tools.pdf24.org/zh/pdf-to-images",
+        "image-to-pdf": "https://tools.pdf24.org/zh/images-to-pdf"
+      }
+    },
+
+    "smallpdf": {
+      "name": "Smallpdf",
+      "domain": "smallpdf.com",
+      "category": ["PDF"],
+      "base_url": "https://smallpdf.com/cn/",
+      "routes": {
+        "pdf-compress": "https://smallpdf.com/cn/compress-pdf",
+        "pdf-to-word": "https://smallpdf.com/cn/pdf-to-word",
+        "pdf-merge": "https://smallpdf.com/cn/merge-pdf",
+        "pdf-split": "https://smallpdf.com/cn/split-pdf",
+        "pdf-sign": "https://smallpdf.com/cn/sign-pdf",
+        "pdf-to-image": "https://smallpdf.com/cn/pdf-to-jpg",
+        "image-to-pdf": "https://smallpdf.com/cn/jpg-to-pdf"
+      }
+    },
+
+    "squoosh": {
+      "name": "Squoosh",
+      "domain": "squoosh.app",
+      "category": ["图片"],
+      "base_url": "https://squoosh.app/",
+      "routes": {
+        "image-compress": "https://squoosh.app/",
+        "image-resize": "https://squoosh.app/"
+      }
+    },
+
+    "tinypng": {
+      "name": "TinyPNG",
+      "domain": "tinypng.com",
+      "category": ["图片"],
+      "base_url": "https://tinypng.com/",
+      "routes": {
+        "image-compress": "https://tinypng.com/"
+      }
+    },
+
+    "iloveimg": {
+      "name": "iLoveIMG",
+      "domain": "iloveimg.com",
+      "category": ["图片"],
+      "base_url": "https://www.iloveimg.com/zh-cn/",
+      "routes": {
+        "image-compress": "https://www.iloveimg.com/zh-cn/compress-image",
+        "image-resize": "https://www.iloveimg.com/zh-cn/resize-image"
+      }
+    },
+
+    "bgsub": {
+      "name": "BgSub",
+      "domain": "bgsub.cn",
+      "category": ["图片"],
+      "base_url": "https://bgsub.cn/",
+      "routes": {
+        "remove-background": "https://bgsub.cn/",
+        "id-photo-background": "https://bgsub.cn/"
+      }
+    },
+
+    "removebg": {
+      "name": "Remove.bg",
+      "domain": "remove.bg",
+      "category": ["图片"],
+      "base_url": "https://www.remove.bg/zh",
+      "routes": {
+        "remove-background": "https://www.remove.bg/zh"
+      }
+    },
+
+    "photoroom": {
+      "name": "PhotoRoom",
+      "domain": "photoroom.com",
+      "category": ["图片"],
+      "base_url": "https://www.photoroom.com/",
+      "routes": {
+        "remove-background": "https://www.photoroom.com/tools/background-remover",
+        "id-photo-background": "https://www.photoroom.com/tools/background-remover"
+      }
+    },
+
+    "ezgif": {
+      "name": "EZGIF",
+      "domain": "ezgif.com",
+      "category": ["视频", "GIF"],
+      "base_url": "https://ezgif.com/",
+      "routes": {
+        "video-to-gif": "https://ezgif.com/video-to-gif"
+      }
+    },
+
+    "cloudconvert": {
+      "name": "CloudConvert",
+      "domain": "cloudconvert.com",
+      "category": ["图片", "视频", "音频"],
+      "base_url": "https://cloudconvert.com/",
+      "routes": {
+        "heic-to-jpg": "https://cloudconvert.com/heic-to-jpg",
+        "video-to-gif": "https://cloudconvert.com/mp4-to-gif",
+        "video-to-audio": "https://cloudconvert.com/mp4-to-mp3",
+        "audio-convert": "https://cloudconvert.com/audio-converter"
+      }
+    },
+
+    "chatgpt": {
+      "name": "ChatGPT",
+      "domain": "chatgpt.com",
+      "category": ["AI"],
+      "base_url": "https://chatgpt.com/",
+      "routes": {
+        "ai-chat": "https://chatgpt.com/",
+        "ai-pdf": "https://chatgpt.com/",
+        "ai-writing": "https://chatgpt.com/"
+      }
+    },
+
+    "kimi": {
+      "name": "Kimi",
+      "domain": "kimi.com",
+      "category": ["AI"],
+      "base_url": "https://www.kimi.com/",
+      "routes": {
+        "ai-chat": "https://www.kimi.com/",
+        "ai-pdf": "https://www.kimi.com/"
+      }
+    },
+
+    "doubao": {
+      "name": "豆包",
+      "domain": "doubao.com",
+      "category": ["AI"],
+      "base_url": "https://www.doubao.com/chat/",
+      "routes": {
+        "ai-chat": "https://www.doubao.com/chat/",
+        "ai-writing": "https://www.doubao.com/chat/"
+      }
+    },
+
+    "deepl": {
+      "name": "DeepL",
+      "domain": "deepl.com",
+      "category": ["AI", "翻译"],
+      "base_url": "https://www.deepl.com/translator",
+      "routes": {
+        "translate": "https://www.deepl.com/translator"
+      }
+    },
+
+    "gamma": {
+      "name": "Gamma",
+      "domain": "gamma.app",
+      "category": ["AI", "PPT"],
+      "base_url": "https://gamma.app/",
+      "routes": {
+        "ai-ppt": "https://gamma.app/"
+      }
+    },
+
+    "canva": {
+      "name": "Canva",
+      "domain": "canva.com",
+      "category": ["图片", "视频", "AI", "办公"],
+      "base_url": "https://www.canva.com/",
+      "routes": {
+        "ai-ppt": "https://www.canva.com/",
+        "ai-image": "https://www.canva.com/ai-image-generator/",
+        "mind-map": "https://www.canva.com/graphs/mind-maps/"
+      }
+    },
+
+    "processon": {
+      "name": "ProcessOn",
+      "domain": "processon.com",
+      "category": ["办公"],
+      "base_url": "https://www.processon.com/",
+      "routes": {
+        "mind-map": "https://www.processon.com/",
+        "flowchart": "https://www.processon.com/"
+      }
+    },
+
+    "pairdrop": {
+      "name": "PairDrop",
+      "domain": "pairdrop.net",
+      "category": ["文件"],
+      "base_url": "https://pairdrop.net/",
+      "routes": {
+        "file-transfer": "https://pairdrop.net/"
+      }
+    },
+
+    "regex101": {
+      "name": "Regex101",
+      "domain": "regex101.com",
+      "category": ["开发者"],
+      "base_url": "https://regex101.com/",
+      "routes": {
+        "regex": "https://regex101.com/"
+      }
+    },
+
+    "jsoncn": {
+      "name": "JSON.cn",
+      "domain": "json.cn",
+      "category": ["开发者"],
+      "base_url": "https://www.json.cn/",
+      "routes": {
+        "json-format": "https://www.json.cn/"
+      }
+    },
+
+    "rayso": {
+      "name": "Ray.so",
+      "domain": "ray.so",
+      "category": ["开发者"],
+      "base_url": "https://ray.so/",
+      "routes": {
+        "code-image": "https://ray.so/"
+      }
+    },
+
+    "grammarly": {
+      "name": "Grammarly",
+      "domain": "grammarly.com",
+      "category": ["学习"],
+      "base_url": "https://www.grammarly.com/",
+      "routes": {
+        "grammar-check": "https://www.grammarly.com/grammar-check"
+      }
+    },
+
+    "simpletex": {
+      "name": "SimpleTex",
+      "domain": "simpletex.cn",
+      "category": ["学习"],
+      "base_url": "https://simpletex.cn/",
+      "routes": {
+        "latex": "https://simpletex.cn/"
+      }
+    },
+
+    "mybib": {
+      "name": "MyBib",
+      "domain": "mybib.com",
+      "category": ["学习"],
+      "base_url": "https://www.mybib.com/",
+      "routes": {
+        "citation": "https://www.mybib.com/"
+      }
+    }
+  }
+}
