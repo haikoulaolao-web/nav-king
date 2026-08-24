@@ -1,0 +1,302 @@
+{
+  "version": "2.2",
+  "updated": "2026-08-25",
+  "description": "NAV KING 原子任务字典。定义用户想完成什么，不直接保存工具网址。",
+  "tasks": [
+    {
+      "id": "pdf-compress",
+      "title": "PDF压缩",
+      "category": "pdf",
+      "keywords": ["PDF压缩", "压缩PDF", "PDF太大", "PDF变小", "减小PDF"]
+    },
+    {
+      "id": "pdf-to-word",
+      "title": "PDF转Word",
+      "category": "pdf",
+      "keywords": ["PDF转Word", "PDF转DOC", "PDF转文档"]
+    },
+    {
+      "id": "word-to-pdf",
+      "title": "Word转PDF",
+      "category": "pdf",
+      "keywords": ["Word转PDF", "DOC转PDF", "文档转PDF"]
+    },
+    {
+      "id": "pdf-merge",
+      "title": "合并PDF",
+      "category": "pdf",
+      "keywords": ["合并PDF", "PDF合并", "多个PDF合并"]
+    },
+    {
+      "id": "pdf-split",
+      "title": "拆分PDF",
+      "category": "pdf",
+      "keywords": ["拆分PDF", "分割PDF", "PDF拆分", "PDF分割"]
+    },
+    {
+      "id": "pdf-sign",
+      "title": "PDF签名",
+      "category": "pdf",
+      "keywords": ["PDF签名", "电子签名", "PDF电子签名"]
+    },
+    {
+      "id": "pdf-to-image",
+      "title": "PDF转图片",
+      "category": "pdf",
+      "keywords": ["PDF转图片", "PDF转JPG", "PDF转PNG"]
+    },
+    {
+      "id": "image-to-pdf",
+      "title": "图片转PDF",
+      "category": "pdf",
+      "keywords": ["图片转PDF", "JPG转PDF", "照片转PDF"]
+    },
+
+    {
+      "id": "image-compress",
+      "title": "图片压缩",
+      "category": "image",
+      "keywords": ["图片压缩", "照片压缩", "图片太大", "图片变小"]
+    },
+    {
+      "id": "image-remove-bg",
+      "title": "一键抠图",
+      "category": "image",
+      "keywords": ["抠图", "一键抠图", "去背景", "删除背景", "透明背景"]
+    },
+    {
+      "id": "id-photo-bg",
+      "title": "证件照换底色",
+      "category": "image",
+      "keywords": ["证件照换底色", "换底色", "证件照背景", "白底照片", "蓝底照片", "红底照片"]
+    },
+    {
+      "id": "id-photo",
+      "title": "制作证件照",
+      "category": "image",
+      "keywords": ["制作证件照", "证件照", "一寸照片", "二寸照片"]
+    },
+    {
+      "id": "image-resize",
+      "title": "图片改尺寸",
+      "category": "image",
+      "keywords": ["图片改尺寸", "图片尺寸", "修改分辨率", "照片改尺寸"]
+    },
+    {
+      "id": "image-ocr",
+      "title": "OCR提取文字",
+      "category": "image",
+      "keywords": ["OCR", "提取文字", "图片转文字", "识别图片文字"]
+    },
+    {
+      "id": "heic-to-jpg",
+      "title": "HEIC转JPG",
+      "category": "image",
+      "keywords": ["HEIC转JPG", "HEIC转换", "苹果照片转JPG"]
+    },
+    {
+      "id": "image-stitch",
+      "title": "拼接长图",
+      "category": "image",
+      "keywords": ["拼接长图", "长图拼接", "图片拼接", "照片拼接"]
+    },
+
+    {
+      "id": "video-compress",
+      "title": "视频压缩",
+      "category": "video",
+      "keywords": ["视频压缩", "视频太大", "压视频", "减小视频"]
+    },
+    {
+      "id": "video-cut",
+      "title": "视频剪切",
+      "category": "video",
+      "keywords": ["视频剪切", "剪视频", "视频裁剪", "截取视频"]
+    },
+    {
+      "id": "video-to-gif",
+      "title": "视频转GIF",
+      "category": "video",
+      "keywords": ["视频转GIF", "MP4转GIF", "制作GIF"]
+    },
+    {
+      "id": "video-extract-audio",
+      "title": "视频提取音频",
+      "category": "video",
+      "keywords": ["视频提取音频", "视频转音频", "提取音乐", "MP4转MP3"]
+    },
+    {
+      "id": "video-mute",
+      "title": "视频静音",
+      "category": "video",
+      "keywords": ["视频静音", "视频去声音", "删除视频声音"]
+    },
+    {
+      "id": "video-subtitle",
+      "title": "视频自动字幕",
+      "category": "video",
+      "keywords": ["视频自动字幕", "自动字幕", "视频加字幕", "字幕生成"]
+    },
+
+    {
+      "id": "audio-cut",
+      "title": "音频裁剪",
+      "category": "audio",
+      "keywords": ["音频裁剪", "剪音乐", "MP3裁剪", "截取音频"]
+    },
+    {
+      "id": "audio-transcribe",
+      "title": "录音转文字",
+      "category": "audio",
+      "keywords": ["录音转文字", "语音转文字", "音频转文字", "会议转文字"]
+    },
+    {
+      "id": "audio-denoise",
+      "title": "音频降噪",
+      "category": "audio",
+      "keywords": ["音频降噪", "录音降噪", "去噪音", "声音降噪"]
+    },
+    {
+      "id": "vocal-separation",
+      "title": "人声伴奏分离",
+      "category": "audio",
+      "keywords": ["人声伴奏分离", "去人声", "提取伴奏", "伴奏", "人声分离"]
+    },
+    {
+      "id": "text-to-speech",
+      "title": "文字转语音",
+      "category": "audio",
+      "keywords": ["文字转语音", "文本转语音", "AI配音", "文字朗读"]
+    },
+    {
+      "id": "audio-to-mp3",
+      "title": "音频转MP3",
+      "category": "audio",
+      "keywords": ["音频转MP3", "转MP3", "音频格式转换"]
+    },
+
+    {
+      "id": "ai-chat",
+      "title": "AI问答",
+      "category": "ai",
+      "keywords": ["AI问答", "AI聊天", "问AI", "ChatGPT", "豆包", "Kimi"]
+    },
+    {
+      "id": "ai-pdf-summary",
+      "title": "AI总结PDF",
+      "category": "ai",
+      "keywords": ["AI总结PDF", "总结PDF", "PDF摘要", "阅读PDF"]
+    },
+    {
+      "id": "ai-ppt",
+      "title": "AI做PPT",
+      "category": "ai",
+      "keywords": ["AI做PPT", "做PPT", "PPT生成", "自动做PPT"]
+    },
+    {
+      "id": "ai-translate",
+      "title": "AI翻译",
+      "category": "ai",
+      "keywords": ["AI翻译", "翻译", "英文翻译", "中文翻译"]
+    },
+    {
+      "id": "ai-copywriting",
+      "title": "AI写文案",
+      "category": "ai",
+      "keywords": ["AI写文案", "写文案", "AI写作", "写文章"]
+    },
+    {
+      "id": "ai-image",
+      "title": "AI画图",
+      "category": "ai",
+      "keywords": ["AI画图", "AI图片", "生成图片", "文生图"]
+    },
+
+    {
+      "id": "mind-map",
+      "title": "思维导图",
+      "category": "office",
+      "keywords": ["思维导图", "脑图", "Mind Map"]
+    },
+    {
+      "id": "flowchart",
+      "title": "流程图",
+      "category": "office",
+      "keywords": ["流程图", "画流程图", "Flowchart"]
+    },
+    {
+      "id": "file-transfer",
+      "title": "文件快传",
+      "category": "office",
+      "keywords": ["文件快传", "传文件", "文件传输", "手机传电脑"]
+    },
+    {
+      "id": "text-clean",
+      "title": "文本清洗",
+      "category": "office",
+      "keywords": ["文本清洗", "文字清洗", "去空格", "整理文本"]
+    },
+    {
+      "id": "currency-convert",
+      "title": "汇率换算",
+      "category": "office",
+      "keywords": ["汇率换算", "汇率", "人民币换美元", "货币转换"]
+    },
+    {
+      "id": "password-generator",
+      "title": "随机密码",
+      "category": "office",
+      "keywords": ["随机密码", "生成密码", "密码生成器", "强密码"]
+    },
+
+    {
+      "id": "english-check",
+      "title": "英文纠错",
+      "category": "learning",
+      "keywords": ["英文纠错", "英语纠错", "语法检查", "英文语法"]
+    },
+    {
+      "id": "paper-check",
+      "title": "论文查重",
+      "category": "learning",
+      "keywords": ["论文查重", "查重", "重复率", "论文重复"]
+    },
+    {
+      "id": "latex-convert",
+      "title": "公式转LaTeX",
+      "category": "learning",
+      "keywords": ["公式转LaTeX", "LaTeX", "公式识别", "数学公式"]
+    },
+    {
+      "id": "citation-generator",
+      "title": "参考文献生成",
+      "category": "learning",
+      "keywords": ["参考文献生成", "参考文献", "引用生成", "文献格式"]
+    },
+
+    {
+      "id": "json-format",
+      "title": "JSON格式化",
+      "category": "pro",
+      "keywords": ["JSON格式化", "JSON", "格式化JSON", "JSON美化"]
+    },
+    {
+      "id": "regex-test",
+      "title": "正则测试",
+      "category": "pro",
+      "keywords": ["正则测试", "正则表达式", "Regex", "正则"]
+    },
+    {
+      "id": "sql-format",
+      "title": "SQL美化",
+      "category": "pro",
+      "keywords": ["SQL美化", "SQL格式化", "格式化SQL", "SQL"]
+    },
+    {
+      "id": "code-image",
+      "title": "代码截图",
+      "category": "pro",
+      "keywords": ["代码截图", "代码图片", "代码转图片", "漂亮代码截图"]
+    }
+  ]
+}
