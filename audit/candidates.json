@@ -1,0 +1,128 @@
+{
+  "version": "1.0",
+  "updated": "2026-08-25",
+  "description": "NAV KING real-world candidate audit batch 001",
+  "test_group": "REAL_WORLD",
+  "candidates": [
+    {
+      "candidate_id": "REAL-001",
+      "task_id": "pdf-compress",
+      "provider": "iLovePDF",
+      "name": "iLovePDF PDF压缩",
+      "url": "https://www.ilovepdf.com/zh-cn/compress_pdf",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["pdf", "compress", "压缩"],
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-002",
+      "task_id": "pdf-to-word",
+      "provider": "Smallpdf",
+      "name": "Smallpdf PDF转Word",
+      "url": "https://smallpdf.com/cn/pdf-to-word",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["pdf", "word", "转换"],
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-003",
+      "task_id": "pdf-merge",
+      "provider": "iLovePDF",
+      "name": "iLovePDF PDF合并",
+      "url": "https://www.ilovepdf.com/zh-cn/merge_pdf",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["pdf", "merge", "合并"],
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-004",
+      "task_id": "pdf-split",
+      "provider": "iLovePDF",
+      "name": "iLovePDF PDF拆分",
+      "url": "https://www.ilovepdf.com/zh-cn/split_pdf",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["pdf", "split", "拆分"],
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-005",
+      "task_id": "image-compress",
+      "provider": "Squoosh",
+      "name": "Squoosh图片压缩",
+      "url": "https://squoosh.app/",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["image", "compress", "squoosh"],
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-006",
+      "task_id": "image-resize",
+      "provider": "Squoosh",
+      "name": "Squoosh图片缩放",
+      "url": "https://squoosh.app/",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["image", "resize", "squoosh"],
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-007",
+      "task_id": "image-remove-bg",
+      "provider": "稿定设计",
+      "name": "稿定抠图",
+      "url": "https://www.gaoding.com/koutu",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["抠图", "背景", "图片"],
+      "cn_priority": "HIGH",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-008",
+      "task_id": "heic-to-jpg",
+      "provider": "CloudConvert",
+      "name": "CloudConvert HEIC转JPG",
+      "url": "https://cloudconvert.com/heic-to-jpg",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["heic", "jpg", "convert"],
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-009",
+      "task_id": "audio-cut",
+      "provider": "123apps",
+      "name": "Audio Cutter",
+      "url": "https://mp3cut.net/cn/",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["audio", "cut", "mp3"],
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "status": "PENDING"
+    },
+    {
+      "candidate_id": "REAL-010",
+      "task_id": "audio-merge",
+      "provider": "123apps",
+      "name": "Audio Joiner",
+      "url": "https://audio-joiner.com/cn/",
+      "source": "nav-king-replacement-batch",
+      "expected_keywords": ["audio", "join", "merge"],
+      "cn_priority": "MEDIUM",
+      "cn_verified": false,
+      "status": "PENDING"
+    }
+  ]
+}
