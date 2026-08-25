@@ -1,1087 +1,1968 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
-
-  <meta
-    name="description"
-    content="马上办 - 不研究工具，直接把事办完"
-  >
-
-  <meta
-    http-equiv="Cache-Control"
-    content="no-cache, no-store, must-revalidate"
-  >
-
-  <meta
-    http-equiv="Pragma"
-    content="no-cache"
-  >
-
-  <meta
-    http-equiv="Expires"
-    content="0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#111827"
-  >
-
-  <title>马上办 · 高效工具入口</title>
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        "PingFang SC",
-        "Microsoft YaHei",
-        sans-serif;
-
-      background: #f5f7fb;
-      color: #172033;
-
-      padding-bottom: 92px;
-    }
-
-    button,
-    input {
-      font: inherit;
-    }
-
-    button {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-
-      padding:
-        12px
-        10px
-        40px;
-    }
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+<meta
+  name="description"
+  content="马上办 NAV KING - 不研究工具，不记网站名字，按任务直接办事"
+>
+
+<meta
+  http-equiv="Cache-Control"
+  content="no-cache, no-store, must-revalidate"
+>
+
+<meta
+  http-equiv="Pragma"
+  content="no-cache"
+>
+
+<meta
+  http-equiv="Expires"
+  content="0"
+>
+
+<meta
+  name="theme-color"
+  content="#111827"
+>
+
+<title>马上办 · NAV KING</title>
+
+<style>
+
+/* =========================================================
+   NAV KING V4.3.1
+   Visual System
+   深蓝品牌骨架 + 低饱和分类 + 状态色
+========================================================= */
+
+:root {
 
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      background:
-        linear-gradient(
-          135deg,
-          #111827 0%,
-          #1f2937 100%
-        );
+  /* 品牌 */
+  --brand-dark: #111827;
+  --brand-dark-2: #182235;
+  --brand-blue: #2563eb;
+  --brand-blue-light: #60a5fa;
 
-      color: white;
+  /* 字体 */
+  --text-main: #172033;
+  --text-sub: #64748b;
+  --text-soft: #94a3b8;
 
-      border-radius: 20px;
+  /* 背景 */
+  --page-bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --card-soft: #f8fafc;
 
-      padding:
-        17px
-        16px
-        16px;
+  /* 状态 */
+  --green: #16a34a;
+  --green-soft: #dcfce7;
 
-      box-shadow:
-        0 10px 28px
-        rgba(15,23,42,.14);
-    }
+  --orange: #f59e0b;
+  --orange-soft: #fff7ed;
 
-    .brand-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
+  --red: #dc2626;
+  --red-soft: #fef2f2;
 
-    .brand {
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 2.5px;
-      color: #60a5fa;
-    }
+  --purple: #7c3aed;
+  --purple-soft: #f5f0ff;
 
-    .save-nav-btn {
-      border:
-        1px solid
-        rgba(255,255,255,.15);
+  /* 边框 */
+  --border: #e2e8f0;
 
-      background:
-        rgba(255,255,255,.08);
+  /* 分类低饱和颜色 */
+  --pdf-bg: #eaf2ff;
+  --image-bg: #ecfdf3;
+  --video-bg: #f3eeff;
+  --audio-bg: #fff4e8;
+  --ai-bg: #eafbff;
+  --office-bg: #fff8d9;
+  --learning-bg: #fff0f7;
+  --pro-bg: #f1f3f6;
+  --design-bg: #fff7d6;
+  --web-bg: #edf8ff;
+  --other-bg: #f5f1ff;
 
-      color: white;
+}
 
-      min-height: 30px;
 
-      padding:
-        5px
-        9px;
+/* =========================================================
+   RESET
+========================================================= */
 
-      border-radius: 999px;
+* {
+  box-sizing: border-box;
+}
 
-      font-size: 11px;
-      font-weight: 850;
+html {
+  scroll-behavior: smooth;
+}
 
-      cursor: pointer;
-      white-space: nowrap;
-    }
+body {
 
-    .save-nav-btn:active {
-      transform: scale(.97);
-    }
+  margin: 0;
 
-    .hero h1 {
-      margin:
-        10px
-        0
-        0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
 
-      font-size: 28px;
-      line-height: 1.2;
-      letter-spacing: -1px;
-    }
+  background: var(--page-bg);
 
-    .hero-text {
-      margin-top: 7px;
+  color: var(--text-main);
 
-      font-size: 14px;
-      line-height: 1.5;
+  padding-bottom:
+    calc(
+      82px +
+      env(safe-area-inset-bottom)
+    );
 
-      color: #cbd5e1;
-    }
+}
 
+button,
+input {
+  font: inherit;
+}
 
-    /* =========================
-       搜索
-    ========================= */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-    .search {
-      margin-top: 13px;
+a {
+  color: inherit;
+}
 
-      display: flex;
-      gap: 7px;
-    }
 
-    .search input {
-      flex: 1;
+/* =========================================================
+   PAGE
+========================================================= */
 
-      min-width: 0;
+.container {
 
-      height: 42px;
+  width: 100%;
 
-      border: 0;
-      outline: none;
+  max-width: 860px;
 
-      border-radius: 13px;
+  margin: 0 auto;
 
-      padding:
-        0
-        13px;
+  padding:
+    14px
+    12px
+    70px;
 
-      font-size: 14px;
+}
 
-      color: #111827;
-      background: white;
-    }
 
-    .search button {
-      height: 42px;
+/* =========================================================
+   HERO
+========================================================= */
 
-      border: 0;
-      border-radius: 13px;
+.hero {
 
-      padding:
-        0
-        15px;
+  position: relative;
 
-      background: #2563eb;
-      color: white;
+  overflow: hidden;
 
-      font-size: 13px;
-      font-weight: 850;
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-dark) 0%,
+      var(--brand-dark-2) 100%
+    );
 
-      cursor: pointer;
-    }
+  color: white;
 
+  border-radius: 24px;
 
-    /* =========================
-       系统状态
-    ========================= */
+  padding:
+    23px
+    20px
+    22px;
 
-    .system-status {
-      display: none !important;
-    }
+  box-shadow:
+    0 16px 42px
+    rgba(15,23,42,.16);
 
-    .status-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #f59e0b;
-    }
+}
 
-    .status-dot.ok {
-      background: #16a34a;
-    }
+.hero::after {
 
-    .status-dot.error {
-      background: #dc2626;
-    }
+  content: "";
 
+  position: absolute;
 
-    /* =========================
-       引导
-    ========================= */
+  width: 180px;
+  height: 180px;
 
-    .guide {
-      margin:
-        10px
-        3px
-        2px;
+  right: -80px;
+  top: -80px;
 
-      color: #64748b;
+  border-radius: 50%;
 
-      font-size: 11px;
-      line-height: 1.5;
-    }
+  background:
+    radial-gradient(
+      circle,
+      rgba(96,165,250,.18),
+      rgba(96,165,250,0)
+    );
 
+  pointer-events: none;
 
-    /* =========================
-       分类
-    ========================= */
+}
 
-    #categories {
-      min-height: 180px;
-    }
+.brand-row {
 
-    .category {
-      margin-top: 10px;
+  position: relative;
 
-      border-radius: 18px;
+  z-index: 2;
 
-      padding:
-        12px
-        11px
-        11px;
+  display: flex;
 
-      box-shadow:
-        0 5px 18px
-        rgba(15,23,42,.045);
-    }
+  align-items: center;
 
-    .category-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  justify-content: space-between;
 
-      gap: 8px;
+  gap: 12px;
 
-      margin-bottom: 9px;
-    }
+}
 
-    .category-title {
-      margin: 0;
+.brand {
 
-      font-size: 16px;
-      font-weight: 850;
+  font-size: 13px;
 
-      letter-spacing: -.2px;
-    }
+  font-weight: 900;
 
-    .category-note {
-      font-size: 10px;
-      color: #64748b;
-      white-space: nowrap;
-    }
+  letter-spacing: 3px;
 
-    .task-grid {
-      display: grid;
+  color: var(--brand-blue-light);
 
-      grid-template-columns:
-        repeat(3,1fr);
+}
 
-      gap: 7px;
-    }
+.save-nav-btn {
 
-    .task {
-      min-height: 47px;
+  border:
+    1px solid
+    rgba(255,255,255,.16);
 
-      border:
-        1px
-        solid
-        rgba(255,255,255,.9);
+  background:
+    rgba(255,255,255,.08);
 
-      background:
-        rgba(255,255,255,.84);
+  color: white;
 
-      border-radius: 13px;
+  min-height: 34px;
 
-      padding:
-        7px
-        5px;
+  padding:
+    7px
+    12px;
 
-      display: flex;
+  border-radius: 999px;
 
-      align-items: center;
-      justify-content: center;
+  font-size: 12px;
 
-      text-align: center;
+  font-weight: 850;
 
-      color: #172033;
+  cursor: pointer;
 
-      font-size: 13px;
-      line-height: 1.25;
+  backdrop-filter: blur(8px);
 
-      font-weight: 800;
+}
 
-      cursor: pointer;
+.save-nav-btn:active {
+  transform: scale(.97);
+}
 
-      user-select: none;
+.hero h1 {
 
-      box-shadow:
-        0 2px 8px
-        rgba(15,23,42,.035);
+  position: relative;
 
-      transition:
-        transform .12s ease,
-        box-shadow .12s ease;
-    }
-
-    .task:active {
-      transform: scale(.95);
-      box-shadow: none;
-    }
-
-
-    /* =========================
-       分类颜色
-    ========================= */
-
-    .cat-pdf {
-      background:
-        linear-gradient(
-          135deg,
-          #dbeafe,
-          #eff6ff
-        );
-    }
-
-    .cat-image {
-      background:
-        linear-gradient(
-          135deg,
-          #dcfce7,
-          #f0fdf4
-        );
-    }
+  z-index: 2;
 
-    .cat-video {
-      background:
-        linear-gradient(
-          135deg,
-          #ede9fe,
-          #f5f3ff
-        );
-    }
+  margin:
+    14px
+    0
+    0;
 
-    .cat-audio {
-      background:
-        linear-gradient(
-          135deg,
-          #ffedd5,
-          #fff7ed
-        );
-    }
+  font-size: 31px;
 
-    .cat-ai {
-      background:
-        linear-gradient(
-          135deg,
-          #cffafe,
-          #ecfeff
-        );
-    }
+  line-height: 1.22;
 
-    .cat-office {
-      background:
-        linear-gradient(
-          135deg,
-          #fef3c7,
-          #fffbeb
-        );
-    }
+  letter-spacing: -1px;
 
-    .cat-learning {
-      background:
-        linear-gradient(
-          135deg,
-          #fce7f3,
-          #fdf2f8
-        );
-    }
+}
 
-    .cat-programming {
-      background:
-        linear-gradient(
-          135deg,
-          #e5e7eb,
-          #f3f4f6
-        );
-    }
+.hero-text {
 
-    .cat-design {
-      background:
-        linear-gradient(
-          135deg,
-          #fde68a,
-          #fefce8
-        );
-    }
+  position: relative;
 
-    .cat-web {
-      background:
-        linear-gradient(
-          135deg,
-          #bae6fd,
-          #f0f9ff
-        );
-    }
+  z-index: 2;
 
-    .cat-other {
-      background:
-        linear-gradient(
-          135deg,
-          #ddd6fe,
-          #faf5ff
-        );
-    }
+  margin-top: 10px;
 
+  font-size: 15px;
 
-    /* =========================
-       结果卡
-    ========================= */
+  line-height: 1.65;
 
-    .result {
-      display: none;
+  color: #cbd5e1;
 
-      margin-top: 12px;
+  max-width: 620px;
 
-      background: white;
+}
 
-      border-radius: 19px;
 
-      padding:
-        15px
-        14px;
+/* =========================================================
+   SEARCH
+========================================================= */
 
-      box-shadow:
-        0 9px 28px
-        rgba(15,23,42,.10);
-    }
+.search {
 
-    .result.show {
-      display: block;
-    }
+  position: relative;
 
-    .result-label {
-      font-size: 10px;
-      font-weight: 850;
+  z-index: 2;
 
-      color: #2563eb;
+  display: flex;
 
-      letter-spacing: 1px;
+  gap: 8px;
 
-      margin-bottom: 5px;
-    }
+  margin-top: 18px;
 
-    .result h2 {
-      margin: 0;
+}
 
-      font-size: 19px;
-      line-height: 1.3;
-    }
+.search input {
 
-    .result-description {
-      margin:
-        5px
-        0
-        10px;
+  flex: 1;
 
-      color: #64748b;
+  min-width: 0;
 
-      font-size: 12px;
-      line-height: 1.5;
-    }
+  height: 48px;
 
+  border: 0;
 
-    /* =========================
-       工具入口
-    ========================= */
+  outline: none;
 
-    .site-list {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
+  border-radius: 15px;
 
-    .site {
-      display: flex;
+  padding:
+    0
+    15px;
 
-      align-items: center;
-      justify-content: space-between;
+  font-size: 15px;
 
-      gap: 9px;
+  color: var(--brand-dark);
 
-      text-decoration: none;
+  background: white;
 
-      color: #172033;
+  box-shadow:
+    inset
+    0 0 0 1px
+    rgba(255,255,255,.6);
 
-      border:
-        1px
-        solid
-        #e2e8f0;
+}
 
-      background: #f8fafc;
+.search input::placeholder {
+  color: #a1a1aa;
+}
 
-      border-radius: 14px;
+.search button {
 
-      padding:
-        10px
-        10px;
+  height: 48px;
 
-      transition:
-        transform .12s ease,
-        background .12s ease,
-        border-color .12s ease;
-    }
+  border: 0;
 
-    .site:active {
-      transform: scale(.985);
-      background: #f1f5f9;
-    }
+  border-radius: 15px;
 
-    .site.recommended {
-      border-color: #86efac;
-      background: #f7fff9;
-    }
+  padding:
+    0
+    18px;
 
-    .site-left {
-      min-width: 0;
-      flex: 1;
-    }
+  background: var(--brand-blue);
 
-    .site-topline {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 4px;
-    }
+  color: white;
 
-    .site-rank {
-      display: inline-flex;
+  font-size: 14px;
 
-      align-items: center;
-      justify-content: center;
+  font-weight: 850;
 
-      min-height: 21px;
+  cursor: pointer;
 
-      padding:
-        3px
-        6px;
+  box-shadow:
+    0 7px 18px
+    rgba(37,99,235,.28);
 
-      border-radius: 7px;
+}
 
-      background: #e0e7ff;
-      color: #3730a3;
+.search button:active {
+  transform: scale(.97);
+}
 
-      font-size: 10px;
-      font-weight: 900;
-    }
 
-    .site:nth-child(1)
-    .site-rank {
-      background: #dcfce7;
-      color: #166534;
-    }
+/* =========================================================
+   GUIDE
+========================================================= */
 
-    .site:nth-child(2)
-    .site-rank {
-      background: #dbeafe;
-      color: #1d4ed8;
-    }
+.guide {
 
-    .site:nth-child(3)
-    .site-rank {
-      background: #fef3c7;
-      color: #92400e;
-    }
+  margin:
+    14px
+    4px
+    2px;
 
-    .site-name {
-      font-size: 14px;
-      font-weight: 850;
-      line-height: 1.3;
-    }
+  color: var(--text-sub);
 
-    .site-domain {
-      margin-top: 2px;
+  font-size: 13px;
 
-      color: #64748b;
+  line-height: 1.65;
 
-      font-size: 10px;
+}
 
-      word-break: break-all;
-    }
 
-    .tool-tags {
-      display: flex;
-      flex-wrap: wrap;
+/* =========================================================
+   CATEGORY
+========================================================= */
 
-      gap: 4px;
+#categories {
+  min-height: 220px;
+}
 
-      margin-top: 6px;
-    }
+.category {
 
-    .tool-tag {
-      display: inline-flex;
-      align-items: center;
+  margin-top: 15px;
 
-      min-height: 20px;
+  border-radius: 22px;
 
-      padding:
-        3px
-        6px;
+  padding: 14px;
 
-      border-radius: 999px;
+  box-shadow:
+    0 8px 24px
+    rgba(15,23,42,.045);
 
-      font-size: 9px;
-      font-weight: 750;
+  border:
+    1px solid
+    rgba(255,255,255,.72);
 
-      background: #f1f5f9;
-      color: #475569;
-    }
+}
 
-    .tool-tag.good {
-      background: #dcfce7;
-      color: #166534;
-    }
+.category-head {
 
-    .tool-tag.info {
-      background: #dbeafe;
-      color: #1d4ed8;
-    }
+  display: flex;
 
-    .tool-tag.warn {
-      background: #fef3c7;
-      color: #92400e;
-    }
+  align-items: center;
 
-    .site-open {
-      flex-shrink: 0;
+  justify-content: space-between;
 
-      background: #111827;
-      color: white;
+  gap: 10px;
 
-      border-radius: 10px;
+  margin-bottom: 12px;
 
-      padding:
-        8px
-        9px;
+}
 
-      font-size: 12px;
-      font-weight: 800;
-    }
+.category-title {
 
+  margin: 0;
 
-    /* =========================
-       元数据
-    ========================= */
+  font-size: 19px;
 
-    .meta-row {
-      margin-top: 9px;
+  font-weight: 900;
 
-      display: flex;
-      flex-wrap: wrap;
+  line-height: 1.3;
 
-      gap: 5px;
-    }
+  letter-spacing: -.3px;
 
-    .badge {
-      display: inline-flex;
+}
 
-      align-items: center;
+.category-note {
 
-      min-height: 22px;
+  font-size: 12px;
 
-      padding:
-        4px
-        7px;
+  color: var(--text-sub);
 
-      border-radius: 999px;
+  white-space: nowrap;
 
-      font-size: 9px;
-      font-weight: 750;
+}
 
-      background: #f1f5f9;
-      color: #475569;
-    }
 
-    .badge.local {
-      background: #dcfce7;
-      color: #166534;
-    }
+/* =========================================================
+   TASK GRID
+========================================================= */
 
-    .badge.cloud {
-      background: #fef3c7;
-      color: #92400e;
-    }
+.task-grid {
 
-    .badge.pro {
-      background: #e5e7eb;
-      color: #374151;
-    }
+  display: grid;
 
+  grid-template-columns:
+    repeat(3,1fr);
 
-    /* =========================
-       风险提醒
-    ========================= */
+  gap: 8px;
 
-    .privacy-warning {
-      margin-top: 10px;
+}
 
-      padding:
-        9px
-        10px;
+.task {
 
-      border-radius: 12px;
+  min-height: 60px;
 
-      background: #fff7ed;
+  border:
+    1px solid
+    rgba(255,255,255,.9);
 
-      border:
-        1px solid
-        #fed7aa;
+  background:
+    rgba(255,255,255,.84);
 
-      color: #9a3412;
+  border-radius: 16px;
 
-      font-size: 10px;
-      line-height: 1.55;
-    }
+  padding:
+    8px
+    6px;
 
-    .privacy-warning strong {
-      color: #7c2d12;
-    }
+  display: flex;
 
-    .result-tip {
-      margin-top: 9px;
+  align-items: center;
 
-      padding-top: 9px;
+  justify-content: center;
 
-      border-top:
-        1px solid
-        #e5e7eb;
+  text-align: center;
 
-      color: #94a3b8;
+  color: var(--text-main);
 
-      font-size: 9px;
-      line-height: 1.5;
-    }
+  font-size: 14px;
 
+  line-height: 1.35;
 
-    /* =========================
-       未找到
-    ========================= */
+  font-weight: 850;
 
-    .empty {
-      margin-top: 12px;
+  cursor: pointer;
 
-      background: white;
+  user-select: none;
 
-      padding: 15px;
+  box-shadow:
+    0 3px 10px
+    rgba(15,23,42,.035);
 
-      border-radius: 16px;
+  transition:
+    transform .12s ease,
+    box-shadow .12s ease,
+    background .12s ease;
 
-      color: #64748b;
+}
 
-      font-size: 12px;
-      line-height: 1.55;
+.task:active {
 
-      display: none;
-    }
+  transform: scale(.96);
 
-    .empty.show {
-      display: block;
-    }
+  box-shadow: none;
 
+  background: white;
 
-    /* =========================
-       保存弹窗
-    ========================= */
+}
 
-    .save-modal-backdrop {
-      position: fixed;
 
-      inset: 0;
+/* =========================================================
+   CATEGORY COLORS
+========================================================= */
 
-      display: none;
+.cat-pdf {
+  background: var(--pdf-bg);
+}
 
-      align-items: flex-end;
-      justify-content: center;
+.cat-image {
+  background: var(--image-bg);
+}
 
-      background:
-        rgba(15,23,42,.48);
+.cat-video {
+  background: var(--video-bg);
+}
 
-      padding:
-        20px
-        14px
-        calc(
-          20px +
-          env(safe-area-inset-bottom)
-        );
+.cat-audio {
+  background: var(--audio-bg);
+}
 
-      z-index: 1000;
-    }
+.cat-ai {
+  background: var(--ai-bg);
+}
 
-    .save-modal-backdrop.show {
-      display: flex;
-    }
+.cat-office {
+  background: var(--office-bg);
+}
 
-    .save-modal {
-      width: 100%;
-      max-width: 520px;
+.cat-learning {
+  background: var(--learning-bg);
+}
 
-      background: white;
+.cat-programming {
+  background: var(--pro-bg);
+}
 
-      border-radius: 22px;
+.cat-design {
+  background: var(--design-bg);
+}
 
-      padding: 18px;
+.cat-web {
+  background: var(--web-bg);
+}
 
-      box-shadow:
-        0 20px 50px
-        rgba(15,23,42,.28);
-    }
+.cat-other {
+  background: var(--other-bg);
+}
 
-    .save-modal-head {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
 
-    .save-modal-title {
-      margin: 0;
+/* =========================================================
+   MEDIA LEARNING
+========================================================= */
 
-      font-size: 19px;
-      line-height: 1.35;
+.media-learning-card {
 
-      font-weight: 900;
-    }
+  position: relative;
 
-    .save-modal-close {
-      border: 0;
+  overflow: hidden;
 
-      background: #f1f5f9;
-      color: #475569;
+  margin-top: 16px;
 
-      width: 32px;
-      height: 32px;
+  display: flex;
 
-      border-radius: 50%;
+  align-items: center;
 
-      display: flex;
+  gap: 13px;
 
-      align-items: center;
-      justify-content: center;
+  padding:
+    15px
+    16px;
 
-      font-size: 19px;
-      cursor: pointer;
+  border:
+    1.5px solid
+    #c4b5fd;
 
-      flex-shrink: 0;
-    }
+  border-radius: 19px;
 
-    .save-modal-subtitle {
-      margin-top: 7px;
+  background:
+    linear-gradient(
+      135deg,
+      #fbf9ff,
+      var(--purple-soft)
+    );
 
-      color: #64748b;
+  box-shadow:
+    0 7px 20px
+    rgba(124,58,237,.075);
 
-      font-size: 13px;
-      line-height: 1.55;
-    }
+  cursor: pointer;
 
-    .save-option-list {
-      margin-top: 14px;
+}
 
-      display: flex;
-      flex-direction: column;
+.media-learning-card::after {
 
-      gap: 8px;
-    }
+  content: "";
 
-    .save-option {
-      width: 100%;
+  position: absolute;
 
-      border:
-        1px solid
-        #e2e8f0;
+  width: 90px;
+  height: 90px;
 
-      background: #f8fafc;
-      color: #172033;
+  right: -35px;
+  top: -35px;
 
-      border-radius: 15px;
+  border-radius: 50%;
 
-      padding: 12px;
+  background:
+    rgba(124,58,237,.07);
 
-      text-align: left;
+}
 
-      cursor: pointer;
-    }
+.media-learning-card:active {
+  transform: scale(.985);
+}
 
-    .save-option:active {
-      transform: scale(.985);
-    }
+.media-icon {
 
-    .save-option-title {
-      font-size: 14px;
-      font-weight: 850;
-    }
+  width: 44px;
 
-    .save-option-desc {
-      margin-top: 3px;
+  height: 44px;
 
-      font-size: 11px;
+  flex-shrink: 0;
 
-      color: #64748b;
+  border-radius: 13px;
 
-      line-height: 1.45;
-    }
+  display: flex;
 
-    .save-help {
-      margin-top: 12px;
+  align-items: center;
 
-      padding:
-        11px
-        12px;
+  justify-content: center;
 
-      border-radius: 13px;
+  font-size: 24px;
 
-      background: #eff6ff;
-      color: #1e3a8a;
+  background: #ede9fe;
 
-      font-size: 12px;
-      line-height: 1.55;
-    }
+}
 
-    .save-help strong {
-      color: #1d4ed8;
-    }
+.media-main {
 
+  min-width: 0;
 
-    /* =========================
-       底部固定条
-    ========================= */
+  flex: 1;
 
-    .ad {
-      position: fixed;
+}
 
-      left: 50%;
+.media-title {
 
-      bottom:
-        calc(
-          8px +
-          env(safe-area-inset-bottom)
-        );
+  font-size: 16px;
 
-      transform:
-        translateX(-50%);
+  font-weight: 900;
 
-      width:
-        calc(100% - 20px);
+  line-height: 1.4;
 
-      max-width: 700px;
+}
 
-      background: #111827;
+.media-subtitle {
 
-      color: white;
+  margin-top: 3px;
 
-      border-radius: 16px;
+  color: var(--text-sub);
 
-      padding:
-        12px
-        10px;
+  font-size: 12px;
 
-      text-align: center;
+}
 
-      font-size: 13px;
-      font-weight: 850;
+.media-arrow {
 
-      box-shadow:
-        0 10px 25px
-        rgba(15,23,42,.23);
+  position: relative;
 
-      z-index: 100;
-    }
+  z-index: 2;
 
-    .ad strong {
-      color: #fbbf24;
-    }
+  color: var(--purple);
 
+  font-size: 25px;
 
-    /* =========================
-       小屏适配
-    ========================= */
+  font-weight: 700;
 
-    @media (max-width: 350px) {
+}
 
-      .task-grid {
-        grid-template-columns:
-          repeat(2,1fr);
-      }
 
-      .hero h1 {
-        font-size: 25px;
-      }
+/* =========================================================
+   RESULT
+========================================================= */
 
-      .task {
-        font-size: 12px;
-      }
+.result {
 
-    }
+  display: none;
 
+  margin-top: 18px;
 
-    @media (min-width:600px) {
+  background: white;
 
-      .task-grid {
-        grid-template-columns:
-          repeat(4,1fr);
-      }
+  border-radius: 22px;
 
-      .save-modal-backdrop {
-        align-items: center;
-      }
+  padding: 18px;
 
-    }
+  box-shadow:
+    0 13px 36px
+    rgba(15,23,42,.11);
 
-  </style>
+}
+
+.result.show {
+  display: block;
+}
+
+.result-label {
+
+  font-size: 12px;
+
+  font-weight: 850;
+
+  color: var(--brand-blue);
+
+  letter-spacing: 1px;
+
+  margin-bottom: 7px;
+
+}
+
+.result h2 {
+
+  margin: 0;
+
+  font-size: 22px;
+
+  line-height: 1.35;
+
+}
+
+.result-description {
+
+  margin:
+    7px
+    0
+    15px;
+
+  color: var(--text-sub);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   TOOL LIST
+========================================================= */
+
+.site-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+}
+
+.site {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  color: var(--text-main);
+
+  border:
+    1px solid
+    var(--border);
+
+  background: var(--card-soft);
+
+  border-radius: 16px;
+
+  padding: 13px;
+
+  transition:
+    transform .12s ease,
+    background .12s ease,
+    border-color .12s ease;
+
+}
+
+.site:active {
+
+  transform: scale(.985);
+
+  background: #f1f5f9;
+
+}
+
+.site.recommended {
+
+  border-color: #86efac;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fff9,
+      #f3fff6
+    );
+
+}
+
+.site-left {
+
+  min-width: 0;
+
+  flex: 1;
+
+}
+
+.site-topline {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 6px;
+
+}
+
+.site-rank {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 25px;
+
+  padding:
+    4px
+    8px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  background: #e0e7ff;
+
+  color: #3730a3;
+
+}
+
+.site:nth-child(1)
+.site-rank {
+
+  background: var(--green-soft);
+
+  color: #166534;
+
+}
+
+.site:nth-child(2)
+.site-rank {
+
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+}
+
+.site:nth-child(3)
+.site-rank {
+
+  background: #fef3c7;
+
+  color: #92400e;
+
+}
+
+.site-name {
+
+  font-size: 16px;
+
+  line-height: 1.35;
+
+  font-weight: 900;
+
+}
+
+.site-domain {
+
+  margin-top: 3px;
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+
+  word-break: break-all;
+
+}
+
+.tool-tags {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 8px;
+
+}
+
+.tool-tag {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 23px;
+
+  padding:
+    4px
+    8px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  font-weight: 750;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+}
+
+.tool-tag.good {
+
+  background: var(--green-soft);
+
+  color: #166534;
+
+}
+
+.tool-tag.info {
+
+  background: #dbeafe;
+
+  color: #1d4ed8;
+
+}
+
+.tool-tag.warn {
+
+  background: #fef3c7;
+
+  color: #92400e;
+
+}
+
+.site-open {
+
+  flex-shrink: 0;
+
+  background: var(--brand-dark);
+
+  color: white;
+
+  border-radius: 11px;
+
+  padding:
+    9px
+    11px;
+
+  font-size: 13px;
+
+  font-weight: 850;
+
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.meta-row {
+
+  margin-top: 13px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+}
+
+.badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding:
+    5px
+    9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+}
+
+.badge.local {
+
+  background: var(--green-soft);
+
+  color: #166534;
+
+}
+
+.badge.cloud {
+
+  background: #fef3c7;
+
+  color: #92400e;
+
+}
+
+.badge.pro {
+
+  background: #e5e7eb;
+
+  color: #374151;
+
+}
+
+
+/* =========================================================
+   PRIVACY WARNING
+========================================================= */
+
+.privacy-warning {
+
+  margin-top: 14px;
+
+  padding:
+    12px
+    13px;
+
+  border:
+    1px solid
+    #fdba74;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf4,
+      var(--orange-soft)
+    );
+
+  color: #9a3412;
+
+  font-size: 12px;
+
+  line-height: 1.62;
+
+}
+
+.privacy-warning strong {
+
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #7c2d12;
+
+}
+
+.result-tip {
+
+  margin-top: 13px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px solid
+    #e5e7eb;
+
+  color: var(--text-soft);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty {
+
+  display: none;
+
+  margin-top: 18px;
+
+  background: white;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  color: var(--text-sub);
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  box-shadow:
+    0 8px 22px
+    rgba(15,23,42,.06);
+
+}
+
+.empty.show {
+  display: block;
+}
+
+
+/* =========================================================
+   MODAL COMMON
+========================================================= */
+
+.modal-backdrop {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: none;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  background:
+    rgba(15,23,42,.52);
+
+  padding:
+    20px
+    14px
+    calc(
+      20px +
+      env(safe-area-inset-bottom)
+    );
+
+  z-index: 1200;
+
+}
+
+.modal-backdrop.show {
+  display: flex;
+}
+
+.modal {
+
+  width: 100%;
+
+  max-width: 520px;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 22px 60px
+    rgba(15,23,42,.3);
+
+}
+
+.modal-head {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+}
+
+.modal-title {
+
+  margin: 0;
+
+  font-size: 20px;
+
+  line-height: 1.35;
+
+  font-weight: 900;
+
+}
+
+.modal-close {
+
+  border: 0;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  width: 34px;
+
+  height: 34px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+}
+
+.modal-subtitle {
+
+  margin-top: 7px;
+
+  color: var(--text-sub);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+}
+
+.modal-icon {
+
+  width: 58px;
+
+  height: 58px;
+
+  border-radius: 18px;
+
+  margin:
+    2px
+    auto
+    13px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 32px;
+
+  background: #ede9fe;
+
+}
+
+.modal-center {
+  text-align: center;
+}
+
+.action-primary {
+
+  width: 100%;
+
+  min-height: 45px;
+
+  margin-top: 17px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  background: var(--brand-blue);
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 850;
+
+  cursor: pointer;
+
+}
+
+.action-primary:active {
+  transform: scale(.985);
+}
+
+.action-quiet {
+
+  width: 100%;
+
+  min-height: 38px;
+
+  margin-top: 9px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--text-sub);
+
+  cursor: pointer;
+
+}
+
+
+/* =========================================================
+   FLOAT FEEDBACK
+========================================================= */
+
+.feedback-float {
+
+  position: fixed;
+
+  right: 15px;
+
+  bottom:
+    calc(
+      15px +
+      env(safe-area-inset-bottom)
+    );
+
+  z-index: 800;
+
+  width: 56px;
+
+  height: 56px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-blue),
+      #3b82f6
+    );
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px
+    rgba(37,99,235,.3);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
+.feedback-float:active {
+  transform: scale(.95);
+}
+
+.feedback-float .icon {
+
+  font-size: 19px;
+
+  line-height: 1;
+
+}
+
+.feedback-float .txt {
+
+  margin-top: 2px;
+
+  font-size: 9px;
+
+  line-height: 1;
+
+  font-weight: 850;
+
+}
+
+
+/* =========================================================
+   FEEDBACK SHEET
+========================================================= */
+
+.feedback-sheet-backdrop {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: none;
+
+  justify-content: flex-end;
+
+  background:
+    rgba(15,23,42,.42);
+
+  z-index: 1300;
+
+}
+
+.feedback-sheet-backdrop.show {
+  display: flex;
+}
+
+.feedback-sheet {
+
+  width:
+    min(
+      390px,
+      92vw
+    );
+
+  height: 100%;
+
+  padding:
+    22px
+    18px;
+
+  background: white;
+
+  box-shadow:
+    -18px 0 50px
+    rgba(15,23,42,.18);
+
+  overflow: auto;
+
+}
+
+.sheet-head {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+}
+
+.sheet-title {
+
+  font-size: 21px;
+
+  font-weight: 900;
+
+}
+
+.sheet-subtitle {
+
+  margin-top: 4px;
+
+  color: var(--text-sub);
+
+  font-size: 13px;
+
+}
+
+.sheet-close {
+
+  width: 34px;
+
+  height: 34px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+}
+
+.feedback-options {
+
+  margin-top: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+}
+
+.feedback-option {
+
+  width: 100%;
+
+  border:
+    1px solid
+    #e5e7eb;
+
+  border-radius: 14px;
+
+  background: #f8fafc;
+
+  padding: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+}
+
+.feedback-option:active {
+  transform: scale(.985);
+}
+
+.feedback-option.special {
+
+  border-color: #d8b4fe;
+
+  background: #faf5ff;
+
+}
+
+.feedback-option-icon {
+
+  width: 35px;
+
+  height: 35px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #eff6ff;
+
+}
+
+.feedback-option-title {
+
+  font-size: 14px;
+
+  font-weight: 850;
+
+}
+
+.feedback-option-desc {
+
+  margin-top: 2px;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+
+  color: var(--text-sub);
+
+}
+
+.contact-card {
+
+  margin-top: 18px;
+
+  padding: 15px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4fff7,
+      #ecfdf3
+    );
+
+  border:
+    1px solid
+    #bbf7d0;
+
+}
+
+.contact-label {
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+
+}
+
+.contact-value {
+
+  margin-top: 5px;
+
+  font-size: 17px;
+
+  font-weight: 900;
+
+  color: #166534;
+
+  user-select: all;
+
+}
+
+.copy-contact {
+
+  margin-top: 10px;
+
+  width: 100%;
+
+  min-height: 39px;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background: var(--green);
+
+  color: white;
+
+  font-weight: 850;
+
+  cursor: pointer;
+
+}
+
+.sheet-footer {
+
+  margin-top: 20px;
+
+  padding-top: 15px;
+
+  border-top:
+    1px solid
+    #e5e7eb;
+
+  color: var(--text-soft);
+
+  font-size: 11px;
+
+  line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   SAVE MODAL
+========================================================= */
+
+.save-option-list {
+
+  margin-top: 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+}
+
+.save-option {
+
+  width: 100%;
+
+  border:
+    1px solid
+    var(--border);
+
+  background: #f8fafc;
+
+  color: var(--text-main);
+
+  border-radius: 16px;
+
+  padding: 13px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+}
+
+.save-option:active {
+  transform: scale(.985);
+}
+
+.save-option-title {
+
+  font-size: 15px;
+
+  font-weight: 850;
+
+}
+
+.save-option-desc {
+
+  margin-top: 3px;
+
+  color: var(--text-sub);
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+}
+
+.save-help {
+
+  margin-top: 14px;
+
+  padding:
+    12px
+    13px;
+
+  border-radius: 14px;
+
+  background: #eff6ff;
+
+  color: #1e3a8a;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+
+}
+
+
+/* =========================================================
+   SYSTEM STATUS
+========================================================= */
+
+.system-status {
+  display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:599px) {
+
+  .container {
+
+    padding:
+      12px
+      10px
+      70px;
+
+  }
+
+  .hero {
+
+    border-radius: 22px;
+
+    padding:
+      21px
+      17px;
+
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .search input {
+    font-size: 14px;
+  }
+
+  .category {
+
+    padding: 12px;
+
+    border-radius: 20px;
+
+  }
+
+  .category-title {
+    font-size: 18px;
+  }
+
+  .task-grid {
+
+    grid-template-columns:
+      repeat(3,1fr);
+
+    gap: 7px;
+
+  }
+
+  .task {
+
+    min-height: 57px;
+
+    border-radius: 15px;
+
+    padding:
+      7px
+      4px;
+
+    font-size: 13px;
+
+  }
+
+  .feedback-sheet-backdrop {
+    align-items: flex-end;
+  }
+
+  .feedback-sheet {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 86vh;
+
+    border-radius:
+      24px
+      24px
+      0
+      0;
+
+    padding-bottom:
+      calc(
+        22px +
+        env(safe-area-inset-bottom)
+      );
+
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width:600px) {
+
+  .modal-backdrop {
+    align-items: center;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
@@ -1089,206 +1970,515 @@
 <main class="container">
 
 
-  <!-- HERO -->
+<!-- ======================================================
+     HERO
+====================================================== -->
 
-  <section class="hero">
+<section class="hero">
 
-    <div class="brand-row">
+  <div class="brand-row">
 
-      <div class="brand">
-        马上办 · NAV KING
-      </div>
-
-      <button
-        id="saveNavButton"
-        class="save-nav-btn"
-        type="button"
-      >
-        ⭐ 保存
-      </button>
-
+    <div class="brand">
+      马上办 · NAV KING
     </div>
 
-    <h1>
-      有事？马上办。
-    </h1>
-
-    <div class="hero-text">
-      不研究工具，不记网站名字。
-      选一个任务，直接把事办完。
-    </div>
-
-    <div class="search">
-
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="PDF压缩、抠图、录音转文字…"
-      >
-
-      <button
-        id="searchButton"
-        type="button"
-      >
-        搜索
-      </button>
-
-    </div>
-
-  </section>
-
-
-  <!-- 后台状态 -->
-
-  <div class="system-status">
-
-    <span
-      id="statusDot"
-      class="status-dot"
-    ></span>
-
-    <span id="statusText">
-      正在读取数据库…
-    </span>
+    <button
+      id="saveNavButton"
+      class="save-nav-btn"
+      type="button"
+    >
+      ⭐ 保存
+    </button>
 
   </div>
 
+  <h1>
+    有事？马上办。
+  </h1>
 
-  <div class="guide">
-    ↓ 直接点任务。每个任务最多给你 3 个入口，优先排更省事、低摩擦的选择。
+  <div class="hero-text">
+    不研究工具，不记网站名字。
+    选一个任务，直接把事办完。
   </div>
 
+  <div class="search">
 
-  <div id="categories">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="PDF压缩、抠图、录音转文字…"
+    >
+
+    <button
+      id="searchButton"
+      type="button"
+    >
+      搜索
+    </button>
+
   </div>
 
+</section>
 
-  <!-- 搜索无结果 -->
 
-  <section
-    id="empty"
-    class="empty"
+<!-- ======================================================
+     HIDDEN STATUS
+====================================================== -->
+
+<div class="system-status">
+
+  <span id="statusDot"></span>
+
+  <span id="statusText"></span>
+
+</div>
+
+
+<!-- ======================================================
+     GUIDE
+====================================================== -->
+
+<div class="guide">
+  ↓ 直接点任务。
+  每个任务最多给你 3 个入口，
+  优先排列更省事、低摩擦的选择。
+</div>
+
+
+<!-- ======================================================
+     CATEGORIES
+====================================================== -->
+
+<div id="categories"></div>
+
+
+<!-- ======================================================
+     MEDIA LEARNING
+====================================================== -->
+
+<section
+  id="mediaLearningCard"
+  class="media-learning-card"
+  role="button"
+  tabindex="0"
+>
+
+  <div class="media-icon">
+    🎬
+  </div>
+
+  <div class="media-main">
+
+    <div class="media-title">
+      🎬 影视学习资料点这里👈
+    </div>
+
+    <div class="media-subtitle">
+      影视学习资料 · 交流入口
+    </div>
+
+  </div>
+
+  <div class="media-arrow">
+    ›
+  </div>
+
+</section>
+
+
+<!-- ======================================================
+     EMPTY
+====================================================== -->
+
+<section
+  id="empty"
+  class="empty"
+>
+
+  暂时没有找到完全匹配的任务。
+
+  <br><br>
+
+  可以试试：
+
+  <strong>
+    PDF、压缩、抠图、证件照、视频、
+    录音、翻译、PPT、JSON
+  </strong>
+
+</section>
+
+
+<!-- ======================================================
+     RESULT
+====================================================== -->
+
+<section
+  id="result"
+  class="result"
+>
+
+  <div class="result-label">
+    直接入口
+  </div>
+
+  <h2 id="resultTitle">
+    任务名称
+  </h2>
+
+  <div
+    id="resultDescription"
+    class="result-description"
   >
+  </div>
 
-    暂时没有找到完全匹配的任务。
+  <div
+    id="siteList"
+    class="site-list"
+  >
+  </div>
 
-    <br><br>
+  <div
+    id="metaRow"
+    class="meta-row"
+  >
+  </div>
 
-    可以试试：
+  <div class="privacy-warning">
 
     <strong>
-      PDF、压缩、抠图、证件照、视频、录音、翻译、PPT、JSON
+      ⚠️ 隐私提醒
     </strong>
 
-  </section>
+    身份证、合同、病历、财务资料、
+    私人照片等敏感文件，
+    上传第三方网站前请先确认处理方式。
 
+    优先选择标记为
+    “本地处理”的入口。
 
-  <!-- 结果 -->
+  </div>
 
-  <section
-    id="result"
-    class="result"
-  >
+  <div class="result-tip">
 
-    <div class="result-label">
-      直接入口
-    </div>
+    马上办只提供第三方网址入口，
+    不接收你的文件。
 
-    <h2 id="resultTitle">
-      任务名称
-    </h2>
+    “国内优先”不等于国内运营商已经实测；
+    未知广告情况不会标记为无广告。
 
-    <div
-      id="resultDescription"
-      class="result-description"
-    >
-    </div>
+  </div>
 
-    <div
-      id="siteList"
-      class="site-list"
-    >
-    </div>
-
-    <div
-      id="metaRow"
-      class="meta-row"
-    >
-    </div>
-
-
-    <div class="privacy-warning">
-
-      <strong>
-        ⚠️ 隐私提醒
-      </strong>
-
-      <br>
-
-      身份证、合同、病历、财务资料、私人照片等敏感文件，
-      上传第三方网站前请先确认处理方式。
-
-      优先选择标记为
-      <strong>“本地处理”</strong>
-      的入口。
-
-    </div>
-
-
-    <div class="result-tip">
-
-      马上办只提供第三方网址入口，不接收你的文件。
-
-      <br>
-
-      “国内优先”不等于国内运营商已经实测；
-      未知广告情况也不会标记为无广告。
-
-    </div>
-
-  </section>
+</section>
 
 
 </main>
 
 
-<!-- 保存弹窗 -->
+<!-- ======================================================
+     FLOAT FEEDBACK
+====================================================== -->
 
-<div
-  id="saveModalBackdrop"
-  class="save-modal-backdrop"
+<button
+  id="feedbackFloat"
+  class="feedback-float"
+  type="button"
 >
 
-  <div
-    class="save-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="saveModalTitle"
-  >
+  <span class="icon">
+    💬
+  </span>
 
-    <div class="save-modal-head">
+  <span class="txt">
+    反馈/交流
+  </span>
+
+</button>
+
+
+<!-- ======================================================
+     MEDIA MODAL
+====================================================== -->
+
+<div
+  id="mediaModal"
+  class="modal-backdrop"
+>
+
+  <div class="modal">
+
+    <div class="modal-head">
+
+      <div></div>
+
+      <button
+        id="mediaModalClose"
+        class="modal-close"
+        type="button"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div class="modal-center">
+
+      <div class="modal-icon">
+        🎬
+      </div>
+
+      <h2 class="modal-title">
+        影视学习资料
+      </h2>
+
+      <div class="modal-subtitle">
+
+        这个分类暂不提供公开入口。
+
+        <br>
+
+        部分内容不适合直接放公开页面。
+
+        <br><br>
+
+        如果你有具体需求，
+        可以进入交流入口。
+
+      </div>
+
+      <button
+        id="mediaContactButton"
+        class="action-primary"
+        type="button"
+      >
+        联系交流
+      </button>
+
+      <button
+        id="mediaCloseButton"
+        class="action-quiet"
+        type="button"
+      >
+        关闭
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ======================================================
+     FEEDBACK SHEET
+====================================================== -->
+
+<div
+  id="feedbackBackdrop"
+  class="feedback-sheet-backdrop"
+>
+
+  <aside class="feedback-sheet">
+
+    <div class="sheet-head">
 
       <div>
 
-        <h2
-          id="saveModalTitle"
-          class="save-modal-title"
-        >
-          保存“马上办”
+        <div class="sheet-title">
+          反馈 / 交流
+        </div>
+
+        <div class="sheet-subtitle">
+          一起完善 NAV KING
+        </div>
+
+      </div>
+
+      <button
+        id="feedbackClose"
+        class="sheet-close"
+        type="button"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="feedback-options">
+
+
+      <button
+        class="feedback-option"
+        type="button"
+      >
+
+        <div class="feedback-option-icon">
+          🧰
+        </div>
+
+        <div>
+
+          <div class="feedback-option-title">
+            提交新工具
+          </div>
+
+          <div class="feedback-option-desc">
+            发现好用工具，可以推荐给我们
+          </div>
+
+        </div>
+
+      </button>
+
+
+      <button
+        class="feedback-option"
+        type="button"
+      >
+
+        <div class="feedback-option-icon">
+          ⚠️
+        </div>
+
+        <div>
+
+          <div class="feedback-option-title">
+            报告失效入口
+          </div>
+
+          <div class="feedback-option-desc">
+            某个工具打不开了，可以告诉我
+          </div>
+
+        </div>
+
+      </button>
+
+
+      <button
+        class="feedback-option"
+        type="button"
+      >
+
+        <div class="feedback-option-icon">
+          💡
+        </div>
+
+        <div>
+
+          <div class="feedback-option-title">
+            功能建议
+          </div>
+
+          <div class="feedback-option-desc">
+            告诉我你还想增加什么任务
+          </div>
+
+        </div>
+
+      </button>
+
+
+      <button
+        class="feedback-option special"
+        type="button"
+      >
+
+        <div class="feedback-option-icon">
+          💬
+        </div>
+
+        <div>
+
+          <div class="feedback-option-title">
+            用户交流 / 商务合作
+          </div>
+
+          <div class="feedback-option-desc">
+            使用问题、交流、合作都可以联系
+          </div>
+
+        </div>
+
+      </button>
+
+
+    </div>
+
+
+    <div class="contact-card">
+
+      <div class="contact-label">
+        微信
+      </div>
+
+      <div
+        id="wechatValue"
+        class="contact-value"
+      >
+        ziyouluoti8
+      </div>
+
+      <button
+        id="copyWechatButton"
+        class="copy-contact"
+        type="button"
+      >
+        复制微信号
+      </button>
+
+    </div>
+
+
+    <div class="sheet-footer">
+
+      感谢你的反馈。
+
+      入口失效、
+      工具体验、
+      功能需求都会用于后续更新。
+
+    </div>
+
+  </aside>
+
+</div>
+
+
+<!-- ======================================================
+     SAVE MODAL
+====================================================== -->
+
+<div
+  id="saveModal"
+  class="modal-backdrop"
+>
+
+  <div class="modal">
+
+    <div class="modal-head">
+
+      <div>
+
+        <h2 class="modal-title">
+          保存 NAV KING
         </h2>
 
-        <div class="save-modal-subtitle">
+        <div class="modal-subtitle">
+
           下次不用重新找网址，
-          直接从桌面或浏览器进入。
+
+          直接从桌面或浏览器收藏进入。
+
         </div>
 
       </div>
 
       <button
         id="saveModalClose"
-        class="save-modal-close"
+        class="modal-close"
         type="button"
-        aria-label="关闭"
       >
         ×
       </button>
@@ -1297,6 +2487,7 @@
 
 
     <div class="save-option-list">
+
 
       <button
         id="addHomeButton"
@@ -1309,7 +2500,7 @@
         </div>
 
         <div class="save-option-desc">
-          像 App 一样放到桌面。
+          像 App 一样放到手机桌面。
         </div>
 
       </button>
@@ -1326,10 +2517,11 @@
         </div>
 
         <div class="save-option-desc">
-          保存到 Safari、Chrome、Edge 等收藏夹。
+          保存到 Safari / Chrome / Edge。
         </div>
 
       </button>
+
 
     </div>
 
@@ -1338,25 +2530,10 @@
       id="saveHelp"
       class="save-help"
     >
-      正在识别你的设备…
+      正在识别设备…
     </div>
 
   </div>
-
-</div>
-
-
-<!-- 底部 -->
-
-<div class="ad">
-
-  解压资源 懂得都懂🔍 V➕
-
-  <strong>
-    ziyouluoti8
-  </strong>
-
-  交流
 
 </div>
 
@@ -1367,14 +2544,14 @@
 
 
 /* =========================================================
-   马上办 / NAV KING V4.3
+   NAV KING
 ========================================================= */
 
 const APP_VERSION =
-  "4.3";
+  "4.3.1";
 
 const BUILD_ID =
-  "20260825-COMPACT-UI";
+  "20260825-V431-VISUAL-SYSTEM";
 
 
 let atomicTasks =
@@ -1386,18 +2563,12 @@ let toolRegistry =
 let searchableTasks =
   [];
 
-let atomicDataVersion =
-  "UNKNOWN";
-
-let toolsDataVersion =
-  "UNKNOWN";
-
 let deferredInstallPrompt =
   null;
 
 
 /* =========================================================
-   分类
+   CATEGORY
 ========================================================= */
 
 const categoryConfig = {
@@ -1473,8 +2644,8 @@ const categoryConfig = {
   },
 
   OTHER: {
-    title: "🧩 其他",
-    note: "实用",
+    title: "🧩 其他实用",
+    note: "更多",
     className: "cat-other",
     order: 11
   }
@@ -1483,293 +2654,201 @@ const categoryConfig = {
 
 
 /* =========================================================
-   搜索别名
+   SEARCH ALIASES
 ========================================================= */
 
 const aliases = {
 
-  "pdf太大": "PDF压缩",
-  "压缩pdf": "PDF压缩",
-  "pdf小一点": "PDF压缩",
+  "pdf太大":
+    "PDF压缩",
 
-  "pdf转word": "PDF转Word",
-  "pdf改文字": "PDF转Word",
+  "压缩pdf":
+    "PDF压缩",
 
-  "抠图": "一键抠图",
-  "去背景": "一键抠图",
-  "透明背景": "一键抠图",
+  "pdf小一点":
+    "PDF压缩",
 
-  "图片太大": "图片压缩",
-  "照片太大": "图片压缩",
-  "100kb": "图片压缩",
+  "pdf转word":
+    "PDF转Word",
 
-  "证件照": "制作证件照",
-  "换底色": "证件照换底色",
+  "pdf改文字":
+    "PDF转Word",
 
-  "图片文字": "OCR提取文字",
-  "提取文字": "OCR提取文字",
-  "ocr": "OCR提取文字",
+  "抠图":
+    "一键抠图",
 
-  "视频太大": "视频压缩",
-  "压视频": "视频压缩",
+  "去背景":
+    "一键抠图",
 
-  "视频转音频": "视频提取音频",
-  "提取音频": "视频提取音频",
+  "透明背景":
+    "一键抠图",
 
-  "录音文字": "录音转文字",
-  "语音转文字": "录音转文字",
-  "会议转文字": "录音转文字",
+  "图片太大":
+    "图片压缩",
 
-  "去人声": "人声伴奏分离",
-  "伴奏": "人声伴奏分离",
+  "照片太大":
+    "图片压缩",
 
-  "做ppt": "AI做PPT",
-  "ppt": "AI做PPT",
+  "100kb":
+    "图片压缩",
 
-  "翻译": "AI翻译",
+  "证件照":
+    "制作证件照",
 
-  "总结pdf": "AI总结PDF",
-  "长文总结": "AI总结PDF",
+  "换底色":
+    "证件照换底色",
 
-  "画图": "AI画图",
-  "ai图片": "AI画图",
+  "图片文字":
+    "OCR提取文字",
 
-  "思维导图": "思维导图",
-  "流程图": "流程图",
+  "提取文字":
+    "OCR提取文字",
 
-  "查重": "论文查重",
-  "论文": "论文查重",
+  "ocr":
+    "OCR提取文字",
 
-  "latex": "公式转LaTeX",
-  "公式": "公式转LaTeX",
+  "视频太大":
+    "视频压缩",
 
-  "json": "JSON格式化",
-  "正则": "正则测试",
-  "sql": "SQL美化",
+  "压视频":
+    "视频压缩",
 
-  "二维码": "二维码生成",
-  "解压": "在线解压缩",
-  "字数": "字数统计",
+  "视频转音频":
+    "视频提取音频",
 
-  "网页转pdf": "网页转PDF/长截图",
-  "长截图": "网页转PDF/长截图"
+  "提取音频":
+    "视频提取音频",
+
+  "录音文字":
+    "录音转文字",
+
+  "语音转文字":
+    "录音转文字",
+
+  "会议转文字":
+    "录音转文字",
+
+  "去人声":
+    "人声伴奏分离",
+
+  "伴奏":
+    "人声伴奏分离",
+
+  "做ppt":
+    "AI做PPT",
+
+  "ppt":
+    "AI做PPT",
+
+  "翻译":
+    "AI翻译",
+
+  "总结pdf":
+    "AI总结PDF",
+
+  "画图":
+    "AI画图",
+
+  "思维导图":
+    "思维导图",
+
+  "流程图":
+    "流程图",
+
+  "查重":
+    "论文查重",
+
+  "latex":
+    "公式转LaTeX",
+
+  "json":
+    "JSON格式化",
+
+  "正则":
+    "正则测试",
+
+  "sql":
+    "SQL美化",
+
+  "二维码":
+    "二维码生成",
+
+  "解压":
+    "在线解压缩",
+
+  "字数":
+    "字数统计",
+
+  "网页转pdf":
+    "网页转PDF/长截图",
+
+  "长截图":
+    "网页转PDF/长截图"
 
 };
 
 
 /* =========================================================
-   设备
+   COMMON DATA
 ========================================================= */
 
-function isIOS() {
+function extractArray(
+  data,
+  keys
+) {
+
+  if (
+    Array.isArray(
+      data
+    )
+  ) {
 
-  return /iPad|iPhone|iPod/i
-    .test(navigator.userAgent);
-
-}
-
-function isAndroid() {
-
-  return /Android/i
-    .test(navigator.userAgent);
-
-}
-
-function isMac() {
-
-  return /Macintosh|Mac OS X/i
-    .test(navigator.userAgent);
-
-}
-
-
-/* =========================================================
-   保存
-========================================================= */
-
-function openSaveModal() {
-
-  document
-    .getElementById("saveModalBackdrop")
-    .classList
-    .add("show");
-
-  updateSaveHelp();
-
-}
-
-function closeSaveModal() {
-
-  document
-    .getElementById("saveModalBackdrop")
-    .classList
-    .remove("show");
-
-}
-
-function updateSaveHelp() {
-
-  const help =
-    document.getElementById("saveHelp");
-
-  if (isIOS()) {
-
-    help.innerHTML =
-      "<strong>iPhone / iPad：</strong>" +
-      "Safari 点击“分享” → “添加到主屏幕”。";
-
-    return;
-  }
-
-  if (isAndroid()) {
-
-    help.innerHTML =
-      deferredInstallPrompt
-      ? "<strong>Android：</strong>点击上方“添加到主屏幕”即可。"
-      : "<strong>Android：</strong>浏览器菜单 → 添加到主屏幕 / 安装应用。";
-
-    return;
-  }
-
-  if (isMac()) {
-
-    help.innerHTML =
-      "<strong>Mac：</strong>按 ⌘ + D 收藏。";
-
-    return;
-  }
-
-  help.innerHTML =
-    "<strong>Windows / Linux：</strong>按 Ctrl + D 收藏。";
-
-}
-
-window.addEventListener(
-  "beforeinstallprompt",
-  function(event) {
-
-    event.preventDefault();
-
-    deferredInstallPrompt =
-      event;
-
-    updateSaveHelp();
-
-  }
-);
-
-async function handleAddHome() {
-
-  if (deferredInstallPrompt) {
-
-    try {
-
-      deferredInstallPrompt.prompt();
-
-      await deferredInstallPrompt
-        .userChoice;
-
-      deferredInstallPrompt =
-        null;
-
-      closeSaveModal();
-
-      return;
-
-    } catch (error) {
-
-      console.warn(
-        "Install prompt failed:",
-        error
-      );
-
-    }
-
-  }
-
-  const help =
-    document.getElementById("saveHelp");
-
-  if (isIOS()) {
-
-    help.innerHTML =
-      "<strong>操作：</strong>Safari 分享 → 添加到主屏幕 → 添加。";
-
-  } else if (isAndroid()) {
-
-    help.innerHTML =
-      "<strong>操作：</strong>浏览器菜单 → 添加到主屏幕 / 安装应用。";
-
-  } else if (isMac()) {
-
-    help.innerHTML =
-      "<strong>桌面：</strong>按 ⌘ + D 收藏。";
-
-  } else {
-
-    help.innerHTML =
-      "<strong>桌面：</strong>按 Ctrl + D 收藏。";
-
-  }
-
-}
-
-function handleBookmark() {
-
-  const help =
-    document.getElementById("saveHelp");
-
-  if (isIOS()) {
-
-    help.innerHTML =
-      "<strong>Safari：</strong>分享 → 添加书签。";
-
-  } else if (isMac()) {
-
-    help.innerHTML =
-      "<strong>收藏：</strong>按 ⌘ + D。";
-
-  } else {
-
-    help.innerHTML =
-      "<strong>收藏：</strong>按 Ctrl + D。";
-
-  }
-
-}
-
-
-/* =========================================================
-   JSON
-========================================================= */
-
-function extractArray(data, keys) {
-
-  if (Array.isArray(data)) {
     return data;
+
   }
 
-  if (!data || typeof data !== "object") {
+
+  if (
+    !data ||
+    typeof data !==
+      "object"
+  ) {
+
     return [];
+
   }
 
-  for (const key of keys) {
 
-    if (Array.isArray(data[key])) {
+  for (
+    const key
+    of keys
+  ) {
+
+    if (
+      Array.isArray(
+        data[key]
+      )
+    ) {
+
       return data[key];
+
     }
 
   }
+
 
   return [];
+
 }
 
 
 /* =========================================================
-   Task
+   TASK HELPERS
 ========================================================= */
 
-function getTaskId(task) {
+function getTaskId(
+  task
+) {
 
   return String(
     task.id ??
@@ -1778,14 +2857,20 @@ function getTaskId(task) {
     task.ID ??
     ""
   )
-  .replace(/^TASK\s*/i, "")
+  .replace(
+    /^TASK\s*/i,
+    ""
+  )
   .trim();
 
 }
 
-function getTaskName(task) {
 
-  return (
+function getTaskName(
+  task
+) {
+
+  return String(
     task.title ??
     task.name ??
     task.task ??
@@ -1795,73 +2880,82 @@ function getTaskName(task) {
     task.user_job ??
     ""
   )
-  .toString()
   .trim();
 
 }
 
-function getTaskCategory(task) {
 
-  return (
+function getTaskCategory(
+  task
+) {
+
+  return String(
     task.category ??
     task.CATEGORY ??
     "OTHER"
   )
-  .toString()
   .trim()
   .toUpperCase();
 
 }
 
-function getTaskStatus(task) {
 
-  return (
+function getTaskStatus(
+  task
+) {
+
+  return String(
     task.status ??
     task.STATUS ??
     "ACTIVE"
   )
-  .toString()
   .trim()
   .toUpperCase();
 
 }
 
-function getTaskLayer(task) {
 
-  return (
+function getTaskLayer(
+  task
+) {
+
+  return String(
     task.core_layer ??
     task.layer ??
     task.CORE_LAYER ??
     ""
   )
-  .toString()
   .trim()
   .toUpperCase();
 
 }
 
-function getTaskDescription(task) {
 
-  return (
+function getTaskDescription(
+  task
+) {
+
+  return String(
     task.user_job ??
     task.description ??
     task.notes ??
     task.USER_JOB ??
     ""
   )
-  .toString()
   .trim();
 
 }
 
 
 /* =========================================================
-   Tool
+   TOOL HELPERS
 ========================================================= */
 
-function getToolName(tool) {
+function getToolName(
+  tool
+) {
 
-  return (
+  return String(
     tool.name ??
     tool.tool_name ??
     tool.title ??
@@ -1869,14 +2963,16 @@ function getToolName(tool) {
     tool.NAME ??
     ""
   )
-  .toString()
   .trim();
 
 }
 
-function getToolUrl(tool) {
 
-  return (
+function getToolUrl(
+  tool
+) {
+
+  return String(
     tool.direct_url ??
     tool.directUrl ??
     tool.url ??
@@ -1885,12 +2981,14 @@ function getToolUrl(tool) {
     tool.officialUrl ??
     ""
   )
-  .toString()
   .trim();
 
 }
 
-function getToolTasks(tool) {
+
+function getToolTasks(
+  tool
+) {
 
   const raw =
     tool.tasks ??
@@ -1899,99 +2997,119 @@ function getToolTasks(tool) {
     tool.TASKS ??
     [];
 
-  if (Array.isArray(raw)) {
+
+  if (
+    Array.isArray(
+      raw
+    )
+  ) {
 
     return raw
-      .map(
-        function(id) {
 
-          return String(id)
-            .replace(/^TASK\s*/i, "")
-            .trim();
+      .map(
+        function(
+          id
+        ) {
+
+          return String(
+            id
+          )
+          .replace(
+            /^TASK\s*/i,
+            ""
+          )
+          .trim();
 
         }
       )
-      .filter(Boolean);
+
+      .filter(
+        Boolean
+      );
 
   }
 
-  if (typeof raw === "string") {
+
+  if (
+    typeof raw ===
+    "string"
+  ) {
 
     return raw
-      .replace(/[\[\]]/g, "")
-      .split(",")
+
+      .replace(
+        /[\[\]]/g,
+        ""
+      )
+
+      .split(
+        ","
+      )
+
       .map(
-        function(id) {
+        function(
+          id
+        ) {
 
           return id
-            .replace(/^TASK\s*/i, "")
-            .replace(/["']/g, "")
+            .replace(
+              /^TASK\s*/i,
+              ""
+            )
+            .replace(
+              /["']/g,
+              ""
+            )
             .trim();
 
         }
       )
-      .filter(Boolean);
+
+      .filter(
+        Boolean
+      );
 
   }
+
 
   return [];
 
 }
 
-function getToolRole(tool) {
 
-  return (
+function getToolRole(
+  tool
+) {
+
+  return String(
     tool.role ??
     tool.ROLE ??
     ""
   )
-  .toString()
   .trim()
   .toUpperCase();
 
 }
 
-function getToolStatus(tool) {
 
-  return (
+function getToolStatus(
+  tool
+) {
+
+  return String(
     tool.status ??
     tool.STATUS ??
     "HEALTHY"
   )
-  .toString()
   .trim()
   .toUpperCase();
 
 }
 
-function getToolLocal(tool) {
 
-  const processing =
-    String(
-      tool.processing ??
-      ""
-    )
-    .toUpperCase();
-
-  if (processing === "LOCAL") {
-    return true;
-  }
-
-  const value =
-    tool.local ??
-    tool.LOCAL ??
-    tool.local_only ??
-    tool.localOnly;
-
-  return (
-    value === true ||
-    value === "YES" ||
-    value === "TRUE"
-  );
-
-}
-
-function getToolAds(tool) {
+function getToolAds(
+  tool
+) {
 
   return String(
     tool.ads ??
@@ -2002,9 +3120,14 @@ function getToolAds(tool) {
 
 }
 
-function getToolLogin(tool) {
 
-  if (tool.login_level) {
+function getToolLogin(
+  tool
+) {
+
+  if (
+    tool.login_level
+  ) {
 
     return String(
       tool.login_level
@@ -2014,19 +3137,35 @@ function getToolLogin(tool) {
 
   }
 
-  if (tool.login === false) {
+
+  if (
+    tool.login ===
+    false
+  ) {
+
     return "NONE";
+
   }
 
-  if (tool.login === true) {
+
+  if (
+    tool.login ===
+    true
+  ) {
+
     return "REQUIRED";
+
   }
+
 
   return "UNKNOWN";
 
 }
 
-function getToolProcessing(tool) {
+
+function getToolProcessing(
+  tool
+) {
 
   const value =
     String(
@@ -2036,17 +3175,46 @@ function getToolProcessing(tool) {
     .trim()
     .toUpperCase();
 
-  if (value) {
+
+  if (
+    value
+  ) {
+
     return value;
+
   }
 
-  return getToolLocal(tool)
-    ? "LOCAL"
-    : "UNKNOWN";
+
+  if (
+    tool.local ===
+    true
+  ) {
+
+    return "LOCAL";
+
+  }
+
+
+  return "UNKNOWN";
 
 }
 
-function getToolCnPriority(tool) {
+
+function getToolMobile(
+  tool
+) {
+
+  return (
+    tool.mobile !==
+    false
+  );
+
+}
+
+
+function getToolCnPriority(
+  tool
+) {
 
   return String(
     tool.cn_priority ??
@@ -2057,19 +3225,22 @@ function getToolCnPriority(tool) {
 
 }
 
-function getToolCnVerified(tool) {
 
-  return tool.cn_verified === true;
+function getToolCnVerified(
+  tool
+) {
+
+  return (
+    tool.cn_verified ===
+    true
+  );
 
 }
 
-function getToolMobile(tool) {
 
-  return tool.mobile !== false;
-
-}
-
-function getEvidenceLevel(tool) {
+function getEvidenceLevel(
+  tool
+) {
 
   return String(
     tool.evidence_level ??
@@ -2083,85 +3254,208 @@ function getEvidenceLevel(tool) {
 
 
 /* =========================================================
-   排序
+   TOOL SCORE
 ========================================================= */
 
-function scoreTool(tool) {
+function scoreTool(
+  tool
+) {
 
-  let score = 0;
+  let score =
+    0;
 
-  if (getToolCnVerified(tool)) {
+
+  if (
+    getToolCnVerified(
+      tool
+    )
+  ) {
 
     score += 55;
 
   } else {
 
     const cn =
-      getToolCnPriority(tool);
+      getToolCnPriority(
+        tool
+      );
 
-    if (cn === "HIGH") {
+
+    if (
+      cn ===
+      "HIGH"
+    ) {
+
       score += 30;
-    } else if (cn === "MEDIUM") {
+
+    } else if (
+      cn ===
+      "MEDIUM"
+    ) {
+
       score += 12;
-    } else if (cn === "LOW") {
+
+    } else if (
+      cn ===
+      "LOW"
+    ) {
+
       score -= 12;
+
     }
 
   }
 
-  const ads =
-    getToolAds(tool);
 
-  if (ads === "NONE") {
+  const ads =
+    getToolAds(
+      tool
+    );
+
+
+  if (
+    ads ===
+    "NONE"
+  ) {
+
     score += 22;
-  } else if (ads === "LOW") {
+
+  } else if (
+    ads ===
+    "LOW"
+  ) {
+
     score += 8;
-  } else if (ads === "MEDIUM") {
+
+  } else if (
+    ads ===
+    "MEDIUM"
+  ) {
+
     score -= 12;
-  } else if (ads === "HIGH") {
+
+  } else if (
+    ads ===
+    "HIGH"
+  ) {
+
     score -= 35;
+
   }
+
 
   const login =
-    getToolLogin(tool);
+    getToolLogin(
+      tool
+    );
 
-  if (login === "NONE") {
+
+  if (
+    login ===
+    "NONE"
+  ) {
+
     score += 16;
-  } else if (login === "OPTIONAL") {
+
+  } else if (
+    login ===
+    "OPTIONAL"
+  ) {
+
     score += 6;
-  } else if (login === "REQUIRED") {
+
+  } else if (
+    login ===
+    "REQUIRED"
+  ) {
+
     score -= 12;
+
   }
 
-  if (getToolMobile(tool)) {
+
+  if (
+    getToolMobile(
+      tool
+    )
+  ) {
+
     score += 10;
+
   }
+
 
   const processing =
-    getToolProcessing(tool);
+    getToolProcessing(
+      tool
+    );
 
-  if (processing === "LOCAL") {
+
+  if (
+    processing ===
+    "LOCAL"
+  ) {
+
     score += 12;
-  } else if (processing === "CLOUD_TEMP") {
+
+  } else if (
+    processing ===
+    "CLOUD_TEMP"
+  ) {
+
     score += 3;
-  } else if (processing === "CLOUD_ACCOUNT") {
+
+  } else if (
+    processing ===
+    "CLOUD_ACCOUNT"
+  ) {
+
     score -= 3;
+
   }
+
 
   const evidence =
-    getEvidenceLevel(tool);
+    getEvidenceLevel(
+      tool
+    );
 
-  if (evidence === "VERIFIED_PAGE") {
+
+  if (
+    evidence ===
+    "VERIFIED_PAGE"
+  ) {
+
     score += 8;
-  } else if (evidence === "VERIFIED_PROVIDER") {
+
+  } else if (
+    evidence ===
+    "VERIFIED_PROVIDER"
+  ) {
+
     score += 4;
-  } else if (evidence === "LEGACY_VALIDATED") {
+
+  } else if (
+    evidence ===
+    "LEGACY_VALIDATED"
+  ) {
+
     score += 2;
+
   }
 
-  if (getToolRole(tool) === "PRIMARY") {
+
+  if (
+    getToolRole(
+      tool
+    ) ===
+    "PRIMARY"
+  ) {
+
     score += 3;
+
   }
+
 
   return score;
 
@@ -2169,142 +3463,228 @@ function scoreTool(tool) {
 
 
 /* =========================================================
-   标签
+   TOOL TAGS
 ========================================================= */
 
-function getToolTags(tool) {
+function getToolTags(
+  tool
+) {
 
-  const tags = [];
+  const tags =
+    [];
 
-  if (getToolCnVerified(tool)) {
 
-    tags.push({
-      text: "✓ 国内实测",
-      type: "good"
-    });
-
-  } else if (
-    getToolCnPriority(tool) === "HIGH"
+  if (
+    getToolCnVerified(
+      tool
+    )
   ) {
 
     tags.push({
-      text: "国内优先",
-      type: "info"
+      text:
+        "✓ 国内实测",
+
+      type:
+        "good"
+    });
+
+  } else if (
+    getToolCnPriority(
+      tool
+    ) ===
+    "HIGH"
+  ) {
+
+    tags.push({
+      text:
+        "国内优先",
+
+      type:
+        "info"
     });
 
   }
 
-  if (getToolAds(tool) === "NONE") {
 
-    tags.push({
-      text: "无广告",
-      type: "good"
-    });
-
-  } else if (
-    getToolAds(tool) === "LOW"
+  if (
+    getToolAds(
+      tool
+    ) ===
+    "NONE"
   ) {
 
     tags.push({
-      text: "少量广告",
-      type: "warn"
+      text:
+        "无广告",
+
+      type:
+        "good"
+    });
+
+  } else if (
+    getToolAds(
+      tool
+    ) ===
+    "LOW"
+  ) {
+
+    tags.push({
+      text:
+        "少量广告",
+
+      type:
+        "warn"
     });
 
   }
 
-  if (getToolLogin(tool) === "NONE") {
 
-    tags.push({
-      text: "无需登录",
-      type: "good"
-    });
-
-  } else if (
-    getToolLogin(tool) === "OPTIONAL"
+  if (
+    getToolLogin(
+      tool
+    ) ===
+    "NONE"
   ) {
 
     tags.push({
-      text: "登录可选",
-      type: "info"
+      text:
+        "无需登录",
+
+      type:
+        "good"
     });
 
   } else if (
-    getToolLogin(tool) === "REQUIRED"
+    getToolLogin(
+      tool
+    ) ===
+    "OPTIONAL"
   ) {
 
     tags.push({
-      text: "需要登录",
-      type: "warn"
+      text:
+        "登录可选",
+
+      type:
+        "info"
+    });
+
+  } else if (
+    getToolLogin(
+      tool
+    ) ===
+    "REQUIRED"
+  ) {
+
+    tags.push({
+      text:
+        "需要登录",
+
+      type:
+        "warn"
     });
 
   }
+
 
   const processing =
-    getToolProcessing(tool);
+    getToolProcessing(
+      tool
+    );
 
-  if (processing === "LOCAL") {
 
-    tags.push({
-      text: "本地处理",
-      type: "good"
-    });
-
-  } else if (
-    processing === "CLOUD_TEMP"
+  if (
+    processing ===
+    "LOCAL"
   ) {
 
     tags.push({
-      text: "临时云处理",
-      type: "info"
+      text:
+        "本地处理",
+
+      type:
+        "good"
     });
 
   } else if (
-    processing === "CLOUD_ACCOUNT"
+    processing ===
+    "CLOUD"
   ) {
 
     tags.push({
-      text: "账号云处理",
-      type: "warn"
+      text:
+        "云端处理",
+
+      type:
+        "info"
     });
 
   } else if (
-    processing === "CLOUD"
+    processing ===
+    "CLOUD_TEMP"
   ) {
 
     tags.push({
-      text: "云端处理",
-      type: "info"
+      text:
+        "临时云处理",
+
+      type:
+        "info"
+    });
+
+  } else if (
+    processing ===
+    "CLOUD_ACCOUNT"
+  ) {
+
+    tags.push({
+      text:
+        "账号云处理",
+
+      type:
+        "warn"
     });
 
   }
 
-  /*
-    紧凑版最多显示 3 个标签，
-    减少卡片高度。
-  */
 
-  return tags.slice(0,3);
+  if (
+    getToolMobile(
+      tool
+    )
+  ) {
+
+    tags.push({
+      text:
+        "手机可用",
+
+      type:
+        "info"
+    });
+
+  }
+
+
+  return tags
+    .slice(
+      0,
+      5
+    );
 
 }
 
 
 /* =========================================================
-   数据
+   LOAD DATA
 ========================================================= */
 
 async function loadData() {
 
-  setStatus(
-    "loading",
-    "马上办 V" +
-    APP_VERSION +
-    " · 正在读取数据库…"
-  );
-
   try {
 
-    const cacheBust =
+    const cb =
       Date.now();
+
 
     const [
       atomicResponse,
@@ -2314,23 +3694,30 @@ async function loadData() {
 
         fetch(
           "./data/atomic_tasks.json?cb=" +
-          cacheBust,
+          cb,
+
           {
-            cache: "no-store"
+            cache:
+              "no-store"
           }
         ),
 
         fetch(
           "./data/tools.json?cb=" +
-          cacheBust,
+          cb,
+
           {
-            cache: "no-store"
+            cache:
+              "no-store"
           }
         )
 
       ]);
 
-    if (!atomicResponse.ok) {
+
+    if (
+      !atomicResponse.ok
+    ) {
 
       throw new Error(
         "atomic_tasks.json HTTP " +
@@ -2339,7 +3726,10 @@ async function loadData() {
 
     }
 
-    if (!toolsResponse.ok) {
+
+    if (
+      !toolsResponse.ok
+    ) {
 
       throw new Error(
         "tools.json HTTP " +
@@ -2348,25 +3738,14 @@ async function loadData() {
 
     }
 
+
     const atomicData =
       await atomicResponse.json();
+
 
     const toolsData =
       await toolsResponse.json();
 
-    atomicDataVersion =
-      String(
-        atomicData.version ??
-        atomicData.VERSION ??
-        "UNKNOWN"
-      );
-
-    toolsDataVersion =
-      String(
-        toolsData.version ??
-        toolsData.VERSION ??
-        "UNKNOWN"
-      );
 
     atomicTasks =
       extractArray(
@@ -2379,6 +3758,7 @@ async function loadData() {
         ]
       );
 
+
     toolRegistry =
       extractArray(
         toolsData,
@@ -2390,64 +3770,63 @@ async function loadData() {
         ]
       );
 
-    if (!atomicTasks.length) {
+
+    if (
+      !atomicTasks.length
+    ) {
 
       throw new Error(
-        "atomic_tasks.json 没有读取到任务"
+        "未读取到任务"
       );
 
     }
 
-    if (!toolRegistry.length) {
+
+    if (
+      !toolRegistry.length
+    ) {
 
       throw new Error(
-        "tools.json 没有读取到工具入口"
+        "未读取到工具"
       );
 
     }
+
 
     searchableTasks =
-      atomicTasks.filter(isVisibleTask);
+      atomicTasks.filter(
+        isVisibleTask
+      );
+
 
     renderCategories();
 
-    setStatus(
-      "ok",
-      "马上办 V" +
-      APP_VERSION +
-      " · 已读取 " +
-      searchableTasks.length +
-      " 个任务 / " +
-      toolRegistry.length +
-      " 个入口"
-    );
 
     console.log(
-      "BUILD:",
+      "NAV KING BUILD:",
       BUILD_ID
     );
 
-    console.log(
-      "TASK DATA VERSION:",
-      atomicDataVersion
-    );
 
     console.log(
-      "TOOL DATA VERSION:",
-      toolsDataVersion
+      "TASK COUNT:",
+      searchableTasks.length
     );
 
-  } catch (error) {
+
+    console.log(
+      "TOOL COUNT:",
+      toolRegistry.length
+    );
+
+
+  } catch (
+    error
+  ) {
 
     console.error(
-      "LOAD ERROR:",
+      "NAV KING LOAD ERROR:",
       error
-    );
-
-    setStatus(
-      "error",
-      "数据库读取失败：" +
-      error.message
     );
 
   }
@@ -2456,111 +3835,129 @@ async function loadData() {
 
 
 /* =========================================================
-   可见任务
+   VISIBLE TASK
 ========================================================= */
 
-function isVisibleTask(task) {
+function isVisibleTask(
+  task
+) {
 
   const status =
-    getTaskStatus(task);
+    getTaskStatus(
+      task
+    );
+
 
   if (
-    status === "MERGED" ||
-    status === "RETIRED" ||
-    status === "DISABLED"
+    [
+      "MERGED",
+      "RETIRED",
+      "DISABLED"
+    ]
+    .includes(
+      status
+    )
   ) {
 
     return false;
 
   }
 
+
   return Boolean(
-    getTaskName(task)
+    getTaskName(
+      task
+    )
   );
 
 }
 
 
 /* =========================================================
-   状态
-========================================================= */
-
-function setStatus(type, text) {
-
-  const dot =
-    document.getElementById("statusDot");
-
-  const label =
-    document.getElementById("statusText");
-
-  if (!dot || !label) {
-    return;
-  }
-
-  dot.className =
-    "status-dot";
-
-  if (type === "ok") {
-    dot.classList.add("ok");
-  }
-
-  if (type === "error") {
-    dot.classList.add("error");
-  }
-
-  label.textContent =
-    text;
-
-}
-
-
-/* =========================================================
-   分类
+   CATEGORY RENDER
 ========================================================= */
 
 function renderCategories() {
 
   const container =
-    document.getElementById("categories");
+    document.getElementById(
+      "categories"
+    );
 
-  container.innerHTML = "";
 
-  const groups = {};
+  container.innerHTML =
+    "";
+
+
+  const groups =
+    {};
+
 
   searchableTasks.forEach(
-    function(task) {
+    function(
+      task
+    ) {
 
       const category =
-        getTaskCategory(task);
+        getTaskCategory(
+          task
+        );
 
-      if (!groups[category]) {
-        groups[category] = [];
+
+      if (
+        !groups[
+          category
+        ]
+      ) {
+
+        groups[
+          category
+        ] =
+          [];
+
       }
 
-      groups[category].push(task);
+
+      groups[
+        category
+      ].push(
+        task
+      );
 
     }
   );
 
+
   Object
-    .keys(groups)
+    .keys(
+      groups
+    )
+
     .sort(
-      function(a,b) {
+      function(
+        a,
+        b
+      ) {
 
-        const orderA =
-          categoryConfig[a]?.order ??
-          999;
-
-        const orderB =
-          categoryConfig[b]?.order ??
-          999;
-
-        return orderA - orderB;
+        return (
+          (
+            categoryConfig[a]?.order ??
+            999
+          )
+          -
+          (
+            categoryConfig[b]?.order ??
+            999
+          )
+        );
 
       }
     )
+
     .forEach(
-      function(categoryName) {
+      function(
+        categoryName
+      ) {
 
         const config =
           categoryConfig[
@@ -2579,81 +3976,107 @@ function renderCategories() {
 
           };
 
+
         const section =
           document.createElement(
             "section"
           );
 
+
         section.className =
           "category " +
           config.className;
+
 
         const head =
           document.createElement(
             "div"
           );
 
+
         head.className =
           "category-head";
+
 
         const title =
           document.createElement(
             "h2"
           );
 
+
         title.className =
           "category-title";
 
+
         title.textContent =
           config.title;
+
 
         const note =
           document.createElement(
             "div"
           );
 
+
         note.className =
           "category-note";
+
 
         note.textContent =
           config.note;
 
-        head.appendChild(title);
-        head.appendChild(note);
+
+        head.append(
+          title,
+          note
+        );
+
 
         const grid =
           document.createElement(
             "div"
           );
 
+
         grid.className =
           "task-grid";
+
 
         groups[
           categoryName
         ]
         .forEach(
-          function(task) {
+          function(
+            task
+          ) {
 
             const button =
               document.createElement(
                 "div"
               );
 
+
             button.className =
               "task";
 
+
             button.textContent =
-              getTaskName(task);
+              getTaskName(
+                task
+              );
+
 
             button.addEventListener(
               "click",
               function() {
 
-                showTask(task);
+                showTask(
+                  task
+                );
 
               }
             );
+
 
             grid.appendChild(
               button
@@ -2662,8 +4085,12 @@ function renderCategories() {
           }
         );
 
-        section.appendChild(head);
-        section.appendChild(grid);
+
+        section.append(
+          head,
+          grid
+        );
+
 
         container.appendChild(
           section
@@ -2676,27 +4103,40 @@ function renderCategories() {
 
 
 /* =========================================================
-   工具排序
+   TOOL MATCHING
 ========================================================= */
 
-function findToolsForTask(task) {
+function findToolsForTask(
+  task
+) {
 
   const taskId =
-    getTaskId(task);
+    getTaskId(
+      task
+    );
+
 
   return toolRegistry
 
     .filter(
-      function(tool) {
+      function(
+        tool
+      ) {
 
-        return getToolTasks(tool)
-          .includes(taskId);
+        return getToolTasks(
+          tool
+        )
+        .includes(
+          taskId
+        );
 
       }
     )
 
     .filter(
-      function(tool) {
+      function(
+        tool
+      ) {
 
         return ![
           "DOWN",
@@ -2704,222 +4144,354 @@ function findToolsForTask(task) {
           "DEAD"
         ]
         .includes(
-          getToolStatus(tool)
+          getToolStatus(
+            tool
+          )
         );
 
       }
     )
 
     .filter(
-      function(tool) {
+      function(
+        tool
+      ) {
 
         return (
-          getToolName(tool) &&
-          getToolUrl(tool)
+          getToolName(
+            tool
+          )
+          &&
+          getToolUrl(
+            tool
+          )
         );
 
       }
     )
 
     .map(
-      function(tool) {
+      function(
+        tool
+      ) {
 
         return {
-          tool: tool,
-          score: scoreTool(tool)
+
+          tool:
+            tool,
+
+          score:
+            scoreTool(
+              tool
+            )
+
         };
 
       }
     )
 
     .sort(
-      function(a,b) {
+      function(
+        a,
+        b
+      ) {
 
-        if (b.score !== a.score) {
-          return b.score - a.score;
+        if (
+          b.score !==
+          a.score
+        ) {
+
+          return (
+            b.score -
+            a.score
+          );
+
         }
+
 
         const roleA =
-          getToolRole(a.tool);
+          getToolRole(
+            a.tool
+          );
+
 
         const roleB =
-          getToolRole(b.tool);
-
-        if (
-          roleA === "PRIMARY" &&
-          roleB !== "PRIMARY"
-        ) {
-          return -1;
-        }
-
-        if (
-          roleB === "PRIMARY" &&
-          roleA !== "PRIMARY"
-        ) {
-          return 1;
-        }
-
-        return getToolName(a.tool)
-          .localeCompare(
-            getToolName(b.tool),
-            "zh-CN"
+          getToolRole(
+            b.tool
           );
+
+
+        if (
+          roleA ===
+          "PRIMARY"
+          &&
+          roleB !==
+          "PRIMARY"
+        ) {
+
+          return -1;
+
+        }
+
+
+        if (
+          roleB ===
+          "PRIMARY"
+          &&
+          roleA !==
+          "PRIMARY"
+        ) {
+
+          return 1;
+
+        }
+
+
+        return getToolName(
+          a.tool
+        )
+        .localeCompare(
+          getToolName(
+            b.tool
+          ),
+          "zh-CN"
+        );
 
       }
     )
 
-    .slice(0,3);
+    .slice(
+      0,
+      3
+    );
 
 }
 
 
 /* =========================================================
-   展示
+   SHOW TASK
 ========================================================= */
 
-function showTask(task) {
+function showTask(
+  task
+) {
 
   const result =
-    document.getElementById("result");
+    document.getElementById(
+      "result"
+    );
+
 
   const empty =
-    document.getElementById("empty");
+    document.getElementById(
+      "empty"
+    );
+
 
   const title =
-    document.getElementById("resultTitle");
+    document.getElementById(
+      "resultTitle"
+    );
+
 
   const description =
     document.getElementById(
       "resultDescription"
     );
 
+
   const list =
-    document.getElementById("siteList");
+    document.getElementById(
+      "siteList"
+    );
+
 
   const metaRow =
-    document.getElementById("metaRow");
+    document.getElementById(
+      "metaRow"
+    );
 
-  empty.classList.remove("show");
 
-  const taskName =
-    getTaskName(task);
+  empty.classList.remove(
+    "show"
+  );
 
-  const taskDescription =
-    getTaskDescription(task);
-
-  const rankedTools =
-    findToolsForTask(task);
 
   title.textContent =
-    taskName;
+    getTaskName(
+      task
+    );
+
 
   description.textContent =
-    taskDescription ||
+    getTaskDescription(
+      task
+    )
+    ||
     "已按国内优先、广告、登录、手机体验和处理方式自动排序。";
 
-  list.innerHTML = "";
-  metaRow.innerHTML = "";
 
-  if (!rankedTools.length) {
+  list.innerHTML =
+    "";
+
+
+  metaRow.innerHTML =
+    "";
+
+
+  const rankedTools =
+    findToolsForTask(
+      task
+    );
+
+
+  if (
+    !rankedTools.length
+  ) {
 
     const message =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
+
 
     message.style.padding =
-      "12px";
+      "15px";
+
 
     message.style.background =
       "#fff7ed";
 
+
     message.style.borderRadius =
-      "12px";
+      "14px";
+
 
     message.style.color =
       "#9a3412";
 
+
     message.style.fontSize =
-      "12px";
+      "14px";
+
 
     message.textContent =
-      "这个任务目前还没有可用入口。";
+      "这个任务已经进入马上办，但目前还没有关联网址入口。";
 
-    list.appendChild(message);
+
+    list.appendChild(
+      message
+    );
 
   }
 
+
   rankedTools.forEach(
-    function(item,index) {
+    function(
+      item,
+      index
+    ) {
 
       const tool =
         item.tool;
 
+
       const name =
-        getToolName(tool);
+        getToolName(
+          tool
+        );
+
 
       const url =
-        getToolUrl(tool);
+        getToolUrl(
+          tool
+        );
 
-      let domain = "";
+
+      let domain =
+        url;
+
 
       try {
 
         domain =
-          new URL(url)
+          new URL(
+            url
+          )
           .hostname;
 
-      } catch (error) {
-
-        domain = url;
+      } catch (
+        error
+      ) {
 
       }
 
-      const rankText =
-        index === 0
-        ? "🥇 推荐"
-        : (
-            "备用 " +
-            index
-          );
-
-      const tags =
-        getToolTags(tool);
 
       const link =
-        document.createElement("a");
+        document.createElement(
+          "a"
+        );
+
 
       link.className =
         "site" +
         (
           index === 0
-          ? " recommended"
-          : ""
+          ?
+          " recommended"
+          :
+          ""
         );
+
 
       link.href =
         url;
 
+
       link.target =
         "_blank";
+
 
       link.rel =
         "noopener noreferrer";
 
+
+      const rankText =
+        index === 0
+        ?
+        "🥇 推荐"
+        :
+        (
+          "备用 " +
+          index
+        );
+
+
       const tagsHtml =
-        tags
-          .map(
-            function(tag) {
+        getToolTags(
+          tool
+        )
 
-              return `
-                <span
-                  class="tool-tag ${escapeHTML(tag.type)}"
-                >
-                  ${escapeHTML(tag.text)}
-                </span>
-              `;
+        .map(
+          function(
+            tag
+          ) {
 
-            }
-          )
-          .join("");
+            return `
+              <span
+                class="tool-tag ${escapeHTML(tag.type)}"
+              >
+                ${escapeHTML(tag.text)}
+              </span>
+            `;
+
+          }
+        )
+
+        .join(
+          ""
+        );
+
 
       link.innerHTML = `
 
@@ -2933,25 +4505,31 @@ function showTask(task) {
 
           </div>
 
+
           <div class="site-name">
             ${escapeHTML(name)}
           </div>
+
 
           <div class="site-domain">
             ${escapeHTML(domain)}
           </div>
 
+
           ${
             tagsHtml
-            ? `
+            ?
+            `
               <div class="tool-tags">
                 ${tagsHtml}
               </div>
             `
-            : ""
+            :
+            ""
           }
 
         </div>
+
 
         <div class="site-open">
           打开
@@ -2959,89 +4537,106 @@ function showTask(task) {
 
       `;
 
-      list.appendChild(link);
+
+      list.appendChild(
+        link
+      );
 
     }
   );
 
-  const anyLocal =
-    rankedTools.some(
-      function(item) {
 
-        return (
-          getToolProcessing(
-            item.tool
-          ) === "LOCAL"
-        );
+  if (
+    rankedTools.length
+  ) {
 
-      }
-    );
+    const anyLocal =
+      rankedTools.some(
+        function(
+          item
+        ) {
 
-  if (rankedTools.length) {
+          return (
+            getToolProcessing(
+              item.tool
+            )
+            ===
+            "LOCAL"
+          );
 
-    if (anyLocal) {
-
-      addBadge(
-        metaRow,
-        "含本地处理",
-        "local"
+        }
       );
 
-    } else {
-
-      addBadge(
-        metaRow,
-        "第三方处理",
-        "cloud"
-      );
-
-    }
-
-  }
-
-  const layer =
-    getTaskLayer(task);
-
-  if (layer === "PRO") {
 
     addBadge(
       metaRow,
-      "Pro",
+      anyLocal
+      ?
+      "包含本地处理"
+      :
+      "第三方处理",
+      anyLocal
+      ?
+      "local"
+      :
+      "cloud"
+    );
+
+  }
+
+
+  if (
+    getTaskLayer(
+      task
+    ) ===
+    "PRO"
+  ) {
+
+    addBadge(
+      metaRow,
+      "Pro 专业工具",
       "pro"
     );
 
   }
 
+
   addBadge(
     metaRow,
-    getTaskCategory(task),
+    getTaskCategory(
+      task
+    ),
     ""
   );
 
-  result.classList.add("show");
 
-  /*
-    不再 center，
-    避免点击任务后页面大幅跳动。
-  */
+  result.classList.add(
+    "show"
+  );
+
 
   setTimeout(
     function() {
 
       result.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
+
+        behavior:
+          "smooth",
+
+        block:
+          "center"
+
       });
 
     },
-    60
+    80
   );
 
 }
 
 
 /* =========================================================
-   Badge
+   BADGE
 ========================================================= */
 
 function addBadge(
@@ -3051,25 +4646,39 @@ function addBadge(
 ) {
 
   const badge =
-    document.createElement("span");
+    document.createElement(
+      "span"
+    );
+
 
   badge.className =
     "badge";
 
-  if (type) {
-    badge.classList.add(type);
+
+  if (
+    type
+  ) {
+
+    badge.classList.add(
+      type
+    );
+
   }
+
 
   badge.textContent =
     text;
 
-  parent.appendChild(badge);
+
+  parent.appendChild(
+    badge
+  );
 
 }
 
 
 /* =========================================================
-   搜索
+   SEARCH
 ========================================================= */
 
 function searchTask() {
@@ -3079,65 +4688,114 @@ function searchTask() {
       "searchInput"
     );
 
+
   const keyword =
     input.value
       .trim()
       .toLowerCase();
 
-  if (!keyword) {
+
+  if (
+    !keyword
+  ) {
+
     return;
+
   }
 
-  const empty =
-    document.getElementById("empty");
 
-  empty.classList.remove("show");
+  const empty =
+    document.getElementById(
+      "empty"
+    );
+
+
+  empty.classList.remove(
+    "show"
+  );
+
 
   let matched =
     searchableTasks.find(
-      function(task) {
+      function(
+        task
+      ) {
 
         const name =
-          getTaskName(task)
+          getTaskName(
+            task
+          )
           .toLowerCase();
 
+
         return (
-          name.includes(keyword) ||
-          keyword.includes(name)
+          name.includes(
+            keyword
+          )
+          ||
+          keyword.includes(
+            name
+          )
         );
 
       }
     );
 
-  if (!matched) {
 
-    for (const alias in aliases) {
+  if (
+    !matched
+  ) {
+
+    for (
+      const alias
+      in aliases
+    ) {
 
       const lowerAlias =
-        alias.toLowerCase();
+        alias
+          .toLowerCase();
+
 
       if (
-        keyword.includes(lowerAlias) ||
-        lowerAlias.includes(keyword)
+        keyword.includes(
+          lowerAlias
+        )
+        ||
+        lowerAlias.includes(
+          keyword
+        )
       ) {
 
         const targetName =
-          aliases[alias];
+          aliases[
+            alias
+          ];
+
 
         matched =
           searchableTasks.find(
-            function(task) {
+            function(
+              task
+            ) {
 
               return (
-                getTaskName(task) ===
+                getTaskName(
+                  task
+                )
+                ===
                 targetName
               );
 
             }
           );
 
-        if (matched) {
+
+        if (
+          matched
+        ) {
+
           break;
+
         }
 
       }
@@ -3146,28 +4804,47 @@ function searchTask() {
 
   }
 
-  if (!matched) {
+
+  if (
+    !matched
+  ) {
 
     matched =
       searchableTasks.find(
-        function(task) {
+        function(
+          task
+        ) {
 
           const keywords =
             Array.isArray(
               task.keywords
             )
-            ? task.keywords.join(" ")
-            : "";
+            ?
+            task.keywords.join(
+              " "
+            )
+            :
+            "";
+
 
           const combined =
             (
-              getTaskName(task) +
-              " " +
-              getTaskDescription(task) +
-              " " +
+              getTaskName(
+                task
+              )
+              +
+              " "
+              +
+              getTaskDescription(
+                task
+              )
+              +
+              " "
+              +
               keywords
             )
             .toLowerCase();
+
 
           return combined.includes(
             keyword
@@ -3178,22 +4855,40 @@ function searchTask() {
 
   }
 
-  if (matched) {
 
-    showTask(matched);
+  if (
+    matched
+  ) {
+
+    showTask(
+      matched
+    );
 
   } else {
 
     document
-      .getElementById("result")
+      .getElementById(
+        "result"
+      )
       .classList
-      .remove("show");
+      .remove(
+        "show"
+      );
 
-    empty.classList.add("show");
+
+    empty.classList.add(
+      "show"
+    );
+
 
     empty.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
+
+      behavior:
+        "smooth",
+
+      block:
+        "center"
+
     });
 
   }
@@ -3202,79 +4897,567 @@ function searchTask() {
 
 
 /* =========================================================
-   HTML安全
+   MEDIA
 ========================================================= */
 
-function escapeHTML(value) {
+function openMediaModal() {
 
-  return String(value)
+  document
+    .getElementById(
+      "mediaModal"
+    )
+    .classList
+    .add(
+      "show"
+    );
 
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
+}
+
+
+function closeMediaModal() {
+
+  document
+    .getElementById(
+      "mediaModal"
+    )
+    .classList
+    .remove(
+      "show"
+    );
+
+}
+
+
+function mediaToFeedback() {
+
+  closeMediaModal();
+
+
+  setTimeout(
+    openFeedback,
+    120
+  );
 
 }
 
 
 /* =========================================================
-   事件
+   FEEDBACK
+========================================================= */
+
+function openFeedback() {
+
+  document
+    .getElementById(
+      "feedbackBackdrop"
+    )
+    .classList
+    .add(
+      "show"
+    );
+
+}
+
+
+function closeFeedback() {
+
+  document
+    .getElementById(
+      "feedbackBackdrop"
+    )
+    .classList
+    .remove(
+      "show"
+    );
+
+}
+
+
+/* =========================================================
+   COPY CONTACT
+========================================================= */
+
+async function copyWechat() {
+
+  const value =
+    "ziyouluoti8";
+
+
+  const button =
+    document.getElementById(
+      "copyWechatButton"
+    );
+
+
+  try {
+
+    await navigator.clipboard
+      .writeText(
+        value
+      );
+
+
+    button.textContent =
+      "✓ 已复制";
+
+  } catch (
+    error
+  ) {
+
+    button.textContent =
+      "微信号：ziyouluoti8";
+
+  }
+
+
+  setTimeout(
+    function() {
+
+      button.textContent =
+        "复制微信号";
+
+    },
+    1800
+  );
+
+}
+
+
+/* =========================================================
+   DEVICE
+========================================================= */
+
+function isIOS() {
+
+  return /iPad|iPhone|iPod/i
+    .test(
+      navigator.userAgent
+    );
+
+}
+
+
+function isAndroid() {
+
+  return /Android/i
+    .test(
+      navigator.userAgent
+    );
+
+}
+
+
+function isMac() {
+
+  return /Macintosh|Mac OS X/i
+    .test(
+      navigator.userAgent
+    );
+
+}
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function openSaveModal() {
+
+  document
+    .getElementById(
+      "saveModal"
+    )
+    .classList
+    .add(
+      "show"
+    );
+
+
+  updateSaveHelp();
+
+}
+
+
+function closeSaveModal() {
+
+  document
+    .getElementById(
+      "saveModal"
+    )
+    .classList
+    .remove(
+      "show"
+    );
+
+}
+
+
+function updateSaveHelp() {
+
+  const help =
+    document.getElementById(
+      "saveHelp"
+    );
+
+
+  if (
+    isIOS()
+  ) {
+
+    help.innerHTML =
+      "<strong>iPhone / iPad：</strong>" +
+      "Safari 分享 → 添加到主屏幕。";
+
+    return;
+
+  }
+
+
+  if (
+    isAndroid()
+  ) {
+
+    help.innerHTML =
+      "<strong>Android：</strong>" +
+      "浏览器菜单 → 添加到主屏幕 / 安装应用。";
+
+    return;
+
+  }
+
+
+  if (
+    isMac()
+  ) {
+
+    help.innerHTML =
+      "<strong>Mac：</strong>" +
+      "按 ⌘ + D 收藏。";
+
+    return;
+
+  }
+
+
+  help.innerHTML =
+    "<strong>电脑：</strong>" +
+    "按 Ctrl + D 收藏。";
+
+}
+
+
+window.addEventListener(
+  "beforeinstallprompt",
+  function(
+    event
+  ) {
+
+    event.preventDefault();
+
+
+    deferredInstallPrompt =
+      event;
+
+  }
+);
+
+
+async function handleAddHome() {
+
+  if (
+    deferredInstallPrompt
+  ) {
+
+    try {
+
+      deferredInstallPrompt
+        .prompt();
+
+
+      await deferredInstallPrompt
+        .userChoice;
+
+
+      deferredInstallPrompt =
+        null;
+
+
+      closeSaveModal();
+
+
+      return;
+
+    } catch (
+      error
+    ) {
+
+      console.warn(
+        "Install prompt failed:",
+        error
+      );
+
+    }
+
+  }
+
+
+  updateSaveHelp();
+
+}
+
+
+function handleBookmark() {
+
+  updateSaveHelp();
+
+}
+
+
+/* =========================================================
+   ESCAPE
+========================================================= */
+
+function escapeHTML(
+  value
+) {
+
+  return String(
+    value
+  )
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+   EVENTS
 ========================================================= */
 
 document
-  .getElementById("searchButton")
+  .getElementById(
+    "searchButton"
+  )
   .addEventListener(
     "click",
     searchTask
   );
 
+
 document
-  .getElementById("searchInput")
+  .getElementById(
+    "searchInput"
+  )
   .addEventListener(
     "keydown",
-    function(event) {
+    function(
+      event
+    ) {
 
-      if (event.key === "Enter") {
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
         searchTask();
+
       }
 
     }
   );
 
+
 document
-  .getElementById("saveNavButton")
+  .getElementById(
+    "saveNavButton"
+  )
   .addEventListener(
     "click",
     openSaveModal
   );
 
+
 document
-  .getElementById("saveModalClose")
+  .getElementById(
+    "saveModalClose"
+  )
   .addEventListener(
     "click",
     closeSaveModal
   );
 
+
 document
-  .getElementById("addHomeButton")
+  .getElementById(
+    "addHomeButton"
+  )
   .addEventListener(
     "click",
     handleAddHome
   );
 
+
 document
-  .getElementById("bookmarkButton")
+  .getElementById(
+    "bookmarkButton"
+  )
   .addEventListener(
     "click",
     handleBookmark
   );
 
+
 document
-  .getElementById("saveModalBackdrop")
+  .getElementById(
+    "mediaLearningCard"
+  )
   .addEventListener(
     "click",
-    function(event) {
+    openMediaModal
+  );
+
+
+document
+  .getElementById(
+    "mediaLearningCard"
+  )
+  .addEventListener(
+    "keydown",
+    function(
+      event
+    ) {
+
+      if (
+        event.key ===
+        "Enter"
+        ||
+        event.key ===
+        " "
+      ) {
+
+        openMediaModal();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "mediaModalClose"
+  )
+  .addEventListener(
+    "click",
+    closeMediaModal
+  );
+
+
+document
+  .getElementById(
+    "mediaCloseButton"
+  )
+  .addEventListener(
+    "click",
+    closeMediaModal
+  );
+
+
+document
+  .getElementById(
+    "mediaContactButton"
+  )
+  .addEventListener(
+    "click",
+    mediaToFeedback
+  );
+
+
+document
+  .getElementById(
+    "feedbackFloat"
+  )
+  .addEventListener(
+    "click",
+    openFeedback
+  );
+
+
+document
+  .getElementById(
+    "feedbackClose"
+  )
+  .addEventListener(
+    "click",
+    closeFeedback
+  );
+
+
+document
+  .getElementById(
+    "copyWechatButton"
+  )
+  .addEventListener(
+    "click",
+    copyWechat
+  );
+
+
+document
+  .getElementById(
+    "mediaModal"
+  )
+  .addEventListener(
+    "click",
+    function(
+      event
+    ) {
+
+      if (
+        event.target ===
+        event.currentTarget
+      ) {
+
+        closeMediaModal();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "saveModal"
+  )
+  .addEventListener(
+    "click",
+    function(
+      event
+    ) {
 
       if (
         event.target ===
@@ -3282,6 +5465,29 @@ document
       ) {
 
         closeSaveModal();
+
+      }
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "feedbackBackdrop"
+  )
+  .addEventListener(
+    "click",
+    function(
+      event
+    ) {
+
+      if (
+        event.target ===
+        event.currentTarget
+      ) {
+
+        closeFeedback();
 
       }
 
