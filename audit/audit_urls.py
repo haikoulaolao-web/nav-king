@@ -427,8 +427,12 @@ class URLAuditor:
 
         if result["task_match"] == "FAIL" or score < self.SCORE_REVIEW:
             result["verdict"] = "FAIL"
+
             if result["reason"] == "Audit started":
-                result["reason"] = f"Low score and task mismatch: {result['score']}"
+                result["reason"] = (
+                    f"Low score and task mismatch: {result['score']}"
+                )
+
             if not result["review_reason_code"]:
                 result["review_reason_code"] = "TASK_MISMATCH"
 
@@ -445,6 +449,7 @@ class URLAuditor:
                 f"Needs manual review "
                 f"(score: {result['score']}, task_match: {task_match})"
             )
+
             if not result["review_reason_code"]:
                 result["review_reason_code"] = "INSUFFICIENT_EVIDENCE"
 
@@ -479,6 +484,7 @@ class URLAuditor:
                         continue
 
                     remaining = self.MAX_CONTENT_SIZE - content_size
+
                     if remaining <= 0:
                         break
 
@@ -558,10 +564,12 @@ class URLAuditor:
     def _is_valid_url(self, url: str) -> bool:
         try:
             parsed = urlparse(url)
+
             return (
                 parsed.scheme in ("http", "https")
                 and bool(parsed.netloc)
             )
+
         except Exception:
             return False
 
@@ -614,7 +622,9 @@ class URLAuditor:
             if suspicious:
                 return {
                     "verdict": "FAIL",
-                    "reason": f"Suspicious cross-domain redirect: {suspicious}",
+                    "reason": (
+                        f"Suspicious cross-domain redirect: {suspicious}"
+                    ),
                     "code": "MALICIOUS_REDIRECT",
                 }
 
@@ -636,8 +646,16 @@ class URLAuditor:
 
     def _is_language_subdomain(self, orig: str, final: str) -> bool:
         langs = {
-            "en", "zh", "fr", "de", "es",
-            "ja", "ko", "ru", "pt", "it",
+            "en",
+            "zh",
+            "fr",
+            "de",
+            "es",
+            "ja",
+            "ko",
+            "ru",
+            "pt",
+            "it",
         }
 
         orig_parts = orig.lower().split(".")
@@ -649,6 +667,7 @@ class URLAuditor:
         orig_base = ".".join(
             orig_parts[1:] if orig_parts[0] in langs else orig_parts
         )
+
         final_base = ".".join(
             final_parts[1:] if final_parts[0] in langs else final_parts
         )
@@ -691,22 +710,33 @@ class URLAuditor:
             return True
 
         text_lower = text.lower()
-        indicators = ["not found", "page not found", "404"]
+        indicators = [
+            "not found",
+            "page not found",
+            "404",
+        ]
 
-        matches = sum(1 for indicator in indicators if indicator in text_lower)
+        matches = sum(
+            1 for indicator in indicators
+            if indicator in text_lower
+        )
 
         if matches < 2:
             return False
 
         title = soup.find("title")
+
         if title:
             title_text = title.get_text().lower()
+
             if "404" in title_text or "not found" in title_text:
                 return True
 
         h1 = soup.find("h1")
+
         if h1:
             h1_text = h1.get_text().lower()
+
             if "404" in h1_text or "not found" in h1_text:
                 return True
 
@@ -722,7 +752,11 @@ class URLAuditor:
         ]
 
         text_lower = text.lower()
-        return any(indicator in text_lower for indicator in indicators)
+
+        return any(
+            indicator in text_lower
+            for indicator in indicators
+        )
 
     def _detect_ads_v11(self, soup, text: str) -> bool:
         text_lower = text.lower()
@@ -735,11 +769,15 @@ class URLAuditor:
             "adsbygoogle",
         ]
 
-        if any(indicator in text_lower for indicator in strong_indicators):
+        if any(
+            indicator in text_lower
+            for indicator in strong_indicators
+        ):
             return True
 
         for script in soup.find_all("script", src=True):
             src = script.get("src", "").lower()
+
             if any(
                 signal in src
                 for signal in (
@@ -768,12 +806,19 @@ class URLAuditor:
             "you must be logged in",
         ]
 
-        if any(indicator in text_lower for indicator in strong_indicators):
+        if any(
+            indicator in text_lower
+            for indicator in strong_indicators
+        ):
             return "STRONG"
 
         return None
 
-    def _detect_forced_app_v11(self, soup, text: str) -> bool:
+    def _detect_forced_app_v11(
+        self,
+        soup,
+        text: str,
+    ) -> bool:
         text_lower = text.lower()
 
         forced_indicators = [
@@ -800,6 +845,30 @@ class URLAuditor:
         content: str,
         path: str,
     ) -> str:
+        """
+        Task matching with expected-keyword evidence protection.
+
+        Important:
+        If expected_keywords are supplied, task-id terms alone are NOT
+        sufficient to produce REVIEW.
+
+        This prevents unrelated pages that merely mention generic terms
+        such as "PDF" or "compression" from being treated as plausible
+        task matches.
+
+        PASS:
+        - >= 70% expected keywords match
+        - AND at least one task-id term matches
+        - AND page is not only a root/homepage
+
+        REVIEW:
+        - >= 40% expected keywords match
+        - AND at least one task-id term matches
+
+        FAIL:
+        - insufficient expected-keyword evidence
+        """
+
         if not keywords:
             return self._check_task_match_no_keywords(
                 task_id,
@@ -809,9 +878,9 @@ class URLAuditor:
             )
 
         keywords_lower = [
-            kw.lower().strip()
-            for kw in keywords
-            if str(kw).strip()
+            str(keyword).lower().strip()
+            for keyword in keywords
+            if str(keyword).strip()
         ]
 
         if not keywords_lower:
@@ -822,12 +891,19 @@ class URLAuditor:
                 path,
             )
 
-        combined_text = f"{title} {description} {content} {path}"
+        combined_text = (
+            f"{title} {description} {content} {path}"
+        ).lower()
 
         keyword_matches = sum(
-            1 for kw in keywords_lower if kw in combined_text
+            1
+            for keyword in keywords_lower
+            if keyword in combined_text
         )
-        keyword_ratio = keyword_matches / len(keywords_lower)
+
+        keyword_ratio = (
+            keyword_matches / len(keywords_lower)
+        )
 
         task_terms = [
             term
@@ -836,15 +912,30 @@ class URLAuditor:
         ]
 
         task_term_matches = sum(
-            1 for term in task_terms if term in combined_text
+            1
+            for term in task_terms
+            if term in combined_text
         )
 
-        if keyword_ratio >= 0.7 and task_term_matches > 0:
+        # Strong evidence.
+        if (
+            keyword_ratio >= 0.7
+            and task_term_matches > 0
+        ):
             if path in ("", "/", "/index.html"):
                 return "REVIEW"
+
             return "PASS"
 
-        if keyword_ratio >= 0.4 or task_term_matches >= 2:
+        # Partial evidence.
+        #
+        # Critical v1.2 fix:
+        # expected keywords MUST contribute evidence.
+        # Task terms alone cannot elevate an unrelated page to REVIEW.
+        if (
+            keyword_ratio >= 0.4
+            and task_term_matches > 0
+        ):
             return "REVIEW"
 
         return "FAIL"
@@ -865,17 +956,24 @@ class URLAuditor:
         if not task_terms:
             return "FAIL"
 
-        combined_text = f"{title} {content} {path}".lower()
+        combined_text = (
+            f"{title} {content} {path}"
+        ).lower()
 
         task_term_matches = sum(
-            1 for term in task_terms if term in combined_text
+            1
+            for term in task_terms
+            if term in combined_text
         )
 
-        ratio = task_term_matches / len(task_terms)
+        ratio = (
+            task_term_matches / len(task_terms)
+        )
 
         if ratio >= 0.8:
             if path in ("", "/", "/index.html"):
                 return "REVIEW"
+
             return "PASS"
 
         if task_term_matches > 0:
@@ -898,10 +996,22 @@ class URLAuditor:
             if re.search(pattern, path_lower):
                 return True
 
-        normalized_path = re.sub(r"[-_/]", "", path_lower)
-        normalized_task = re.sub(r"[-_ ]", "", task_id.lower())
+        normalized_path = re.sub(
+            r"[-_/]",
+            "",
+            path_lower,
+        )
 
-        if normalized_task and normalized_task in normalized_path:
+        normalized_task = re.sub(
+            r"[-_ ]",
+            "",
+            task_id.lower(),
+        )
+
+        if (
+            normalized_task
+            and normalized_task in normalized_path
+        ):
             return True
 
         for keyword in keywords:
@@ -910,7 +1020,11 @@ class URLAuditor:
                 "",
                 str(keyword).lower(),
             )
-            if normalized_keyword and normalized_keyword in normalized_path:
+
+            if (
+                normalized_keyword
+                and normalized_keyword in normalized_path
+            ):
                 return True
 
         explicit_indicators = [
@@ -923,7 +1037,10 @@ class URLAuditor:
             "free online",
         ]
 
-        if any(indicator in title_lower for indicator in explicit_indicators):
+        if any(
+            indicator in title_lower
+            for indicator in explicit_indicators
+        ):
             return True
 
         return False
@@ -948,19 +1065,35 @@ class URLAuditor:
             "results": results,
         }
 
-        with open(output_file, "w", encoding="utf-8") as f:
-            json.dump(output, f, ensure_ascii=False, indent=2)
+        with open(
+            output_file,
+            "w",
+            encoding="utf-8",
+        ) as f:
+            json.dump(
+                output,
+                f,
+                ensure_ascii=False,
+                indent=2,
+            )
 
         print(f"[OUTPUT] Wrote {output_file}")
 
-    def generate_approved(self, results: List[Dict]):
+    def generate_approved(
+        self,
+        results: List[Dict],
+    ):
         approved = [
             result
             for result in results
             if result.get("verdict") == "PASS"
         ]
 
-        with open("audit/approved.json", "w", encoding="utf-8") as f:
+        with open(
+            "audit/approved.json",
+            "w",
+            encoding="utf-8",
+        ) as f:
             json.dump(
                 {"approved": approved},
                 f,
@@ -973,7 +1106,10 @@ class URLAuditor:
             f"({len(approved)} items)"
         )
 
-    def generate_rejected(self, results: List[Dict]):
+    def generate_rejected(
+        self,
+        results: List[Dict],
+    ):
         rejected = []
 
         for result in results:
@@ -981,15 +1117,25 @@ class URLAuditor:
                 continue
 
             rejected.append({
-                "candidate_id": result.get("candidate_id"),
-                "task_id": result.get("task_id"),
-                "url": result.get("url"),
-                "http_status": result.get("http_status"),
-                "reason": result.get("reason"),
-                "review_reason_code": result.get("review_reason_code"),
+                "candidate_id":
+                    result.get("candidate_id"),
+                "task_id":
+                    result.get("task_id"),
+                "url":
+                    result.get("url"),
+                "http_status":
+                    result.get("http_status"),
+                "reason":
+                    result.get("reason"),
+                "review_reason_code":
+                    result.get("review_reason_code"),
             })
 
-        with open("audit/rejected.json", "w", encoding="utf-8") as f:
+        with open(
+            "audit/rejected.json",
+            "w",
+            encoding="utf-8",
+        ) as f:
             json.dump(
                 {"rejected": rejected},
                 f,
@@ -1016,10 +1162,15 @@ def main():
     )
 
     if success:
-        print("\n[SUCCESS] Audit completed successfully")
+        print(
+            "\n[SUCCESS] Audit completed successfully"
+        )
         return 0
 
-    print("\n[ERROR] Audit failed")
+    print(
+        "\n[ERROR] Audit failed"
+    )
+
     return 1
 
 
