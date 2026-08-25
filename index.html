@@ -2,32 +2,38 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
+
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
+
   <meta
     name="description"
-    content="NAV KING - 不记网站名字，直接按任务找工具"
+    content="马上办 - 不研究工具，直接把事办完"
   >
+
   <meta
     http-equiv="Cache-Control"
     content="no-cache, no-store, must-revalidate"
   >
+
   <meta
     http-equiv="Pragma"
     content="no-cache"
   >
+
   <meta
     http-equiv="Expires"
     content="0"
   >
+
   <meta
     name="theme-color"
     content="#111827"
   >
 
-  <title>NAV KING · 导航王</title>
+  <title>马上办 · 高效工具入口</title>
 
   <style>
 
@@ -53,7 +59,7 @@
       background: #f5f7fb;
       color: #172033;
 
-      padding-bottom: 110px;
+      padding-bottom: 92px;
     }
 
     button,
@@ -68,13 +74,12 @@
     .container {
       width: 100%;
       max-width: 720px;
-
       margin: 0 auto;
 
       padding:
-        18px
-        14px
-        55px;
+        12px
+        10px
+        40px;
     }
 
 
@@ -92,61 +97,54 @@
 
       color: white;
 
-      border-radius: 24px;
+      border-radius: 20px;
 
       padding:
-        24px
-        20px;
+        17px
+        16px
+        16px;
 
       box-shadow:
-        0 14px 35px
-        rgba(15,23,42,.16);
+        0 10px 28px
+        rgba(15,23,42,.14);
     }
 
     .brand-row {
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
-
-      gap: 12px;
+      gap: 10px;
     }
 
     .brand {
-      font-size: 13px;
-
+      font-size: 12px;
       font-weight: 900;
-
-      letter-spacing: 3px;
-
+      letter-spacing: 2.5px;
       color: #60a5fa;
     }
 
     .save-nav-btn {
       border:
         1px solid
-        rgba(255,255,255,.16);
+        rgba(255,255,255,.15);
 
       background:
-        rgba(255,255,255,.09);
+        rgba(255,255,255,.08);
 
       color: white;
 
-      min-height: 34px;
+      min-height: 30px;
 
       padding:
-        7px
-        11px;
+        5px
+        9px;
 
       border-radius: 999px;
 
-      font-size: 12px;
-
+      font-size: 11px;
       font-weight: 850;
 
       cursor: pointer;
-
       white-space: nowrap;
     }
 
@@ -156,23 +154,20 @@
 
     .hero h1 {
       margin:
-        12px
+        10px
         0
         0;
 
-      font-size: 30px;
-
-      line-height: 1.25;
-
+      font-size: 28px;
+      line-height: 1.2;
       letter-spacing: -1px;
     }
 
     .hero-text {
-      margin-top: 10px;
+      margin-top: 7px;
 
-      font-size: 15px;
-
-      line-height: 1.65;
+      font-size: 14px;
+      line-height: 1.5;
 
       color: #cbd5e1;
     }
@@ -183,11 +178,10 @@
     ========================= */
 
     .search {
-      margin-top: 18px;
+      margin-top: 13px;
 
       display: flex;
-
-      gap: 8px;
+      gap: 7px;
     }
 
     .search input {
@@ -195,42 +189,37 @@
 
       min-width: 0;
 
-      height: 48px;
+      height: 42px;
 
       border: 0;
-
       outline: none;
 
-      border-radius: 15px;
+      border-radius: 13px;
+
+      padding:
+        0
+        13px;
+
+      font-size: 14px;
+
+      color: #111827;
+      background: white;
+    }
+
+    .search button {
+      height: 42px;
+
+      border: 0;
+      border-radius: 13px;
 
       padding:
         0
         15px;
 
-      font-size: 15px;
-
-      color: #111827;
-
-      background: white;
-    }
-
-    .search button {
-      height: 48px;
-
-      border: 0;
-
-      border-radius: 15px;
-
-      padding:
-        0
-        17px;
-
       background: #2563eb;
-
       color: white;
 
-      font-size: 14px;
-
+      font-size: 13px;
       font-weight: 850;
 
       cursor: pointer;
@@ -238,8 +227,7 @@
 
 
     /* =========================
-       后台状态
-       前台隐藏
+       系统状态
     ========================= */
 
     .system-status {
@@ -248,11 +236,8 @@
 
     .status-dot {
       width: 10px;
-
       height: 10px;
-
       border-radius: 50%;
-
       background: #f59e0b;
     }
 
@@ -271,15 +256,14 @@
 
     .guide {
       margin:
-        15px
-        4px
-        4px;
+        10px
+        3px
+        2px;
 
       color: #64748b;
 
-      font-size: 13px;
-
-      line-height: 1.6;
+      font-size: 11px;
+      line-height: 1.5;
     }
 
 
@@ -288,48 +272,46 @@
     ========================= */
 
     #categories {
-      min-height: 220px;
+      min-height: 180px;
     }
 
     .category {
-      margin-top: 16px;
+      margin-top: 10px;
 
-      border-radius: 23px;
+      border-radius: 18px;
 
-      padding: 17px;
+      padding:
+        12px
+        11px
+        11px;
 
       box-shadow:
-        0 8px 25px
-        rgba(15,23,42,.055);
+        0 5px 18px
+        rgba(15,23,42,.045);
     }
 
     .category-head {
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
-      gap: 10px;
+      gap: 8px;
 
-      margin-bottom: 14px;
+      margin-bottom: 9px;
     }
 
     .category-title {
       margin: 0;
 
-      font-size: 19px;
-
+      font-size: 16px;
       font-weight: 850;
 
-      letter-spacing: -.3px;
+      letter-spacing: -.2px;
     }
 
     .category-note {
-      font-size: 12px;
-
+      font-size: 10px;
       color: #64748b;
-
       white-space: nowrap;
     }
 
@@ -337,13 +319,13 @@
       display: grid;
 
       grid-template-columns:
-        repeat(2,1fr);
+        repeat(3,1fr);
 
-      gap: 10px;
+      gap: 7px;
     }
 
     .task {
-      min-height: 64px;
+      min-height: 47px;
 
       border:
         1px
@@ -351,25 +333,25 @@
         rgba(255,255,255,.9);
 
       background:
-        rgba(255,255,255,.82);
+        rgba(255,255,255,.84);
 
-      border-radius: 17px;
+      border-radius: 13px;
 
       padding:
-        10px
-        7px;
+        7px
+        5px;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
 
       color: #172033;
 
-      font-size: 15px;
+      font-size: 13px;
+      line-height: 1.25;
 
       font-weight: 800;
 
@@ -378,8 +360,8 @@
       user-select: none;
 
       box-shadow:
-        0 3px 12px
-        rgba(15,23,42,.04);
+        0 2px 8px
+        rgba(15,23,42,.035);
 
       transition:
         transform .12s ease,
@@ -387,11 +369,8 @@
     }
 
     .task:active {
-      transform:
-        scale(.96);
-
-      box-shadow:
-        none;
+      transform: scale(.95);
+      box-shadow: none;
     }
 
 
@@ -500,23 +479,25 @@
 
 
     /* =========================
-       结果卡片
+       结果卡
     ========================= */
 
     .result {
       display: none;
 
-      margin-top: 18px;
+      margin-top: 12px;
 
       background: white;
 
-      border-radius: 23px;
+      border-radius: 19px;
 
-      padding: 19px;
+      padding:
+        15px
+        14px;
 
       box-shadow:
-        0 12px 35px
-        rgba(15,23,42,.12);
+        0 9px 28px
+        rgba(15,23,42,.10);
     }
 
     .result.show {
@@ -524,36 +505,33 @@
     }
 
     .result-label {
-      font-size: 12px;
-
+      font-size: 10px;
       font-weight: 850;
 
       color: #2563eb;
 
       letter-spacing: 1px;
 
-      margin-bottom: 7px;
+      margin-bottom: 5px;
     }
 
     .result h2 {
       margin: 0;
 
-      font-size: 21px;
-
-      line-height: 1.35;
+      font-size: 19px;
+      line-height: 1.3;
     }
 
     .result-description {
       margin:
-        7px
+        5px
         0
-        16px;
+        10px;
 
       color: #64748b;
 
-      font-size: 14px;
-
-      line-height: 1.6;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
 
@@ -563,20 +541,17 @@
 
     .site-list {
       display: flex;
-
       flex-direction: column;
-
-      gap: 10px;
+      gap: 7px;
     }
 
     .site {
       display: flex;
 
       align-items: center;
-
       justify-content: space-between;
 
-      gap: 12px;
+      gap: 9px;
 
       text-decoration: none;
 
@@ -589,9 +564,11 @@
 
       background: #f8fafc;
 
-      border-radius: 17px;
+      border-radius: 14px;
 
-      padding: 14px;
+      padding:
+        10px
+        10px;
 
       transition:
         transform .12s ease,
@@ -600,147 +577,123 @@
     }
 
     .site:active {
-      transform:
-        scale(.98);
-
-      background:
-        #f1f5f9;
+      transform: scale(.985);
+      background: #f1f5f9;
     }
 
     .site.recommended {
       border-color: #86efac;
-
       background: #f7fff9;
     }
 
     .site-left {
       min-width: 0;
-
       flex: 1;
     }
 
     .site-topline {
       display: flex;
-
       align-items: center;
-
-      gap: 8px;
-
+      gap: 6px;
       flex-wrap: wrap;
-
-      margin-bottom: 7px;
+      margin-bottom: 4px;
     }
 
     .site-rank {
       display: inline-flex;
 
       align-items: center;
-
       justify-content: center;
 
-      min-height: 26px;
+      min-height: 21px;
 
       padding:
-        4px
-        8px;
+        3px
+        6px;
 
-      border-radius: 8px;
+      border-radius: 7px;
 
       background: #e0e7ff;
-
       color: #3730a3;
 
-      font-size: 12px;
-
+      font-size: 10px;
       font-weight: 900;
     }
 
     .site:nth-child(1)
     .site-rank {
       background: #dcfce7;
-
       color: #166534;
     }
 
     .site:nth-child(2)
     .site-rank {
       background: #dbeafe;
-
       color: #1d4ed8;
     }
 
     .site:nth-child(3)
     .site-rank {
       background: #fef3c7;
-
       color: #92400e;
     }
 
     .site-name {
-      font-size: 16px;
-
+      font-size: 14px;
       font-weight: 850;
-
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
     .site-domain {
-      margin-top: 4px;
+      margin-top: 2px;
 
       color: #64748b;
 
-      font-size: 12px;
+      font-size: 10px;
 
       word-break: break-all;
     }
 
     .tool-tags {
       display: flex;
-
       flex-wrap: wrap;
 
-      gap: 6px;
+      gap: 4px;
 
-      margin-top: 9px;
+      margin-top: 6px;
     }
 
     .tool-tag {
       display: inline-flex;
-
       align-items: center;
 
-      min-height: 24px;
+      min-height: 20px;
 
       padding:
-        4px
-        8px;
+        3px
+        6px;
 
       border-radius: 999px;
 
-      font-size: 11px;
-
+      font-size: 9px;
       font-weight: 750;
 
       background: #f1f5f9;
-
       color: #475569;
     }
 
     .tool-tag.good {
       background: #dcfce7;
-
       color: #166534;
     }
 
     .tool-tag.info {
       background: #dbeafe;
-
       color: #1d4ed8;
     }
 
     .tool-tag.warn {
       background: #fef3c7;
-
       color: #92400e;
     }
 
@@ -748,33 +701,30 @@
       flex-shrink: 0;
 
       background: #111827;
-
       color: white;
 
-      border-radius: 11px;
+      border-radius: 10px;
 
       padding:
-        9px
-        11px;
+        8px
+        9px;
 
-      font-size: 13px;
-
+      font-size: 12px;
       font-weight: 800;
     }
 
 
     /* =========================
-       结果标签
+       元数据
     ========================= */
 
     .meta-row {
-      margin-top: 14px;
+      margin-top: 9px;
 
       display: flex;
-
       flex-wrap: wrap;
 
-      gap: 7px;
+      gap: 5px;
     }
 
     .badge {
@@ -782,45 +732,70 @@
 
       align-items: center;
 
-      min-height: 28px;
+      min-height: 22px;
 
       padding:
-        5px
-        9px;
+        4px
+        7px;
 
       border-radius: 999px;
 
-      font-size: 11px;
-
+      font-size: 9px;
       font-weight: 750;
 
       background: #f1f5f9;
-
       color: #475569;
     }
 
     .badge.local {
       background: #dcfce7;
-
       color: #166534;
     }
 
     .badge.cloud {
       background: #fef3c7;
-
       color: #92400e;
     }
 
     .badge.pro {
       background: #e5e7eb;
-
       color: #374151;
     }
 
-    .result-tip {
-      margin-top: 13px;
 
-      padding-top: 12px;
+    /* =========================
+       风险提醒
+    ========================= */
+
+    .privacy-warning {
+      margin-top: 10px;
+
+      padding:
+        9px
+        10px;
+
+      border-radius: 12px;
+
+      background: #fff7ed;
+
+      border:
+        1px solid
+        #fed7aa;
+
+      color: #9a3412;
+
+      font-size: 10px;
+      line-height: 1.55;
+    }
+
+    .privacy-warning strong {
+      color: #7c2d12;
+    }
+
+    .result-tip {
+      margin-top: 9px;
+
+      padding-top: 9px;
 
       border-top:
         1px solid
@@ -828,9 +803,8 @@
 
       color: #94a3b8;
 
-      font-size: 12px;
-
-      line-height: 1.55;
+      font-size: 9px;
+      line-height: 1.5;
     }
 
 
@@ -839,19 +813,18 @@
     ========================= */
 
     .empty {
-      margin-top: 18px;
+      margin-top: 12px;
 
       background: white;
 
-      padding: 18px;
+      padding: 15px;
 
-      border-radius: 20px;
+      border-radius: 16px;
 
       color: #64748b;
 
-      font-size: 14px;
-
-      line-height: 1.65;
+      font-size: 12px;
+      line-height: 1.55;
 
       display: none;
     }
@@ -862,7 +835,7 @@
 
 
     /* =========================
-       保存 NAV KING 弹窗
+       保存弹窗
     ========================= */
 
     .save-modal-backdrop {
@@ -873,7 +846,6 @@
       display: none;
 
       align-items: flex-end;
-
       justify-content: center;
 
       background:
@@ -896,14 +868,13 @@
 
     .save-modal {
       width: 100%;
-
       max-width: 520px;
 
       background: white;
 
-      border-radius: 24px;
+      border-radius: 22px;
 
-      padding: 20px;
+      padding: 18px;
 
       box-shadow:
         0 20px 50px
@@ -912,19 +883,15 @@
 
     .save-modal-head {
       display: flex;
-
       align-items: flex-start;
-
       justify-content: space-between;
-
       gap: 12px;
     }
 
     .save-modal-title {
       margin: 0;
 
-      font-size: 20px;
-
+      font-size: 19px;
       line-height: 1.35;
 
       font-weight: 900;
@@ -934,46 +901,40 @@
       border: 0;
 
       background: #f1f5f9;
-
       color: #475569;
 
-      width: 34px;
-
-      height: 34px;
+      width: 32px;
+      height: 32px;
 
       border-radius: 50%;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
-      font-size: 20px;
-
+      font-size: 19px;
       cursor: pointer;
 
       flex-shrink: 0;
     }
 
     .save-modal-subtitle {
-      margin-top: 8px;
+      margin-top: 7px;
 
       color: #64748b;
 
-      font-size: 14px;
-
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.55;
     }
 
     .save-option-list {
-      margin-top: 16px;
+      margin-top: 14px;
 
       display: flex;
-
       flex-direction: column;
 
-      gap: 10px;
+      gap: 8px;
     }
 
     .save-option {
@@ -984,12 +945,11 @@
         #e2e8f0;
 
       background: #f8fafc;
-
       color: #172033;
 
-      border-radius: 17px;
+      border-radius: 15px;
 
-      padding: 14px;
+      padding: 12px;
 
       text-align: left;
 
@@ -1001,37 +961,34 @@
     }
 
     .save-option-title {
-      font-size: 15px;
-
+      font-size: 14px;
       font-weight: 850;
     }
 
     .save-option-desc {
-      margin-top: 4px;
+      margin-top: 3px;
 
-      font-size: 12px;
+      font-size: 11px;
 
       color: #64748b;
 
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .save-help {
-      margin-top: 14px;
+      margin-top: 12px;
 
       padding:
-        13px
-        14px;
+        11px
+        12px;
 
-      border-radius: 15px;
+      border-radius: 13px;
 
       background: #eff6ff;
-
       color: #1e3a8a;
 
-      font-size: 13px;
-
-      line-height: 1.65;
+      font-size: 12px;
+      line-height: 1.55;
     }
 
     .save-help strong {
@@ -1040,7 +997,7 @@
 
 
     /* =========================
-       底部广告
+       底部固定条
     ========================= */
 
     .ad {
@@ -1050,7 +1007,7 @@
 
       bottom:
         calc(
-          10px +
+          8px +
           env(safe-area-inset-bottom)
         );
 
@@ -1058,29 +1015,28 @@
         translateX(-50%);
 
       width:
-        calc(100% - 28px);
+        calc(100% - 20px);
 
-      max-width: 690px;
+      max-width: 700px;
 
       background: #111827;
 
       color: white;
 
-      border-radius: 18px;
+      border-radius: 16px;
 
       padding:
-        14px
-        12px;
+        12px
+        10px;
 
       text-align: center;
 
-      font-size: 14px;
-
+      font-size: 13px;
       font-weight: 850;
 
       box-shadow:
-        0 12px 30px
-        rgba(15,23,42,.25);
+        0 10px 25px
+        rgba(15,23,42,.23);
 
       z-index: 100;
     }
@@ -1090,11 +1046,33 @@
     }
 
 
+    /* =========================
+       小屏适配
+    ========================= */
+
+    @media (max-width: 350px) {
+
+      .task-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .hero h1 {
+        font-size: 25px;
+      }
+
+      .task {
+        font-size: 12px;
+      }
+
+    }
+
+
     @media (min-width:600px) {
 
       .task-grid {
         grid-template-columns:
-          repeat(3,1fr);
+          repeat(4,1fr);
       }
 
       .save-modal-backdrop {
@@ -1118,7 +1096,7 @@
     <div class="brand-row">
 
       <div class="brand">
-        NAV KING
+        马上办 · NAV KING
       </div>
 
       <button
@@ -1126,19 +1104,18 @@
         class="save-nav-btn"
         type="button"
       >
-        ⭐ 保存 NAV KING
+        ⭐ 保存
       </button>
 
     </div>
 
     <h1>
-      你现在要干什么？
+      有事？马上办。
     </h1>
 
     <div class="hero-text">
-      不用记网站名字。
-      直接选择任务，
-      NAV KING 会把更适合你的入口排在前面。
+      不研究工具，不记网站名字。
+      选一个任务，直接把事办完。
     </div>
 
     <div class="search">
@@ -1146,7 +1123,7 @@
       <input
         id="searchInput"
         type="text"
-        placeholder="例如：PDF压缩、抠图、录音转文字"
+        placeholder="PDF压缩、抠图、录音转文字…"
       >
 
       <button
@@ -1161,7 +1138,7 @@
   </section>
 
 
-  <!-- 后台状态，前台隐藏 -->
+  <!-- 后台状态 -->
 
   <div class="system-status">
 
@@ -1171,16 +1148,14 @@
     ></span>
 
     <span id="statusText">
-      正在读取 NAV KING 数据库…
+      正在读取数据库…
     </span>
 
   </div>
 
 
   <div class="guide">
-    ↓ 手机直接按分类找任务。
-    点击任务后显示最多 3 个入口，
-    并优先推荐更清爽、低摩擦的选择。
+    ↓ 直接点任务。每个任务最多给你 3 个入口，优先排更省事、低摩擦的选择。
   </div>
 
 
@@ -1199,11 +1174,10 @@
 
     <br><br>
 
-    可以尝试更简单的关键词，例如：
+    可以试试：
 
     <strong>
-      PDF、压缩、抠图、证件照、
-      视频、录音、翻译、PPT、JSON
+      PDF、压缩、抠图、证件照、视频、录音、翻译、PPT、JSON
     </strong>
 
   </section>
@@ -1217,7 +1191,7 @@
   >
 
     <div class="result-label">
-      网址入口
+      直接入口
     </div>
 
     <h2 id="resultTitle">
@@ -1242,19 +1216,33 @@
     >
     </div>
 
-    <div class="result-tip">
 
-      NAV KING 只负责导航。
+    <div class="privacy-warning">
 
-      标签只展示数据库已有证据：
-      未知信息不会被当成“无广告”
-      或“国内已实测”。
+      <strong>
+        ⚠️ 隐私提醒
+      </strong>
 
       <br>
 
-      你的文件不会上传到 NAV KING。
-      第三方工具是否本地处理或云端处理，
-      以对应入口标签为准。
+      身份证、合同、病历、财务资料、私人照片等敏感文件，
+      上传第三方网站前请先确认处理方式。
+
+      优先选择标记为
+      <strong>“本地处理”</strong>
+      的入口。
+
+    </div>
+
+
+    <div class="result-tip">
+
+      马上办只提供第三方网址入口，不接收你的文件。
+
+      <br>
+
+      “国内优先”不等于国内运营商已经实测；
+      未知广告情况也不会标记为无广告。
 
     </div>
 
@@ -1264,7 +1252,7 @@
 </main>
 
 
-<!-- 保存 NAV KING 弹窗 -->
+<!-- 保存弹窗 -->
 
 <div
   id="saveModalBackdrop"
@@ -1286,12 +1274,12 @@
           id="saveModalTitle"
           class="save-modal-title"
         >
-          保存 NAV KING
+          保存“马上办”
         </h2>
 
         <div class="save-modal-subtitle">
           下次不用重新找网址，
-          可以直接从手机桌面或浏览器收藏进入。
+          直接从桌面或浏览器进入。
         </div>
 
       </div>
@@ -1321,8 +1309,7 @@
         </div>
 
         <div class="save-option-desc">
-          像 App 一样放到手机桌面，
-          下次直接点击进入。
+          像 App 一样放到桌面。
         </div>
 
       </button>
@@ -1339,8 +1326,7 @@
         </div>
 
         <div class="save-option-desc">
-          保存到 Safari、Chrome、Edge
-          等浏览器收藏夹。
+          保存到 Safari、Chrome、Edge 等收藏夹。
         </div>
 
       </button>
@@ -1360,11 +1346,11 @@
 </div>
 
 
-<!-- 底部广告 -->
+<!-- 底部 -->
 
 <div class="ad">
 
-  解压必备资源 ➕ V
+  私密资源 ➕ V
 
   <strong>
     ziyouluoti8
@@ -1381,15 +1367,14 @@
 
 
 /* =========================================================
-   NAV KING V4.2
-   智能排序 + 用户标签
+   马上办 / NAV KING V4.3
 ========================================================= */
 
 const APP_VERSION =
-  "4.2";
+  "4.3";
 
 const BUILD_ID =
-  "20260825-SMART-RANKING-LABELS";
+  "20260825-COMPACT-UI";
 
 
 let atomicTasks =
@@ -1419,77 +1404,77 @@ const categoryConfig = {
 
   PDF: {
     title: "📄 PDF / 文档",
-    note: "办公高频",
+    note: "办公",
     className: "cat-pdf",
     order: 1
   },
 
   IMAGE: {
     title: "🖼 图片",
-    note: "手机常用",
+    note: "常用",
     className: "cat-image",
     order: 2
   },
 
   VIDEO: {
     title: "🎬 视频",
-    note: "影音处理",
+    note: "处理",
     className: "cat-video",
     order: 3
   },
 
   AUDIO: {
     title: "🎧 音频",
-    note: "声音处理",
+    note: "声音",
     className: "cat-audio",
     order: 4
   },
 
   AI: {
-    title: "🤖 AI 工具",
-    note: "效率工具",
+    title: "🤖 AI",
+    note: "效率",
     className: "cat-ai",
     order: 5
   },
 
   OFFICE: {
     title: "💼 办公 / 实用",
-    note: "日常工具",
+    note: "日常",
     className: "cat-office",
     order: 6
   },
 
   LEARNING: {
     title: "🎓 学习 / 求职",
-    note: "学生刚需",
+    note: "学习",
     className: "cat-learning",
     order: 7
   },
 
   PRO: {
-    title: "🧰 Pro / 开发者",
-    note: "专业工具",
+    title: "🧰 Pro / 开发",
+    note: "专业",
     className: "cat-programming",
     order: 8
   },
 
   DESIGN: {
     title: "🎨 设计",
-    note: "视觉工具",
+    note: "视觉",
     className: "cat-design",
     order: 9
   },
 
   WEB: {
     title: "🌐 网络 / Web",
-    note: "网络工具",
+    note: "网络",
     className: "cat-web",
     order: 10
   },
 
   OTHER: {
-    title: "🧩 其他实用",
-    note: "生活工具",
+    title: "🧩 其他",
+    note: "实用",
     className: "cat-other",
     order: 11
   }
@@ -1503,276 +1488,161 @@ const categoryConfig = {
 
 const aliases = {
 
-  "pdf太大":
-    "PDF压缩",
+  "pdf太大": "PDF压缩",
+  "压缩pdf": "PDF压缩",
+  "pdf小一点": "PDF压缩",
 
-  "压缩pdf":
-    "PDF压缩",
+  "pdf转word": "PDF转Word",
+  "pdf改文字": "PDF转Word",
 
-  "pdf小一点":
-    "PDF压缩",
+  "抠图": "一键抠图",
+  "去背景": "一键抠图",
+  "透明背景": "一键抠图",
 
-  "pdf转word":
-    "PDF转Word",
+  "图片太大": "图片压缩",
+  "照片太大": "图片压缩",
+  "100kb": "图片压缩",
 
-  "pdf改文字":
-    "PDF转Word",
+  "证件照": "制作证件照",
+  "换底色": "证件照换底色",
 
-  "抠图":
-    "一键抠图",
+  "图片文字": "OCR提取文字",
+  "提取文字": "OCR提取文字",
+  "ocr": "OCR提取文字",
 
-  "去背景":
-    "一键抠图",
+  "视频太大": "视频压缩",
+  "压视频": "视频压缩",
 
-  "透明背景":
-    "一键抠图",
+  "视频转音频": "视频提取音频",
+  "提取音频": "视频提取音频",
 
-  "图片太大":
-    "图片压缩",
+  "录音文字": "录音转文字",
+  "语音转文字": "录音转文字",
+  "会议转文字": "录音转文字",
 
-  "照片太大":
-    "图片压缩",
+  "去人声": "人声伴奏分离",
+  "伴奏": "人声伴奏分离",
 
-  "100kb":
-    "图片压缩",
+  "做ppt": "AI做PPT",
+  "ppt": "AI做PPT",
 
-  "证件照":
-    "制作证件照",
+  "翻译": "AI翻译",
 
-  "换底色":
-    "证件照换底色",
+  "总结pdf": "AI总结PDF",
+  "长文总结": "AI总结PDF",
 
-  "图片文字":
-    "OCR提取文字",
+  "画图": "AI画图",
+  "ai图片": "AI画图",
 
-  "提取文字":
-    "OCR提取文字",
+  "思维导图": "思维导图",
+  "流程图": "流程图",
 
-  "ocr":
-    "OCR提取文字",
+  "查重": "论文查重",
+  "论文": "论文查重",
 
-  "视频太大":
-    "视频压缩",
+  "latex": "公式转LaTeX",
+  "公式": "公式转LaTeX",
 
-  "压视频":
-    "视频压缩",
+  "json": "JSON格式化",
+  "正则": "正则测试",
+  "sql": "SQL美化",
 
-  "视频转音频":
-    "视频提取音频",
+  "二维码": "二维码生成",
+  "解压": "在线解压缩",
+  "字数": "字数统计",
 
-  "提取音频":
-    "视频提取音频",
-
-  "录音文字":
-    "录音转文字",
-
-  "语音转文字":
-    "录音转文字",
-
-  "会议转文字":
-    "录音转文字",
-
-  "去人声":
-    "人声伴奏分离",
-
-  "伴奏":
-    "人声伴奏分离",
-
-  "做ppt":
-    "AI做PPT",
-
-  "ppt":
-    "AI做PPT",
-
-  "翻译":
-    "AI翻译",
-
-  "总结pdf":
-    "AI总结PDF",
-
-  "长文总结":
-    "AI总结PDF",
-
-  "画图":
-    "AI画图",
-
-  "ai图片":
-    "AI画图",
-
-  "思维导图":
-    "思维导图",
-
-  "流程图":
-    "流程图",
-
-  "查重":
-    "论文查重",
-
-  "论文":
-    "论文查重",
-
-  "latex":
-    "公式转LaTeX",
-
-  "公式":
-    "公式转LaTeX",
-
-  "json":
-    "JSON格式化",
-
-  "正则":
-    "正则测试",
-
-  "sql":
-    "SQL美化",
-
-  "二维码":
-    "二维码生成",
-
-  "解压":
-    "在线解压缩",
-
-  "字数":
-    "字数统计",
-
-  "网页转pdf":
-    "网页转PDF/长截图",
-
-  "长截图":
-    "网页转PDF/长截图"
+  "网页转pdf": "网页转PDF/长截图",
+  "长截图": "网页转PDF/长截图"
 
 };
 
 
 /* =========================================================
-   设备识别
+   设备
 ========================================================= */
 
 function isIOS() {
 
   return /iPad|iPhone|iPod/i
-    .test(
-      navigator.userAgent
-    );
+    .test(navigator.userAgent);
 
 }
-
 
 function isAndroid() {
 
   return /Android/i
-    .test(
-      navigator.userAgent
-    );
+    .test(navigator.userAgent);
 
 }
-
 
 function isMac() {
 
   return /Macintosh|Mac OS X/i
-    .test(
-      navigator.userAgent
-    );
+    .test(navigator.userAgent);
 
 }
 
 
 /* =========================================================
-   保存 NAV KING
+   保存
 ========================================================= */
 
 function openSaveModal() {
 
   document
-    .getElementById(
-      "saveModalBackdrop"
-    )
+    .getElementById("saveModalBackdrop")
     .classList
-    .add(
-      "show"
-    );
-
+    .add("show");
 
   updateSaveHelp();
 
 }
 
-
 function closeSaveModal() {
 
   document
-    .getElementById(
-      "saveModalBackdrop"
-    )
+    .getElementById("saveModalBackdrop")
     .classList
-    .remove(
-      "show"
-    );
+    .remove("show");
 
 }
-
 
 function updateSaveHelp() {
 
   const help =
-    document.getElementById(
-      "saveHelp"
-    );
+    document.getElementById("saveHelp");
 
-
-  if (
-    isIOS()
-  ) {
+  if (isIOS()) {
 
     help.innerHTML =
       "<strong>iPhone / iPad：</strong>" +
-      "点击 Safari 的“分享”按钮，" +
-      "再选择“添加到主屏幕”。";
+      "Safari 点击“分享” → “添加到主屏幕”。";
 
     return;
-
   }
 
-
-  if (
-    isAndroid()
-  ) {
+  if (isAndroid()) {
 
     help.innerHTML =
       deferredInstallPrompt
-
-      ? "<strong>Android：</strong>" +
-        "你的浏览器支持安装，" +
-        "点击上方“添加到主屏幕”继续。"
-
-      : "<strong>Android：</strong>" +
-        "打开浏览器菜单，选择“添加到主屏幕”或“安装应用”。";
+      ? "<strong>Android：</strong>点击上方“添加到主屏幕”即可。"
+      : "<strong>Android：</strong>浏览器菜单 → 添加到主屏幕 / 安装应用。";
 
     return;
-
   }
 
-
-  if (
-    isMac()
-  ) {
+  if (isMac()) {
 
     help.innerHTML =
-      "<strong>Mac：</strong>" +
-      "按 ⌘ + D 收藏当前页面。";
+      "<strong>Mac：</strong>按 ⌘ + D 收藏。";
 
     return;
-
   }
 
-
   help.innerHTML =
-    "<strong>Windows / Linux：</strong>" +
-    "按 Ctrl + D 收藏当前页面。";
+    "<strong>Windows / Linux：</strong>按 Ctrl + D 收藏。";
 
 }
-
 
 window.addEventListener(
   "beforeinstallprompt",
@@ -1788,12 +1658,9 @@ window.addEventListener(
   }
 );
 
-
 async function handleAddHome() {
 
-  if (
-    deferredInstallPrompt
-  ) {
+  if (deferredInstallPrompt) {
 
     try {
 
@@ -1809,9 +1676,7 @@ async function handleAddHome() {
 
       return;
 
-    } catch (
-      error
-    ) {
+    } catch (error) {
 
       console.warn(
         "Install prompt failed:",
@@ -1822,77 +1687,52 @@ async function handleAddHome() {
 
   }
 
-
   const help =
-    document.getElementById(
-      "saveHelp"
-    );
+    document.getElementById("saveHelp");
 
-
-  if (
-    isIOS()
-  ) {
+  if (isIOS()) {
 
     help.innerHTML =
-      "<strong>操作步骤：</strong>" +
-      "Safari 分享 → 添加到主屏幕 → 添加。";
+      "<strong>操作：</strong>Safari 分享 → 添加到主屏幕 → 添加。";
 
-  } else if (
-    isAndroid()
-  ) {
+  } else if (isAndroid()) {
 
     help.innerHTML =
-      "<strong>操作步骤：</strong>" +
-      "浏览器菜单 → 添加到主屏幕 / 安装应用。";
+      "<strong>操作：</strong>浏览器菜单 → 添加到主屏幕 / 安装应用。";
 
-  } else if (
-    isMac()
-  ) {
+  } else if (isMac()) {
 
     help.innerHTML =
-      "<strong>桌面端：</strong>" +
-      "按 ⌘ + D 收藏；部分浏览器也支持安装网页应用。";
+      "<strong>桌面：</strong>按 ⌘ + D 收藏。";
 
   } else {
 
     help.innerHTML =
-      "<strong>桌面端：</strong>" +
-      "按 Ctrl + D 收藏；Chrome / Edge 也可能支持安装应用。";
+      "<strong>桌面：</strong>按 Ctrl + D 收藏。";
 
   }
 
 }
-
 
 function handleBookmark() {
 
   const help =
-    document.getElementById(
-      "saveHelp"
-    );
+    document.getElementById("saveHelp");
 
-
-  if (
-    isIOS()
-  ) {
+  if (isIOS()) {
 
     help.innerHTML =
-      "<strong>Safari 收藏：</strong>" +
-      "点击“分享” → “添加书签”。";
+      "<strong>Safari：</strong>分享 → 添加书签。";
 
-  } else if (
-    isMac()
-  ) {
+  } else if (isMac()) {
 
     help.innerHTML =
-      "<strong>收藏快捷键：</strong>" +
-      "按 ⌘ + D。网页不能绕过浏览器安全限制自动写入收藏夹。";
+      "<strong>收藏：</strong>按 ⌘ + D。";
 
   } else {
 
     help.innerHTML =
-      "<strong>收藏快捷键：</strong>" +
-      "按 Ctrl + D。网页不能绕过浏览器安全限制自动写入收藏夹。";
+      "<strong>收藏：</strong>按 Ctrl + D。";
 
   }
 
@@ -1900,66 +1740,36 @@ function handleBookmark() {
 
 
 /* =========================================================
-   通用 JSON 读取
+   JSON
 ========================================================= */
 
-function extractArray(
-  data,
-  keys
-) {
+function extractArray(data, keys) {
 
-  if (
-    Array.isArray(
-      data
-    )
-  ) {
-
+  if (Array.isArray(data)) {
     return data;
-
   }
 
-
-  if (
-    !data ||
-    typeof data !==
-      "object"
-  ) {
-
+  if (!data || typeof data !== "object") {
     return [];
-
   }
 
+  for (const key of keys) {
 
-  for (
-    const key
-    of keys
-  ) {
-
-    if (
-      Array.isArray(
-        data[key]
-      )
-    ) {
-
+    if (Array.isArray(data[key])) {
       return data[key];
-
     }
 
   }
 
-
   return [];
-
 }
 
 
 /* =========================================================
-   Task 字段
+   Task
 ========================================================= */
 
-function getTaskId(
-  task
-) {
+function getTaskId(task) {
 
   return String(
     task.id ??
@@ -1968,18 +1778,12 @@ function getTaskId(
     task.ID ??
     ""
   )
-  .replace(
-    /^TASK\s*/i,
-    ""
-  )
+  .replace(/^TASK\s*/i, "")
   .trim();
 
 }
 
-
-function getTaskName(
-  task
-) {
+function getTaskName(task) {
 
   return (
     task.title ??
@@ -1996,10 +1800,7 @@ function getTaskName(
 
 }
 
-
-function getTaskCategory(
-  task
-) {
+function getTaskCategory(task) {
 
   return (
     task.category ??
@@ -2012,10 +1813,7 @@ function getTaskCategory(
 
 }
 
-
-function getTaskStatus(
-  task
-) {
+function getTaskStatus(task) {
 
   return (
     task.status ??
@@ -2028,10 +1826,7 @@ function getTaskStatus(
 
 }
 
-
-function getTaskLayer(
-  task
-) {
+function getTaskLayer(task) {
 
   return (
     task.core_layer ??
@@ -2045,10 +1840,7 @@ function getTaskLayer(
 
 }
 
-
-function getTaskDescription(
-  task
-) {
+function getTaskDescription(task) {
 
   return (
     task.user_job ??
@@ -2064,12 +1856,10 @@ function getTaskDescription(
 
 
 /* =========================================================
-   Tool 字段
+   Tool
 ========================================================= */
 
-function getToolName(
-  tool
-) {
+function getToolName(tool) {
 
   return (
     tool.name ??
@@ -2084,10 +1874,7 @@ function getToolName(
 
 }
 
-
-function getToolUrl(
-  tool
-) {
+function getToolUrl(tool) {
 
   return (
     tool.direct_url ??
@@ -2103,10 +1890,7 @@ function getToolUrl(
 
 }
 
-
-function getToolTasks(
-  tool
-) {
+function getToolTasks(tool) {
 
   const raw =
     tool.tasks ??
@@ -2115,75 +1899,46 @@ function getToolTasks(
     tool.TASKS ??
     [];
 
-
-  if (
-    Array.isArray(
-      raw
-    )
-  ) {
+  if (Array.isArray(raw)) {
 
     return raw
       .map(
         function(id) {
 
           return String(id)
-            .replace(
-              /^TASK\s*/i,
-              ""
-            )
+            .replace(/^TASK\s*/i, "")
             .trim();
 
         }
       )
-      .filter(
-        Boolean
-      );
+      .filter(Boolean);
 
   }
 
-
-  if (
-    typeof raw ===
-      "string"
-  ) {
+  if (typeof raw === "string") {
 
     return raw
-      .replace(
-        /[\[\]]/g,
-        ""
-      )
+      .replace(/[\[\]]/g, "")
       .split(",")
       .map(
         function(id) {
 
           return id
-            .replace(
-              /^TASK\s*/i,
-              ""
-            )
-            .replace(
-              /["']/g,
-              ""
-            )
+            .replace(/^TASK\s*/i, "")
+            .replace(/["']/g, "")
             .trim();
 
         }
       )
-      .filter(
-        Boolean
-      );
+      .filter(Boolean);
 
   }
-
 
   return [];
 
 }
 
-
-function getToolRole(
-  tool
-) {
+function getToolRole(tool) {
 
   return (
     tool.role ??
@@ -2196,10 +1951,7 @@ function getToolRole(
 
 }
 
-
-function getToolStatus(
-  tool
-) {
+function getToolStatus(tool) {
 
   return (
     tool.status ??
@@ -2212,10 +1964,7 @@ function getToolStatus(
 
 }
 
-
-function getToolLocal(
-  tool
-) {
+function getToolLocal(tool) {
 
   const processing =
     String(
@@ -2224,23 +1973,15 @@ function getToolLocal(
     )
     .toUpperCase();
 
-
-  if (
-    processing ===
-    "LOCAL"
-  ) {
-
+  if (processing === "LOCAL") {
     return true;
-
   }
-
 
   const value =
     tool.local ??
     tool.LOCAL ??
     tool.local_only ??
     tool.localOnly;
-
 
   return (
     value === true ||
@@ -2250,10 +1991,7 @@ function getToolLocal(
 
 }
 
-
-function getToolAds(
-  tool
-) {
+function getToolAds(tool) {
 
   return String(
     tool.ads ??
@@ -2264,14 +2002,9 @@ function getToolAds(
 
 }
 
+function getToolLogin(tool) {
 
-function getToolLogin(
-  tool
-) {
-
-  if (
-    tool.login_level
-  ) {
+  if (tool.login_level) {
 
     return String(
       tool.login_level
@@ -2281,33 +2014,19 @@ function getToolLogin(
 
   }
 
-
-  if (
-    tool.login === false
-  ) {
-
+  if (tool.login === false) {
     return "NONE";
-
   }
 
-
-  if (
-    tool.login === true
-  ) {
-
+  if (tool.login === true) {
     return "REQUIRED";
-
   }
-
 
   return "UNKNOWN";
 
 }
 
-
-function getToolProcessing(
-  tool
-) {
+function getToolProcessing(tool) {
 
   const value =
     String(
@@ -2317,28 +2036,17 @@ function getToolProcessing(
     .trim()
     .toUpperCase();
 
-
-  if (
-    value
-  ) {
-
+  if (value) {
     return value;
-
   }
 
-
-  return getToolLocal(
-    tool
-  )
-  ? "LOCAL"
-  : "UNKNOWN";
+  return getToolLocal(tool)
+    ? "LOCAL"
+    : "UNKNOWN";
 
 }
 
-
-function getToolCnPriority(
-  tool
-) {
+function getToolCnPriority(tool) {
 
   return String(
     tool.cn_priority ??
@@ -2349,34 +2057,19 @@ function getToolCnPriority(
 
 }
 
+function getToolCnVerified(tool) {
 
-function getToolCnVerified(
-  tool
-) {
-
-  return (
-    tool.cn_verified ===
-    true
-  );
+  return tool.cn_verified === true;
 
 }
 
+function getToolMobile(tool) {
 
-function getToolMobile(
-  tool
-) {
-
-  return (
-    tool.mobile !==
-    false
-  );
+  return tool.mobile !== false;
 
 }
 
-
-function getEvidenceLevel(
-  tool
-) {
+function getEvidenceLevel(tool) {
 
   return String(
     tool.evidence_level ??
@@ -2390,209 +2083,85 @@ function getEvidenceLevel(
 
 
 /* =========================================================
-   V4.2 智能评分
+   排序
 ========================================================= */
 
-function scoreTool(
-  tool
-) {
+function scoreTool(tool) {
 
-  let score =
-    0;
+  let score = 0;
 
-
-  /* 国内网络 */
-
-  if (
-    getToolCnVerified(
-      tool
-    )
-  ) {
+  if (getToolCnVerified(tool)) {
 
     score += 55;
 
   } else {
 
     const cn =
-      getToolCnPriority(
-        tool
-      );
+      getToolCnPriority(tool);
 
-
-    if (
-      cn === "HIGH"
-    ) {
-
+    if (cn === "HIGH") {
       score += 30;
-
-    } else if (
-      cn === "MEDIUM"
-    ) {
-
+    } else if (cn === "MEDIUM") {
       score += 12;
-
-    } else if (
-      cn === "LOW"
-    ) {
-
+    } else if (cn === "LOW") {
       score -= 12;
-
     }
 
   }
 
-
-  /* 广告 */
-
   const ads =
-    getToolAds(
-      tool
-    );
+    getToolAds(tool);
 
-
-  if (
-    ads === "NONE"
-  ) {
-
+  if (ads === "NONE") {
     score += 22;
-
-  } else if (
-    ads === "LOW"
-  ) {
-
+  } else if (ads === "LOW") {
     score += 8;
-
-  } else if (
-    ads === "MEDIUM"
-  ) {
-
+  } else if (ads === "MEDIUM") {
     score -= 12;
-
-  } else if (
-    ads === "HIGH"
-  ) {
-
+  } else if (ads === "HIGH") {
     score -= 35;
-
   }
-
-
-  /* 登录 */
 
   const login =
-    getToolLogin(
-      tool
-    );
+    getToolLogin(tool);
 
-
-  if (
-    login === "NONE"
-  ) {
-
+  if (login === "NONE") {
     score += 16;
-
-  } else if (
-    login === "OPTIONAL"
-  ) {
-
+  } else if (login === "OPTIONAL") {
     score += 6;
-
-  } else if (
-    login === "REQUIRED"
-  ) {
-
+  } else if (login === "REQUIRED") {
     score -= 12;
-
   }
 
-
-  /* 手机 */
-
-  if (
-    getToolMobile(
-      tool
-    )
-  ) {
-
+  if (getToolMobile(tool)) {
     score += 10;
-
   }
-
-
-  /* 处理方式 */
 
   const processing =
-    getToolProcessing(
-      tool
-    );
+    getToolProcessing(tool);
 
-
-  if (
-    processing === "LOCAL"
-  ) {
-
+  if (processing === "LOCAL") {
     score += 12;
-
-  } else if (
-    processing === "CLOUD_TEMP"
-  ) {
-
+  } else if (processing === "CLOUD_TEMP") {
     score += 3;
-
-  } else if (
-    processing === "CLOUD_ACCOUNT"
-  ) {
-
+  } else if (processing === "CLOUD_ACCOUNT") {
     score -= 3;
-
   }
-
-
-  /* 证据 */
 
   const evidence =
-    getEvidenceLevel(
-      tool
-    );
+    getEvidenceLevel(tool);
 
-
-  if (
-    evidence === "VERIFIED_PAGE"
-  ) {
-
+  if (evidence === "VERIFIED_PAGE") {
     score += 8;
-
-  } else if (
-    evidence === "VERIFIED_PROVIDER"
-  ) {
-
+  } else if (evidence === "VERIFIED_PROVIDER") {
     score += 4;
-
-  } else if (
-    evidence === "LEGACY_VALIDATED"
-  ) {
-
+  } else if (evidence === "LEGACY_VALIDATED") {
     score += 2;
-
   }
 
-
-  /* 原始 PRIMARY 只作为轻微加权 */
-
-  const role =
-    getToolRole(
-      tool
-    );
-
-
-  if (
-    role === "PRIMARY"
-  ) {
-
+  if (getToolRole(tool) === "PRIMARY") {
     score += 3;
-
   }
-
 
   return score;
 
@@ -2600,148 +2169,84 @@ function scoreTool(
 
 
 /* =========================================================
-   用户可读标签
+   标签
 ========================================================= */
 
-function getToolTags(
-  tool
-) {
+function getToolTags(tool) {
 
-  const tags =
-    [];
+  const tags = [];
 
-
-  /* 国内 */
-
-  if (
-    getToolCnVerified(
-      tool
-    )
-  ) {
+  if (getToolCnVerified(tool)) {
 
     tags.push({
-      text:
-        "✓ 国内实测",
-
-      type:
-        "good"
+      text: "✓ 国内实测",
+      type: "good"
     });
 
   } else if (
-    getToolCnPriority(
-      tool
-    ) === "HIGH"
+    getToolCnPriority(tool) === "HIGH"
   ) {
 
     tags.push({
-      text:
-        "国内优先",
-
-      type:
-        "info"
+      text: "国内优先",
+      type: "info"
     });
 
   }
 
-
-  /* 广告 */
-
-  if (
-    getToolAds(
-      tool
-    ) === "NONE"
-  ) {
+  if (getToolAds(tool) === "NONE") {
 
     tags.push({
-      text:
-        "无广告",
-
-      type:
-        "good"
+      text: "无广告",
+      type: "good"
     });
 
   } else if (
-    getToolAds(
-      tool
-    ) === "LOW"
+    getToolAds(tool) === "LOW"
   ) {
 
     tags.push({
-      text:
-        "少量广告",
-
-      type:
-        "warn"
+      text: "少量广告",
+      type: "warn"
     });
 
   }
 
-
-  /* 登录 */
-
-  if (
-    getToolLogin(
-      tool
-    ) === "NONE"
-  ) {
+  if (getToolLogin(tool) === "NONE") {
 
     tags.push({
-      text:
-        "无需登录",
-
-      type:
-        "good"
+      text: "无需登录",
+      type: "good"
     });
 
   } else if (
-    getToolLogin(
-      tool
-    ) === "OPTIONAL"
+    getToolLogin(tool) === "OPTIONAL"
   ) {
 
     tags.push({
-      text:
-        "登录可选",
-
-      type:
-        "info"
+      text: "登录可选",
+      type: "info"
     });
 
   } else if (
-    getToolLogin(
-      tool
-    ) === "REQUIRED"
+    getToolLogin(tool) === "REQUIRED"
   ) {
 
     tags.push({
-      text:
-        "需要登录",
-
-      type:
-        "warn"
+      text: "需要登录",
+      type: "warn"
     });
 
   }
-
-
-  /* 处理方式 */
 
   const processing =
-    getToolProcessing(
-      tool
-    );
+    getToolProcessing(tool);
 
-
-  if (
-    processing === "LOCAL"
-  ) {
+  if (processing === "LOCAL") {
 
     tags.push({
-      text:
-        "本地处理",
-
-      type:
-        "good"
+      text: "本地处理",
+      type: "good"
     });
 
   } else if (
@@ -2749,11 +2254,8 @@ function getToolTags(
   ) {
 
     tags.push({
-      text:
-        "临时云处理",
-
-      type:
-        "info"
+      text: "临时云处理",
+      type: "info"
     });
 
   } else if (
@@ -2761,11 +2263,8 @@ function getToolTags(
   ) {
 
     tags.push({
-      text:
-        "账号云处理",
-
-      type:
-        "warn"
+      text: "账号云处理",
+      type: "warn"
     });
 
   } else if (
@@ -2773,63 +2272,39 @@ function getToolTags(
   ) {
 
     tags.push({
-      text:
-        "云端处理",
-
-      type:
-        "info"
+      text: "云端处理",
+      type: "info"
     });
 
   }
 
+  /*
+    紧凑版最多显示 3 个标签，
+    减少卡片高度。
+  */
 
-  /* 手机 */
-
-  if (
-    getToolMobile(
-      tool
-    )
-  ) {
-
-    tags.push({
-      text:
-        "手机可用",
-
-      type:
-        "info"
-    });
-
-  }
-
-
-  return tags
-    .slice(
-      0,
-      5
-    );
+  return tags.slice(0,3);
 
 }
 
 
 /* =========================================================
-   数据加载
+   数据
 ========================================================= */
 
 async function loadData() {
 
   setStatus(
     "loading",
-    "NAV KING V" +
+    "马上办 V" +
     APP_VERSION +
-    " · 正在读取最新数据库…"
+    " · 正在读取数据库…"
   );
-
 
   try {
 
     const cacheBust =
       Date.now();
-
 
     const [
       atomicResponse,
@@ -2840,29 +2315,22 @@ async function loadData() {
         fetch(
           "./data/atomic_tasks.json?cb=" +
           cacheBust,
-
           {
-            cache:
-              "no-store"
+            cache: "no-store"
           }
         ),
 
         fetch(
           "./data/tools.json?cb=" +
           cacheBust,
-
           {
-            cache:
-              "no-store"
+            cache: "no-store"
           }
         )
 
       ]);
 
-
-    if (
-      !atomicResponse.ok
-    ) {
+    if (!atomicResponse.ok) {
 
       throw new Error(
         "atomic_tasks.json HTTP " +
@@ -2871,10 +2339,7 @@ async function loadData() {
 
     }
 
-
-    if (
-      !toolsResponse.ok
-    ) {
+    if (!toolsResponse.ok) {
 
       throw new Error(
         "tools.json HTTP " +
@@ -2883,14 +2348,11 @@ async function loadData() {
 
     }
 
-
     const atomicData =
       await atomicResponse.json();
 
-
     const toolsData =
       await toolsResponse.json();
-
 
     atomicDataVersion =
       String(
@@ -2899,14 +2361,12 @@ async function loadData() {
         "UNKNOWN"
       );
 
-
     toolsDataVersion =
       String(
         toolsData.version ??
         toolsData.VERSION ??
         "UNKNOWN"
       );
-
 
     atomicTasks =
       extractArray(
@@ -2919,7 +2379,6 @@ async function loadData() {
         ]
       );
 
-
     toolRegistry =
       extractArray(
         toolsData,
@@ -2931,10 +2390,7 @@ async function loadData() {
         ]
       );
 
-
-    if (
-      !atomicTasks.length
-    ) {
+    if (!atomicTasks.length) {
 
       throw new Error(
         "atomic_tasks.json 没有读取到任务"
@@ -2942,10 +2398,7 @@ async function loadData() {
 
     }
 
-
-    if (
-      !toolRegistry.length
-    ) {
+    if (!toolRegistry.length) {
 
       throw new Error(
         "tools.json 没有读取到工具入口"
@@ -2953,71 +2406,43 @@ async function loadData() {
 
     }
 
-
     searchableTasks =
-      atomicTasks.filter(
-        isVisibleTask
-      );
-
+      atomicTasks.filter(isVisibleTask);
 
     renderCategories();
 
-
     setStatus(
       "ok",
-      "NAV KING V" +
+      "马上办 V" +
       APP_VERSION +
-      " · TASK DATA " +
-      atomicDataVersion +
-      " · TOOL DATA " +
-      toolsDataVersion +
       " · 已读取 " +
       searchableTasks.length +
       " 个任务 / " +
       toolRegistry.length +
-      " 个网址入口"
+      " 个入口"
     );
-
 
     console.log(
-      "NAV KING BUILD:",
+      "BUILD:",
       BUILD_ID
     );
-
 
     console.log(
       "TASK DATA VERSION:",
       atomicDataVersion
     );
 
-
     console.log(
       "TOOL DATA VERSION:",
       toolsDataVersion
     );
 
-
-    console.log(
-      "TASK COUNT:",
-      searchableTasks.length
-    );
-
-
-    console.log(
-      "TOOL COUNT:",
-      toolRegistry.length
-    );
-
-
-  } catch (
-    error
-  ) {
+  } catch (error) {
 
     console.error(
-      "NAV KING LOAD ERROR:",
+      "LOAD ERROR:",
       error
     );
-
 
     setStatus(
       "error",
@@ -3034,15 +2459,10 @@ async function loadData() {
    可见任务
 ========================================================= */
 
-function isVisibleTask(
-  task
-) {
+function isVisibleTask(task) {
 
   const status =
-    getTaskStatus(
-      task
-    );
-
+    getTaskStatus(task);
 
   if (
     status === "MERGED" ||
@@ -3054,72 +2474,39 @@ function isVisibleTask(
 
   }
 
-
   return Boolean(
-    getTaskName(
-      task
-    )
+    getTaskName(task)
   );
 
 }
 
 
 /* =========================================================
-   后台状态
+   状态
 ========================================================= */
 
-function setStatus(
-  type,
-  text
-) {
+function setStatus(type, text) {
 
   const dot =
-    document.getElementById(
-      "statusDot"
-    );
-
+    document.getElementById("statusDot");
 
   const label =
-    document.getElementById(
-      "statusText"
-    );
+    document.getElementById("statusText");
 
-
-  if (
-    !dot ||
-    !label
-  ) {
-
+  if (!dot || !label) {
     return;
-
   }
-
 
   dot.className =
     "status-dot";
 
-
-  if (
-    type === "ok"
-  ) {
-
-    dot.classList.add(
-      "ok"
-    );
-
+  if (type === "ok") {
+    dot.classList.add("ok");
   }
 
-
-  if (
-    type === "error"
-  ) {
-
-    dot.classList.add(
-      "error"
-    );
-
+  if (type === "error") {
+    dot.classList.add("error");
   }
-
 
   label.textContent =
     text;
@@ -3128,89 +2515,52 @@ function setStatus(
 
 
 /* =========================================================
-   分类渲染
+   分类
 ========================================================= */
 
 function renderCategories() {
 
   const container =
-    document.getElementById(
-      "categories"
-    );
+    document.getElementById("categories");
 
+  container.innerHTML = "";
 
-  container.innerHTML =
-    "";
-
-
-  const groups =
-    {};
-
+  const groups = {};
 
   searchableTasks.forEach(
     function(task) {
 
       const category =
-        getTaskCategory(
-          task
-        );
+        getTaskCategory(task);
 
-
-      if (
-        !groups[
-          category
-        ]
-      ) {
-
-        groups[
-          category
-        ] =
-          [];
-
+      if (!groups[category]) {
+        groups[category] = [];
       }
 
-
-      groups[
-        category
-      ].push(
-        task
-      );
+      groups[category].push(task);
 
     }
   );
 
-
   Object
-    .keys(
-      groups
-    )
+    .keys(groups)
     .sort(
-      function(
-        a,
-        b
-      ) {
+      function(a,b) {
 
         const orderA =
           categoryConfig[a]?.order ??
           999;
 
-
         const orderB =
           categoryConfig[b]?.order ??
           999;
 
-
-        return (
-          orderA -
-          orderB
-        );
+        return orderA - orderB;
 
       }
     )
     .forEach(
-      function(
-        categoryName
-      ) {
+      function(categoryName) {
 
         const config =
           categoryConfig[
@@ -3222,118 +2572,88 @@ function renderCategories() {
               categoryName,
 
             note:
-              "更多工具",
+              "更多",
 
             className:
               "cat-other"
 
           };
 
-
         const section =
           document.createElement(
             "section"
           );
 
-
         section.className =
           "category " +
           config.className;
-
 
         const head =
           document.createElement(
             "div"
           );
 
-
         head.className =
           "category-head";
-
 
         const title =
           document.createElement(
             "h2"
           );
 
-
         title.className =
           "category-title";
 
-
         title.textContent =
           config.title;
-
 
         const note =
           document.createElement(
             "div"
           );
 
-
         note.className =
           "category-note";
-
 
         note.textContent =
           config.note;
 
-
-        head.appendChild(
-          title
-        );
-
-
-        head.appendChild(
-          note
-        );
-
+        head.appendChild(title);
+        head.appendChild(note);
 
         const grid =
           document.createElement(
             "div"
           );
 
-
         grid.className =
           "task-grid";
-
 
         groups[
           categoryName
         ]
         .forEach(
-          function(
-            task
-          ) {
+          function(task) {
 
             const button =
               document.createElement(
                 "div"
               );
 
-
             button.className =
               "task";
 
-
             button.textContent =
-              getTaskName(
-                task
-              );
-
+              getTaskName(task);
 
             button.addEventListener(
               "click",
               function() {
 
-                showTask(
-                  task
-                );
+                showTask(task);
 
               }
             );
-
 
             grid.appendChild(
               button
@@ -3342,16 +2662,8 @@ function renderCategories() {
           }
         );
 
-
-        section.appendChild(
-          head
-        );
-
-
-        section.appendChild(
-          grid
-        );
-
+        section.appendChild(head);
+        section.appendChild(grid);
 
         container.appendChild(
           section
@@ -3364,40 +2676,27 @@ function renderCategories() {
 
 
 /* =========================================================
-   工具匹配 + 智能排序
+   工具排序
 ========================================================= */
 
-function findToolsForTask(
-  task
-) {
+function findToolsForTask(task) {
 
   const taskId =
-    getTaskId(
-      task
-    );
-
+    getTaskId(task);
 
   return toolRegistry
 
     .filter(
-      function(
-        tool
-      ) {
+      function(tool) {
 
-        return getToolTasks(
-          tool
-        )
-        .includes(
-          taskId
-        );
+        return getToolTasks(tool)
+          .includes(taskId);
 
       }
     )
 
     .filter(
-      function(
-        tool
-      ) {
+      function(tool) {
 
         return ![
           "DOWN",
@@ -3405,314 +2704,188 @@ function findToolsForTask(
           "DEAD"
         ]
         .includes(
-          getToolStatus(
-            tool
-          )
+          getToolStatus(tool)
         );
 
       }
     )
 
     .filter(
-      function(
-        tool
-      ) {
+      function(tool) {
 
         return (
-          getToolName(
-            tool
-          ) &&
-          getToolUrl(
-            tool
-          )
+          getToolName(tool) &&
+          getToolUrl(tool)
         );
 
       }
     )
 
     .map(
-      function(
-        tool
-      ) {
+      function(tool) {
 
         return {
-
-          tool:
-            tool,
-
-          score:
-            scoreTool(
-              tool
-            )
-
+          tool: tool,
+          score: scoreTool(tool)
         };
 
       }
     )
 
     .sort(
-      function(
-        a,
-        b
-      ) {
+      function(a,b) {
 
-        if (
-          b.score !==
-          a.score
-        ) {
-
-          return (
-            b.score -
-            a.score
-          );
-
+        if (b.score !== a.score) {
+          return b.score - a.score;
         }
 
-
         const roleA =
-          getToolRole(
-            a.tool
-          );
-
+          getToolRole(a.tool);
 
         const roleB =
-          getToolRole(
-            b.tool
-          );
-
+          getToolRole(b.tool);
 
         if (
           roleA === "PRIMARY" &&
           roleB !== "PRIMARY"
         ) {
-
           return -1;
-
         }
-
 
         if (
           roleB === "PRIMARY" &&
           roleA !== "PRIMARY"
         ) {
-
           return 1;
-
         }
 
-
-        return getToolName(
-          a.tool
-        )
-        .localeCompare(
-          getToolName(
-            b.tool
-          ),
-          "zh-CN"
-        );
+        return getToolName(a.tool)
+          .localeCompare(
+            getToolName(b.tool),
+            "zh-CN"
+          );
 
       }
     )
 
-    .slice(
-      0,
-      3
-    );
+    .slice(0,3);
 
 }
 
 
 /* =========================================================
-   结果展示
+   展示
 ========================================================= */
 
-function showTask(
-  task
-) {
+function showTask(task) {
 
   const result =
-    document.getElementById(
-      "result"
-    );
-
+    document.getElementById("result");
 
   const empty =
-    document.getElementById(
-      "empty"
-    );
-
+    document.getElementById("empty");
 
   const title =
-    document.getElementById(
-      "resultTitle"
-    );
-
+    document.getElementById("resultTitle");
 
   const description =
     document.getElementById(
       "resultDescription"
     );
 
-
   const list =
-    document.getElementById(
-      "siteList"
-    );
-
+    document.getElementById("siteList");
 
   const metaRow =
-    document.getElementById(
-      "metaRow"
-    );
+    document.getElementById("metaRow");
 
-
-  empty.classList.remove(
-    "show"
-  );
-
+  empty.classList.remove("show");
 
   const taskName =
-    getTaskName(
-      task
-    );
-
+    getTaskName(task);
 
   const taskDescription =
-    getTaskDescription(
-      task
-    );
-
+    getTaskDescription(task);
 
   const rankedTools =
-    findToolsForTask(
-      task
-    );
-
+    findToolsForTask(task);
 
   title.textContent =
     taskName;
-
 
   description.textContent =
     taskDescription ||
     "已按国内优先、广告、登录、手机体验和处理方式自动排序。";
 
+  list.innerHTML = "";
+  metaRow.innerHTML = "";
 
-  list.innerHTML =
-    "";
-
-
-  metaRow.innerHTML =
-    "";
-
-
-  if (
-    !rankedTools.length
-  ) {
+  if (!rankedTools.length) {
 
     const message =
-      document.createElement(
-        "div"
-      );
-
+      document.createElement("div");
 
     message.style.padding =
-      "15px";
-
+      "12px";
 
     message.style.background =
       "#fff7ed";
 
-
     message.style.borderRadius =
-      "14px";
-
+      "12px";
 
     message.style.color =
       "#9a3412";
 
-
     message.style.fontSize =
-      "14px";
-
+      "12px";
 
     message.textContent =
-      "这个任务已经进入 NAV KING，但目前还没有关联网址入口。";
+      "这个任务目前还没有可用入口。";
 
-
-    list.appendChild(
-      message
-    );
+    list.appendChild(message);
 
   }
 
-
   rankedTools.forEach(
-    function(
-      item,
-      index
-    ) {
+    function(item,index) {
 
       const tool =
         item.tool;
 
-
       const name =
-        getToolName(
-          tool
-        );
-
+        getToolName(tool);
 
       const url =
-        getToolUrl(
-          tool
-        );
+        getToolUrl(tool);
 
-
-      let domain =
-        "";
-
+      let domain = "";
 
       try {
 
         domain =
-          new URL(
-            url
-          )
+          new URL(url)
           .hostname;
 
-      } catch (
-        error
-      ) {
+      } catch (error) {
 
-        domain =
-          url;
+        domain = url;
 
       }
 
-
       const rankText =
         index === 0
-
         ? "🥇 推荐"
-
         : (
             "备用 " +
             index
           );
 
-
       const tags =
-        getToolTags(
-          tool
-        );
-
+        getToolTags(tool);
 
       const link =
-        document.createElement(
-          "a"
-        );
-
+        document.createElement("a");
 
       link.className =
         "site" +
@@ -3722,25 +2895,19 @@ function showTask(
           : ""
         );
 
-
       link.href =
         url;
-
 
       link.target =
         "_blank";
 
-
       link.rel =
         "noopener noreferrer";
-
 
       const tagsHtml =
         tags
           .map(
-            function(
-              tag
-            ) {
+            function(tag) {
 
               return `
                 <span
@@ -3752,10 +2919,7 @@ function showTask(
 
             }
           )
-          .join(
-            ""
-          );
-
+          .join("");
 
       link.innerHTML = `
 
@@ -3779,13 +2943,11 @@ function showTask(
 
           ${
             tagsHtml
-
             ? `
               <div class="tool-tags">
                 ${tagsHtml}
               </div>
             `
-
             : ""
           }
 
@@ -3797,20 +2959,14 @@ function showTask(
 
       `;
 
-
-      list.appendChild(
-        link
-      );
+      list.appendChild(link);
 
     }
   );
 
-
   const anyLocal =
     rankedTools.some(
-      function(
-        item
-      ) {
+      function(item) {
 
         return (
           getToolProcessing(
@@ -3821,18 +2977,13 @@ function showTask(
       }
     );
 
+  if (rankedTools.length) {
 
-  if (
-    rankedTools.length
-  ) {
-
-    if (
-      anyLocal
-    ) {
+    if (anyLocal) {
 
       addBadge(
         metaRow,
-        "包含本地处理入口",
+        "含本地处理",
         "local"
       );
 
@@ -3840,7 +2991,7 @@ function showTask(
 
       addBadge(
         metaRow,
-        "以第三方网站处理为主",
+        "第三方处理",
         "cloud"
       );
 
@@ -3848,55 +2999,42 @@ function showTask(
 
   }
 
-
   const layer =
-    getTaskLayer(
-      task
-    );
+    getTaskLayer(task);
 
-
-  if (
-    layer === "PRO"
-  ) {
+  if (layer === "PRO") {
 
     addBadge(
       metaRow,
-      "Pro 专业工具",
+      "Pro",
       "pro"
     );
 
   }
 
-
   addBadge(
     metaRow,
-    getTaskCategory(
-      task
-    ),
+    getTaskCategory(task),
     ""
   );
 
+  result.classList.add("show");
 
-  result.classList.add(
-    "show"
-  );
-
+  /*
+    不再 center，
+    避免点击任务后页面大幅跳动。
+  */
 
   setTimeout(
     function() {
 
       result.scrollIntoView({
-
-        behavior:
-          "smooth",
-
-        block:
-          "center"
-
+        behavior: "smooth",
+        block: "start"
       });
 
     },
-    80
+    60
   );
 
 }
@@ -3913,33 +3051,19 @@ function addBadge(
 ) {
 
   const badge =
-    document.createElement(
-      "span"
-    );
-
+    document.createElement("span");
 
   badge.className =
     "badge";
 
-
-  if (
-    type
-  ) {
-
-    badge.classList.add(
-      type
-    );
-
+  if (type) {
+    badge.classList.add(type);
   }
-
 
   badge.textContent =
     text;
 
-
-  parent.appendChild(
-    badge
-  );
+  parent.appendChild(badge);
 
 }
 
@@ -3955,111 +3079,65 @@ function searchTask() {
       "searchInput"
     );
 
-
   const keyword =
     input.value
       .trim()
       .toLowerCase();
 
-
-  if (
-    !keyword
-  ) {
-
+  if (!keyword) {
     return;
-
   }
 
-
   const empty =
-    document.getElementById(
-      "empty"
-    );
+    document.getElementById("empty");
 
-
-  empty.classList.remove(
-    "show"
-  );
-
+  empty.classList.remove("show");
 
   let matched =
     searchableTasks.find(
-      function(
-        task
-      ) {
+      function(task) {
 
         const name =
-          getTaskName(
-            task
-          )
+          getTaskName(task)
           .toLowerCase();
 
-
         return (
-          name.includes(
-            keyword
-          ) ||
-          keyword.includes(
-            name
-          )
+          name.includes(keyword) ||
+          keyword.includes(name)
         );
 
       }
     );
 
+  if (!matched) {
 
-  if (
-    !matched
-  ) {
-
-    for (
-      const alias
-      in aliases
-    ) {
+    for (const alias in aliases) {
 
       const lowerAlias =
-        alias
-          .toLowerCase();
-
+        alias.toLowerCase();
 
       if (
-        keyword.includes(
-          lowerAlias
-        ) ||
-        lowerAlias.includes(
-          keyword
-        )
+        keyword.includes(lowerAlias) ||
+        lowerAlias.includes(keyword)
       ) {
 
         const targetName =
-          aliases[
-            alias
-          ];
-
+          aliases[alias];
 
         matched =
           searchableTasks.find(
-            function(
-              task
-            ) {
+            function(task) {
 
               return (
-                getTaskName(
-                  task
-                ) ===
+                getTaskName(task) ===
                 targetName
               );
 
             }
           );
 
-
-        if (
-          matched
-        ) {
-
+        if (matched) {
           break;
-
         }
 
       }
@@ -4068,41 +3146,28 @@ function searchTask() {
 
   }
 
-
-  if (
-    !matched
-  ) {
+  if (!matched) {
 
     matched =
       searchableTasks.find(
-        function(
-          task
-        ) {
+        function(task) {
 
           const keywords =
             Array.isArray(
               task.keywords
             )
-            ? task.keywords.join(
-                " "
-              )
+            ? task.keywords.join(" ")
             : "";
-
 
           const combined =
             (
-              getTaskName(
-                task
-              ) +
+              getTaskName(task) +
               " " +
-              getTaskDescription(
-                task
-              ) +
+              getTaskDescription(task) +
               " " +
               keywords
             )
             .toLowerCase();
-
 
           return combined.includes(
             keyword
@@ -4113,40 +3178,22 @@ function searchTask() {
 
   }
 
+  if (matched) {
 
-  if (
-    matched
-  ) {
-
-    showTask(
-      matched
-    );
+    showTask(matched);
 
   } else {
 
     document
-      .getElementById(
-        "result"
-      )
+      .getElementById("result")
       .classList
-      .remove(
-        "show"
-      );
+      .remove("show");
 
-
-    empty.classList.add(
-      "show"
-    );
-
+    empty.classList.add("show");
 
     empty.scrollIntoView({
-
-      behavior:
-        "smooth",
-
-      block:
-        "center"
-
+      behavior: "smooth",
+      block: "center"
     });
 
   }
@@ -4155,41 +3202,18 @@ function searchTask() {
 
 
 /* =========================================================
-   HTML 安全转义
+   HTML安全
 ========================================================= */
 
-function escapeHTML(
-  value
-) {
+function escapeHTML(value) {
 
-  return String(
-    value
-  )
+  return String(value)
 
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
@@ -4199,87 +3223,58 @@ function escapeHTML(
 ========================================================= */
 
 document
-  .getElementById(
-    "searchButton"
-  )
+  .getElementById("searchButton")
   .addEventListener(
     "click",
     searchTask
   );
 
-
 document
-  .getElementById(
-    "searchInput"
-  )
+  .getElementById("searchInput")
   .addEventListener(
     "keydown",
-    function(
-      event
-    ) {
+    function(event) {
 
-      if (
-        event.key ===
-        "Enter"
-      ) {
-
+      if (event.key === "Enter") {
         searchTask();
-
       }
 
     }
   );
 
-
 document
-  .getElementById(
-    "saveNavButton"
-  )
+  .getElementById("saveNavButton")
   .addEventListener(
     "click",
     openSaveModal
   );
 
-
 document
-  .getElementById(
-    "saveModalClose"
-  )
+  .getElementById("saveModalClose")
   .addEventListener(
     "click",
     closeSaveModal
   );
 
-
 document
-  .getElementById(
-    "addHomeButton"
-  )
+  .getElementById("addHomeButton")
   .addEventListener(
     "click",
     handleAddHome
   );
 
-
 document
-  .getElementById(
-    "bookmarkButton"
-  )
+  .getElementById("bookmarkButton")
   .addEventListener(
     "click",
     handleBookmark
   );
 
-
 document
-  .getElementById(
-    "saveModalBackdrop"
-  )
+  .getElementById("saveModalBackdrop")
   .addEventListener(
     "click",
-    function(
-      event
-    ) {
+    function(event) {
 
       if (
         event.target ===
