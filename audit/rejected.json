@@ -1,0 +1,36 @@
+{
+  "rejected": [
+    {
+      "candidate_id": "REAL-005",
+      "task_id": "image-compress",
+      "url": "https://squoosh.app/",
+      "http_status": 200,
+      "reason": "Low score and task mismatch: 40",
+      "review_reason_code": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "candidate_id": "REAL-006",
+      "task_id": "image-resize",
+      "url": "https://squoosh.app/",
+      "http_status": 200,
+      "reason": "Low score and task mismatch: 40",
+      "review_reason_code": "INSUFFICIENT_EVIDENCE"
+    },
+    {
+      "candidate_id": "REAL-007",
+      "task_id": "image-remove-bg",
+      "url": "https://www.gaoding.com/koutu",
+      "http_status": 405,
+      "reason": "Low score and task mismatch: 0",
+      "review_reason_code": "TASK_MISMATCH"
+    },
+    {
+      "candidate_id": "REAL-010",
+      "task_id": "audio-merge",
+      "url": "https://audio-joiner.com/cn/",
+      "http_status": 200,
+      "reason": "Low score and task mismatch: 40",
+      "review_reason_code": "INSUFFICIENT_EVIDENCE"
+    }
+  ]
+}
