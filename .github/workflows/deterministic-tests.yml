@@ -46,6 +46,10 @@ jobs:
 
       - name: Protect production files
         run: |
+          test -f index.html
+          test -f data/atomic_tasks.json
+          test -f data/tools.json
+
           sha256sum index.html > /tmp/index.before
           sha256sum data/atomic_tasks.json > /tmp/atomic_tasks.before
           sha256sum data/tools.json > /tmp/tools.before
@@ -57,9 +61,17 @@ jobs:
       - name: Verify production files unchanged
         if: always()
         run: |
-          sha256sum -c /tmp/index.before
-          sha256sum -c /tmp/atomic_tasks.before
-          sha256sum -c /tmp/tools.before
+          if [ -f /tmp/index.before ]; then
+            sha256sum -c /tmp/index.before
+          fi
+
+          if [ -f /tmp/atomic_tasks.before ]; then
+            sha256sum -c /tmp/atomic_tasks.before
+          fi
+
+          if [ -f /tmp/tools.before ]; then
+            sha256sum -c /tmp/tools.before
+          fi
 
       - name: Show audit results
         if: always()
